@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JOINT Sweep — World Cup 2026</title>
+<style>
+  :root {
+    --bg: #18181B;       /* Zinc 900 */
+    --panel: #27272A;    /* Zinc 800 — surface */
+    --panel-2: #313135;
+    --border: #3F3F46;   /* Zinc 700 */
+    --text: #FAFAFA;     /* Zinc 50 */
+    --muted: #A1A1AA;    /* Zinc 400 */
+    --green: #4ADE80;    /* Green 400 — success */
+    --amber: #FBBF24;    /* Yellow 400 — warning */
+    --red: #F87171;      /* Red 400 — losses/eliminated (no danger colour in scheme) */
+    --blue: #22D3EE;     /* Cyan 400 — accent */
+    --gold: #A78BFA;     /* Purple 400 — highlight */
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+    padding: 24px 16px 64px;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; }
+
+  /* Header */
+  .masthead {
+    text-align: center;
+    padding: 28px 16px 24px;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 28px;
+  }
+  .masthead .trophy {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .masthead h1 {
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+  }
+  .masthead h1 .tag { color: var(--blue); }
+  .masthead .sub {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 0.95rem;
+  }
+  .masthead .stamp {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 5px 14px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--panel);
+    color: var(--blue);
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin: 36px 0 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Summary */
+  .summary p { margin-bottom: 12px; color: var(--text); }
+  .summary p:last-child { margin-bottom: 0; }
+
+  /* Leaderboard */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95rem;
+  }
+  th {
+    background: var(--panel-2);
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.pos { font-weight: 700; width: 44px; }
+  td.name { font-weight: 600; }
+  td.record { color: var(--muted); font-variant-numeric: tabular-nums; }
+  tr.lb-danger td { background: rgba(248, 113, 113, 0.08); }
+  .bar {
+    width: 120px;
+    height: 8px;
+    background: var(--panel-2);
+    border-radius: 999px;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  .bar-fill { height: 100%; background: var(--green); border-radius: 999px; }
+  .bar-label { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 0.9rem; }
+
+  /* Squads */
+  .squad-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 1000px) {
+    .squad-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .squad-grid { grid-template-columns: 1fr; }
+  }
+  .squad {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .squad-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 12px;
+    background: var(--panel-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .squad-head h3 { font-size: 1rem; }
+  .squad-head .alive { color: var(--muted); font-size: 0.75rem; white-space: nowrap; }
+  ul.teams { list-style: none; }
+  ul.teams li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.82rem;
+  }
+  ul.teams li:last-child { border-bottom: none; }
+  .flag { width: 20px; text-align: center; flex: none; }
+  .team { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .res {
+    width: 22px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    flex: none;
+  }
+  .res.w { background: rgba(74, 222, 128, 0.18); color: var(--green); }
+  .res.d { background: rgba(34, 211, 238, 0.15); color: var(--blue); }
+  .res.l { background: rgba(248, 113, 113, 0.18); color: var(--red); }
+  .res.none { background: var(--panel-2); color: var(--muted); }
+  .st-dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  li.st-in .st-dot { background: var(--green); }
+  li.st-risk .st-dot { background: var(--amber); }
+  li.st-out .st-dot { background: var(--red); }
+  li.st-risk { background: rgba(251, 191, 36, 0.05); }
+  li.st-out { background: rgba(248, 113, 113, 0.05); }
+  li.st-out .team, li.st-out .flag { opacity: 0.55; }
+  li.st-out .team { text-decoration: line-through; }
+
+  /* Legend + footer */
+  .legend {
+    margin-top: 28px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  .legend-rag {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .legend-rag span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend-note { margin-top: 8px; font-size: 0.78rem; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot.g { background: var(--green); }
+  .dot.a { background: var(--amber); }
+  .dot.r { background: var(--red); }
+  footer {
+    margin-top: 44px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="trophy">🏆</div>
+    <h1><span class="tag">[JOINT]</span> Sweep</h1>
+    <div class="sub">FIFA World Cup 2026 · Last squad standing · Loser cops it</div>
+    <div class="stamp">Report generated: Saturday 13 June 2026, 17:25 AEST</div>
+  </header>
+
+  <h2>📋 Summary</h2>
+  <div class="summary">
+    <p>Quiet on the pitch since this morning's update — no fresh results in the last 20 minutes, so the table's unchanged. <strong>USA 4–1 Paraguay</strong> and the <strong>Canada 1–1 Bosnia &amp; Herzegovina</strong> draw remain the day's headlines, leaving <strong>Kerrod</strong> sitting pretty at 2W-0D-0L (Mexico and USA both winning) while <strong>Ryan</strong> still holds top spot on the danger rankings after Paraguay's 4-1 hiding and South Africa's opening loss.</p>
+    <p>Eyes now turn to a huge Day 3 slate kicking off in a few hours (all times AEST, Sunday 14 June): <strong>Qatar v Switzerland</strong> at 5:00am (Kerrod v Jay), <strong>Brazil v Morocco</strong> at 8:00am (Jay v Ryan), <strong>Haiti v Scotland</strong> at 11:00am (a Mitchell derby), and <strong>Australia v Türkiye</strong> at 2:00pm (Jay v Kerrod again — busy day for him). Plenty on the line for everyone.</p>
+  </div>
+
+  <h2>💀 Danger Rankings</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Participant</th>
+        <th>Teams remaining</th>
+        <th>Eliminated</th>
+        <th>At risk</th>
+        <th>Record (W-D-L)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="pos">1</td>
+        <td class="name">Kerrod</td>
+        <td><div class="bar"><div class="bar-fill" style="width:100%"></div></div><span class="bar-label">12 / 12</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td class="record">2W-0D-0L</td>
+      </tr>
+      <tr>
+        <td class="pos">2</td>
+        <td class="name">Jay</td>
+        <td><div class="bar"><div class="bar-fill" style="width:100%"></div></div><span class="bar-label">12 / 12</span></td>
+        <td>0</td>
+        <td>0</td>
+        <td class="record">0W-1D-0L</td>
+      </tr>
+      <tr>
+        <td class="pos">3</td>
+        <td class="name">Mitchell</td>
+        <td><div class="bar"><div class="bar-fill" style="width:100%"></div></div><span class="bar-label">12 / 12</span></td>
+        <td>0</td>
+        <td>1</td>
+        <td class="record">0W-1D-1L</td>
+      </tr>
+      <tr class="lb-danger">
+        <td class="pos">💀</td>
+        <td class="name">Ryan</td>
+        <td><div class="bar"><div class="bar-fill" style="width:100%"></div></div><span class="bar-label">12 / 12</span></td>
+        <td>0</td>
+        <td>2</td>
+        <td class="record">1W-0D-2L</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>👥 Squads</h2>
+  <div class="squad-grid">
+    <section class="squad">
+      <header class="squad-head">
+        <h3>Jay</h3>
+        <span class="alive">12/12 alive</span>
+      </header>
+      <ul class="teams">
+        <li class="st-in"><span class="flag">🇪🇸</span><span class="team">Spain</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇧🇷</span><span class="team">Brazil</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇴</span><span class="team">Colombia</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇯🇵</span><span class="team">Japan</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇭</span><span class="team">Switzerland</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇦🇺</span><span class="team">Australia</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇪🇬</span><span class="team">Egypt</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇩🇿</span><span class="team">Algeria</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇮</span><span class="team">Ivory Coast</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇻</span><span class="team">Cape Verde</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇧🇦</span><span class="team">Bosnia &amp; Herz.</span><span class="res d">D</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇬🇭</span><span class="team">Ghana</span><span class="res none">–</span><span class="st-dot"></span></li>
+      </ul>
+    </section>
+
+    <section class="squad">
+      <header class="squad-head">
+        <h3>Kerrod</h3>
+        <span class="alive">12/12 alive</span>
+      </header>
+      <ul class="teams">
+        <li class="st-in"><span class="flag">🇫🇷</span><span class="team">France</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇧🇪</span><span class="team">Belgium</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇲🇽</span><span class="team">Mexico</span><span class="res w">W</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇺🇸</span><span class="team">United States</span><span class="res w">W</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇺🇾</span><span class="team">Uruguay</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇮🇷</span><span class="team">Iran</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇹🇷</span><span class="team">Türkiye</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇳🇴</span><span class="team">Norway</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇹🇳</span><span class="team">Tunisia</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇶🇦</span><span class="team">Qatar</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇼</span><span class="team">Curaçao</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇳🇿</span><span class="team">New Zealand</span><span class="res none">–</span><span class="st-dot"></span></li>
+      </ul>
+    </section>
+
+    <section class="squad">
+      <header class="squad-head">
+        <h3>Mitchell</h3>
+        <span class="alive">12/12 alive</span>
+      </header>
+      <ul class="teams">
+        <li class="st-in"><span class="flag">🇦🇷</span><span class="team">Argentina</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team">England</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇭🇷</span><span class="team">Croatia</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇸🇳</span><span class="team">Senegal</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇪🇨</span><span class="team">Ecuador</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇦</span><span class="team">Canada</span><span class="res d">D</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇸🇪</span><span class="team">Sweden</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-risk"><span class="flag">🇨🇿</span><span class="team">Czechia</span><span class="res l">L</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team">Scotland</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇺🇿</span><span class="team">Uzbekistan</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇸🇦</span><span class="team">Saudi Arabia</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇭🇹</span><span class="team">Haiti</span><span class="res none">–</span><span class="st-dot"></span></li>
+      </ul>
+    </section>
+
+    <section class="squad">
+      <header class="squad-head">
+        <h3>Ryan</h3>
+        <span class="alive">12/12 alive</span>
+      </header>
+      <ul class="teams">
+        <li class="st-in"><span class="flag">🇵🇹</span><span class="team">Portugal</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇳🇱</span><span class="team">Netherlands</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇲🇦</span><span class="team">Morocco</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇩🇪</span><span class="team">Germany</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇦🇹</span><span class="team">Austria</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇰🇷</span><span class="team">South Korea</span><span class="res w">W</span><span class="st-dot"></span></li>
+        <li class="st-risk"><span class="flag">🇵🇾</span><span class="team">Paraguay</span><span class="res l">L</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇵🇦</span><span class="team">Panama</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇨🇩</span><span class="team">DR Congo</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇮🇶</span><span class="team">Iraq</span><span class="res none">–</span><span class="st-dot"></span></li>
+        <li class="st-risk"><span class="flag">🇿🇦</span><span class="team">South Africa</span><span class="res l">L</span><span class="st-dot"></span></li>
+        <li class="st-in"><span class="flag">🇯🇴</span><span class="team">Jordan</span><span class="res none">–</span><span class="st-dot"></span></li>
+      </ul>
+    </section>
+  </div>
+  <div class="legend">
+    <div class="legend-rag">
+      <span><span class="dot g"></span> In</span>
+      <span><span class="dot a"></span> At Risk</span>
+      <span><span class="dot r"></span> Out</span>
+    </div>
+    <div class="legend-note">W/D/L indicates most recent game result only.</div>
+  </div>
+
+  <footer>
+    [JOINT] Sweep - FIFA World Cup 2026
+  </footer>
+
+</div>
+</body>
+</html>
