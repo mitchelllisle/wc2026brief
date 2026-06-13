@@ -1,0 +1,355 @@
+{
+  "generated_at": "2026-06-14T09:24:21.804231+10:00",
+  "summary": [
+    "Early days but the vibes are already very different around the sweep! **Kerrod** is the only one with wins on the board and all **12 teams** still purring along — sitting pretty at the top. **Jay** is clean too with a draw keeping things steady, while **Mitchell** has his first team **at risk** after an early loss — though he's still got all 12 alive. The big concern is **Ryan**, who's already copped **two losses** across his squad with **zero wins or draws** to show for it — both **Ryan** teams that went down are now sitting dangerously **at risk** and one more slip from either could see his count start ticking. Rough start, mate.",
+    "This weekend is absolutely loaded and there's plenty on the line. **Mitchell** needs his **Haiti** and **Scotland** (Sun 11:00AM) to hold firm — **Scotland** especially need a result to avoid going **at risk**, and a **Haiti** loss would be brutal for Mitch's already-nervy start. **Jay** fans should watch **Australia vs Turkey** (Sun 2:00PM) closely — that's **Jay's Australia** against **Kerrod's Turkey**, a direct head-to-head where someone's taking heat. **Kerrod** has a massive slate with **Turkey**, **Curaçao** (Mon 3:00AM), **Tunisia** (Mon 12:00PM), **New Zealand** (Tue 11:00AM), and **Norway** (Wed 8:00AM) all up — if he keeps clean it's a stranglehold on top spot. **Ryan** desperately needs **Germany** (Mon 3:00AM), **Netherlands** (Mon 6:00AM), and **France** (Wed 5:00AM) to bail him out — two teams already **at risk**, any more losses and the dinner bill is starting to have **Ryan's** name on it. Big few days, lads. 👀"
+  ],
+  "leaderboard": [
+    {
+      "name": "Kerrod",
+      "teams_remaining": 12,
+      "teams_total": 12,
+      "eliminated": 0,
+      "at_risk": 0,
+      "record": {
+        "w": 1,
+        "d": 1,
+        "l": 0
+      }
+    },
+    {
+      "name": "Jay",
+      "teams_remaining": 12,
+      "teams_total": 12,
+      "eliminated": 0,
+      "at_risk": 0,
+      "record": {
+        "w": 0,
+        "d": 1,
+        "l": 0
+      }
+    },
+    {
+      "name": "Mitchell",
+      "teams_remaining": 12,
+      "teams_total": 12,
+      "eliminated": 0,
+      "at_risk": 1,
+      "record": {
+        "w": 0,
+        "d": 1,
+        "l": 1
+      }
+    },
+    {
+      "name": "Ryan",
+      "teams_remaining": 12,
+      "teams_total": 12,
+      "eliminated": 0,
+      "at_risk": 2,
+      "record": {
+        "w": 0,
+        "d": 0,
+        "l": 2
+      }
+    }
+  ],
+  "squads": {
+    "Kerrod": [
+      {
+        "name": "France",
+        "flag": "🇫🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Mexico",
+        "flag": "🇲🇽",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "USA",
+        "flag": "🇺🇸",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Uruguay",
+        "flag": "🇺🇾",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Iran",
+        "flag": "🇮🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Turkey",
+        "flag": "🇹🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Norway",
+        "flag": "🇳🇴",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Tunisia",
+        "flag": "🇹🇳",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Qatar",
+        "flag": "🇶🇦",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Curaçao",
+        "flag": "🇨🇼",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "New Zealand",
+        "flag": "🇳🇿",
+        "status": "in",
+        "last_result": null
+      }
+    ],
+    "Jay": [
+      {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Brazil",
+        "flag": "🇧🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Colombia",
+        "flag": "🇨🇴",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Egypt",
+        "flag": "🇪🇬",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Algeria",
+        "flag": "🇩🇿",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Côte d'Ivoire",
+        "flag": "🇨🇮",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Cabo Verde",
+        "flag": "🇨🇻",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "flag": "🇧🇦",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Ghana",
+        "flag": "🇬🇭",
+        "status": "in",
+        "last_result": null
+      }
+    ],
+    "Mitchell": [
+      {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Croatia",
+        "flag": "🇭🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Senegal",
+        "flag": "🇸🇳",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Ecuador",
+        "flag": "🇪🇨",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Czechia",
+        "flag": "🇨🇿",
+        "status": "risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Scotland",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Uzbekistan",
+        "flag": "🇺🇿",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Saudi Arabia",
+        "flag": "🇸🇦",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Haiti",
+        "flag": "🇭🇹",
+        "status": "in",
+        "last_result": null
+      }
+    ],
+    "Ryan": [
+      {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Austria",
+        "flag": "🇦🇹",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Korea Republic",
+        "flag": "🇰🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "status": "risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Panama",
+        "flag": "🇵🇦",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "DR Congo",
+        "flag": "🇨🇩",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Iraq",
+        "flag": "🇮🇶",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "South Africa",
+        "flag": "🇿🇦",
+        "status": "risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Jordan",
+        "flag": "🇯🇴",
+        "status": "in",
+        "last_result": null
+      }
+    ]
+  }
+}

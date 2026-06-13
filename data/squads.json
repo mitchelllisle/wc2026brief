@@ -1,0 +1,72 @@
+{
+  "participants": [
+    {
+      "name": "Jay",
+      "teams": [
+        {"name": "Spain", "flag": "🇪🇸"},
+        {"name": "Brazil", "flag": "🇧🇷"},
+        {"name": "Colombia", "flag": "🇨🇴"},
+        {"name": "Japan", "flag": "🇯🇵"},
+        {"name": "Switzerland", "flag": "🇨🇭"},
+        {"name": "Australia", "flag": "🇦🇺"},
+        {"name": "Egypt", "flag": "🇪🇬"},
+        {"name": "Algeria", "flag": "🇩🇿"},
+        {"name": "Côte d'Ivoire", "flag": "🇨🇮"},
+        {"name": "Cabo Verde", "flag": "🇨🇻"},
+        {"name": "Bosnia and Herzegovina", "flag": "🇧🇦"},
+        {"name": "Ghana", "flag": "🇬🇭"}
+      ]
+    },
+    {
+      "name": "Kerrod",
+      "teams": [
+        {"name": "France", "flag": "🇫🇷"},
+        {"name": "Belgium", "flag": "🇧🇪"},
+        {"name": "Mexico", "flag": "🇲🇽"},
+        {"name": "USA", "flag": "🇺🇸"},
+        {"name": "Uruguay", "flag": "🇺🇾"},
+        {"name": "Iran", "flag": "🇮🇷"},
+        {"name": "Turkey", "flag": "🇹🇷"},
+        {"name": "Norway", "flag": "🇳🇴"},
+        {"name": "Tunisia", "flag": "🇹🇳"},
+        {"name": "Qatar", "flag": "🇶🇦"},
+        {"name": "Curaçao", "flag": "🇨🇼"},
+        {"name": "New Zealand", "flag": "🇳🇿"}
+      ]
+    },
+    {
+      "name": "Mitchell",
+      "teams": [
+        {"name": "Argentina", "flag": "🇦🇷"},
+        {"name": "England", "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
+        {"name": "Croatia", "flag": "🇭🇷"},
+        {"name": "Senegal", "flag": "🇸🇳"},
+        {"name": "Ecuador", "flag": "🇪🇨"},
+        {"name": "Canada", "flag": "🇨🇦"},
+        {"name": "Sweden", "flag": "🇸🇪"},
+        {"name": "Czechia", "flag": "🇨🇿"},
+        {"name": "Scotland", "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿"},
+        {"name": "Uzbekistan", "flag": "🇺🇿"},
+        {"name": "Saudi Arabia", "flag": "🇸🇦"},
+        {"name": "Haiti", "flag": "🇭🇹"}
+      ]
+    },
+    {
+      "name": "Ryan",
+      "teams": [
+        {"name": "Portugal", "flag": "🇵🇹"},
+        {"name": "Netherlands", "flag": "🇳🇱"},
+        {"name": "Morocco", "flag": "🇲🇦"},
+        {"name": "Germany", "flag": "🇩🇪"},
+        {"name": "Austria", "flag": "🇦🇹"},
+        {"name": "Korea Republic", "flag": "🇰🇷"},
+        {"name": "Paraguay", "flag": "🇵🇾"},
+        {"name": "Panama", "flag": "🇵🇦"},
+        {"name": "DR Congo", "flag": "🇨🇩"},
+        {"name": "Iraq", "flag": "🇮🇶"},
+        {"name": "South Africa", "flag": "🇿🇦"},
+        {"name": "Jordan", "flag": "🇯🇴"}
+      ]
+    }
+  ]
+}
