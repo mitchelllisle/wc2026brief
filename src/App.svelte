@@ -40,6 +40,7 @@
   }
 
   const ENDPOINT = `${import.meta.env.BASE_URL}data/stats.json`;
+  const LOGO_SRC = `${import.meta.env.BASE_URL}fifa-logo.svg`;
   const ORDER = { in: 0, at_risk: 1, risk: 1, out: 2 };
   const DAYS_TO_FINAL = 33;
   const FINAL_VENUE = 'MetLife Stadium';
@@ -142,7 +143,12 @@
       {/if}
       <span>Last team standing wins</span>
     </div>
-    <div class="np-title"><h1>The [Joint] <b>Sweep</b> Desk</h1></div>
+    <div class="np-title">
+      <div class="brand-logo" aria-hidden="true">
+        <img src={LOGO_SRC} alt="FIFA World Cup 2026 logo" />
+      </div>
+      <h1>The [Joint] <b>Sweep</b> Desk</h1>
+    </div>
     <div class="np-sub">FIFA World Cup 2026 · United States · Canada · Mexico</div>
   </header>
 

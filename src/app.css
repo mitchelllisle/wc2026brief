@@ -118,9 +118,11 @@ body {
 .gm .ft { font-family: var(--mono); font-size: 9px; color: var(--accent); letter-spacing: 0.12em; font-weight: 700; }
 
 .nameplate { padding: 22px 0 14px; border-bottom: 3px double var(--hair); }
+.brand-logo { display: flex; align-items: center; justify-content: center; }
+.brand-logo img { width: 70px; max-width: 18vw; height: auto; object-fit: contain; filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.32)); }
 .np-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--txt-3); padding-bottom: 14px; flex-wrap: wrap; }
 .np-top .mid { color: var(--accent); }
-.np-title { display: flex; align-items: baseline; justify-content: center; gap: 16px; text-align: center; }
+.np-title { display: flex; align-items: center; justify-content: center; gap: 14px; text-align: center; }
 .np-title h1 { font-size: clamp(34px, 7vw, 72px); font-weight: 900; letter-spacing: -0.04em; line-height: 0.9; text-transform: uppercase; }
 .np-title h1 b { color: var(--accent); }
 .np-sub { text-align: center; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.28em; color: var(--txt-2); margin-top: 12px; }
@@ -251,7 +253,8 @@ tr.tab td { box-shadow: inset 3px 0 0 var(--out); }
 
 @media (max-width: 640px) {
   .wrap { padding: 0 16px 60px; }
-  .manager-stats { grid-template-columns: 1fr; }
+  .brand-logo img { width: 52px; }
+  .np-title { gap: 10px; }
   .report-cols { grid-template-columns: 1fr; }
   .squads { grid-template-columns: 1fr; }
   .sq { border-right: none !important; }
