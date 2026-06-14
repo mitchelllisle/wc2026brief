@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-14T13:05:14.048057+10:00",
+  "generated_at": "2026-06-14T15:32:47.712192+10:00",
   "summary": [
-    "The Sweep is heating up early! **Kerrod** is the only one sitting pretty with a clean slate — **1W-1D-0L** and all 12 teams untouched. **Jay** is holding firm too with two draws and zero losses. **Mitchell** has one team **at risk** after an early loss somewhere in the group stage, while **Ryan** is already sweating with **two teams at risk** — the worst record of the group at **0W-1D-2L**. Nobody's out yet, but Ryan is dangerously close to seeing his first team eliminated. One more bad result and the Secretary chat might start early.",
-    "Massive week ahead. **Ryan's Germany** face **Kerrod's Curaçao** at **3:00AM Monday** — Ryan needs the win badly. **Ryan's Netherlands** vs **Jay's Japan** at **6:00AM Monday** is a tasty clash of clean records. **Jay's Australia** take on **Kerrod's Turkey** at **2:00PM Sunday** — a sweep battle in every sense. **Mitchell's Saudi Arabia** face **Kerrod's Uruguay** on Tuesday, and **Kerrod's France** meet **Mitchell's Senegal** on Wednesday — both huge. Ryan must turn things around fast, or that Secretary role is looking very, very real."
+    "Early doors and it's already getting spicy. **Kerrod** is sitting pretty — **1W-1D** with all **12 teams alive** and none at risk, the smug legend. **Jay** is steady too, **2 draws**, nothing lost, nothing to panic about yet. **Mitchell** is the one sweating — **2 teams at risk** after losses from his sides, with only **1 win** to show. But spare a thought for **Ryan**, who's genuinely wobbling — **0 wins**, **2 losses**, **2 teams at risk**, and staring down the barrel of the Secretary role already. Nobody's out yet, but the gap in vibes between Kerrod and Ryan right now is enormous.",
+    "Big week ahead. **Germany vs Curaçao (Mon 3:00AM)** is massive — a **Ryan** vs **Kerrod** clash where **Curaçao** could go at-risk immediately. **Netherlands vs Japan (Mon 6:00AM)** pits **Ryan's Netherlands** against **Jay's Japan** — both need the points. **Sweden vs Tunisia (Mon 12:00PM)** is a **Mitchell vs Kerrod** battle. Then **Belgium vs Egypt (Tue 5:00AM)** and **France vs Senegal (Wed 5:00AM)** could be huge for **Kerrod** and **Mitchell** respectively. The spiciest of all? **Iraq vs Norway (Wed 8:00AM)** — **Ryan's Iraq** vs **Kerrod's Norway**, with both sides needing a result. **Ryan** simply cannot afford another loss — Secretary duties are calling his name."
   ],
   "leaderboard": [
     {
@@ -34,11 +34,11 @@
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 1,
+      "at_risk": 2,
       "record": {
-        "w": 0,
+        "w": 1,
         "d": 1,
-        "l": 1
+        "l": 2
       }
     },
     {
@@ -256,7 +256,7 @@
         "name": "Scotland",
         "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "Uzbekistan",
@@ -273,8 +273,8 @@
       {
         "name": "Haiti",
         "flag": "🇭🇹",
-        "status": "in",
-        "last_result": null
+        "status": "at_risk",
+        "last_result": "L"
       }
     ],
     "Ryan": [
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "HAI",
+      "h_flag": "🇭🇹",
+      "hs": 0,
+      "a_code": "SCO",
+      "a_flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+      "as": 1,
+      "group": "GRP C"
+    },
     {
       "h_code": "BRA",
       "h_flag": "🇧🇷",
