@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-14T17:35:38.652789+10:00",
+  "generated_at": "2026-06-14T17:42:05.859668+10:00",
   "summary": [
-    "The group stage is underway and the ledger is already getting spicy! **Jay** is sitting pretty — the only one with **zero teams at risk** after a perfect **1W-3D-0L** start. **Kerrod** has one team sweating with **2W-1D-1L**, while **Mitchell** and **Ryan** are both staring down **2 at-risk teams each** at **1W-1D-2L**. Nobody's been knocked out yet, but the pressure is building fast. **Ryan** in particular has the 💀 skull next to his name — a grim early warning that the Secretary role could be looming if his at-risk teams can't stop the bleeding.",
-    "Huge slate of matches incoming! **Ryan's Germany** kick things off vs **Kerrod's Curaçao** at **3:00AM AEST Monday** — a win keeps Germany alive, a loss could spell big trouble. **Jay's Ivory Coast** face **Mitchell's Ecuador** at **9:00AM AEST** — both teams need a result badly. **Jay's Spain** take on **Jay's Cape Verde Islands** at **2:00AM AEST Tuesday** — Jay literally can't lose that one! Then **Kerrod's Belgium** vs **Jay's Egypt** at **5:00AM**, and **Mitchell's Saudi Arabia** vs **Kerrod's Uruguay** at **8:00AM** are must-watches for both sides. **Mitchell's Senegal** clash with **Kerrod's France** on Wednesday at **5:00AM** — massive stakes for both participants."
+    "We're three rounds deep and the cracks are already showing. **Mitchell** is sweating the most with **two teams at risk**, while **Ryan** is right there with him — also sitting on **two at risk** and carrying the dreaded 💀 Secretary skull. **Kerrod** has one blemish on his record after picking up his first loss somewhere along the way, but still has all **12 teams alive**. Meanwhile **Jay** is cruising with a clean sheet — **1W-2D-0L** and zero teams in danger. Smug energy fully justified for now. The early group stage chaos is real, and with two losses sending any team packing, nobody can afford to be complacent.",
+    "Big matches incoming. **Jay's Japan** face **Ryan's Netherlands** on **Mon 15 Jun, 6:00AM AEST** — a massive clash where both owners desperately want the points. **Jay's Ivory Coast** take on **Mitchell's Ecuador** at **9:00AM AEST** the same morning, with both sides already at risk — a loss here ends someone. **Ryan's Germany** open against **Kerrod's Curaçao** at **3:00AM AEST** — easy on paper but upsets happen. **Jay's Spain** vs **Jay's Cape Verde Islands** on **Tue 16 Jun** is a weird one Jay can't lose either way. Then **Wed 17 Jun** brings the blockbuster — **Kerrod's France** vs **Mitchell's Senegal** at **5:00AM AEST**. One of those teams is already at risk. Someone's getting closer to the Secretary chair."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 0,
       "record": {
         "w": 1,
-        "d": 3,
+        "d": 2,
         "l": 0
       }
     },
@@ -37,7 +37,7 @@
       "at_risk": 2,
       "record": {
         "w": 1,
-        "d": 1,
+        "d": 0,
         "l": 2
       }
     },
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Ghana",
@@ -238,7 +238,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Sweden",
@@ -397,15 +397,6 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
-    },
-    {
-      "h_code": "CAN",
-      "h_flag": "🇨🇦",
-      "hs": 1,
-      "a_code": "BIH",
-      "a_flag": "🇧🇦",
-      "as": 1,
-      "group": "GRP B"
     },
     {
       "h_code": "KOR",
