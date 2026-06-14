@@ -182,7 +182,7 @@
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
         <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the Secretary role</h1>
-        <p class="deck">Ten still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.</p>
+        <p class="deck">{ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.</p>
         <div class="report-cols">
           {#each data.summary as p}
             <p>{@html renderPara(p)}</p>
@@ -203,7 +203,7 @@
       </aside>
     </section>
 
-    <div class="sec"><span class="num">01</span><h2>Danger Rankings</h2><span class="meta">Last out becomes Secretary for 12 months</span></div>
+    <div class="sec"><span class="num">01</span><h2>Danger Rankings</h2><span class="meta">First out becomes Secretary for 12 months</span></div>
     <table class="table">
       <thead>
         <tr>
@@ -229,7 +229,7 @@
               <div class="pips">
                 {#each pipOrder(data.squads[p.name] ?? []) as t}
                   <span
-                    class="p {normalizeStatus(t.status)}"
+                    class="p {t.last_result === 'W' ? 'win' : t.last_result === 'D' ? 'draw' : t.last_result === 'L' ? 'loss' : 'none'}"
                     data-tip="{t.name} · {t.last_result ?? 'No result'}"
                     title="{t.name} · {t.last_result ?? 'No result'}"
                   ></span>
@@ -259,7 +259,7 @@
             <div class="tm {status}">
               <span class="fl">{t.flag}</span>
               <span class="nm">{t.name}</span>
-              <span class="rr {t.last_result ?? 'D'}">{t.last_result ?? 'D'}</span>
+              <span class="rr {t.last_result ?? 'none'}">{t.last_result ?? '–'}</span>
               <span class="sd {status}"></span>
             </div>
           {/each}

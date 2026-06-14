@@ -178,9 +178,10 @@ tr.tab .c-rank .n { color: var(--out); }
 .c-name .sub { font-family: var(--mono); font-size: 10px; color: var(--txt-3); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.08em; }
 .pips { display: flex; gap: 2.5px; align-items: center; min-width: 130px; }
 .pips .p { height: 13px; flex: 1; border-radius: 2px; min-width: 5px; }
-.pips .p.in { background: var(--in); }
-.pips .p.at_risk, .pips .p.risk { background: var(--risk); }
-.pips .p.out { background: #3c272c; }
+.pips .p.win { background: var(--in); }
+.pips .p.draw { background: var(--risk); }
+.pips .p.loss { background: var(--out); }
+.pips .p.none { background: var(--hair); }
 .pips .p { position: relative; cursor: default; }
 .pips .p:hover::after {
   content: attr(data-tip);
@@ -232,6 +233,7 @@ tr.tab td { box-shadow: inset 3px 0 0 var(--out); }
 .rr.W { color: var(--in); }
 .rr.D { color: var(--txt-3); }
 .rr.L { color: var(--out); }
+.rr.none { color: var(--hair); }
 .sd { width: 8px; height: 8px; border-radius: 50%; }
 .sd.in { background: var(--in); }
 .sd.at_risk, .sd.risk { background: var(--risk); }

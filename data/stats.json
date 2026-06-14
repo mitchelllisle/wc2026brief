@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-14T17:32:14.882569+10:00",
+  "generated_at": "2026-06-14T17:35:38.652789+10:00",
   "summary": [
-    "The group stage is heating up and the early damage is real. **Mitchell** is already sweating with **2 teams at risk**, while **Ryan** — sitting dead last with zero wins — also has **2 at risk** and is staring down the barrel of the Secretary role early. **Kerrod** has one slip with **1 team at risk** after his **1 loss**, but **Jay** is the only one sitting pretty with a clean sheet — **1W-2D-0L** and zero teams threatened. No scores to dissect just yet from the latest round, but the standings make it clear: **Ryan** and **Mitchell** cannot afford another slip-up. One more loss each for their at-risk sides and the eliminations start stacking up fast.",
-    "Big games incoming — buckle up. **Ryan's Germany** host **Kerrod's Curaçao** at **3:00AM AEST Monday**, with Ryan desperately needing points. Then **Ryan's Netherlands** face **Jay's Japan** at **6:00AM** — massive clash between first and last place. **Jay's Ivory Coast** take on **Mitchell's Ecuador** at **9:00AM**, with both teams already at risk for their owners. **Mitchell's Sweden** vs **Kerrod's Tunisia** at **12:00PM** is another at-risk battle. Tuesday brings **Jay's Spain** vs **Jay's Cape Verde Islands** — he literally can't lose that one — then **Jay's Egypt** face **Kerrod's Belgium** at **5:00AM**. Wednesday's highlight: **Mitchell's Argentina** vs **Jay's Algeria** at **11:00AM**, and **Ryan's Iraq** take on **Kerrod's Norway** at **8:00AM**. **Ryan** needs wins everywhere — fast."
+    "The group stage is underway and the ledger is already getting spicy! **Jay** is sitting pretty — the only one with **zero teams at risk** after a perfect **1W-3D-0L** start. **Kerrod** has one team sweating with **2W-1D-1L**, while **Mitchell** and **Ryan** are both staring down **2 at-risk teams each** at **1W-1D-2L**. Nobody's been knocked out yet, but the pressure is building fast. **Ryan** in particular has the 💀 skull next to his name — a grim early warning that the Secretary role could be looming if his at-risk teams can't stop the bleeding.",
+    "Huge slate of matches incoming! **Ryan's Germany** kick things off vs **Kerrod's Curaçao** at **3:00AM AEST Monday** — a win keeps Germany alive, a loss could spell big trouble. **Jay's Ivory Coast** face **Mitchell's Ecuador** at **9:00AM AEST** — both teams need a result badly. **Jay's Spain** take on **Jay's Cape Verde Islands** at **2:00AM AEST Tuesday** — Jay literally can't lose that one! Then **Kerrod's Belgium** vs **Jay's Egypt** at **5:00AM**, and **Mitchell's Saudi Arabia** vs **Kerrod's Uruguay** at **8:00AM** are must-watches for both sides. **Mitchell's Senegal** clash with **Kerrod's France** on Wednesday at **5:00AM** — massive stakes for both participants."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 0,
       "record": {
         "w": 1,
-        "d": 2,
+        "d": 3,
         "l": 0
       }
     },
@@ -24,7 +24,7 @@
       "eliminated": 0,
       "at_risk": 1,
       "record": {
-        "w": 1,
+        "w": 2,
         "d": 1,
         "l": 1
       }
@@ -48,7 +48,7 @@
       "eliminated": 0,
       "at_risk": 2,
       "record": {
-        "w": 0,
+        "w": 1,
         "d": 1,
         "l": 2
       }
@@ -105,22 +105,22 @@
         "last_result": null
       },
       {
-        "name": "Côte d'Ivoire",
+        "name": "Ivory Coast",
         "flag": "🇨🇮",
         "status": "in",
         "last_result": null
       },
       {
-        "name": "Cabo Verde",
+        "name": "Cape Verde Islands",
         "flag": "🇨🇻",
         "status": "in",
         "last_result": null
       },
       {
-        "name": "Bosnia and Herzegovina",
+        "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Ghana",
@@ -149,10 +149,10 @@
         "last_result": "W"
       },
       {
-        "name": "USA",
+        "name": "United States",
         "flag": "🇺🇸",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "Uruguay",
@@ -309,10 +309,10 @@
         "last_result": null
       },
       {
-        "name": "Korea Republic",
+        "name": "South Korea",
         "flag": "🇰🇷",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "Paraguay",
@@ -327,7 +327,7 @@
         "last_result": null
       },
       {
-        "name": "DR Congo",
+        "name": "Congo DR",
         "flag": "🇨🇩",
         "status": "in",
         "last_result": null
@@ -391,7 +391,7 @@
     },
     {
       "h_code": "USA",
-      "h_flag": "🏳️",
+      "h_flag": "🇺🇸",
       "hs": 4,
       "a_code": "PAR",
       "a_flag": "🇵🇾",
@@ -403,13 +403,13 @@
       "h_flag": "🇨🇦",
       "hs": 1,
       "a_code": "BIH",
-      "a_flag": "🏳️",
+      "a_flag": "🇧🇦",
       "as": 1,
       "group": "GRP B"
     },
     {
       "h_code": "KOR",
-      "h_flag": "🏳️",
+      "h_flag": "🇰🇷",
       "hs": 2,
       "a_code": "CZE",
       "a_flag": "🇨🇿",
