@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class Team(BaseModel):
@@ -19,7 +19,7 @@ class TeamRecord(BaseModel):
 class TeamResult(BaseModel):
     name: str
     flag: str
-    status: str  # "in" | "risk" | "out"
+    status: str  # "in" | "at_risk" | "out"
     last_result: str | None = None
 
 
@@ -57,11 +57,24 @@ class LeaderboardEntry(BaseModel):
     record: Record
 
 
+class RecentResult(BaseModel):
+    model_config = ConfigDict(populate_by_name=True)
+
+    h_code: str
+    h_flag: str
+    hs: int
+    a_code: str
+    a_flag: str
+    as_: int = Field(alias="as")
+    group: str
+
+
 class StatsOutput(BaseModel):
     generated_at: str
     summary: list[str]
     leaderboard: list[LeaderboardEntry]
     squads: dict[str, list[TeamResult]]
+    recent_results: list[RecentResult]
 
 
 class SummaryOutput(BaseModel):

@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-14T10:34:23.886309+10:00",
+  "generated_at": "2026-06-14T10:52:25.459871+10:00",
   "summary": [
-    "Early days but the vibes are already very different across the group! **Kerrod** is the standout after the opening round — all **12 teams alive**, picking up a win and a draw with zero losses. **Jay** is sitting steady too with a couple of draws and nothing to worry about yet. **Mitchell** is the first one sweating, with one of his teams already **at risk** after picking up a loss in matchday one — and **Ryan** is already in proper danger territory with **two teams at risk** after two losses already. No one's out yet, but Ryan is absolutely not having a good time.",
-    "The next wave of matches is massive and there's plenty on the line for everyone. **Mitchell** needs his boys to step up — **Haiti vs Scotland (Sun 11:00AM)** is a nervous one since both are his, meaning one of them is going to cop a result, and **Australia vs Turkey (Sun 2:00PM)** has **Jay's Australia** up against **Kerrod's Turkey** — big clash. **Ryan** desperately needs clean sheets from **Germany vs Curaçao (Mon 3:00AM)** — that's two of his own going head-to-head with **Kerrod's Curaçao** in the mix too — plus **Netherlands vs Japan (Mon 6:00AM)** where Ryan's **Netherlands** face Jay's **Japan**. Further along, **Belgium vs Egypt (Tue 5:00AM)** is a Kerrod-vs-Jay battle, **Saudi Arabia vs Uruguay (Tue 8:00AM)** is Mitchell's **Saudi Arabia** against Kerrod's **Uruguay**, and **France vs Senegal (Wed 5:00AM)** pits Kerrod's **France** against Mitchell's **Senegal**. Ryan needs wins badly — another loss anywhere and someone's getting marked **out** for the first time."
+    "Early days but the vibes are already very different across the sweep. **Kerrod** is flying — **1W-1D** with all **12 teams** still pristine. **Jay** is sitting on two draws, unbeaten but yet to win. **Mitchell** has his first team **at risk** after one loss already — rough start. But it's **Ryan** copping the most heat early, with **two teams at risk** off the back of **two losses** in his first two games. Nobody's out yet, but Ryan is already looking nervous.",
+    "Massive few days ahead. **Mitchell's Scotland** face **Haiti** (Sun, **11AM**) — a must-win. **Jay's Australia** vs **Kerrod's Turkey** (Sun, **2PM**) is a cracking derby. **Ryan's Germany** and **Netherlands** need wins Monday. **Jay's Ivory Coast, Cabo Verde** and **Egypt** all play too, big chance to open up a lead. **Kerrod's Norway, Tunisia, New Zealand, Iran, Uruguay** and **Belgium** are all in action — ridiculous depth. **Mitchell's Saudi Arabia** and **Sweden** also feature. Ryan's teams desperately need points before someone starts getting eliminated."
   ],
   "leaderboard": [
     {
@@ -249,7 +249,7 @@
       {
         "name": "Czechia",
         "flag": "🇨🇿",
-        "status": "risk",
+        "status": "at_risk",
         "last_result": "L"
       },
       {
@@ -317,7 +317,7 @@
       {
         "name": "Paraguay",
         "flag": "🇵🇾",
-        "status": "risk",
+        "status": "at_risk",
         "last_result": "L"
       },
       {
@@ -341,7 +341,7 @@
       {
         "name": "South Africa",
         "flag": "🇿🇦",
-        "status": "risk",
+        "status": "at_risk",
         "last_result": "L"
       },
       {
@@ -351,5 +351,61 @@
         "last_result": null
       }
     ]
-  }
+  },
+  "recent_results": [
+    {
+      "h_code": "BRA",
+      "h_flag": "🇧🇷",
+      "hs": 1,
+      "a_code": "MAR",
+      "a_flag": "🇲🇦",
+      "as": 1,
+      "group": "GRP C"
+    },
+    {
+      "h_code": "QAT",
+      "h_flag": "🇶🇦",
+      "hs": 1,
+      "a_code": "SUI",
+      "a_flag": "🇨🇭",
+      "as": 1,
+      "group": "GRP B"
+    },
+    {
+      "h_code": "USA",
+      "h_flag": "🏳️",
+      "hs": 4,
+      "a_code": "PAR",
+      "a_flag": "🇵🇾",
+      "as": 1,
+      "group": "GRP D"
+    },
+    {
+      "h_code": "CAN",
+      "h_flag": "🇨🇦",
+      "hs": 1,
+      "a_code": "BIH",
+      "a_flag": "🏳️",
+      "as": 1,
+      "group": "GRP B"
+    },
+    {
+      "h_code": "KOR",
+      "h_flag": "🏳️",
+      "hs": 2,
+      "a_code": "CZE",
+      "a_flag": "🇨🇿",
+      "as": 1,
+      "group": "GRP A"
+    },
+    {
+      "h_code": "MEX",
+      "h_flag": "🇲🇽",
+      "hs": 2,
+      "a_code": "RSA",
+      "a_flag": "🇿🇦",
+      "as": 0,
+      "group": "GRP A"
+    }
+  ]
 }

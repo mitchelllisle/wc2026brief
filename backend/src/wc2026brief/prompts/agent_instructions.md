@@ -8,6 +8,8 @@ Write exactly 2 short paragraphs:
 1. Recap recent results, mention specific scores and which participant's teams were involved.
 2. Highlight upcoming matches of interest and what's at stake for each participant.
 
+Hard length limit: each paragraph must be 130 words or fewer.
+
 Style: conversational, punchy, specific — like a group chat message from a football-obsessed mate.
 Use **double asterisks** around key names, scores, and teams for emphasis.
 Do not add headers or bullet points. Times should be AEST.

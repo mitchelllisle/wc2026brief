@@ -13,6 +13,7 @@ from wc2026brief.config import Config
 from wc2026brief.models import (
     LeaderboardEntry,
     ParticipantStats,
+    RecentResult,
     Record,
     Squads,
     StatsOutput,
@@ -25,6 +26,8 @@ logger = logging.getLogger(__name__)
 
 AEST = ZoneInfo("Australia/Sydney")
 FOOTBALL_API_BASE = "https://api.football-data.org/v4"
+MAX_RECENT_RESULTS = 24
+MAX_SUMMARY_WORDS = 130
 
 _AGENT_INSTRUCTIONS = (Path(__file__).parent / "prompts" / "agent_instructions.md").read_text()
 
@@ -80,20 +83,97 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
 def team_status(rec: TeamRecord) -> str:
     """Derive a sweep status string from a team's match record.
 
-    Group stage: 0 losses → "in", 1 loss → "risk", 2+ losses → "out".
+    Group stage: 0 losses → "in", 1 loss → "at_risk", 2+ losses → "out".
     Knockout: any loss sets knocked_out, which immediately → "out".
 
     Args:
         rec: Accumulated win/draw/loss record for a single team.
 
     Returns:
-        One of "in", "risk", or "out".
+        One of "in", "at_risk", or "out".
     """
     if rec.knocked_out or rec.l >= 2:
         return "out"
     if rec.l == 1:
-        return "risk"
+        return "at_risk"
     return "in"
+
+
+def _fallback_code(team_name: str) -> str:
+    compact = "".join(ch for ch in team_name.upper() if ch.isalpha())
+    return (compact[:3] or "TBD").ljust(3, "X")
+
+
+def _group_label(match: dict) -> str:
+    group = match.get("group")
+    if isinstance(group, str) and group:
+        if group.startswith("GROUP_"):
+            return f"GRP {group.split('_')[-1]}"
+        return group.replace("_", " ")
+
+    stage = match.get("stage", "")
+    stage_map = {
+        "ROUND_OF_16": "RO16",
+        "QUARTER_FINALS": "QF",
+        "SEMI_FINALS": "SF",
+        "THIRD_PLACE": "3RD",
+        "FINAL": "FINAL",
+    }
+    return stage_map.get(stage, "KO")
+
+
+def build_recent_results(matches: list[dict], squads: Squads) -> list[RecentResult]:
+    team_flags = {team.name: team.flag for p in squads.participants for team in p.teams}
+    results: list[RecentResult] = []
+
+    finished = sorted(
+        [m for m in matches if m.get("status") == "FINISHED"],
+        key=lambda m: m.get("utcDate", ""),
+        reverse=True,
+    )
+
+    for match in finished:
+        score = match.get("score", {}).get("fullTime", {})
+        hs = score.get("home")
+        as_ = score.get("away")
+        if hs is None or as_ is None:
+            continue
+
+        home_team = match.get("homeTeam", {})
+        away_team = match.get("awayTeam", {})
+        home_name = home_team.get("name", "")
+        away_name = away_team.get("name", "")
+
+        h_code = home_team.get("tla") or _fallback_code(home_name)
+        a_code = away_team.get("tla") or _fallback_code(away_name)
+        h_flag = team_flags.get(home_name, "🏳️")
+        a_flag = team_flags.get(away_name, "🏳️")
+
+        results.append(RecentResult(
+            h_code=h_code,
+            h_flag=h_flag,
+            hs=hs,
+            a_code=a_code,
+            a_flag=a_flag,
+            as_=as_,
+            group=_group_label(match),
+        ))
+
+        if len(results) >= MAX_RECENT_RESULTS:
+            break
+
+    return results
+
+
+def _limit_words(text: str, max_words: int = MAX_SUMMARY_WORDS) -> str:
+    words = text.split()
+    if len(words) <= max_words:
+        return text
+    return " ".join(words[:max_words]).rstrip(" ,;:-") + "…"
+
+
+def _enforce_summary_length(paragraphs: list[str]) -> list[str]:
+    return [_limit_words(p, MAX_SUMMARY_WORDS) for p in paragraphs]
 
 
 def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord]) -> list[ParticipantStats]:
@@ -121,7 +201,7 @@ def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord])
             teams_out.append(TeamResult(name=t.name, flag=t.flag, status=status, last_result=rec.last_result))
             if status == "out":
                 eliminated += 1
-            elif status == "risk":
+            elif status == "at_risk":
                 at_risk += 1
             w += rec.w
             d += rec.d
@@ -225,10 +305,11 @@ class WCFetcher:
             {json.dumps(team_to_owner, ensure_ascii=False)}
 
             Write the 2-paragraph briefing now.
+            Each paragraph must be 130 words or fewer.
         """
 
         result = self._agent.run_sync(prompt)
-        return result.output.paragraphs
+        return _enforce_summary_length(result.output.paragraphs)
 
     def run(self) -> None:
         """Fetch match data, compute standings, generate a summary, and write stats.json.
@@ -270,7 +351,8 @@ class WCFetcher:
                 for p in participant_stats
             ],
             squads={p.name: p.teams for p in participant_stats},
+            recent_results=build_recent_results(matches, squads),
         )
 
-        self._stats_file.write_text(output.model_dump_json(indent=2))
+        self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))

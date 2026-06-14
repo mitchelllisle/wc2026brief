@@ -1,4 +1,11 @@
-from wc2026brief.fetcher import compute_team_records, team_status, build_participant_stats
+from wc2026brief.fetcher import (
+    _enforce_summary_length,
+    _limit_words,
+    build_participant_stats,
+    build_recent_results,
+    compute_team_records,
+    team_status,
+)
 from wc2026brief.models import Participant, Squads, Team, TeamRecord
 
 
@@ -7,7 +14,7 @@ def test_team_status_in():
 
 
 def test_team_status_risk():
-    assert team_status(TeamRecord(w=1, d=0, l=1)) == "risk"
+    assert team_status(TeamRecord(w=1, d=0, l=1)) == "at_risk"
 
 
 def test_team_status_out_two_losses():
@@ -23,8 +30,9 @@ def _match(home: str, away: str, hs: int, as_: int, stage: str = "GROUP_STAGE", 
         "utcDate": "2026-06-15T12:00:00Z",
         "status": status,
         "stage": stage,
-        "homeTeam": {"name": home},
-        "awayTeam": {"name": away},
+        "group": "GROUP_C",
+        "homeTeam": {"name": home, "tla": home[:3].upper()},
+        "awayTeam": {"name": away, "tla": away[:3].upper()},
         "score": {"fullTime": {"home": hs, "away": as_}},
     }
 
@@ -126,3 +134,43 @@ def test_build_participant_stats_sort_order():
     stats = build_participant_stats(squads, team_records)
     assert stats[0].name == "Safe"
     assert stats[-1].name == "Danger"
+
+
+def test_build_recent_results_newest_first_and_group_format():
+    squads = _squads(("Alice", [("Brazil", "🇧🇷"), ("Argentina", "🇦🇷")]))
+    older = _match("Brazil", "Argentina", 1, 0)
+    newer = _match("Argentina", "Brazil", 2, 2)
+    older["utcDate"] = "2026-06-14T12:00:00Z"
+    newer["utcDate"] = "2026-06-15T12:00:00Z"
+
+    out = build_recent_results([older, newer], squads)
+    assert len(out) == 2
+    assert out[0].h_code == "ARG"
+    assert out[0].h_flag == "🇦🇷"
+    assert out[0].group == "GRP C"
+    assert out[0].as_ == 2
+
+
+def test_build_recent_results_skips_unfinished_and_handles_missing_scores():
+    squads = _squads(("Alice", [("Brazil", "🇧🇷"), ("Argentina", "🇦🇷")]))
+    scheduled = _match("Brazil", "Argentina", 0, 0, status="SCHEDULED")
+    null_score = _match("Brazil", "Argentina", 0, 0)
+    null_score["score"] = {"fullTime": {"home": None, "away": None}}
+
+    out = build_recent_results([scheduled, null_score], squads)
+    assert out == []
+
+
+def test_limit_words_truncates_to_130_words():
+    text = " ".join([f"w{i}" for i in range(150)])
+    limited = _limit_words(text, 130)
+    assert len(limited.split()) == 130
+    assert limited.endswith("…")
+
+
+def test_enforce_summary_length_caps_each_paragraph_independently():
+    short = "one two three"
+    long = " ".join([f"w{i}" for i in range(200)])
+    out = _enforce_summary_length([short, long])
+    assert out[0] == short
+    assert len(out[1].split()) == 130

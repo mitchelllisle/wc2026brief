@@ -7,7 +7,7 @@
 
   onMount(async () => {
     try {
-      const res = await fetch(`${import.meta.env.BASE_URL}data/stats.json`);
+      const res = await fetch(ENDPOINT);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       data = await res.json();
     } catch (e) {
@@ -38,100 +38,237 @@
       .replace(/>/g, '&gt;')
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
+
+  const ENDPOINT = `${import.meta.env.BASE_URL}data/stats.json`;
+  const ORDER = { in: 0, at_risk: 1, risk: 1, out: 2 };
+  const DAYS_TO_FINAL = 33;
+  const FINAL_VENUE = 'MetLife Stadium';
+  const MANAGER_ORDER = ['Mitchell', 'Kerrod', 'Jay', 'Ryan'];
+
+  function normalizeStatus(status) {
+    return status === 'risk' ? 'at_risk' : status;
+  }
+
+  function managerRagClass(teamsRemaining) {
+    if (typeof teamsRemaining !== 'number') return '';
+    if (teamsRemaining >= 9) return 'rag-in';
+    if (teamsRemaining >= 6) return 'rag-risk';
+    return 'rag-out';
+  }
+
+  const pipOrder = (squad) => [...squad].sort((a, b) => {
+    const aStatus = normalizeStatus(a.status);
+    const bStatus = normalizeStatus(b.status);
+    return ORDER[aStatus] - ORDER[bStatus];
+  });
+
+  function fallbackCode(teamName) {
+    const compact = teamName.toUpperCase().replace(/[^A-Z]/g, '');
+    return (compact.slice(0, 3) || 'TBD').padEnd(3, 'X');
+  }
+
+  function ownerFromResult(code, flag, squads) {
+    if (!squads) return '';
+
+    const ownersByFlag = new Map();
+    const ownersByCode = new Map();
+
+    for (const [owner, teams] of Object.entries(squads)) {
+      for (const team of teams ?? []) {
+        if (team?.flag) {
+          const f = ownersByFlag.get(team.flag) ?? new Set();
+          f.add(owner);
+          ownersByFlag.set(team.flag, f);
+        }
+        if (team?.name) {
+          const c = fallbackCode(team.name);
+          const cs = ownersByCode.get(c) ?? new Set();
+          cs.add(owner);
+          ownersByCode.set(c, cs);
+        }
+      }
+    }
+
+    const byFlag = ownersByFlag.get(flag);
+    if (byFlag?.size === 1) return [...byFlag][0];
+
+    const byCode = ownersByCode.get(code);
+    if (byCode?.size === 1) return [...byCode][0];
+
+    return '';
+  }
+
+  const homeWin = (g) => g.hs > g.as;
+  const awayWin = (g) => g.as > g.hs;
+
+  let ranked = $derived(data ? [...data.leaderboard] : []);
+  let leaderName = $derived(ranked[0]?.name);
+  let tabName = $derived(ranked.at(-1)?.name);
+  let stamp = $derived(data ? formatStamp(data.generated_at) : '');
+  let totalAlive = $derived(ranked.reduce((s, p) => s + p.teams_remaining, 0));
+  let totalOut = $derived(ranked.reduce((s, p) => s + p.eliminated, 0));
 </script>
 
+<div class="ribbon"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>
+<div class="crawl" aria-label="Recent full-time results ticker">
+  <div class="crawl-tag"><span class="dot"></span> Full-Time</div>
+  <div class="crawl-track">
+    {#if data?.recent_results}
+      {#each [...data.recent_results, ...data.recent_results] as g}
+          {@const hOwner = ownerFromResult(g.h_code, g.h_flag, data.squads)}
+          {@const aOwner = ownerFromResult(g.a_code, g.a_flag, data.squads)}
+        <span class="gm">
+          <span class="grp">{g.group}</span>
+            <span class="side" class:win={homeWin(g)}><span class="fl">{g.h_flag}</span>{g.h_code}{#if hOwner}<span class="own">({hOwner})</span>{/if}</span>
+          <span class="sc">{g.hs}–{g.as}</span>
+            <span class="side" class:win={awayWin(g)}>{g.a_code}{#if aOwner}<span class="own">({aOwner})</span>{/if}<span class="fl">{g.a_flag}</span></span>
+          <span class="ft">FT</span>
+        </span>
+      {/each}
+    {/if}
+  </div>
+</div>
+
 <div class="wrap">
-  <header class="masthead">
-    <div class="trophy">🏆</div>
-    <h1><span class="tag">[JOINT]</span> Sweep</h1>
-    <div class="sub">FIFA World Cup 2026 · Last squad standing · Loser cops it</div>
-    <div class="stamp">
+  <header class="nameplate">
+    <div class="np-top">
+      <span>Vol. I · No. 3 — Group Stage</span>
       {#if loading}
-        Loading…
+        <span class="mid">● Updating…</span>
       {:else if error}
-        Stats unavailable — check back soon
+        <span class="mid">● Feed unavailable</span>
       {:else}
-        Report generated: {formatStamp(data.generated_at)}
+        <span class="mid">● Updated {stamp}</span>
       {/if}
+      <span>Last team standing wins</span>
     </div>
+    <div class="np-title"><h1>The [Joint] <b>Sweep</b> Desk</h1></div>
+    <div class="np-sub">FIFA World Cup 2026 · United States · Canada · Mexico</div>
   </header>
 
-  {#if data}
-    <h2>📋 Summary</h2>
-    <div class="summary">
-      {#each data.summary as para}
-        <p>{@html renderPara(para)}</p>
-      {/each}
-    </div>
+  {#if error}
+    <section class="lede">
+      <div class="lede-main">
+        <div class="kicker-row">
+          <span class="kick">Feed Status</span>
+          <span class="byline">The Sweep Desk</span>
+        </div>
+        <h1 class="headline">Stats unavailable right now.</h1>
+        <p class="deck">Couldn&apos;t load the latest sweep file. Check the data source and refresh.</p>
+      </div>
+      <aside class="lede-side">
+        <div class="side-label">At a glance</div>
+        <div class="glance">
+          <div class="gl"><div class="lab">Teams alive<small>of 48 drafted</small></div><div class="val g">--</div></div>
+          <div class="gl"><div class="lab">Eliminated<small>copped it</small></div><div class="val r">--</div></div>
+          <div class="gl"><div class="lab">Final<small>{FINAL_VENUE}</small></div><div class="val">{DAYS_TO_FINAL}<small>days</small></div></div>
+          {#each MANAGER_ORDER as manager}
+            <div class="gl"><div class="lab">{manager}<small>teams left</small></div><div class="val">--</div></div>
+          {/each}
+        </div>
+      </aside>
+    </section>
+  {:else if data}
+    <section class="lede">
+      <div class="lede-main">
+        <div class="kicker-row">
+          <span class="kick">Match Report</span>
+          <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
+        </div>
+        <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the bill</h1>
+        <p class="deck">Ten still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and dinner, has {tabName}&apos;s name all over it.</p>
+        <div class="report-cols">
+          {#each data.summary as p}
+            <p>{@html renderPara(p)}</p>
+          {/each}
+        </div>
+      </div>
+      <aside class="lede-side">
+        <div class="side-label">At a glance</div>
+        <div class="glance">
+          <div class="gl"><div class="lab">Teams alive<small>of 48 drafted</small></div><div class="val g">{totalAlive}</div></div>
+          <div class="gl"><div class="lab">Eliminated<small>copped it</small></div><div class="val r">{totalOut}</div></div>
+          <div class="gl"><div class="lab">Final<small>{FINAL_VENUE}</small></div><div class="val">{DAYS_TO_FINAL}<small>days</small></div></div>
+          {#each MANAGER_ORDER as manager}
+            {@const p = ranked.find((x) => x.name.toLowerCase() === manager.toLowerCase())}
+            <div class="gl"><div class="lab">{p?.name ?? manager}<small>teams left</small></div><div class="val {managerRagClass(p?.teams_remaining)}">{p?.teams_remaining ?? '--'}</div></div>
+          {/each}
+        </div>
+      </aside>
+    </section>
 
-    <h2>💀 Danger Rankings</h2>
-    <table>
+    <div class="sec"><span class="num">01</span><h2>Danger Rankings</h2><span class="meta">Last out buys dinner</span></div>
+    <table class="table">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Participant</th>
-          <th>Teams remaining</th>
-          <th>Eliminated</th>
-          <th>At risk</th>
-          <th>Record (W-D-L)</th>
+          <th class="l">#</th><th class="l">Manager</th>
+          <th class="hide-sm">Survival</th><th>Alive</th><th class="hide-sm">Risk</th><th>Out</th><th class="hide-sm">W·D·L</th>
         </tr>
       </thead>
       <tbody>
-        {#each data.leaderboard as p, i}
-          {@const last = i === data.leaderboard.length - 1}
-          {@const pct = p.teams_total > 0 ? Math.round(p.teams_remaining / p.teams_total * 100) : 0}
-          <tr class:lb-danger={last}>
-            <td class="pos">{last ? '💀' : i + 1}</td>
-            <td class="name">{p.name}</td>
-            <td>
-              <div class="bar"><div class="bar-fill" style="width:{pct}%"></div></div>
-              <span class="bar-label">{p.teams_remaining} / {p.teams_total}</span>
+        {#each ranked as p, i}
+          {@const isLeader = p.name === leaderName}
+          {@const isTab = p.name === tabName}
+          <tr class:leader={isLeader} class:tab={isTab}>
+            <td class="c-rank"><span class="n">{i + 1}</span></td>
+            <td class="c-name">
+              <div class="nm">
+                {p.name}
+                {#if isLeader}<span class="pill g">Leader</span>
+                {:else if isTab}<span class="pill r">Buying dinner</span>{/if}
+              </div>
+              <div class="sub">{p.teams_remaining} of {p.teams_total} surviving</div>
             </td>
-            <td>{p.eliminated}</td>
-            <td>{p.at_risk}</td>
-            <td class="record">{p.record.w}W-{p.record.d}D-{p.record.l}L</td>
+            <td class="hide-sm">
+              <div class="pips">
+                {#each pipOrder(data.squads[p.name] ?? []) as t}
+                  <span
+                    class="p {normalizeStatus(t.status)}"
+                    data-tip="{t.name} · {t.last_result ?? 'No result'}"
+                    title="{t.name} · {t.last_result ?? 'No result'}"
+                  ></span>
+                {/each}
+              </div>
+            </td>
+            <td class="num"><span class="v in">{p.teams_remaining}</span></td>
+            <td class="num hide-sm"><span class="v risk">{p.at_risk}</span></td>
+            <td class="num"><span class="v out">{p.eliminated}</span></td>
+            <td class="num hide-sm"><span class="wdl"><b class="w">{p.record.w}</b>·<b>{p.record.d}</b>·<b class="l">{p.record.l}</b></span></td>
           </tr>
         {/each}
       </tbody>
     </table>
 
-    <h2>👥 Squads</h2>
-    <div class="squad-grid">
-      {#each data.leaderboard as p}
-        {@const teams = data.squads[p.name] ?? []}
-        {@const alive = teams.filter(t => t.status !== 'out').length}
-        <section class="squad">
-          <header class="squad-head">
-            <h3>{p.name}</h3>
-            <span class="alive">{alive}/{teams.length} alive</span>
-          </header>
-          <ul class="teams">
-            {#each teams as t}
-              <li class="st-{t.status}">
-                <span class="flag">{t.flag}</span>
-                <span class="team">{t.name}</span>
-                <span class="res {t.last_result ? t.last_result.toLowerCase() : 'none'}">
-                  {t.last_result ?? '–'}
-                </span>
-                <span class="st-dot"></span>
-              </li>
-            {/each}
-          </ul>
-        </section>
+    <div class="sec"><span class="num">02</span><h2>The Squads</h2><span class="meta">12 teams drafted each</span></div>
+    <section class="squads">
+      {#each ranked as p, i}
+        <article class="sq" class:leader={p.name === leaderName}>
+          <div class="sqh">
+            <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+            <span class="nm">{p.name}</span>
+            <span class="av">{p.teams_remaining}<small>/{p.teams_total}</small></span>
+          </div>
+          {#each data.squads[p.name] ?? [] as t}
+            {@const status = normalizeStatus(t.status)}
+            <div class="tm {status}">
+              <span class="fl">{t.flag}</span>
+              <span class="nm">{t.name}</span>
+              <span class="rr {t.last_result ?? 'D'}">{t.last_result ?? 'D'}</span>
+              <span class="sd {status}"></span>
+            </div>
+          {/each}
+        </article>
       {/each}
-    </div>
+    </section>
 
-    <div class="legend">
-      <div class="legend-rag">
-        <span><span class="dot g"></span> In</span>
-        <span><span class="dot a"></span> At Risk</span>
-        <span><span class="dot r"></span> Out</span>
+    <div class="ribbon ribbon-foot"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>
+    <div class="footrow">
+      <div class="legend">
+        <span class="li"><span class="sd in"></span> In</span>
+        <span class="li"><span class="sd at_risk"></span> At risk</span>
+        <span class="li"><span class="sd out"></span> Out</span>
       </div>
-      <div class="legend-note">W/D/L indicates most recent game result only.</div>
+      <span>[Joint] Sweep · First manager eliminated picks up the tab</span>
     </div>
   {/if}
-
-  <footer>
-    [JOINT] Sweep - FIFA World Cup 2026
-  </footer>
 </div>
