@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-14T09:36:40.018215+10:00",
+  "generated_at": "2026-06-14T10:34:23.886309+10:00",
   "summary": [
-    "Early doors and the sweep is already separating itself! **Kerrod** is the only one sitting pretty with a win on the board and all **12 teams** untouched — living the dream. **Jay** and **Mitchell** are both 12/12 alive but **Mitchell** has already got one team **at risk**, while **Ryan** is in early damage control with **two teams at risk** and zero wins or draws to show for it — not the start he was hoping for, mate.",
-    "This weekend is absolutely loaded. **Mitchell** needs a bounce-back from **Haiti** (vs **Scotland**, **Sun 11:00AM**) — problem is, **Scotland** is also his, so he's literally playing himself there! **Jay** will be sweating on **Australia** (vs **Turkey**, **Sun 2:00PM**), with **Kerrod's Turkey** looking to pile on the misery. Then **Mon 3:00AM** brings **Germany vs Curaçao** — **Ryan's Germany** up against **Kerrod's Curaçao**, one of those needs the points badly. **Ryan** also has **Netherlands** (vs **Jay's Japan**, **Mon 6:00AM**) and desperately needs a clean result there before his situation gets ugly. **Jay** gets a massive double-header with **Ivory Coast** (vs **Mitchell's Ecuador**, **Mon 9:00AM**) and then **Spain** (vs **Jay's own Cabo Verde**, **Tue 2:00AM**) — though again, he owns both sides! The week closes out with the blockbuster: **Kerrod's France** vs **Mitchell's Senegal** (**Wed 5:00AM**) — that one's got bragging rights written all over it. **Ryan** needs wins, and he needs them now."
+    "Early days but the vibes are already very different across the group! **Kerrod** is the standout after the opening round — all **12 teams alive**, picking up a win and a draw with zero losses. **Jay** is sitting steady too with a couple of draws and nothing to worry about yet. **Mitchell** is the first one sweating, with one of his teams already **at risk** after picking up a loss in matchday one — and **Ryan** is already in proper danger territory with **two teams at risk** after two losses already. No one's out yet, but Ryan is absolutely not having a good time.",
+    "The next wave of matches is massive and there's plenty on the line for everyone. **Mitchell** needs his boys to step up — **Haiti vs Scotland (Sun 11:00AM)** is a nervous one since both are his, meaning one of them is going to cop a result, and **Australia vs Turkey (Sun 2:00PM)** has **Jay's Australia** up against **Kerrod's Turkey** — big clash. **Ryan** desperately needs clean sheets from **Germany vs Curaçao (Mon 3:00AM)** — that's two of his own going head-to-head with **Kerrod's Curaçao** in the mix too — plus **Netherlands vs Japan (Mon 6:00AM)** where Ryan's **Netherlands** face Jay's **Japan**. Further along, **Belgium vs Egypt (Tue 5:00AM)** is a Kerrod-vs-Jay battle, **Saudi Arabia vs Uruguay (Tue 8:00AM)** is Mitchell's **Saudi Arabia** against Kerrod's **Uruguay**, and **France vs Senegal (Wed 5:00AM)** pits Kerrod's **France** against Mitchell's **Senegal**. Ryan needs wins badly — another loss anywhere and someone's getting marked **out** for the first time."
   ],
   "leaderboard": [
     {
@@ -25,7 +25,7 @@
       "at_risk": 0,
       "record": {
         "w": 0,
-        "d": 1,
+        "d": 2,
         "l": 0
       }
     },
@@ -49,7 +49,7 @@
       "at_risk": 2,
       "record": {
         "w": 0,
-        "d": 0,
+        "d": 1,
         "l": 2
       }
     }
@@ -140,7 +140,7 @@
         "name": "Brazil",
         "flag": "🇧🇷",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Colombia",
@@ -294,7 +294,7 @@
         "name": "Morocco",
         "flag": "🇲🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Germany",
