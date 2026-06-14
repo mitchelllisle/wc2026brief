@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-15T06:27:36.124908+10:00",
+  "generated_at": "2026-06-15T08:24:50.075495+10:00",
   "summary": [
-    "Matchday three is done and the standings are heating up! **Jay** is the only one sitting pretty with a perfect record — **1W-3D-0L** and zero teams at risk, living his best life. Meanwhile, **Kerrod** and **Ryan** are both sweating at **2W-1D-2L** with two teams at risk each. **Mitchell** is in the danger zone at **1W-1D-2L**, also two at risk, and firmly in the frame for Secretary duties if things go sideways. Nobody has been eliminated yet, but the pressure is absolutely building ahead of a massive week of fixtures.",
-    "Things get spicy fast! **Jay** has a huge week — **Ivory Coast vs Ecuador** (Mon 9AM), **Spain vs Cape Verde Islands** (Tue 2AM), **Egypt vs Belgium** (Tue 5AM), and **Algeria vs Argentina** (Wed 11AM). **Mitchell** desperately needs results with **Ecuador, Sweden, Saudi Arabia, Senegal, Argentina, England, and Croatia** all on. **Kerrod** has **Belgium, Uruguay, Iran, Tunisia, and Norway** in action, and **Ryan** sweats through **Austria, Iraq vs Norway, Portugal vs Congo DR, and England vs Croatia**. The standout is **Argentina vs Algeria** — **Mitchell's** Argentina against **Jay's** Algeria. One of them is taking an at-risk tag!"
+    "We're into the thick of Group Stage action and the leaderboard is splitting fast. **Jay** remains the only participant with zero teams at risk — an absolutely pristine **1W-4D-0L** record across his 12 sides. **Kerrod** and **Ryan** both sit on **2 at-risk teams** after picking up two losses each, while **Mitchell** is right there with them — **2 at-risk**, a modest **1W-1D-2L** record, and already wearing the 💀 emoji. Nobody's out yet, but the margins are razor thin and one bad run of results could trigger a proper collapse.",
+    "Huge week incoming. **Mitchell** sweats through **Ivory Coast vs Ecuador (Mon 9AM)**, **Sweden vs Tunisia (Mon 12PM)**, **Saudi Arabia vs Uruguay (Tue 8AM)**, **France vs Senegal (Wed 5AM)**, **Argentina vs Algeria (Wed 11AM)**, and **England vs Croatia (Thu 6AM)** — basically a gauntlet. A second loss for any of those at-risk teams and Mitchell starts losing troops. **Kerrod** watches **Iran vs New Zealand (Tue 11AM)** and **Iraq vs Norway (Wed 8AM)** nervously. **Jay** fancies **Spain vs Cape Verde Islands (Tue 2AM)** and **Belgium vs Egypt (Tue 5AM)** — both his teams, both favourites. **Ryan** has **Portugal vs Congo DR (Thu 3AM)** and **Austria vs Jordan (Wed 2PM)** to navigate."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 0,
       "record": {
         "w": 1,
-        "d": 3,
+        "d": 4,
         "l": 0
       }
     },
@@ -37,7 +37,7 @@
       "at_risk": 2,
       "record": {
         "w": 2,
-        "d": 1,
+        "d": 2,
         "l": 2
       }
     },
@@ -78,7 +78,7 @@
         "name": "Japan",
         "flag": "🇯🇵",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Switzerland",
@@ -214,7 +214,7 @@
         "name": "Netherlands",
         "flag": "🇳🇱",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Morocco",
@@ -354,10 +354,19 @@
   },
   "recent_results": [
     {
+      "h_code": "NED",
+      "h_flag": "🇳🇱",
+      "hs": 2,
+      "a_code": "JPN",
+      "a_flag": "🇯🇵",
+      "as": 2,
+      "group": "GRP F"
+    },
+    {
       "h_code": "GER",
       "h_flag": "🇩🇪",
       "hs": 7,
-      "a_code": "CUR",
+      "a_code": "CUW",
       "a_flag": "🇨🇼",
       "as": 1,
       "group": "GRP E"
