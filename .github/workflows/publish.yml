@@ -5,8 +5,8 @@ on:
   push:
     branches: ["main"]
   schedule:
-    # Every 2 hours — keeps data fresh throughout match days
-    - cron: "0 */2 * * *"
+    # Every hour between 7am and 4pm
+    - cron: "0 7-16 * * *"
 
 permissions:
   contents: write
