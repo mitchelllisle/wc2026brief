@@ -181,8 +181,8 @@
           <span class="kick">Match Report</span>
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
-        <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the bill</h1>
-        <p class="deck">Ten still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and dinner, has {tabName}&apos;s name all over it.</p>
+        <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the Secretary role</h1>
+        <p class="deck">Ten still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.</p>
         <div class="report-cols">
           {#each data.summary as p}
             <p>{@html renderPara(p)}</p>
@@ -203,7 +203,7 @@
       </aside>
     </section>
 
-    <div class="sec"><span class="num">01</span><h2>Danger Rankings</h2><span class="meta">Last out buys dinner</span></div>
+    <div class="sec"><span class="num">01</span><h2>Danger Rankings</h2><span class="meta">Last out becomes Secretary for 12 months</span></div>
     <table class="table">
       <thead>
         <tr>
@@ -221,7 +221,7 @@
               <div class="nm">
                 {p.name}
                 {#if isLeader}<span class="pill g">Leader</span>
-                {:else if isTab}<span class="pill r">Buying dinner</span>{/if}
+                {:else if isTab}<span class="pill r">Secretary duty</span>{/if}
               </div>
               <div class="sub">{p.teams_remaining} of {p.teams_total} surviving</div>
             </td>
@@ -274,7 +274,7 @@
         <span class="li"><span class="sd at_risk"></span> At risk</span>
         <span class="li"><span class="sd out"></span> Out</span>
       </div>
-      <span>[Joint] Sweep · First manager eliminated picks up the tab</span>
+      <span>[Joint] Sweep · First manager eliminated becomes Secretary for 12 months (organising plans and bookings)</span>
     </div>
   {/if}
 </div>
