@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-16T03:38:24.424760+10:00",
+  "generated_at": "2026-06-16T05:17:34.279634+10:00",
   "summary": [
-    "Early group stage carnage and **Kerrod** and **Mitchell** are already sweating. **Kerrod's** squad has taken three losses, putting **Belgium**, **Iran**, and **Norway** all **at risk**, while **Mitchell** is matching that pain with **Argentina**, **Czechia**, and **Saudi Arabia** carrying the skull emoji. **Ryan** isn't clean either — two losses mean **Congo DR** and **Iraq** are walking wounded. Meanwhile, **Jay** is absolutely breezing through with a perfect **2W-4D-0L** record, zero teams at risk, and the smuggest grin in the group chat. No one's officially out yet, but the pressure is building fast.",
-    "Huge week ahead. **Belgium vs Egypt** (**Tue, 5:00AM AEST**) is massive — a loss puts **Kerrod's Belgium** out and sends **Jay's Egypt** to the brink. **Iran vs New Zealand** (**Tue, 11:00AM AEST**) is a nervy one for **Kerrod** — both teams are his and at least one is getting hurt. **Argentina vs Algeria** (**Wed, 11:00AM AEST**) is Mitchell vs Jay in a sweepstakes derby — **Mitchell's Argentina** desperately need the win. **England vs Croatia** (**Thu, 6:00AM AEST**) is another Mitchell internal clash, and **Portugal vs Congo DR** (**Thu, 3:00AM AEST**) could eliminate **Ryan's Congo DR**. Buckle up."
+    "We're deep into the group stage and the standings are getting spicy. **Jay** is the standout — all **12 teams alive, zero at risk**, cruising with a **2W-5D-0L** record. Absolute steel nerves. **Ryan** has two teams **at risk** after back-to-back losses, while **Kerrod** and **Mitchell** are both sweating with **three teams at risk each**. Mitchell's record of **2W-0D-3L** is particularly brutal — not a single draw to soften the blows. The 💀 skull next to his name says it all. Nobody's out yet, but the pressure is very real for those bottom two.",
+    "Massive week incoming. **Mitchell** needs **Saudi Arabia, England, Croatia, Czechia, and Uzbekistan** to hold firm — any slip and the Secretary race heats up fast. **Kerrod** is desperate for **Uruguay, Iran, France, Norway, and New Zealand** to deliver, especially with three teams already **at risk**. **Ryan** watches **Iraq, Austria, Panama, Congo DR, and South Africa** closely — two more losses and teams start dropping. **Jay** has a dream double-header with **Algeria vs Argentina (Wed 11:00AM)** and **Bosnia-Herzegovina vs Switzerland (Fri 5:00AM)** — both his teams, both needing wins. **France vs Senegal (Wed 5:00AM)** is a blockbuster with **Kerrod's France** up against **Mitchell's Senegal** — someone's getting hurt there."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 0,
       "record": {
         "w": 2,
-        "d": 4,
+        "d": 5,
         "l": 0
       }
     },
@@ -49,7 +49,7 @@
       "at_risk": 3,
       "record": {
         "w": 2,
-        "d": 1,
+        "d": 0,
         "l": 3
       }
     }
@@ -60,7 +60,7 @@
         "name": "Spain",
         "flag": "🇪🇸",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Brazil",
@@ -114,13 +114,13 @@
         "name": "Cape Verde Islands",
         "flag": "🇨🇻",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Ghana",
@@ -312,7 +312,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Sweden",
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "ESP",
+      "h_flag": "🇪🇸",
+      "hs": 0,
+      "a_code": "CPV",
+      "a_flag": "🇨🇻",
+      "as": 0,
+      "group": "GRP H"
+    },
     {
       "h_code": "SWE",
       "h_flag": "🇸🇪",
@@ -433,15 +442,6 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
-    },
-    {
-      "h_code": "CAN",
-      "h_flag": "🇨🇦",
-      "hs": 1,
-      "a_code": "BIH",
-      "a_flag": "🇧🇦",
-      "as": 1,
-      "group": "GRP B"
     },
     {
       "h_code": "KOR",
