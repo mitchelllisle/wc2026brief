@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-16T07:01:27.989513+10:00",
+  "generated_at": "2026-06-16T08:39:34.079653+10:00",
   "summary": [
-    "The group stage carnage continues and it's **Kerrod** and **Mitchell** sweating the most heading into the week. **Kerrod** already has **3 teams at risk** after losses from **Iran**, **Uruguay**, and **Norway** among others, while **Mitchell** mirrors that with **3 at risk** too — **Saudi Arabia**, **Czechia**, and **Uzbekistan** among the walking wounded. **Ryan** isn't sleeping easy either with **2 at risk**, including **Iraq** and **Congo DR**. Meanwhile **Jay** is sitting pretty — an unblemished **2W-6D-0L**, zero losses, zero stress. Absolutely insufferable. The only comfort for everyone else is that no one's been eliminated yet. All **12 teams still alive** across the board, but that's about to change fast.",
-    "This week is absolutely loaded. **Mitchell's Saudi Arabia** faces **Kerrod's Uruguay** on **Tuesday 8AM** — someone's getting a second loss there. **Kerrod's Iran** takes on **Kerrod's New Zealand** at **11AM Tuesday**, meaning Kerrod is guaranteed another at-risk team regardless. **Wednesday** brings **France vs Senegal** — **Kerrod vs Mitchell** in a big one at **5AM**. Then **Jay's Algeria** clashes with **Mitchell's Argentina** at **11AM**, and **Ryan's Austria** meets **Ryan's Jordan** at **2PM** — Ryan playing himself! **Thursday** has **Ryan's Congo DR vs Ryan's Portugal** and **Mitchell's England vs Mitchell's Croatia** — more self-cannibalism. **Jay's Ghana vs Ryan's Panama** and **Jay's Colombia vs Mitchell's Uzbekistan** round out a massive slate. Secretary watch is very real."
+    "We're through the early group stage carnage and the damage is real. **Mitchell** and **Kerrod** are both sitting on **3 losses** each and haven't picked up a draw between Mitchell's sides — brutal. **Ryan** has copped **2 losses** with **Austria** and **Congo DR** among those at risk. Meanwhile, **Jay** is the only one yet to lose a single team — a spotless **2W-6D-0L** record keeping all **12 teams alive and untouched**. The gap at the top and bottom is already massive, and we're only a few matchdays in.",
+    "Huge week ahead. **Kerrod** sweats on **Iran vs New Zealand (Tue 11AM)** — a loss for either puts one out. **France vs Senegal (Wed 5AM)** is massive: Kerrod's **France** vs Mitchell's **Senegal**, both already at risk — someone could be eliminated. **Iraq vs Norway (Wed 8AM)** is Ryan's **Iraq** against Kerrod's **Norway** — at-risk clash. **Argentina vs Algeria (Wed 11AM)** pits Mitchell's at-risk **Argentina** against Jay's **Algeria**. Then **England vs Croatia (Thu 6AM)** — both Mitchell's, both must survive. **Ghana vs Panama (Thu 9AM)** is Jay's **Ghana** vs Ryan's **Panama**. Massive week — Mitchell especially cannot afford more losses."
   ],
   "leaderboard": [
     {
@@ -37,7 +37,7 @@
       "at_risk": 3,
       "record": {
         "w": 2,
-        "d": 1,
+        "d": 2,
         "l": 3
       }
     },
@@ -49,7 +49,7 @@
       "at_risk": 3,
       "record": {
         "w": 2,
-        "d": 1,
+        "d": 0,
         "l": 3
       }
     }
@@ -96,7 +96,7 @@
         "name": "Egypt",
         "flag": "🇪🇬",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Algeria",
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Ghana",
@@ -214,7 +214,7 @@
         "name": "Belgium",
         "flag": "🇧🇪",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Mexico",
@@ -312,7 +312,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Sweden",
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "BEL",
+      "h_flag": "🇧🇪",
+      "hs": 1,
+      "a_code": "EGY",
+      "a_flag": "🇪🇬",
+      "as": 1,
+      "group": "GRP G"
+    },
     {
       "h_code": "ESP",
       "h_flag": "🇪🇸",
@@ -442,15 +451,6 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
-    },
-    {
-      "h_code": "CAN",
-      "h_flag": "🇨🇦",
-      "hs": 1,
-      "a_code": "BIH",
-      "a_flag": "🇧🇦",
-      "as": 1,
-      "group": "GRP B"
     },
     {
       "h_code": "KOR",
