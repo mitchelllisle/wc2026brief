@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-15T10:35:56.118516+10:00",
+  "generated_at": "2026-06-15T13:05:40.090731+10:00",
   "summary": [
-    "We're five rounds deep and **Jay** is the only one keeping a clean sheet — **12 from 12 alive** with zero losses, the smug git. **Kerrod** and **Ryan** both sit at **2 at risk** after picking up two losses each, while **Mitchell** joins them in the danger zone on **2 losses** too, though somehow still has all 12 teams breathing. The pressure is real — one more slip for anyone's at-risk teams and we're watching eliminations stack up fast. No specific scores to separate them yet, but the standings don't lie: Jay is coasting while the other three are already sweating.",
-    "Big week ahead. **Sweden vs Tunisia (Mon 12PM)** is a must-watch — **Mitchell's Sweden** face **Kerrod's Tunisia**, both need points badly. **Belgium vs Egypt (Tue 5AM)** pits **Kerrod's Belgium** against **Jay's Egypt** — Jay's unbeaten streak is on the line. **Argentina vs Algeria (Wed 11AM)** is huge: **Mitchell's Argentina** vs **Jay's Algeria**, both owners desperate for different reasons. **France vs Senegal (Wed 5AM)** sees **Kerrod's France** take on **Mitchell's Senegal** — a loss for either hurts. Then **England vs Croatia (Thu 6AM)** is a blockbuster — **Mitchell owns both**, so he's literally playing himself, but one of his teams gets hurt regardless. Chaos incoming."
+    "Quick update on the sweep standings heading into a big week! **Jay** is sitting pretty — all **12 teams alive, zero at risk**, cruising at **2W-3D-0L**. **Kerrod** and **Ryan** both have **2 teams at risk** after picking up losses, while **Mitchell** is already sweating with **3 teams at risk** and a horror **1W-0D-3L** record — the Secretary role is firmly in his sights 😬. No one's been eliminated yet, but the pressure is building fast with a stacked fixture list coming up.",
+    "Massive matches incoming! **Jay** needs **Spain** (Tue 2:00AM), **Egypt** (Tue 5:00AM), **Algeria** (Wed 11:00AM), and **Ghana** (Thu 9:00AM) to keep that clean sheet going. **Kerrod** sweats on **Uruguay** (Tue 8:00AM), **Iran** (Tue 11:00AM), and **Norway** (Wed 8:00AM) — all carrying risk. **Ryan** watches **Austria** (Wed 2:00PM), **Congo DR** (Thu 3:00AM), **Panama** (Thu 9:00AM), and **Iraq** (Wed 8:00AM). But all eyes are on **Mitchell** — **Saudi Arabia** (Tue 8:00AM), **Senegal** (Wed 5:00AM), **Uzbekistan** (Thu 12:00PM), **England vs Croatia** (Thu 6:00AM) — he literally owns both sides of that last one. Any more losses and the Secretary curse looms large! 📋"
   ],
   "leaderboard": [
     {
@@ -12,8 +12,8 @@
       "eliminated": 0,
       "at_risk": 0,
       "record": {
-        "w": 1,
-        "d": 4,
+        "w": 2,
+        "d": 3,
         "l": 0
       }
     },
@@ -46,11 +46,11 @@
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 2,
+      "at_risk": 3,
       "record": {
         "w": 1,
-        "d": 1,
-        "l": 2
+        "d": 0,
+        "l": 3
       }
     }
   ],
@@ -108,7 +108,7 @@
         "name": "Ivory Coast",
         "flag": "🇨🇮",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "Cape Verde Islands",
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Ghana",
@@ -305,14 +305,14 @@
       {
         "name": "Ecuador",
         "flag": "🇪🇨",
-        "status": "in",
-        "last_result": null
+        "status": "at_risk",
+        "last_result": "L"
       },
       {
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Sweden",
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "CIV",
+      "h_flag": "🇨🇮",
+      "hs": 1,
+      "a_code": "ECU",
+      "a_flag": "🇪🇨",
+      "as": 0,
+      "group": "GRP E"
+    },
     {
       "h_code": "NED",
       "h_flag": "🇳🇱",
@@ -415,15 +424,6 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
-    },
-    {
-      "h_code": "CAN",
-      "h_flag": "🇨🇦",
-      "hs": 1,
-      "a_code": "BIH",
-      "a_flag": "🇧🇦",
-      "as": 1,
-      "group": "GRP B"
     },
     {
       "h_code": "KOR",
