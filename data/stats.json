@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-16T00:04:09.874592+10:00",
+  "generated_at": "2026-06-16T03:38:24.424760+10:00",
   "summary": [
-    "Early doors and **Jay** is sitting pretty — **12/12 alive**, no losses, completely unscathed. **Ryan** has taken two hits with **2 teams at risk**, while **Kerrod** and **Mitchell** are both bleeding with **3 at risk each**. **Mitchell** is in the most danger — **3 losses, zero draws**, living on the edge already. No one's been knocked out yet, but the pressure is building fast. The sweep is still wide open but the gap between **Jay's** clean sheet and everyone else is already telling a story.",
-    "Massive round incoming. **Spain vs Cape Verde Islands (Tue 2:00AM)** is Jay's battle against himself — he owns both! **Belgium vs Egypt (Tue 5:00AM)** is huge: **Kerrod's Belgium** and **Jay's Egypt** are both already at risk. **Saudi Arabia vs Uruguay (Tue 8:00AM)** — **Mitchell's Saudi Arabia** face **Kerrod's Uruguay**, both squads potentially one loss from elimination. **France vs Senegal (Wed 5:00AM)** pits **Kerrod's France** against **Mitchell's Senegal** — at-risk teams on both sides. **England vs Croatia (Thu 6:00AM)** is a mouth-watering **Mitchell vs Mitchell** derby. A rough couple of days could push **Kerrod** or **Mitchell** dangerously close to that dreaded Secretary throne."
+    "Early group stage carnage and **Kerrod** and **Mitchell** are already sweating. **Kerrod's** squad has taken three losses, putting **Belgium**, **Iran**, and **Norway** all **at risk**, while **Mitchell** is matching that pain with **Argentina**, **Czechia**, and **Saudi Arabia** carrying the skull emoji. **Ryan** isn't clean either — two losses mean **Congo DR** and **Iraq** are walking wounded. Meanwhile, **Jay** is absolutely breezing through with a perfect **2W-4D-0L** record, zero teams at risk, and the smuggest grin in the group chat. No one's officially out yet, but the pressure is building fast.",
+    "Huge week ahead. **Belgium vs Egypt** (**Tue, 5:00AM AEST**) is massive — a loss puts **Kerrod's Belgium** out and sends **Jay's Egypt** to the brink. **Iran vs New Zealand** (**Tue, 11:00AM AEST**) is a nervy one for **Kerrod** — both teams are his and at least one is getting hurt. **Argentina vs Algeria** (**Wed, 11:00AM AEST**) is Mitchell vs Jay in a sweepstakes derby — **Mitchell's Argentina** desperately need the win. **England vs Croatia** (**Thu, 6:00AM AEST**) is another Mitchell internal clash, and **Portugal vs Congo DR** (**Thu, 3:00AM AEST**) could eliminate **Ryan's Congo DR**. Buckle up."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 0,
       "record": {
         "w": 2,
-        "d": 3,
+        "d": 4,
         "l": 0
       }
     },
@@ -49,7 +49,7 @@
       "at_risk": 3,
       "record": {
         "w": 2,
-        "d": 0,
+        "d": 1,
         "l": 3
       }
     }
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Ghana",
@@ -312,7 +312,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Sweden",
@@ -433,6 +433,15 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
+    },
+    {
+      "h_code": "CAN",
+      "h_flag": "🇨🇦",
+      "hs": 1,
+      "a_code": "BIH",
+      "a_flag": "🇧🇦",
+      "as": 1,
+      "group": "GRP B"
     },
     {
       "h_code": "KOR",
