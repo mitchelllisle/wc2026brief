@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-15T13:05:40.090731+10:00",
+  "generated_at": "2026-06-15T15:45:21.220374+10:00",
   "summary": [
-    "Quick update on the sweep standings heading into a big week! **Jay** is sitting pretty — all **12 teams alive, zero at risk**, cruising at **2W-3D-0L**. **Kerrod** and **Ryan** both have **2 teams at risk** after picking up losses, while **Mitchell** is already sweating with **3 teams at risk** and a horror **1W-0D-3L** record — the Secretary role is firmly in his sights 😬. No one's been eliminated yet, but the pressure is building fast with a stacked fixture list coming up.",
-    "Massive matches incoming! **Jay** needs **Spain** (Tue 2:00AM), **Egypt** (Tue 5:00AM), **Algeria** (Wed 11:00AM), and **Ghana** (Thu 9:00AM) to keep that clean sheet going. **Kerrod** sweats on **Uruguay** (Tue 8:00AM), **Iran** (Tue 11:00AM), and **Norway** (Wed 8:00AM) — all carrying risk. **Ryan** watches **Austria** (Wed 2:00PM), **Congo DR** (Thu 3:00AM), **Panama** (Thu 9:00AM), and **Iraq** (Wed 8:00AM). But all eyes are on **Mitchell** — **Saudi Arabia** (Tue 8:00AM), **Senegal** (Wed 5:00AM), **Uzbekistan** (Thu 12:00PM), **England vs Croatia** (Thu 6:00AM) — he literally owns both sides of that last one. Any more losses and the Secretary curse looms large! 📋"
+    "Early doors and the sweep is already getting spicy. **Jay** is sitting pretty — the only one with zero losses across his 12 teams, riding clean on **2W-3D**. **Ryan** has taken two hits with **2 teams at risk**, while **Kerrod** and **Mitchell** are both sweating with **3 at risk** each. **Mitchell** is the most nervous — **3 losses, zero draws**, meaning he's been competitive but brutal when he loses. No one's out yet, but the gap between Jay's perfect slate and Mitchell's 💀 skull emoji is already telling a story. The group stage is ruthless and it's only just begun.",
+    "Massive week ahead. **Jay** has a double-header with **Spain vs Cape Verde Islands (Tue 2:00AM AEST)** and **Egypt vs Belgium (Tue 5:00AM AEST)** — wins there would tighten his stranglehold. **Kerrod** needs results badly: **Belgium, Uruguay, Iran, France, and Norway** all play, and another loss pushes more teams to the brink. **Mitchell** faces a crunch — **Saudi Arabia vs Uruguay (Tue 8:00AM AEST)** puts his **Saudi Arabia** up against Kerrod's **Uruguay**, a lose-lose drama. Then **England vs Croatia (Thu 6:00AM AEST)** pits two of Mitchell's own teams against each other — someone's going at risk guaranteed. Secretary watch is real."
   ],
   "leaderboard": [
     {
@@ -18,18 +18,6 @@
       }
     },
     {
-      "name": "Kerrod",
-      "teams_remaining": 12,
-      "teams_total": 12,
-      "eliminated": 0,
-      "at_risk": 2,
-      "record": {
-        "w": 2,
-        "d": 1,
-        "l": 2
-      }
-    },
-    {
       "name": "Ryan",
       "teams_remaining": 12,
       "teams_total": 12,
@@ -42,13 +30,25 @@
       }
     },
     {
+      "name": "Kerrod",
+      "teams_remaining": 12,
+      "teams_total": 12,
+      "eliminated": 0,
+      "at_risk": 3,
+      "record": {
+        "w": 2,
+        "d": 1,
+        "l": 3
+      }
+    },
+    {
       "name": "Mitchell",
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
       "at_risk": 3,
       "record": {
-        "w": 1,
+        "w": 2,
         "d": 0,
         "l": 3
       }
@@ -129,80 +129,6 @@
         "last_result": null
       }
     ],
-    "Kerrod": [
-      {
-        "name": "France",
-        "flag": "🇫🇷",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Belgium",
-        "flag": "🇧🇪",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Mexico",
-        "flag": "🇲🇽",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "United States",
-        "flag": "🇺🇸",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "Uruguay",
-        "flag": "🇺🇾",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Iran",
-        "flag": "🇮🇷",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Turkey",
-        "flag": "🇹🇷",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "Norway",
-        "flag": "🇳🇴",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Tunisia",
-        "flag": "🇹🇳",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Qatar",
-        "flag": "🇶🇦",
-        "status": "in",
-        "last_result": "D"
-      },
-      {
-        "name": "Curaçao",
-        "flag": "🇨🇼",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "New Zealand",
-        "flag": "🇳🇿",
-        "status": "in",
-        "last_result": null
-      }
-    ],
     "Ryan": [
       {
         "name": "Portugal",
@@ -277,6 +203,80 @@
         "last_result": null
       }
     ],
+    "Kerrod": [
+      {
+        "name": "France",
+        "flag": "🇫🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Mexico",
+        "flag": "🇲🇽",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "United States",
+        "flag": "🇺🇸",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "Uruguay",
+        "flag": "🇺🇾",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Iran",
+        "flag": "🇮🇷",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Turkey",
+        "flag": "🇹🇷",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Norway",
+        "flag": "🇳🇴",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Tunisia",
+        "flag": "🇹🇳",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Qatar",
+        "flag": "🇶🇦",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Curaçao",
+        "flag": "🇨🇼",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "New Zealand",
+        "flag": "🇳🇿",
+        "status": "in",
+        "last_result": null
+      }
+    ],
     "Mitchell": [
       {
         "name": "Argentina",
@@ -318,7 +318,7 @@
         "name": "Sweden",
         "flag": "🇸🇪",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "Czechia",
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "SWE",
+      "h_flag": "🇸🇪",
+      "hs": 5,
+      "a_code": "TUN",
+      "a_flag": "🇹🇳",
+      "as": 1,
+      "group": "GRP F"
+    },
     {
       "h_code": "CIV",
       "h_flag": "🇨🇮",
