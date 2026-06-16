@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-16T13:05:13.568748+10:00",
+  "generated_at": "2026-06-16T15:48:28.338719+10:00",
   "summary": [
-    "We're deep into the group stage and the pressure is mounting. **Jay** remains the standout with a spotless record — all **12 teams alive, zero at risk**, cruising on **2W-7D**. **Ryan** has wobbled with **2 losses**, leaving **South Africa** and **Jordan** sweating. **Kerrod** is looking nervous with **3 teams at risk** after **3 losses**, while **Mitchell** is firmly in the danger zone — also **3 at risk, 3 losses** — and staring down the barrel of the Secretary role if things don't turn around fast.",
-    "Big ones incoming — **France vs Senegal (Wed 5AM AEST)** pits **Kerrod's France** against **Mitchell's Senegal**, both desperate to avoid another loss. **Argentina vs Algeria (Wed 11AM)** is massive — **Mitchell's Argentina** vs **Jay's Algeria**, both at risk. **Portugal vs Congo DR (Thu 3AM)** and **England vs Croatia (Thu 6AM)** are must-wins for **Ryan** and **Mitchell** respectively. **Ghana vs Panama (Thu 9AM)** features **Jay's Ghana** vs **Ryan's Panama**, while **Switzerland vs Bosnia-Herzegovina (Fri 5AM)** is a nervy all-**Jay** clash. **Mitchell**, one bad run ends you — Secretary season is real."
+    "The group stage is heating up and the pressure is already on. **Kerrod** leads the at-risk count with three teams sweating, including **Norway**, **Mexico**, and **Qatar** — while **Mitchell** is right there with him, with **Czechia**, **Uzbekistan**, and **Senegal** all carrying a loss. **Ryan** isn't sleeping easy either, with **Iraq**, **South Africa**, and **Jordan** all on the brink. Meanwhile, **Jay** is the only one sitting pretty — all 12 teams alive, zero at risk, looking absolutely smug about it. No scores to report yet from this upcoming slate, but the results are about to fly thick and fast across Wednesday and Friday.",
+    "Buckle up — this next round is massive. **Kerrod's Norway** face **Ryan's Iraq** at **8:00AM AEST Wednesday**, a genuine elimination minefield. **Mitchell's Senegal** take on **Kerrod's France** at **5:00AM** — both with at-risk teams, potential carnage. **Jay's Algeria** meet **Mitchell's Argentina** at **11:00AM**, and a loss puts **Algeria at risk**. **Ryan's Jordan vs Austria** at **2:00PM** is a wild self-battle. Thursday brings **Mitchell's England vs Croatia** at **6:00AM** and **Ryan's Panama vs Jay's Ghana** at **9:00AM**. Friday rounds out with **Jay's Switzerland vs Bosnia-Herzegovina** and **Ryan's South Africa vs Mitchell's Czechia**. **Mitchell** especially needs results — another bad day edges him closer to the Secretary's chair."
   ],
   "leaderboard": [
     {
@@ -37,7 +37,7 @@
       "at_risk": 3,
       "record": {
         "w": 2,
-        "d": 3,
+        "d": 5,
         "l": 3
       }
     },
@@ -238,7 +238,7 @@
         "name": "Iran",
         "flag": "🇮🇷",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Turkey",
@@ -274,7 +274,7 @@
         "name": "New Zealand",
         "flag": "🇳🇿",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       }
     ],
     "Mitchell": [
@@ -354,10 +354,19 @@
   },
   "recent_results": [
     {
+      "h_code": "IRN",
+      "h_flag": "🇮🇷",
+      "hs": 2,
+      "a_code": "NZL",
+      "a_flag": "🇳🇿",
+      "as": 2,
+      "group": "GRP G"
+    },
+    {
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URU",
+      "a_code": "URY",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
