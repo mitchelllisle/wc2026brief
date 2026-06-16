@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-17T07:02:07.475404+10:00",
+  "generated_at": "2026-06-17T08:37:09.960535+10:00",
   "summary": [
-    "The group stage is heating up and the pressure is real. **Jay** remains the only participant with zero losses — clean as a whistle at **2W-7D-0L**. **Ryan** and **Kerrod** both have teams **at risk**, with **Ryan** carrying **2 losses** across his squad and **Kerrod** sitting on **3 losses** — ouch. **Mitchell** is right there with him on **3 losses** and **3 at risk**, meaning that dreaded Secretary badge is hovering dangerously close. Nobody's been knocked out yet, but the cracks are forming fast.",
-    "Massive week ahead. **Iraq vs Norway (Wed 8AM)** — **Ryan's Iraq** and **Kerrod's Norway** both need points badly. **Argentina vs Algeria (Wed 11AM)** puts **Mitchell's Argentina** against **Jay's Algeria** — winner takes the bragging rights there. **Austria vs Jordan (Wed 2PM)** is **Ryan vs Ryan**, low stakes but keeping teams alive matters. **England vs Croatia (Thu 6AM)** is a sweepstake classic — **Mitchell's** two teams going head-to-head, one will go at risk. **Ghana vs Panama (Thu 9AM)** pits **Jay's Ghana** against **Ryan's Panama**. Then **Switzerland vs Bosnia-Herzegovina (Fri 5AM)** is a **Jay vs Jay** derby. Big week — Secretary watch is ON."
+    "The group stage is heating up and the pressure is mounting — especially on **Mitchell**, who already has **4 teams at risk** and is staring down the Secretary role. **Kerrod** isn't far behind with **3 at risk**, while **Ryan** has **2 at risk** after a rough start. Meanwhile, **Jay** is sitting pretty — **9 draws and 2 wins, zero losses** — absolutely untouchable right now. No specifics on scores just yet coming into this round, but the records tell the story: Mitchell's **2W-2D-4L** is a disaster, Kerrod's **3W-5D-3L** is shaky, and Ryan's **2W-2D-2L** is fragile. Jay's **2W-7D-0L** is freakishly clean. Someone is about to crack.",
+    "Massive slate coming up. **Mitchell** needs **Argentina** (Wed 11AM) and **England vs Croatia** (Thu 6AM) to deliver — a loss in either fixture puts teams out. **Ryan** is desperate for **Portugal vs Congo DR** (Thu 3AM), **Austria vs Jordan** (Wed 2PM), **Panama** (Thu 9AM), and **South Africa** (Fri 2AM) to survive. **Jay** has **Algeria** (Wed 11AM), **Ghana** (Thu 9AM), **Switzerland** (Fri 5AM), **Colombia** (Thu 12PM), **Bosnia-Herzegovina** (Fri 5AM), and **Australia** (Sat 5AM) all in action — the perfect record is seriously under threat. **Kerrod** watches **Mexico vs South Korea** (Fri 11AM), **Canada vs Qatar** (Fri 8AM with **Mitchell**), and **Scotland vs Morocco** (Sat 8AM). Buckle up — Secretary watch is very real."
   ],
   "leaderboard": [
     {
@@ -36,7 +36,7 @@
       "eliminated": 0,
       "at_risk": 3,
       "record": {
-        "w": 2,
+        "w": 3,
         "d": 5,
         "l": 3
       }
@@ -46,11 +46,11 @@
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 3,
+      "at_risk": 4,
       "record": {
         "w": 2,
         "d": 2,
-        "l": 3
+        "l": 4
       }
     }
   ],
@@ -208,7 +208,7 @@
         "name": "France",
         "flag": "🇫🇷",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "Belgium",
@@ -299,8 +299,8 @@
       {
         "name": "Senegal",
         "flag": "🇸🇳",
-        "status": "in",
-        "last_result": null
+        "status": "at_risk",
+        "last_result": "L"
       },
       {
         "name": "Ecuador",
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "FRA",
+      "h_flag": "🇫🇷",
+      "hs": 3,
+      "a_code": "SEN",
+      "a_flag": "🇸🇳",
+      "as": 1,
+      "group": "GRP I"
+    },
     {
       "h_code": "IRN",
       "h_flag": "🇮🇷",
