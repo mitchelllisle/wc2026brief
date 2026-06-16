@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-16T10:41:28.966133+10:00",
+  "generated_at": "2026-06-16T13:05:13.568748+10:00",
   "summary": [
-    "We're deep into the group stage and the pressure is mounting. **Jay** remains the golden child — all **12 teams alive, zero at risk**, the smug legend. **Ryan** has **2 teams at risk** after losses from **Iraq** and **South Africa**, while **Kerrod** is sweating with **3 at risk** including **Iran** and **New Zealand**. **Mitchell** is in the danger zone too — **3 at risk** with **Czechia**, **Uzbekistan**, and **Canada** all walking a tightrope. Nobody's out yet, but the Secretary curse is circling. One more loss each for Mitchell and Kerrod's struggling sides and things get very spicy very fast.",
-    "Huge week ahead. **Kerrod** needs **Iran** to avoid a second loss against **New Zealand** (Tue 11:00AM) and **Norway** to beat **Iraq** (Wed 8:00AM) — both his teams, maximum stress. **Mitchell** sweats on **England vs Croatia** (Thu 6:00AM) — a loss for either kills one of his own. **Jay** is quietly grinning watching **Algeria vs Argentina** (Wed 11:00AM) — a win keeps **Algeria** flying. **Ryan** needs **Portugal** (Thu 3:00AM), **Austria** (Wed 2:00PM), **Panama** (Thu 9:00AM), and **South Africa** (Fri 2:00AM) to all survive. That's a massive ask. One bad session could tip **Mitchell** or **Kerrod** toward Secretary duties — stay tuned! 🏆"
+    "We're deep into the group stage and the pressure is mounting. **Jay** remains the standout with a spotless record — all **12 teams alive, zero at risk**, cruising on **2W-7D**. **Ryan** has wobbled with **2 losses**, leaving **South Africa** and **Jordan** sweating. **Kerrod** is looking nervous with **3 teams at risk** after **3 losses**, while **Mitchell** is firmly in the danger zone — also **3 at risk, 3 losses** — and staring down the barrel of the Secretary role if things don't turn around fast.",
+    "Big ones incoming — **France vs Senegal (Wed 5AM AEST)** pits **Kerrod's France** against **Mitchell's Senegal**, both desperate to avoid another loss. **Argentina vs Algeria (Wed 11AM)** is massive — **Mitchell's Argentina** vs **Jay's Algeria**, both at risk. **Portugal vs Congo DR (Thu 3AM)** and **England vs Croatia (Thu 6AM)** are must-wins for **Ryan** and **Mitchell** respectively. **Ghana vs Panama (Thu 9AM)** features **Jay's Ghana** vs **Ryan's Panama**, while **Switzerland vs Bosnia-Herzegovina (Fri 5AM)** is a nervy all-**Jay** clash. **Mitchell**, one bad run ends you — Secretary season is real."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 0,
       "record": {
         "w": 2,
-        "d": 6,
+        "d": 7,
         "l": 0
       }
     },
@@ -49,7 +49,7 @@
       "at_risk": 3,
       "record": {
         "w": 2,
-        "d": 1,
+        "d": 2,
         "l": 3
       }
     }
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Ghana",
@@ -312,7 +312,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Sweden",
@@ -357,7 +357,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URY",
+      "a_code": "URU",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
@@ -460,6 +460,15 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
+    },
+    {
+      "h_code": "CAN",
+      "h_flag": "🇨🇦",
+      "hs": 1,
+      "a_code": "BIH",
+      "a_flag": "🇧🇦",
+      "as": 1,
+      "group": "GRP B"
     },
     {
       "h_code": "KOR",
