@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-17T15:36:38.949926+10:00",
+  "generated_at": "2026-06-17T17:44:50.592390+10:00",
   "summary": [
-    "The group stage is heating up and the pressure is mounting on **Mitchell**, who leads the losses table with **4 teams at risk** — more than anyone else. **Jay** is sitting pretty with just **1 team at risk** and a clean 12/12 alive, while **Kerrod** and **Ryan** both have **3 teams at risk** each. No one's been knocked out yet, but the Secretary curse is already circling — **Mitchell** is firmly in the danger zone after a rough run of **4 losses** across his squad, the worst record in the group.",
-    "Massive slate incoming. **Mitchell's** teams are everywhere — **England vs Croatia (Thu 6AM AEST)** is a huge clash, with both sides needing points. **Canada vs Qatar (Fri 8AM AEST)** pits **Mitchell's Canada** against **Kerrod's Qatar**. **Jay** has a double-header to watch: **Switzerland vs Bosnia-Herzegovina (Fri 5AM AEST)** — both his teams! **Ryan** sweats **Congo DR (Thu 3AM)**, **Panama (Thu 9AM)**, **South Korea (Fri 11AM)**, **Morocco (Sat 8AM)** and **Paraguay (Sat 1PM)** — a monster week. **United States vs Australia (Sat 5AM)** is **Kerrod vs Jay** — loser gets a team at risk. Buckle up."
+    "The group stage is heating up and the pressure is on. **Mitchell** and **Ryan** are sweating the most with **4 teams at risk** each, while **Kerrod** isn't far behind with **3 at risk**. **Jay** is sitting pretty with just **1 team at risk** — the smuggest man alive right now. No one's out yet, but with results piling up, the Secretary race is very much alive. **Mitchell** and **Ryan** are locked on identical records (**3W-2D-4L**), so every result this week could separate them from a 12-month admin nightmare.",
+    "Massive days ahead. **Ryan's Portugal** face **Congo DR (Thu 3:00AM)** — a must-win. **Mitchell's England** clash with **Mitchell's Croatia (Thu 6:00AM)** in a fascinating friendly-fire situation. **Jay's Ghana** vs **Ryan's Panama (Thu 9:00AM)** is a cracker. **Jay's Switzerland** vs **Jay's Bosnia-Herzegovina (Fri 5:00AM)** is another self-clash to watch. Then **Kerrod's United States** take on **Jay's Australia (Sat 5:00AM)**, **Ryan's Morocco** face **Mitchell's Scotland (Sat 8:00AM)**, and **Ryan's Paraguay** vs **Kerrod's Turkey (Sat 1:00PM)** rounds out the weekend. Buckle up."
   ],
   "leaderboard": [
     {
@@ -30,19 +30,19 @@
       }
     },
     {
-      "name": "Ryan",
+      "name": "Mitchell",
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 3,
+      "at_risk": 4,
       "record": {
-        "w": 2,
+        "w": 3,
         "d": 2,
-        "l": 3
+        "l": 4
       }
     },
     {
-      "name": "Mitchell",
+      "name": "Ryan",
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
@@ -203,80 +203,6 @@
         "last_result": "D"
       }
     ],
-    "Ryan": [
-      {
-        "name": "Portugal",
-        "flag": "🇵🇹",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Netherlands",
-        "flag": "🇳🇱",
-        "status": "in",
-        "last_result": "D"
-      },
-      {
-        "name": "Morocco",
-        "flag": "🇲🇦",
-        "status": "in",
-        "last_result": "D"
-      },
-      {
-        "name": "Germany",
-        "flag": "🇩🇪",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "Austria",
-        "flag": "🇦🇹",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "South Korea",
-        "flag": "🇰🇷",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "Paraguay",
-        "flag": "🇵🇾",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "Panama",
-        "flag": "🇵🇦",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Congo DR",
-        "flag": "🇨🇩",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Iraq",
-        "flag": "🇮🇶",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "South Africa",
-        "flag": "🇿🇦",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "Jordan",
-        "flag": "🇯🇴",
-        "status": "in",
-        "last_result": null
-      }
-    ],
     "Mitchell": [
       {
         "name": "Argentina",
@@ -350,9 +276,92 @@
         "status": "at_risk",
         "last_result": "L"
       }
+    ],
+    "Ryan": [
+      {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "Austria",
+        "flag": "🇦🇹",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Panama",
+        "flag": "🇵🇦",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Congo DR",
+        "flag": "🇨🇩",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Iraq",
+        "flag": "🇮🇶",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "South Africa",
+        "flag": "🇿🇦",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Jordan",
+        "flag": "🇯🇴",
+        "status": "at_risk",
+        "last_result": "L"
+      }
     ]
   },
   "recent_results": [
+    {
+      "h_code": "AUT",
+      "h_flag": "🇦🇹",
+      "hs": 3,
+      "a_code": "JOR",
+      "a_flag": "🇯🇴",
+      "as": 1,
+      "group": "GRP J"
+    },
     {
       "h_code": "ARG",
       "h_flag": "🇦🇷",
@@ -393,7 +402,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URU",
+      "a_code": "URY",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
