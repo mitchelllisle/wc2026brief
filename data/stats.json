@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-18T06:42:02.583492+10:00",
+  "generated_at": "2026-06-18T08:33:18.021729+10:00",
   "summary": [
-    "Big week of results has left the sweep looking spicy. **Jay** is cruising — only **1 team at risk** across 12 alive, best record in the group. **Kerrod** has **3 at risk** but 4 wins keeps him comfortable. **Mitchell** and **Ryan** are both sweating with **4 teams at risk each** — **Ryan** in particular looks shaky sitting on 4 losses already, one more bad run and the Secretary throne beckons. No one's been eliminated yet, but the group stage is tightening fast and the next few days could flip everything upside down.",
-    "Massive slate incoming. **Jay** has six teams in action — watch **Switzerland vs Bosnia-Herzegovina (Fri 5AM)**, **Colombia vs Uzbekistan (Thu 12PM)**, and **Australia vs USA (Sat 5AM)**, where **Kerrod's United States** clash directly with **Jay's Socceroos** — huge! **Mitchell** needs **Canada, Czechia, Sweden, and Scotland** to hold firm. **Ryan** desperately needs results from **Morocco, Netherlands, Germany, Paraguay, and South Korea** — another round of losses and he's staring down the Secretary gig. **Mexico vs South Korea (Fri 11AM)** is a certified danger match with **Kerrod's Mexico** against **Ryan's South Korea**. Buckle up."
+    "We're into the thick of the group stage and the heat is rising. **Mitchell** is firmly in the danger zone — his teams are racking up losses at an alarming rate, sitting with **5 squads at risk** and a grim **4W-2D-5L** record. **Ryan** isn't far behind with **4 at risk**, while **Kerrod** has **3 on the edge**. Meanwhile **Jay** is cruising with just **1 team at risk** and only one loss across his entire squad — quietly smug, as he should be. No one's been knocked out yet, but the Secretary conversation is already pointing squarely at **Mitchell**.",
+    "Massive slate incoming. **Jay's Ghana** faces **Ryan's Panama** on **Thu 18 Jun, 9:00AM** — both need the win badly. **Jay's Switzerland** takes on his own **Bosnia-Herzegovina** on **Fri 19 Jun, 5:00AM** — awkward. **Kerrod's United States** clashes with **Jay's Australia** on **Sat 20 Jun, 5:00AM**, huge for both. **Ryan's Morocco** hosts **Mitchell's Scotland** at **8:00AM Saturday** — Mitchell desperately needs points. Then **Ryan's Netherlands** vs **Mitchell's Sweden** on **Sun 21 Jun, 3:00AM**, followed by **Ryan's Germany** vs **Jay's Ivory Coast** at **6:00AM**. Mitchell needs wins everywhere or the Secretary's calendar is getting very full."
   ],
   "leaderboard": [
     {
@@ -30,18 +30,6 @@
       }
     },
     {
-      "name": "Mitchell",
-      "teams_remaining": 12,
-      "teams_total": 12,
-      "eliminated": 0,
-      "at_risk": 4,
-      "record": {
-        "w": 3,
-        "d": 2,
-        "l": 4
-      }
-    },
-    {
       "name": "Ryan",
       "teams_remaining": 12,
       "teams_total": 12,
@@ -51,6 +39,18 @@
         "w": 3,
         "d": 4,
         "l": 4
+      }
+    },
+    {
+      "name": "Mitchell",
+      "teams_remaining": 12,
+      "teams_total": 12,
+      "eliminated": 0,
+      "at_risk": 5,
+      "record": {
+        "w": 4,
+        "d": 2,
+        "l": 5
       }
     }
   ],
@@ -203,80 +203,6 @@
         "last_result": "D"
       }
     ],
-    "Mitchell": [
-      {
-        "name": "Argentina",
-        "flag": "🇦🇷",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "England",
-        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Croatia",
-        "flag": "🇭🇷",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Senegal",
-        "flag": "🇸🇳",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "Ecuador",
-        "flag": "🇪🇨",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "Canada",
-        "flag": "🇨🇦",
-        "status": "in",
-        "last_result": "D"
-      },
-      {
-        "name": "Sweden",
-        "flag": "🇸🇪",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "Czechia",
-        "flag": "🇨🇿",
-        "status": "at_risk",
-        "last_result": "L"
-      },
-      {
-        "name": "Scotland",
-        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
-        "status": "in",
-        "last_result": "W"
-      },
-      {
-        "name": "Uzbekistan",
-        "flag": "🇺🇿",
-        "status": "in",
-        "last_result": null
-      },
-      {
-        "name": "Saudi Arabia",
-        "flag": "🇸🇦",
-        "status": "in",
-        "last_result": "D"
-      },
-      {
-        "name": "Haiti",
-        "flag": "🇭🇹",
-        "status": "at_risk",
-        "last_result": "L"
-      }
-    ],
     "Ryan": [
       {
         "name": "Portugal",
@@ -350,9 +276,92 @@
         "status": "at_risk",
         "last_result": "L"
       }
+    ],
+    "Mitchell": [
+      {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "Croatia",
+        "flag": "🇭🇷",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Senegal",
+        "flag": "🇸🇳",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Ecuador",
+        "flag": "🇪🇨",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "Czechia",
+        "flag": "🇨🇿",
+        "status": "at_risk",
+        "last_result": "L"
+      },
+      {
+        "name": "Scotland",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "status": "in",
+        "last_result": "W"
+      },
+      {
+        "name": "Uzbekistan",
+        "flag": "🇺🇿",
+        "status": "in",
+        "last_result": null
+      },
+      {
+        "name": "Saudi Arabia",
+        "flag": "🇸🇦",
+        "status": "in",
+        "last_result": "D"
+      },
+      {
+        "name": "Haiti",
+        "flag": "🇭🇹",
+        "status": "at_risk",
+        "last_result": "L"
+      }
     ]
   },
   "recent_results": [
+    {
+      "h_code": "ENG",
+      "h_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "hs": 4,
+      "a_code": "CRO",
+      "a_flag": "🇭🇷",
+      "as": 2,
+      "group": "GRP L"
+    },
     {
       "h_code": "POR",
       "h_flag": "🇵🇹",
@@ -411,7 +420,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URY",
+      "a_code": "URU",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
