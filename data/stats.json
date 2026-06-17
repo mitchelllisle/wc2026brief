@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-18T01:03:50.043325+10:00",
+  "generated_at": "2026-06-18T03:00:59.638184+10:00",
   "summary": [
-    "The group stage is heating up and the pressure is on. **Mitchell** and **Ryan** are both sweating with **4 teams at risk** each, while **Kerrod** has **3 at risk** and **Jay** is sitting pretty with just **1**. The results have been brutal — **Mitchell's** record sits at **3W-1D-4L** and **Ryan's** at **3W-2D-4L**, meaning both are already one bad run from serious damage. No one is out yet, but the Secretary crown is lurking. **Kerrod** leads on wins with **4** but has taken **3 losses**, so it's tight across the board. Every result from here starts to sting.",
-    "Massive slate incoming. **Jay** has live interest in **Switzerland vs Bosnia-Herzegovina (Fri, 5:00AM)** and **Ghana vs Panama (Thu, 9:00AM)** — both at-risk clashes that could sting. **Mitchell** faces a defining stretch: **England vs Croatia (Thu, 6:00AM)** is an all-**Mitchell** derby, **Canada vs Qatar (Fri, 8:00AM)** pits his **Canada** against **Kerrod's Qatar**, and **Scotland vs Morocco (Sat, 8:00AM)** is **Mitchell vs Ryan**. **Ryan** has **Portugal vs Congo DR (Thu, 3:00AM)** and **United States vs Australia (Sat, 5:00AM)** where **Kerrod's USA** faces **Jay's Australia**. **Mexico vs South Korea (Fri, 11:00AM)** is a tasty **Kerrod vs Ryan** clash. No room for slip-ups — losses are stacking up fast."
+    "We're deep into the group stage and things are heating up! **Jay** is sitting pretty as the only participant with just **1 team at risk**, while **Mitchell** and **Ryan** are both sweating with **4 at risk** each — and nobody's been eliminated yet, which somehow makes it more tense. **Kerrod** sits in between with **3 at risk**. The scores and results so far have been a mixed bag, with **Mitchell's Croatia** and **Ryan's Congo DR**, **Panama**, and **South Korea** among the sides carrying a loss already. **Ryan** in particular is looking shaky across the board. No one's been knocked out yet, but the Secretary trap is already starting to take shape. Stay alert, lads.",
+    "Big days ahead! **Ryan's Portugal** face **Ryan's Congo DR** at **3:00AM Thursday** — a sweep-vs-sweep clash where Ryan's desperately hoping both survive. **Mitchell's England** take on **Mitchell's Croatia** at **6:00AM Thursday** — another all-Mitchell derby, and at least one of them will be under pressure after it. **Jay's Ghana** vs **Ryan's Panama** at **9:00AM** could pile more misery on Ryan. Friday sees **Jay's Switzerland** vs **Jay's Bosnia-Herzegovina** — Jay controls that one nicely. **Mitchell's Canada** vs **Kerrod's Qatar** at **8:00AM Friday** is spicy. Then Saturday, **Kerrod's United States** face **Jay's Australia** at **5:00AM**, and **Ryan's Morocco** meet **Mitchell's Scotland** at **8:00AM**. Carnage incoming — someone's Secretary fate is being written this week."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 1,
       "record": {
         "w": 2,
-        "d": 6,
+        "d": 7,
         "l": 1
       }
     },
@@ -37,7 +37,7 @@
       "at_risk": 4,
       "record": {
         "w": 3,
-        "d": 1,
+        "d": 2,
         "l": 4
       }
     },
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Ghana",
@@ -238,7 +238,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Sweden",
@@ -402,7 +402,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URY",
+      "a_code": "URU",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
@@ -505,6 +505,15 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
+    },
+    {
+      "h_code": "CAN",
+      "h_flag": "🇨🇦",
+      "hs": 1,
+      "a_code": "BIH",
+      "a_flag": "🇧🇦",
+      "as": 1,
+      "group": "GRP B"
     },
     {
       "h_code": "KOR",
