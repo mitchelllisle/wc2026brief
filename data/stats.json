@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-18T04:46:52.998180+10:00",
+  "generated_at": "2026-06-18T06:42:02.583492+10:00",
   "summary": [
-    "The group stage is heating up and the pressure is mounting! **Mitchell** and **Ryan** are both sweating with **4 teams at risk** each — the most vulnerable in the sweep right now. **Kerrod** isn't far behind with **3 at risk**, while **Jay** is cruising with just **1 team at risk** across a tidy **2W-7D-1L** record. Nobody's been knocked out yet, but the axe is hovering. **Ryan** holds the dreaded 💀 emoji, sitting level with **Mitchell** on **3W-2D-4L** — one more bad run of results and the Secretary race gets very real, very fast.",
-    "Huge slate of games incoming! **Mitchell** is sweating on **England vs Croatia (Thu 6AM)** — both his teams, one must lose. **Jay** has double exposure in **Switzerland vs Bosnia-Herzegovina (Fri 5AM)** — same deal, nervous times. **Ryan's** **South Africa** face **Czechia (Fri 2AM)** and **Paraguay** take on **Turkey (Sat 1PM)** — both already at risk. **Kerrod** watches **Mexico vs South Korea (Fri 11AM)** with **Mexico** needing a result. Then **United States vs Australia (Sat 5AM)** is a cracker — **Kerrod's** USA against **Jay's** Aussies. Whoever loses adds another risk flag. With the Secretary trophy looming, every result this weekend could be brutal. 👀"
+    "Big week of results has left the sweep looking spicy. **Jay** is cruising — only **1 team at risk** across 12 alive, best record in the group. **Kerrod** has **3 at risk** but 4 wins keeps him comfortable. **Mitchell** and **Ryan** are both sweating with **4 teams at risk each** — **Ryan** in particular looks shaky sitting on 4 losses already, one more bad run and the Secretary throne beckons. No one's been eliminated yet, but the group stage is tightening fast and the next few days could flip everything upside down.",
+    "Massive slate incoming. **Jay** has six teams in action — watch **Switzerland vs Bosnia-Herzegovina (Fri 5AM)**, **Colombia vs Uzbekistan (Thu 12PM)**, and **Australia vs USA (Sat 5AM)**, where **Kerrod's United States** clash directly with **Jay's Socceroos** — huge! **Mitchell** needs **Canada, Czechia, Sweden, and Scotland** to hold firm. **Ryan** desperately needs results from **Morocco, Netherlands, Germany, Paraguay, and South Korea** — another round of losses and he's staring down the Secretary gig. **Mexico vs South Korea (Fri 11AM)** is a certified danger match with **Kerrod's Mexico** against **Ryan's South Korea**. Buckle up."
   ],
   "leaderboard": [
     {
@@ -49,7 +49,7 @@
       "at_risk": 4,
       "record": {
         "w": 3,
-        "d": 2,
+        "d": 4,
         "l": 4
       }
     }
@@ -282,7 +282,7 @@
         "name": "Portugal",
         "flag": "🇵🇹",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Netherlands",
@@ -330,7 +330,7 @@
         "name": "Congo DR",
         "flag": "🇨🇩",
         "status": "in",
-        "last_result": null
+        "last_result": "D"
       },
       {
         "name": "Iraq",
@@ -353,6 +353,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "POR",
+      "h_flag": "🇵🇹",
+      "hs": 1,
+      "a_code": "COD",
+      "a_flag": "🇨🇩",
+      "as": 1,
+      "group": "GRP K"
+    },
     {
       "h_code": "AUT",
       "h_flag": "🇦🇹",
@@ -402,7 +411,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URU",
+      "a_code": "URY",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
