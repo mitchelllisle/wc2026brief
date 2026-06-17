@@ -240,6 +240,14 @@ tr.tab td { box-shadow: inset 3px 0 0 var(--out); }
 .sd.out { background: var(--out); }
 .tm.at_risk .nm, .tm.risk .nm { color: var(--risk); }
 
+.upcoming { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.up-match { display: flex; align-items: center; gap: 12px; padding: 14px 12px; border-bottom: 1px solid var(--line-soft); flex-wrap: wrap; }
+.up-match:last-child { border-bottom: none; }
+.up-match .team { font-size: 14px; font-weight: 700; color: var(--txt); }
+.up-match .team .mgr { font-family: var(--mono); font-size: 10px; color: var(--txt-3); font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
+.up-match .vs { font-family: var(--mono); font-size: 10px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; }
+.up-empty { padding: 14px 12px; color: var(--txt-2); font-size: 13px; }
+
 .footrow { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 16px; padding-top: 0; font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--txt-3); }
 .legend { display: flex; gap: 18px; flex-wrap: wrap; }
 .legend .li { display: flex; align-items: center; gap: 7px; color: var(--txt-2); }

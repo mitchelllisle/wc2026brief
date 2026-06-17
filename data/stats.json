@@ -551,5 +551,43 @@
       "as": 0,
       "group": "GRP A"
     }
+  ],
+  "upcoming_matches": [
+    {
+      "home_team": "Ghana",
+      "away_team": "Panama",
+      "home_manager": "Jay",
+      "away_manager": "Ryan"
+    },
+    {
+      "home_team": "Switzerland",
+      "away_team": "Bosnia-Herzegovina",
+      "home_manager": "Jay",
+      "away_manager": "Jay"
+    },
+    {
+      "home_team": "United States",
+      "away_team": "Australia",
+      "home_manager": "Kerrod",
+      "away_manager": "Jay"
+    },
+    {
+      "home_team": "Morocco",
+      "away_team": "Scotland",
+      "home_manager": "Ryan",
+      "away_manager": "Mitchell"
+    },
+    {
+      "home_team": "Netherlands",
+      "away_team": "Sweden",
+      "home_manager": "Ryan",
+      "away_manager": "Mitchell"
+    },
+    {
+      "home_team": "Germany",
+      "away_team": "Ivory Coast",
+      "home_manager": "Ryan",
+      "away_manager": "Jay"
+    }
   ]
 }

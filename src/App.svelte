@@ -45,6 +45,12 @@
   const DAYS_TO_FINAL = 33;
   const FINAL_VENUE = 'MetLife Stadium';
   const MANAGER_ORDER = ['Mitchell', 'Kerrod', 'Jay', 'Ryan'];
+  const MANAGER_SHORT = {
+    Mitchell: 'Mitch',
+    Jay: 'Jay',
+    Ryan: 'Ryan',
+    Kerrod: 'Kerrod',
+  };
 
   function normalizeStatus(status) {
     return status === 'risk' ? 'at_risk' : status;
@@ -97,6 +103,10 @@
     if (byCode?.size === 1) return [...byCode][0];
 
     return '';
+  }
+
+  function displayManager(name) {
+    return MANAGER_SHORT[name] ?? name;
   }
 
   const homeWin = (g) => g.hs > g.as;
@@ -265,6 +275,21 @@
           {/each}
         </article>
       {/each}
+    </section>
+
+    <div class="sec"><span class="num">03</span><h2>Upcoming Games</h2><span class="meta">Home vs away</span></div>
+    <section class="upcoming">
+      {#if data.upcoming_matches?.length}
+        {#each data.upcoming_matches as m}
+          <div class="up-match">
+            <span class="team">{m.home_team} <span class="mgr">({displayManager(m.home_manager)})</span></span>
+            <span class="vs">vs</span>
+            <span class="team">{m.away_team} <span class="mgr">({displayManager(m.away_manager)})</span></span>
+          </div>
+        {/each}
+      {:else}
+        <div class="up-empty">No upcoming games available.</div>
+      {/if}
     </section>
 
     <div class="ribbon ribbon-foot"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>

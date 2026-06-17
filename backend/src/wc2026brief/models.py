@@ -69,12 +69,20 @@ class RecentResult(BaseModel):
     group: str
 
 
+class UpcomingMatch(BaseModel):
+    home_team: str
+    away_team: str
+    home_manager: str
+    away_manager: str
+
+
 class StatsOutput(BaseModel):
     generated_at: str
     summary: list[str]
     leaderboard: list[LeaderboardEntry]
     squads: dict[str, list[TeamResult]]
     recent_results: list[RecentResult]
+    upcoming_matches: list[UpcomingMatch]
 
 
 class SummaryOutput(BaseModel):

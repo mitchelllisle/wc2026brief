@@ -20,6 +20,7 @@ from wc2026brief.models import (
     SummaryOutput,
     TeamRecord,
     TeamResult,
+    UpcomingMatch,
 )
 
 logger = logging.getLogger(__name__)
@@ -163,6 +164,35 @@ def build_recent_results(matches: list[dict], squads: Squads) -> list[RecentResu
             break
 
     return results
+
+
+def build_upcoming_matches(matches: list[dict], squads: Squads, limit: int = 12) -> list[UpcomingMatch]:
+    team_to_owner = {
+        team.name: participant.name
+        for participant in squads.participants
+        for team in participant.teams
+    }
+
+    upcoming = sorted(
+        [m for m in matches if m.get("status") in ("SCHEDULED", "TIMED")],
+        key=lambda m: m.get("utcDate", ""),
+    )
+
+    output: list[UpcomingMatch] = []
+    for match in upcoming[:limit]:
+        home_name = match.get("homeTeam", {}).get("name", "")
+        away_name = match.get("awayTeam", {}).get("name", "")
+        if not home_name or not away_name:
+            continue
+
+        output.append(UpcomingMatch(
+            home_team=home_name,
+            away_team=away_name,
+            home_manager=team_to_owner.get(home_name, ""),
+            away_manager=team_to_owner.get(away_name, ""),
+        ))
+
+    return output
 
 
 def _limit_words(text: str, max_words: int = MAX_SUMMARY_WORDS) -> str:
@@ -352,6 +382,7 @@ class WCFetcher:
             ],
             squads={p.name: p.teams for p in participant_stats},
             recent_results=build_recent_results(matches, squads),
+            upcoming_matches=build_upcoming_matches(matches, squads),
         )
 
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))

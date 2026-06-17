@@ -3,6 +3,7 @@ from wc2026brief.fetcher import (
     _limit_words,
     build_participant_stats,
     build_recent_results,
+    build_upcoming_matches,
     compute_team_records,
     team_status,
 )
@@ -158,6 +159,32 @@ def test_build_recent_results_skips_unfinished_and_handles_missing_scores():
     null_score["score"] = {"fullTime": {"home": None, "away": None}}
 
     out = build_recent_results([scheduled, null_score], squads)
+    assert out == []
+
+
+def test_build_upcoming_matches_sorted_and_with_owners():
+    squads = _squads(
+        ("Jay", [("Brazil", "🇧🇷")]),
+        ("Mitchell", [("Argentina", "🇦🇷")]),
+    )
+    timed = _match("Argentina", "Brazil", 0, 0, status="TIMED")
+    scheduled = _match("Brazil", "Argentina", 0, 0, status="SCHEDULED")
+    timed["utcDate"] = "2026-06-15T12:00:00Z"
+    scheduled["utcDate"] = "2026-06-16T12:00:00Z"
+
+    out = build_upcoming_matches([scheduled, timed], squads)
+    assert len(out) == 2
+    assert out[0].home_team == "Argentina"
+    assert out[0].away_team == "Brazil"
+    assert out[0].home_manager == "Mitchell"
+    assert out[0].away_manager == "Jay"
+
+
+def test_build_upcoming_matches_skips_non_upcoming_status():
+    squads = _squads(("Jay", [("Brazil", "🇧🇷"), ("Argentina", "🇦🇷")]))
+    finished = _match("Argentina", "Brazil", 1, 1, status="FINISHED")
+
+    out = build_upcoming_matches([finished], squads)
     assert out == []
 
 
