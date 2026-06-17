@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-17T13:04:55.115100+10:00",
+  "generated_at": "2026-06-17T15:36:38.949926+10:00",
   "summary": [
-    "**Jay** remains the only player without a single loss — a perfect **2W-7D-0L** record keeping all 12 teams squeaky clean. Meanwhile, **Kerrod** and **Ryan** both sit on **3 teams at risk**, while **Mitchell** is sweating hardest with **4 at risk** and a brutal **2W-2D-4L** record — one more bad run and the Secretary role starts looming large. No one's been eliminated yet, but the pressure is building fast as the group stage heats up.",
-    "Big week incoming. **Mitchell** needs **England** to handle **Croatia** (Thu 6AM AEST) and **Czechia** to beat **South Africa** (Fri 2AM AEST) — both already at risk teams who can't afford another slip. **Ryan** has **Austria vs Jordan** (Wed 2PM AEST), **Portugal vs Congo DR** (Thu 3AM AEST), and **Panama vs Ghana** — where **Jay's Ghana** could knock **Ryan's Panama** deeper into danger. **Jay** also watches **Switzerland vs Bosnia-Herzegovina** (Fri 5AM AEST) with both his teams on the pitch. Spicy."
+    "The group stage is heating up and the pressure is mounting on **Mitchell**, who leads the losses table with **4 teams at risk** — more than anyone else. **Jay** is sitting pretty with just **1 team at risk** and a clean 12/12 alive, while **Kerrod** and **Ryan** both have **3 teams at risk** each. No one's been knocked out yet, but the Secretary curse is already circling — **Mitchell** is firmly in the danger zone after a rough run of **4 losses** across his squad, the worst record in the group.",
+    "Massive slate incoming. **Mitchell's** teams are everywhere — **England vs Croatia (Thu 6AM AEST)** is a huge clash, with both sides needing points. **Canada vs Qatar (Fri 8AM AEST)** pits **Mitchell's Canada** against **Kerrod's Qatar**. **Jay** has a double-header to watch: **Switzerland vs Bosnia-Herzegovina (Fri 5AM AEST)** — both his teams! **Ryan** sweats **Congo DR (Thu 3AM)**, **Panama (Thu 9AM)**, **South Korea (Fri 11AM)**, **Morocco (Sat 8AM)** and **Paraguay (Sat 1PM)** — a monster week. **United States vs Australia (Sat 5AM)** is **Kerrod vs Jay** — loser gets a team at risk. Buckle up."
   ],
   "leaderboard": [
     {
@@ -10,11 +10,11 @@
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 0,
+      "at_risk": 1,
       "record": {
         "w": 2,
         "d": 7,
-        "l": 0
+        "l": 1
       }
     },
     {
@@ -48,7 +48,7 @@
       "eliminated": 0,
       "at_risk": 4,
       "record": {
-        "w": 2,
+        "w": 3,
         "d": 2,
         "l": 4
       }
@@ -101,8 +101,8 @@
       {
         "name": "Algeria",
         "flag": "🇩🇿",
-        "status": "in",
-        "last_result": null
+        "status": "at_risk",
+        "last_result": "L"
       },
       {
         "name": "Ivory Coast",
@@ -282,7 +282,7 @@
         "name": "Argentina",
         "flag": "🇦🇷",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       },
       {
         "name": "England",
@@ -354,6 +354,15 @@
   },
   "recent_results": [
     {
+      "h_code": "ARG",
+      "h_flag": "🇦🇷",
+      "hs": 3,
+      "a_code": "ALG",
+      "a_flag": "🇩🇿",
+      "as": 0,
+      "group": "GRP J"
+    },
+    {
       "h_code": "IRQ",
       "h_flag": "🇮🇶",
       "hs": 1,
@@ -384,7 +393,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URY",
+      "a_code": "URU",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
