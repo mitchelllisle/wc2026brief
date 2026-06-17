@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-17T23:10:59.286298+10:00",
+  "generated_at": "2026-06-18T01:03:50.043325+10:00",
   "summary": [
-    "We're into the thick of the group stage and the heat is on. **Mitchell** and **Ryan** are both sweating with **4 teams at risk** each, while **Kerrod** isn't far behind on **3 at risk**. **Jay** is sitting pretty with just **1 team at risk** across a **2W-7D-1L** record — classic Jay, cool as a cucumber. **Mitchell** leads on wins with a solid **3W-2D-4L**, but those 4 losses are a concern. **Ryan** mirrors that exact record, meaning these two are neck-and-neck in the danger zone. Nobody's been eliminated yet, but the pressure is building fast — one bad run of results and the Secretary crown could be heading someone's way.",
-    "Huge slate of games coming up. **Jay** needs **Ghana** (Thu 9AM) and **Switzerland** (Fri 5AM) to hold firm — both at risk. **Kerrod** watches **Mexico vs South Korea** (Fri 11AM) and **United States vs Australia** (Sat 5AM) with sweaty palms. **Mitchell** has a monster week — **England vs Croatia** (Thu 6AM) is a mouth-watering clash where both his teams go head-to-head, one walks away at risk. He also has **Canada** (Fri 8AM), **Czechia** (Fri 2AM), and **Scotland** (Sat 8AM) to track. **Ryan** has **Portugal vs Congo DR** (Thu 3AM), **South Korea**, **Paraguay**, **Panama**, **Morocco**, and **South Africa** all in action. Ryan's got the busiest — and most nerve-wracking — few days of the lot."
+    "The group stage is heating up and the pressure is on. **Mitchell** and **Ryan** are both sweating with **4 teams at risk** each, while **Kerrod** has **3 at risk** and **Jay** is sitting pretty with just **1**. The results have been brutal — **Mitchell's** record sits at **3W-1D-4L** and **Ryan's** at **3W-2D-4L**, meaning both are already one bad run from serious damage. No one is out yet, but the Secretary crown is lurking. **Kerrod** leads on wins with **4** but has taken **3 losses**, so it's tight across the board. Every result from here starts to sting.",
+    "Massive slate incoming. **Jay** has live interest in **Switzerland vs Bosnia-Herzegovina (Fri, 5:00AM)** and **Ghana vs Panama (Thu, 9:00AM)** — both at-risk clashes that could sting. **Mitchell** faces a defining stretch: **England vs Croatia (Thu, 6:00AM)** is an all-**Mitchell** derby, **Canada vs Qatar (Fri, 8:00AM)** pits his **Canada** against **Kerrod's Qatar**, and **Scotland vs Morocco (Sat, 8:00AM)** is **Mitchell vs Ryan**. **Ryan** has **Portugal vs Congo DR (Thu, 3:00AM)** and **United States vs Australia (Sat, 5:00AM)** where **Kerrod's USA** faces **Jay's Australia**. **Mexico vs South Korea (Fri, 11:00AM)** is a tasty **Kerrod vs Ryan** clash. No room for slip-ups — losses are stacking up fast."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 1,
       "record": {
         "w": 2,
-        "d": 7,
+        "d": 6,
         "l": 1
       }
     },
@@ -37,7 +37,7 @@
       "at_risk": 4,
       "record": {
         "w": 3,
-        "d": 2,
+        "d": 1,
         "l": 4
       }
     },
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Ghana",
@@ -238,7 +238,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Sweden",
@@ -505,15 +505,6 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
-    },
-    {
-      "h_code": "CAN",
-      "h_flag": "🇨🇦",
-      "hs": 1,
-      "a_code": "BIH",
-      "a_flag": "🇧🇦",
-      "as": 1,
-      "group": "GRP B"
     },
     {
       "h_code": "KOR",
