@@ -74,13 +74,23 @@ class RecentResult(BaseModel):
     group: str
 
 
+class TitleStrengthBreakdown(BaseModel):
+    form_score: float   # 0–1, based on tournament results
+    stage_score: float  # 0–1, how far the team has progressed
+    rank_score: float   # 0–1, FIFA world ranking quality
+    stage_label: str
+    form_weight: float  # decays from 0.50 → 0.70 by tournament round
+    rank_weight: float  # decays from 0.20 → 0.00 by tournament round
+
+
 class TeamProjection(BaseModel):
     name: str
     flag: str
     manager: str
     status: str
-    next_stage_probability: float
     title_probability: float
+    fifa_rank: int | None = None
+    title_breakdown: TitleStrengthBreakdown | None = None
 
 
 class ManagerProjection(BaseModel):
@@ -97,6 +107,7 @@ class ProjectionsOutput(BaseModel):
 
 class StatsOutput(BaseModel):
     generated_at: str
+    stage: str  # "GROUP_STAGE" | "KNOCKOUT"
     summary: list[str]
     leaderboard: list[LeaderboardEntry]
     squads: dict[str, list[TeamResult]]

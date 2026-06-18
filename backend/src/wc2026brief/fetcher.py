@@ -23,29 +23,121 @@ from wc2026brief.models import (
     TeamProjection,
     TeamRecord,
     TeamResult,
+    TitleStrengthBreakdown,
 )
 
 logger = logging.getLogger(__name__)
 
 AEST = ZoneInfo("Australia/Sydney")
 FOOTBALL_API_BASE = "https://api.football-data.org/v4"
+FIFA_RANKINGS_URL = "https://api.fifa.com/api/v3/fifarankings/rankings/live?gender=1&sportType=0&language=en"
 MAX_RECENT_RESULTS = 24
 MAX_SUMMARY_WORDS = 130
-GROUP_STAGE_BASE_PROBABILITY = 0.34
-GROUP_STAGE_POINTS_WEIGHT = 0.16
-GROUP_STAGE_REMAINING_MATCH_WEIGHT = 0.08
-GROUP_STAGE_LOSS_PENALTY = 0.18
-GROUP_STAGE_GOAL_DIFF_WEIGHT = 0.02
-GROUP_STAGE_SAFE_START_BONUS = 0.08
-DEFAULT_ADVANCEMENT_PROBABILITY = 0.55
-TITLE_STRENGTH_BASE = 0.85
-TITLE_STRENGTH_WIN_WEIGHT = 0.07
-TITLE_STRENGTH_DRAW_WEIGHT = 0.02
-TITLE_STRENGTH_LOSS_PENALTY = 0.05
-TITLE_STRENGTH_GOAL_DIFF_WEIGHT = 0.01
-MIN_TITLE_STRENGTH = 0.25
+STAGE_WEIGHT = 0.30
+_BASE_FORM_WEIGHT = 0.50
+_BASE_RANK_WEIGHT = 0.20
+
+# Depth index per stage — all teams at the same stage share the same weight vector,
+# keeping cross-team scores on a uniform basis inside the normalisation sum.
+_STAGE_DEPTH: dict[str, int] = {
+    "GROUP_STAGE":    0,
+    "ROUND_OF_32":    1,
+    "ROUND_OF_16":    2,
+    "QUARTER_FINALS": 3,
+    "SEMI_FINALS":    4,
+    "THIRD_PLACE":    4,
+    "FINAL":          5,
+}
+_MAX_STAGE_DEPTH = 5   # GROUP(0) → FINAL(5)
+_MIN_RANK_WEIGHT = 0.02  # rank never fully zeroed — retains a small prior even at the final
+
+
+def _dynamic_weights(stage: str) -> tuple[float, float]:
+    """Decay rank weight by tournament round, not per-team games played.
+    Group stage: form=50%, rank=20%. Final: form=68%, rank=2%.
+    All teams at the same round share one weight vector."""
+    depth = _STAGE_DEPTH.get(stage, 0)
+    decay = depth / _MAX_STAGE_DEPTH
+    rank_w = max(_MIN_RANK_WEIGHT, _BASE_RANK_WEIGHT * (1.0 - decay))
+    form_w = _BASE_FORM_WEIGHT + (_BASE_RANK_WEIGHT - rank_w)
+    return form_w, rank_w
+
+# Names used in squads.json that differ from FIFA's English team names
+FIFA_NAME_ALIASES: dict[str, str] = {
+    "United States": "USA",
+    "Iran": "IR Iran",
+    "Turkey": "Türkiye",
+    "Ivory Coast": "Côte d'Ivoire",
+    "Cape Verde Islands": "Cabo Verde",
+    "Bosnia-Herzegovina": "Bosnia and Herzegovina",
+    "South Korea": "Korea Republic",
+}
 
 _AGENT_INSTRUCTIONS = (Path(__file__).parent / "prompts" / "agent_instructions.md").read_text()
+
+
+def fetch_fifa_rankings() -> dict[str, int]:
+    """Fetch live FIFA rankings and return a name → rank mapping.
+
+    Applies FIFA_NAME_ALIASES so squad team names map correctly to FIFA entries.
+    """
+    with httpx.Client(timeout=30) as client:
+        resp = client.get(FIFA_RANKINGS_URL)
+        resp.raise_for_status()
+    alias_lookup = {v: k for k, v in FIFA_NAME_ALIASES.items()}
+    result: dict[str, int] = {}
+    for entry in resp.json()["Results"]:
+        fifa_name = entry["TeamName"][0]["Description"]
+        rank = entry["Rank"]
+        # Store under the FIFA name
+        result[fifa_name] = rank
+        # Also store under the squad alias if one exists
+        if squad_name := alias_lookup.get(fifa_name):
+            result[squad_name] = rank
+    return result
+
+
+_STAGE_SCORES: dict[str, float] = {
+    "GROUP_STAGE":   0.00,
+    "ROUND_OF_32":   0.20,
+    "ROUND_OF_16":   0.40,
+    "QUARTER_FINALS": 0.60,
+    "SEMI_FINALS":   0.80,
+    "THIRD_PLACE":   0.85,
+    "FINAL":         1.00,
+}
+
+_STAGE_LABELS: dict[str, str] = {
+    "GROUP_STAGE":   "Group stage",
+    "ROUND_OF_32":   "Round of 32",
+    "ROUND_OF_16":   "Round of 16",
+    "QUARTER_FINALS": "Quarter-final",
+    "SEMI_FINALS":   "Semi-final",
+    "THIRD_PLACE":   "Third place",
+    "FINAL":         "Final",
+}
+
+
+def _form_score(rec: TeamRecord) -> float:
+    """0–1. Points/24 is the primary signal (8 games × 3 pts max in 2026 format).
+    Goals per game adds a small tiebreaker; presented separately in the breakdown."""
+    if rec.played == 0:
+        return 0.0
+    pts = rec.points / 24
+    gpg = (rec.gf / rec.played) * 0.02
+    return _clamp(pts + gpg, 0.0, 1.0)
+
+
+def _stage_score(rec: TeamRecord) -> float:
+    """0–1 based on how far the team has progressed."""
+    return _STAGE_SCORES.get(rec.current_stage, 0.0)
+
+
+def _rank_score(fifa_rank: int | None) -> float:
+    """0–1 based on FIFA world ranking. Rank 1 = 1.0, rank 80+ = 0.1."""
+    if fifa_rank is None:
+        return 0.5
+    return _clamp(1.0 - (fifa_rank - 1) / 80, 0.1, 1.0)
 
 
 def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
@@ -90,6 +182,7 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
                 team_won = (winner == "HOME_TEAM") == is_home
                 if team_won:
                     rec.w += 1
+                    rec.points += 3
                     rec.last_result = "W"
                 else:
                     rec.l += 1
@@ -97,14 +190,12 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
                     rec.knocked_out = True
             elif score_for > score_against:
                 rec.w += 1
+                rec.points += 3
                 rec.last_result = "W"
-                if stage == "GROUP_STAGE":
-                    rec.points += 3
             elif score_for == score_against:
                 rec.d += 1
+                rec.points += 1
                 rec.last_result = "D"
-                if stage == "GROUP_STAGE":
-                    rec.points += 1
             else:
                 rec.l += 1
                 rec.last_result = "L"
@@ -216,71 +307,46 @@ def _clamp(value: float, lower: float = 0.0, upper: float = 1.0) -> float:
     return max(lower, min(upper, value))
 
 
-def estimate_next_stage_probability(rec: TeamRecord) -> float:
-    if team_status(rec) == "out":
-        return 0.0
-    if rec.current_stage != "GROUP_STAGE" and rec.played >= 3:
-        return 1.0
-    if rec.played == 0:
-        return DEFAULT_ADVANCEMENT_PROBABILITY
-
-    remaining = max(0, 3 - rec.played)
-    goal_diff = rec.gf - rec.ga
-    # Heuristic group-stage advancement estimate:
-    # current points do most of the work, remaining fixtures preserve upside,
-    # losses reduce breathing room, and goal difference lightly breaks ties.
-    estimate = (
-        GROUP_STAGE_BASE_PROBABILITY
-        + (GROUP_STAGE_POINTS_WEIGHT * rec.points)
-        + (GROUP_STAGE_REMAINING_MATCH_WEIGHT * remaining)
-        - (GROUP_STAGE_LOSS_PENALTY * rec.l)
-        + (GROUP_STAGE_GOAL_DIFF_WEIGHT * goal_diff)
-    )
-    if rec.l == 0 and rec.points >= 4:
-        estimate += GROUP_STAGE_SAFE_START_BONUS
-    return _clamp(estimate, 0.03, 0.98)
 
 
-def _stage_factor(rec: TeamRecord) -> float:
-    return {
-        "GROUP_STAGE": 0.18,
-        "ROUND_OF_32": 0.32,
-        "ROUND_OF_16": 0.44,
-        "QUARTER_FINALS": 0.60,
-        "SEMI_FINALS": 0.78,
-        "THIRD_PLACE": 0.40,
-        "FINAL": 1.00,
-    }.get(rec.current_stage, 0.18)
-
-
-def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> ProjectionsOutput:
+def build_projections(
+    squads: Squads,
+    team_records: dict[str, TeamRecord],
+    rankings: dict[str, int] | None = None,
+) -> ProjectionsOutput:
     team_entries: list[TeamProjection] = []
     raw_title_scores: list[tuple[TeamProjection, float]] = []
 
     for participant in squads.participants:
         for team in participant.teams:
             rec = team_records.get(team.name, TeamRecord())
+            fifa_rank = rankings.get(team.name) if rankings else None
             status = team_status(rec)
-            next_stage_probability = estimate_next_stage_probability(rec)
-            # Title odds lean on a simple form signal: wins boost a team most,
-            # draws help a little, losses drag the score down, and goal
-            # difference nudges evenly-matched teams apart.
-            strength = max(
-                MIN_TITLE_STRENGTH,
-                TITLE_STRENGTH_BASE
-                + (TITLE_STRENGTH_WIN_WEIGHT * rec.w)
-                + (TITLE_STRENGTH_DRAW_WEIGHT * rec.d)
-                - (TITLE_STRENGTH_LOSS_PENALTY * rec.l)
-                + (TITLE_STRENGTH_GOAL_DIFF_WEIGHT * (rec.gf - rec.ga)),
+            form  = _form_score(rec)
+            stage = _stage_score(rec)
+            rank  = _rank_score(fifa_rank)
+            form_w, rank_w = _dynamic_weights(rec.current_stage)
+            title_score = (
+                form_w       * form
+                + STAGE_WEIGHT * stage
+                + rank_w       * rank
+            ) if status != "out" else 0.0
+            title_breakdown = TitleStrengthBreakdown(
+                form_score=round(form, 3),
+                stage_score=round(stage, 2),
+                rank_score=round(rank, 3),
+                stage_label=_STAGE_LABELS.get(rec.current_stage, rec.current_stage),
+                form_weight=round(form_w, 3),
+                rank_weight=round(rank_w, 3),
             )
-            title_score = next_stage_probability * strength * _stage_factor(rec)
             projection = TeamProjection(
                 name=team.name,
                 flag=team.flag,
                 manager=participant.name,
                 status=status,
-                next_stage_probability=round(next_stage_probability * 100, 1),
                 title_probability=0.0,
+                fifa_rank=fifa_rank,
+                title_breakdown=title_breakdown,
             )
             team_entries.append(projection)
             raw_title_scores.append((projection, title_score))
@@ -298,13 +364,13 @@ def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> Pr
             ManagerProjection(
                 name=participant.name,
                 title_probability=round(sum(team.title_probability for team in participant_teams), 1),
-                expected_teams_next_stage=round(sum(team.next_stage_probability for team in participant_teams) / 100, 2),
+                expected_teams_next_stage=0.0,
                 favourite_team=favourite.name if favourite else None,
             )
         )
 
     manager_entries.sort(key=lambda manager: manager.title_probability, reverse=True)
-    team_entries.sort(key=lambda team: (team.title_probability, team.next_stage_probability), reverse=True)
+    team_entries.sort(key=lambda team: team.title_probability, reverse=True)
     return ProjectionsOutput(managers=manager_entries, teams=team_entries)
 
 
@@ -456,6 +522,19 @@ class WCFetcher:
         logger.info("Fetching match data…")
         matches = self._fetch_matches()
 
+        logger.info("Fetching FIFA rankings…")
+        try:
+            rankings = fetch_fifa_rankings()
+        except Exception as exc:
+            logger.warning("Could not fetch FIFA rankings, proceeding without them: %s", exc)
+            rankings = None
+
+        knockout_stages = {"ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
+        stage = "KNOCKOUT" if any(
+            m.get("stage") in knockout_stages and m.get("status") == "FINISHED"
+            for m in matches
+        ) else "GROUP_STAGE"
+
         team_records = compute_team_records(matches)
         participant_stats = build_participant_stats(squads, team_records)
 
@@ -470,6 +549,7 @@ class WCFetcher:
         now = datetime.now(AEST)
         output = StatsOutput(
             generated_at=now.isoformat(),
+            stage=stage,
             summary=summary,
             leaderboard=[
                 LeaderboardEntry(
@@ -484,8 +564,11 @@ class WCFetcher:
             ],
             squads={p.name: p.teams for p in participant_stats},
             recent_results=build_recent_results(matches, squads),
-            projections=build_projections(squads, team_records),
+            projections=build_projections(squads, team_records, rankings=rankings),
         )
 
+        prev_file = self._data_dir / "stats_prev.json"
+        if self._stats_file.exists():
+            prev_file.write_text(self._stats_file.read_text())
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))
