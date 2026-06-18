@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-19T04:45:40.623354+10:00",
+  "generated_at": "2026-06-19T06:47:37.836565+10:00",
   "stage": "GROUP_STAGE",
   "summary": [
-    "The sweep is heating up and **Mitchell** is in serious trouble — sitting on a brutal **4W-3D-6L** record with **6 teams at risk**, he's one bad result away from a collapse. **Kerrod** isn't sleeping easy either with **3 at risk** and a **4W-5D-3L** ledger. Meanwhile **Jay** and **Kerrod** both sit at a tidy **25.6% strength** and lead the pack on paper, with **Jay** impressively holding just **1 team at risk** from 12. **Ryan** has **5 at risk** which is quietly alarming. Nobody's out yet, but that squeaky-clean \"12/12 alive\" scoreline is about to get messy fast.",
-    "Big weekend incoming. **Jay** sweats through **Switzerland vs Bosnia-Herzegovina** (Fri 5:00AM) — he owns *both*, so it's a guaranteed at-risk. **Jay** also has **Australia** facing **Kerrod's United States** (Sat 5:00AM) — tasty. **Ryan's Morocco** takes on **Mitchell's Scotland** (Sat 8:00AM), both at-risk candidates. **Mitchell's Haiti** face **Jay's Brazil** (Sat 10:30AM) — not great for Haiti. **Ryan's Paraguay** clash with **Kerrod's Turkey** (Sat 1:00PM) is massive. Sunday brings **Ryan's Netherlands vs Mitchell's Sweden** (3:00AM) and **Jay's Ivory Coast vs Ryan's Germany** (6:00AM) — huge. **Kerrod's Curaçao** meet **Mitchell's Ecuador** (10:00AM), then **Kerrod's Tunisia vs Jay's Japan** (2:00PM). Finally, **Jay's Spain vs Mitchell's Saudi Arabia** (Mon 2:00AM). Mitchell needs miracles."
+    "We're still in the thick of it with everyone keeping all 12 teams alive — but the pressure is mounting fast. **Mitchell** is the danger zone with a whopping **6 teams at risk**, while **Ryan** isn't far behind on **5**. The standings are razor-thin: **Jay** and **Kerrod** both sit on **25.6% strength**, with **Ryan** and **Mitchell** locked at **24.4%**. Nobody's been knocked out yet, but those loss tallies are telling — **Mitchell** has already absorbed **6 losses**, and **Ryan** is on **5**. One more slip each and teams start dropping. The Secretary throne is very much in play.",
+    "Big weekend incoming. **Mitchell** needs to watch **Canada vs Qatar** (**Fri, 8AM**) — a **Canada** loss puts them at risk. **Ryan** faces heat in **Mexico vs South Korea** (**Fri, 11AM**), **Scotland vs Morocco** (**Sat, 8AM**), **Netherlands vs Sweden** (**Sun, 3AM**), and **Germany vs Ivory Coast** (**Sun, 6AM**) — massive exposure. **Jay** is sweating **United States vs Australia** (**Sat, 5AM**), **Brazil vs Haiti** (**Sat, 10:30AM**), and **Spain vs Saudi Arabia** (**Mon, 2AM**). **Kerrod** has eyes on **Mexico vs South Korea**, **Turkey vs Paraguay** (**Sat, 1PM**), **Tunisia vs Japan** (**Sun, 2PM**), and **Belgium vs Iran** (**Mon, 5AM**). It's about to get spicy — don't blink."
   ],
   "leaderboard": [
     {
@@ -1213,11 +1213,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 0.9,
-        "fifa_rank": 63,
+        "fifa_rank": 64,
         "title_breakdown": {
           "form_score": 0.062,
           "stage_score": 0.0,
-          "rank_score": 0.225,
+          "rank_score": 0.213,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1277,11 +1277,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 0.8,
-        "fifa_rank": 64,
+        "fifa_rank": 63,
         "title_breakdown": {
           "form_score": 0.042,
           "stage_score": 0.0,
-          "rank_score": 0.213,
+          "rank_score": 0.225,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
