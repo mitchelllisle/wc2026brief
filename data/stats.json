@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-18T08:33:18.021729+10:00",
+  "generated_at": "2026-06-18T10:37:34.056181+10:00",
   "summary": [
-    "We're into the thick of the group stage and the heat is rising. **Mitchell** is firmly in the danger zone — his teams are racking up losses at an alarming rate, sitting with **5 squads at risk** and a grim **4W-2D-5L** record. **Ryan** isn't far behind with **4 at risk**, while **Kerrod** has **3 on the edge**. Meanwhile **Jay** is cruising with just **1 team at risk** and only one loss across his entire squad — quietly smug, as he should be. No one's been knocked out yet, but the Secretary conversation is already pointing squarely at **Mitchell**.",
-    "Massive slate incoming. **Jay's Ghana** faces **Ryan's Panama** on **Thu 18 Jun, 9:00AM** — both need the win badly. **Jay's Switzerland** takes on his own **Bosnia-Herzegovina** on **Fri 19 Jun, 5:00AM** — awkward. **Kerrod's United States** clashes with **Jay's Australia** on **Sat 20 Jun, 5:00AM**, huge for both. **Ryan's Morocco** hosts **Mitchell's Scotland** at **8:00AM Saturday** — Mitchell desperately needs points. Then **Ryan's Netherlands** vs **Mitchell's Sweden** on **Sun 21 Jun, 3:00AM**, followed by **Ryan's Germany** vs **Jay's Ivory Coast** at **6:00AM**. Mitchell needs wins everywhere or the Secretary's calendar is getting very full."
+    "The sweep is heating up and **Mitchell** is in real trouble — sitting on **5 teams at risk** and staring down the Secretary role already. **Kerrod** isn't sleeping easy either with **3 at risk**, while **Ryan** has **4 teams on the edge**. **Jay** is the standout with just **1 team at risk** across nine matches played — nearly squeaky clean. No one's been eliminated yet, but the losses are stacking up fast for Mitchell and Ryan. The group stage is brutal and it's about to get a whole lot messier for the bottom two.",
+    "Massive weekend incoming. **Mitchell's Uzbekistan** face **Jay's Colombia** on **Thu 12PM** — someone's going deeper at risk. **Jay's Switzerland** vs **Mitchell's Bosnia-Herzegovina** on **Fri 5AM** is a direct clash. **Kerrod's Canada** take on **Mitchell's Qatar** at **Fri 8AM**, then **Ryan's South Korea** clash with **Kerrod's Mexico** at **Fri 11AM**. **Kerrod's United States** vs **Jay's Australia** on **Sat 5AM** is huge. **Ryan's Morocco** face **Mitchell's Scotland** at **Sat 8AM**, and **Jay's Brazil** vs **Mitchell's Haiti** at **Sat 10:30AM** could be brutal for Mitchell. **Ryan's Netherlands** vs **Mitchell's Sweden** on **Sun 3AM** and **Ryan's Germany** vs **Jay's Ivory Coast** at **Sun 6AM** round out a cracking slate."
   ],
   "leaderboard": [
     {
@@ -13,7 +13,7 @@
       "at_risk": 1,
       "record": {
         "w": 2,
-        "d": 7,
+        "d": 6,
         "l": 1
       }
     },
@@ -49,7 +49,7 @@
       "at_risk": 5,
       "record": {
         "w": 4,
-        "d": 2,
+        "d": 1,
         "l": 5
       }
     }
@@ -120,7 +120,7 @@
         "name": "Bosnia-Herzegovina",
         "flag": "🇧🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Ghana",
@@ -312,7 +312,7 @@
         "name": "Canada",
         "flag": "🇨🇦",
         "status": "in",
-        "last_result": "D"
+        "last_result": null
       },
       {
         "name": "Sweden",
@@ -420,7 +420,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URU",
+      "a_code": "URY",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
@@ -523,15 +523,6 @@
       "a_flag": "🇵🇾",
       "as": 1,
       "group": "GRP D"
-    },
-    {
-      "h_code": "CAN",
-      "h_flag": "🇨🇦",
-      "hs": 1,
-      "a_code": "BIH",
-      "a_flag": "🇧🇦",
-      "as": 1,
-      "group": "GRP B"
     },
     {
       "h_code": "KOR",
