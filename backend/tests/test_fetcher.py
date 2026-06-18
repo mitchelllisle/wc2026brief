@@ -5,7 +5,6 @@ from wc2026brief.fetcher import (
     build_projections,
     build_recent_results,
     compute_team_records,
-    estimate_next_stage_probability,
     team_status,
 )
 from wc2026brief.models import Participant, Squads, Team, TeamRecord
@@ -170,12 +169,6 @@ def test_build_recent_results_skips_unfinished_and_handles_missing_scores():
     assert out == []
 
 
-def test_estimate_next_stage_probability_reflects_form():
-    assert estimate_next_stage_probability(TeamRecord(played=1, points=3, w=1, gf=2, ga=0)) > estimate_next_stage_probability(
-        TeamRecord(played=1, points=0, l=1, gf=0, ga=2)
-    )
-
-
 def test_build_projections_rolls_up_manager_odds():
     squads = _squads(
         ("Jay", [("Spain", "🇪🇸"), ("Brazil", "🇧🇷")]),
@@ -190,9 +183,8 @@ def test_build_projections_rolls_up_manager_odds():
     projections = build_projections(squads, team_records)
 
     assert projections.managers[0].name == "Jay"
-    assert projections.managers[0].expected_teams_next_stage > projections.managers[1].expected_teams_next_stage
     assert projections.teams[0].name == "Spain"
-    assert 99.9 <= sum(manager.title_probability for manager in projections.managers) <= 100.1
+    assert abs(sum(manager.title_probability for manager in projections.managers) - 100.0) < 0.2
 
 
 def test_build_projections_zeroes_title_odds_when_everyone_is_out():

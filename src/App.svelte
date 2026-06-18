@@ -150,7 +150,7 @@
   );
   let projectionDeck = $derived(
     projectedLeader
-      ? `${projectedLeader.name} leads on title strength with ${projectedTeam?.flag ?? ''} ${projectedTeam?.name ?? 'nobody yet'} the highest-rated individual pick.`
+      ? `${projectedLeader.name} leads on title strength with ${projectedTeam?.flag ?? ''} ${projectedTeam?.name ?? 'nobody yet'} his highest-rated individual pick.`
       : `${ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has ${tabName}'s name all over it.`
   );
   let teamFlagMap = $derived(

@@ -140,13 +140,6 @@ def _rank_score(fifa_rank: int | None) -> float:
     return _clamp(1.0 - (fifa_rank - 1) / 80, 0.1, 1.0)
 
 
-def estimate_next_stage_probability(rec: TeamRecord) -> float:
-    """Estimate probability (0–1) that a team advances to the next stage, based on form and stage progress."""
-    if team_status(rec) == "out":
-        return 0.0
-    return _clamp(_form_score(rec) + _stage_score(rec) * 0.5, 0.0, 1.0)
-
-
 def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
     """Build a per-team win/draw/loss record from a list of API match objects.
 
@@ -367,15 +360,11 @@ def build_projections(
     for participant in squads.participants:
         participant_teams = [team for team in team_entries if team.manager == participant.name]
         favourite = max(participant_teams, key=lambda team: team.title_probability) if participant_teams else None
-        expected_next = round(sum(
-            estimate_next_stage_probability(team_records.get(t.name, TeamRecord()))
-            for t in participant.teams
-        ), 2)
         manager_entries.append(
             ManagerProjection(
                 name=participant.name,
                 title_probability=round(sum(team.title_probability for team in participant_teams), 1),
-                expected_teams_next_stage=expected_next,
+                expected_teams_next_stage=0.0,
                 favourite_team=favourite.name if favourite else None,
             )
         )
@@ -473,7 +462,7 @@ class WCFetcher:
             resp.raise_for_status()
         return resp.json()["matches"]
 
-    def _generate_summary(self, participant_stats: list[ParticipantStats], upcoming: list[dict]) -> list[str]:
+    def _generate_summary(self, participant_stats: list[ParticipantStats], upcoming: list[dict], projections: ProjectionsOutput | None = None) -> list[str]:
         """Generate a 2-paragraph AI briefing for the current sweep standings.
 
         Args:
@@ -483,9 +472,11 @@ class WCFetcher:
         Returns:
             List of paragraph strings as produced by the summary agent.
         """
+        strength_by_name = {m.name: m.title_probability for m in projections.managers} if projections else {}
         leaderboard_text = "\n".join(
             f"{'💀' if i == len(participant_stats) - 1 else i + 1}. {p.name}: "
-            f"{p.teams_remaining}/12 alive, {p.eliminated} out, {p.at_risk} at risk, "
+            + (f"{strength_by_name[p.name]:.1f}% strength, " if p.name in strength_by_name else "")
+            + f"{p.teams_remaining}/12 alive, {p.eliminated} out, {p.at_risk} at risk, "
             f"{p.record.w}W-{p.record.d}D-{p.record.l}L"
             for i, p in enumerate(participant_stats)
         )
@@ -504,9 +495,8 @@ class WCFetcher:
 
         team_to_owner = {t.name: p.name for p in participant_stats for t in p.teams}
 
-        prompt = f"""Standings:
+        prompt = f"""Standings (sorted by survival, strength % = title probability index):
             {leaderboard_text}
-
             Upcoming matches:
             {upcoming_text}
 
@@ -554,8 +544,10 @@ class WCFetcher:
             key=lambda m: m["utcDate"],
         )
 
+        projections = build_projections(squads, team_records, rankings=rankings)
+
         logger.info("Generating summary…")
-        summary = self._generate_summary(participant_stats, upcoming)
+        summary = self._generate_summary(participant_stats, upcoming, projections=projections)
 
         now = datetime.now(AEST)
         output = StatsOutput(
@@ -575,7 +567,7 @@ class WCFetcher:
             ],
             squads={p.name: p.teams for p in participant_stats},
             recent_results=build_recent_results(matches, squads),
-            projections=build_projections(squads, team_records, rankings=rankings),
+            projections=projections,
         )
 
         prev_file = self._data_dir / "stats_prev.json"
