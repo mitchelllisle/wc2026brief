@@ -286,19 +286,22 @@ def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> Pr
             raw_title_scores.append((projection, title_score))
 
     total_title_score = sum(score for _, score in raw_title_scores)
+    title_probability_scale = (100 / total_title_score) if total_title_score else 0.0
     for projection, title_score in raw_title_scores:
-        projection.title_probability = round((title_score / total_title_score) * 100, 1) if total_title_score else 0.0
+        projection.title_probability = round(title_score * title_probability_scale, 1)
 
     manager_entries: list[ManagerProjection] = []
     for participant in squads.participants:
         participant_teams = [team for team in team_entries if team.manager == participant.name]
         favourite = max(participant_teams, key=lambda team: team.title_probability) if participant_teams else None
-        manager_entries.append(ManagerProjection(
-            name=participant.name,
-            title_probability=round(sum(team.title_probability for team in participant_teams), 1),
-            expected_teams_next_stage=round(sum(team.next_stage_probability for team in participant_teams) / 100, 2),
-            favourite_team=favourite.name if favourite else None,
-        ))
+        manager_entries.append(
+            ManagerProjection(
+                name=participant.name,
+                title_probability=round(sum(team.title_probability for team in participant_teams), 1),
+                expected_teams_next_stage=round(sum(team.next_stage_probability for team in participant_teams) / 100, 2),
+                favourite_team=favourite.name if favourite else None,
+            )
+        )
 
     manager_entries.sort(key=lambda manager: manager.title_probability, reverse=True)
     team_entries.sort(key=lambda team: (team.title_probability, team.next_stage_probability), reverse=True)
