@@ -192,7 +192,7 @@ def test_build_projections_rolls_up_manager_odds():
     assert projections.managers[0].name == "Jay"
     assert projections.managers[0].expected_teams_next_stage > projections.managers[1].expected_teams_next_stage
     assert projections.teams[0].name == "Spain"
-    assert sum(manager.title_probability for manager in projections.managers) >= 99.9
+    assert 99.9 <= sum(manager.title_probability for manager in projections.managers) <= 100.1
 
 
 def test_limit_words_truncates_to_130_words():

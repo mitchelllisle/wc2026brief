@@ -31,6 +31,17 @@ AEST = ZoneInfo("Australia/Sydney")
 FOOTBALL_API_BASE = "https://api.football-data.org/v4"
 MAX_RECENT_RESULTS = 24
 MAX_SUMMARY_WORDS = 130
+GROUP_STAGE_BASE_PROBABILITY = 0.34
+GROUP_STAGE_POINTS_WEIGHT = 0.16
+GROUP_STAGE_REMAINING_MATCH_WEIGHT = 0.08
+GROUP_STAGE_LOSS_PENALTY = 0.18
+GROUP_STAGE_GOAL_DIFF_WEIGHT = 0.02
+GROUP_STAGE_SAFE_START_BONUS = 0.08
+TITLE_STRENGTH_BASE = 0.85
+TITLE_STRENGTH_WIN_WEIGHT = 0.07
+TITLE_STRENGTH_DRAW_WEIGHT = 0.02
+TITLE_STRENGTH_LOSS_PENALTY = 0.05
+TITLE_STRENGTH_GOAL_DIFF_WEIGHT = 0.01
 
 _AGENT_INSTRUCTIONS = (Path(__file__).parent / "prompts" / "agent_instructions.md").read_text()
 
@@ -97,8 +108,6 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
                 rec.last_result = "L"
                 if is_knockout:
                     rec.knocked_out = True
-                elif stage == "GROUP_STAGE":
-                    rec.points += 0
 
     return records
 
@@ -215,9 +224,18 @@ def estimate_next_stage_probability(rec: TeamRecord) -> float:
 
     remaining = max(0, 3 - rec.played)
     goal_diff = rec.gf - rec.ga
-    estimate = 0.34 + (0.16 * rec.points) + (0.08 * remaining) - (0.18 * rec.l) + (0.02 * goal_diff)
+    # Heuristic group-stage advancement estimate:
+    # current points do most of the work, remaining fixtures preserve upside,
+    # losses reduce breathing room, and goal difference lightly breaks ties.
+    estimate = (
+        GROUP_STAGE_BASE_PROBABILITY
+        + (GROUP_STAGE_POINTS_WEIGHT * rec.points)
+        + (GROUP_STAGE_REMAINING_MATCH_WEIGHT * remaining)
+        - (GROUP_STAGE_LOSS_PENALTY * rec.l)
+        + (GROUP_STAGE_GOAL_DIFF_WEIGHT * goal_diff)
+    )
     if rec.l == 0 and rec.points >= 4:
-        estimate += 0.08
+        estimate += GROUP_STAGE_SAFE_START_BONUS
     return _clamp(estimate, 0.03, 0.98)
 
 
@@ -242,7 +260,17 @@ def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> Pr
             rec = team_records.get(team.name, TeamRecord())
             status = team_status(rec)
             next_stage_probability = estimate_next_stage_probability(rec)
-            strength = max(0.25, 0.85 + (0.07 * rec.w) + (0.02 * rec.d) - (0.05 * rec.l) + (0.01 * (rec.gf - rec.ga)))
+            # Title odds lean on a simple form signal: wins boost a team most,
+            # draws help a little, losses drag the score down, and goal
+            # difference nudges evenly-matched teams apart.
+            strength = max(
+                0.25,
+                TITLE_STRENGTH_BASE
+                + (TITLE_STRENGTH_WIN_WEIGHT * rec.w)
+                + (TITLE_STRENGTH_DRAW_WEIGHT * rec.d)
+                - (TITLE_STRENGTH_LOSS_PENALTY * rec.l)
+                + (TITLE_STRENGTH_GOAL_DIFF_WEIGHT * (rec.gf - rec.ga)),
+            )
             title_score = next_stage_probability * strength * _stage_factor(rec)
             projection = TeamProjection(
                 name=team.name,
