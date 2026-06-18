@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-06-18T15:33:46.870872+10:00",
+  "generated_at": "2026-06-18T17:36:00.328770+10:00",
   "summary": [
-    "We're deep into the group stage and the pressure is mounting. **Mitchell** is firmly in the danger zone with a whopping **6 teams at risk** after going **4W-2D-6L** — the Secretary throne is calling his name. **Ryan** isn't far behind with **4 at risk** off a **4L** record, while **Kerrod** has **3 at risk** but at least has wins on the board. **Jay** is cruising — just **1 team at risk** and only **1 loss** all tournament. No one's been eliminated yet, but with group stages tightening up, that's about to change fast.",
-    "Huge weekend incoming. **Mitchell's Czechia** face **Ryan's South Africa** on **Fri 19 Jun, 2:00AM AEST** — both already at risk, so someone could be in serious trouble. **Jay's Switzerland** take on **Jay's Bosnia-Herzegovina** at **5:00AM** — a clean sweep for Jay either way. **Kerrod's United States** clash with **Jay's Australia** at **Sat 20 Jun, 5:00AM** — two big nations going head-to-head. **Mitchell's Scotland** vs **Ryan's Morocco** at **8:00AM** is massive with both sides needing a result. Then **Ryan's Netherlands** face **Mitchell's Sweden** on **Sun 21 Jun, 3:00AM**, and **Ryan's Germany** take on **Jay's Ivory Coast** at **6:00AM** — Ryan desperately needs wins to stop the bleeding."
+    "We're deep into the group stage and the heat is on. **Mitchell** is in serious trouble — **6 teams at risk** with a brutal **4W-2D-6L** record, the worst loss tally by a mile. **Ryan** isn't sleeping easy either with **5 at risk** off the back of **5 losses**. **Kerrod** has managed to keep things together at **3 at risk** despite taking 3 Ls, while **Jay** is sitting pretty with just **1 team at risk** and only **1 loss** across 12 teams — absolute steel nerves stuff. Nobody's been eliminated yet, but the gap between Jay and Mitchell is already enormous. The Secretary curse is looming large.",
+    "This weekend is massive. **Mitchell's Czechia** face **Ryan's South Africa** on **Fri 19 Jun at 2:00AM** — both sides are desperate. **Jay's Switzerland** host **Jay's Bosnia-Herzegovina** at **5:00AM**, a bizarre all-Jay clash. **Mitchell's Canada** take on **Kerrod's Qatar** at **8:00AM**, while **Kerrod's Mexico** face **Ryan's South Korea** at **11:00AM**. Saturday brings **Kerrod's United States vs Jay's Australia** at **5:00AM** — huge for both. **Ryan's Morocco vs Mitchell's Scotland** at **8:00AM** is a must-watch. Sunday's standouts: **Ryan's Netherlands vs Mitchell's Sweden** at **3:00AM** and **Ryan's Germany vs Jay's Ivory Coast** at **6:00AM**. Mitchell needs wins everywhere — another heavy weekend could make the Secretary role a certainty."
   ],
   "leaderboard": [
     {
@@ -12,7 +12,7 @@
       "eliminated": 0,
       "at_risk": 1,
       "record": {
-        "w": 3,
+        "w": 4,
         "d": 7,
         "l": 1
       }
@@ -34,11 +34,11 @@
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 4,
+      "at_risk": 5,
       "record": {
         "w": 3,
         "d": 4,
-        "l": 4
+        "l": 5
       }
     },
     {
@@ -126,7 +126,7 @@
         "name": "Ghana",
         "flag": "🇬🇭",
         "status": "in",
-        "last_result": null
+        "last_result": "W"
       }
     ],
     "Kerrod": [
@@ -249,8 +249,8 @@
       {
         "name": "Panama",
         "flag": "🇵🇦",
-        "status": "in",
-        "last_result": null
+        "status": "at_risk",
+        "last_result": "L"
       },
       {
         "name": "Congo DR",
@@ -361,6 +361,15 @@
       "a_flag": "🇨🇴",
       "as": 3,
       "group": "GRP K"
+    },
+    {
+      "h_code": "GHA",
+      "h_flag": "🇬🇭",
+      "hs": 1,
+      "a_code": "PAN",
+      "a_flag": "🇵🇦",
+      "as": 0,
+      "group": "GRP L"
     },
     {
       "h_code": "ENG",
