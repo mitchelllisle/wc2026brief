@@ -195,6 +195,19 @@ def test_build_projections_rolls_up_manager_odds():
     assert 99.9 <= sum(manager.title_probability for manager in projections.managers) <= 100.1
 
 
+def test_build_projections_zeroes_title_odds_when_everyone_is_out():
+    squads = _squads(("Jay", [("Spain", "🇪🇸")]), ("Ryan", [("Germany", "🇩🇪")]))
+    team_records = {
+        "Spain": TeamRecord(l=2, played=2, current_stage="GROUP_STAGE"),
+        "Germany": TeamRecord(l=2, played=2, current_stage="GROUP_STAGE"),
+    }
+
+    projections = build_projections(squads, team_records)
+
+    assert all(manager.title_probability == 0.0 for manager in projections.managers)
+    assert all(team.title_probability == 0.0 for team in projections.teams)
+
+
 def test_limit_words_truncates_to_130_words():
     text = " ".join([f"w{i}" for i in range(150)])
     limited = _limit_words(text, 130)

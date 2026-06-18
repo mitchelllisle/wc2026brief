@@ -37,11 +37,13 @@ GROUP_STAGE_REMAINING_MATCH_WEIGHT = 0.08
 GROUP_STAGE_LOSS_PENALTY = 0.18
 GROUP_STAGE_GOAL_DIFF_WEIGHT = 0.02
 GROUP_STAGE_SAFE_START_BONUS = 0.08
+DEFAULT_ADVANCEMENT_PROBABILITY = 0.55
 TITLE_STRENGTH_BASE = 0.85
 TITLE_STRENGTH_WIN_WEIGHT = 0.07
 TITLE_STRENGTH_DRAW_WEIGHT = 0.02
 TITLE_STRENGTH_LOSS_PENALTY = 0.05
 TITLE_STRENGTH_GOAL_DIFF_WEIGHT = 0.01
+MIN_TITLE_STRENGTH = 0.25
 
 _AGENT_INSTRUCTIONS = (Path(__file__).parent / "prompts" / "agent_instructions.md").read_text()
 
@@ -220,7 +222,7 @@ def estimate_next_stage_probability(rec: TeamRecord) -> float:
     if rec.current_stage != "GROUP_STAGE" and rec.played >= 3:
         return 1.0
     if rec.played == 0:
-        return 0.55
+        return DEFAULT_ADVANCEMENT_PROBABILITY
 
     remaining = max(0, 3 - rec.played)
     goal_diff = rec.gf - rec.ga
@@ -264,7 +266,7 @@ def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> Pr
             # draws help a little, losses drag the score down, and goal
             # difference nudges evenly-matched teams apart.
             strength = max(
-                0.25,
+                MIN_TITLE_STRENGTH,
                 TITLE_STRENGTH_BASE
                 + (TITLE_STRENGTH_WIN_WEIGHT * rec.w)
                 + (TITLE_STRENGTH_DRAW_WEIGHT * rec.d)
@@ -283,14 +285,14 @@ def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> Pr
             team_entries.append(projection)
             raw_title_scores.append((projection, title_score))
 
-    total_title_score = sum(score for _, score in raw_title_scores) or 1.0
+    total_title_score = sum(score for _, score in raw_title_scores)
     for projection, title_score in raw_title_scores:
-        projection.title_probability = round((title_score / total_title_score) * 100, 1)
+        projection.title_probability = round((title_score / total_title_score) * 100, 1) if total_title_score else 0.0
 
     manager_entries: list[ManagerProjection] = []
     for participant in squads.participants:
         participant_teams = [team for team in team_entries if team.manager == participant.name]
-        favourite = max(participant_teams, key=lambda team: team.title_probability, default=None)
+        favourite = max(participant_teams, key=lambda team: team.title_probability) if participant_teams else None
         manager_entries.append(ManagerProjection(
             name=participant.name,
             title_probability=round(sum(team.title_probability for team in participant_teams), 1),

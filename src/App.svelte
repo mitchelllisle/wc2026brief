@@ -114,6 +114,11 @@
   let totalOut = $derived(ranked.reduce((s, p) => s + p.eliminated, 0));
   let projectedLeader = $derived(data?.projections?.managers?.[0] ?? null);
   let projectedTeam = $derived(data?.projections?.teams?.[0] ?? null);
+  let projectionDeck = $derived(
+    projectedLeader
+      ? `${projectedLeader.name} now leads the title race at ${formatProbability(projectedLeader.title_probability)}, with ${projectedTeam?.flag ?? ''} ${projectedTeam?.name ?? 'nobody yet'} the likeliest squad pick to carry someone deep.`
+      : `${ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has ${tabName}'s name all over it.`
+  );
 </script>
 
 <div class="ribbon"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>
@@ -188,7 +193,7 @@
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
         <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the Secretary role</h1>
-        <p class="deck">{#if projectedLeader}{projectedLeader.name} now leads the title race at {formatProbability(projectedLeader.title_probability)}, with {projectedTeam?.flag ?? ''} {projectedTeam?.name ?? 'nobody yet'} the likeliest squad pick to carry someone deep.{:else}{ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.{/if}</p>
+        <p class="deck">{projectionDeck}</p>
         <div class="report-cols">
           {#each data.summary as p}
             <p>{@html renderPara(p)}</p>
