@@ -140,6 +140,13 @@ def _rank_score(fifa_rank: int | None) -> float:
     return _clamp(1.0 - (fifa_rank - 1) / 80, 0.1, 1.0)
 
 
+def estimate_next_stage_probability(rec: TeamRecord) -> float:
+    """Estimate probability (0–1) that a team advances to the next stage, based on form and stage progress."""
+    if team_status(rec) == "out":
+        return 0.0
+    return _clamp(_form_score(rec) + _stage_score(rec) * 0.5, 0.0, 1.0)
+
+
 def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
     """Build a per-team win/draw/loss record from a list of API match objects.
 
@@ -360,11 +367,15 @@ def build_projections(
     for participant in squads.participants:
         participant_teams = [team for team in team_entries if team.manager == participant.name]
         favourite = max(participant_teams, key=lambda team: team.title_probability) if participant_teams else None
+        expected_next = round(sum(
+            estimate_next_stage_probability(team_records.get(t.name, TeamRecord()))
+            for t in participant.teams
+        ), 2)
         manager_entries.append(
             ManagerProjection(
                 name=participant.name,
                 title_probability=round(sum(team.title_probability for team in participant_teams), 1),
-                expected_teams_next_stage=0.0,
+                expected_teams_next_stage=expected_next,
                 favourite_team=favourite.name if favourite else None,
             )
         )

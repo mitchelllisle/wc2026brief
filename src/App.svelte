@@ -143,7 +143,11 @@
   let totalAlive = $derived(ranked.reduce((s, p) => s + p.teams_remaining, 0));
   let totalOut = $derived(ranked.reduce((s, p) => s + p.eliminated, 0));
   let projectedLeader = $derived(data?.projections?.managers?.[0] ?? null);
-  let projectedTeam = $derived(data?.projections?.teams?.[0] ?? null);
+  let projectedTeam = $derived(
+    projectedLeader?.favourite_team
+      ? (data?.projections?.teams?.find(t => t.name === projectedLeader.favourite_team) ?? null)
+      : null
+  );
   let projectionDeck = $derived(
     projectedLeader
       ? `${projectedLeader.name} leads on title strength with ${projectedTeam?.flag ?? ''} ${projectedTeam?.name ?? 'nobody yet'} the highest-rated individual pick.`
