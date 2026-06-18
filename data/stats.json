@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-06-19T01:02:43.548079+10:00",
+  "generated_at": "2026-06-19T03:01:18.339946+10:00",
   "stage": "GROUP_STAGE",
   "summary": [
-    "We're into the thick of group stage chaos and **Mitchell** is already sweating bullets — sitting on **6 teams at risk** and earning the 💀 tag despite a respectable **24.4% strength**. **Ryan** isn't sleeping easy either with **5 at risk**, while **Kerrod** has **3** and **Jay** is cruising with just **1**. Jay's lone blemish came via that single loss, but his **4W-7D-1L** record is the envy of the group. Mitchell's **4W-2D-6L** is genuinely alarming — six losses from twelve teams is Secretary-level behaviour and the matches haven't even peaked yet. Kerrod and Ryan are scrapping in the middle, and nobody's been eliminated yet, meaning the chaos is just getting started.",
-    "Friday kicks off with fireworks — **Mitchell's Czechia** face **Ryan's South Africa** at **2:00AM AEST**, a must-watch with both sides' owners desperate to avoid another at-risk tag. At **5:00AM**, **Jay's Switzerland** clash with **Jay's Bosnia-Herzegovina** — a weird one where Jay literally can't lose a team! **Kerrod's Qatar** meet **Mitchell's Canada** at **8:00AM**, then **Kerrod's Mexico** take on **Ryan's South Korea** at **11:00AM**. Saturday brings **Kerrod's United States** vs **Jay's Australia** at **5:00AM** — huge for both — followed by **Ryan's Morocco** vs **Mitchell's Scotland** at **8:00AM**. Sunday sees **Ryan's Netherlands** vs **Mitchell's Sweden** at **3:00AM**, then **Ryan's Germany** vs **Jay's Ivory Coast** at **6:00AM**, and **Kerrod's Tunisia** vs **Jay's Japan** at **2:00PM**. Buckle up."
+    "Here's where we're at, lads. **Jay** is sitting pretty at the top with **25.9% strength** and only **1 team at risk** — tidy. **Kerrod** is breathing down his neck at **25.7%** but already has **3 at risk** after going **4W-5D-3L**. **Ryan** has **5 teams at risk** and is starting to look nervous at **24.0%**. And then there's **Mitchell** — **6 teams at risk**, a horror record of **4W-2D-6L**, and firmly wearing the 💀 skull. Nobody's been knocked out yet, but Mitchell is absolutely one bad round away from a proper crisis.",
+    "Massive weekend coming up. **Jay** is in nearly every match — watch **Switzerland vs Bosnia-Herzegovina** (Fri 5:00AM), **Australia vs United States** (Sat 5:00AM), **Ivory Coast vs Germany** (Sun 6:00AM), and **Spain vs Saudi Arabia** (Mon 2:00AM). **Kerrod** needs big results from **Mexico vs South Korea** (Fri 11:00AM), **Turkey vs Paraguay** (Sat 1:00PM), and **Tunisia vs Japan** (Sun 2:00PM) to trim those at-risk teams. **Ryan** has high stakes in **Netherlands vs Sweden** (Sun 3:00AM) and **Germany vs Ivory Coast** (Sun 6:00AM). **Mitchell** sweats through **Canada vs Qatar** (Fri 8:00AM), **Brazil vs Haiti** (Sat 10:30AM), **Scotland vs Morocco** (Sat 8:00AM), and **Ecuador vs Curaçao** (Sun 10:00AM). One more bad day and Mitchell's writing the group calendar for a year. 😬"
   ],
   "leaderboard": [
     {
@@ -587,13 +587,13 @@
       },
       {
         "name": "Mitchell",
-        "title_probability": 24.4,
+        "title_probability": 24.5,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina"
       },
       {
         "name": "Ryan",
-        "title_probability": 24.2,
+        "title_probability": 24.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Germany"
       }
@@ -1100,12 +1100,12 @@
         "flag": "🇨🇩",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 1.6,
-        "fifa_rank": 43,
+        "title_probability": 1.5,
+        "fifa_rank": 44,
         "title_breakdown": {
           "form_score": 0.062,
           "stage_score": 0.0,
-          "rank_score": 0.475,
+          "rank_score": 0.463,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1144,32 +1144,32 @@
         }
       },
       {
-        "name": "Paraguay",
-        "flag": "🇵🇾",
-        "manager": "Ryan",
+        "name": "Czechia",
+        "flag": "🇨🇿",
+        "manager": "Mitchell",
         "status": "at_risk",
         "title_probability": 1.4,
-        "fifa_rank": 42,
+        "fifa_rank": 39,
         "title_breakdown": {
           "form_score": 0.02,
           "stage_score": 0.0,
-          "rank_score": 0.488,
+          "rank_score": 0.525,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         }
       },
       {
-        "name": "Czechia",
-        "flag": "🇨🇿",
-        "manager": "Mitchell",
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "manager": "Ryan",
         "status": "at_risk",
         "title_probability": 1.3,
-        "fifa_rank": 44,
+        "fifa_rank": 43,
         "title_breakdown": {
           "form_score": 0.02,
           "stage_score": 0.0,
-          "rank_score": 0.463,
+          "rank_score": 0.475,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1181,11 +1181,11 @@
         "manager": "Ryan",
         "status": "at_risk",
         "title_probability": 1.3,
-        "fifa_rank": 40,
+        "fifa_rank": 41,
         "title_breakdown": {
           "form_score": 0.0,
           "stage_score": 0.0,
-          "rank_score": 0.512,
+          "rank_score": 0.5,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1213,11 +1213,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 1.0,
-        "fifa_rank": 63,
+        "fifa_rank": 62,
         "title_breakdown": {
           "form_score": 0.062,
           "stage_score": 0.0,
-          "rank_score": 0.225,
+          "rank_score": 0.238,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1309,11 +1309,11 @@
         "manager": "Ryan",
         "status": "at_risk",
         "title_probability": 0.6,
-        "fifa_rank": 61,
+        "fifa_rank": 63,
         "title_breakdown": {
           "form_score": 0.0,
           "stage_score": 0.0,
-          "rank_score": 0.25,
+          "rank_score": 0.225,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
