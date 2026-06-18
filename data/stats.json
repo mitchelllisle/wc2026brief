@@ -569,5 +569,419 @@
       "as": 0,
       "group": "GRP A"
     }
-  ]
+  ],
+  "projections": {
+    "managers": [
+      {
+        "name": "Jay",
+        "title_probability": 28.8,
+        "expected_teams_next_stage": 8.84,
+        "favourite_team": "Colombia"
+      },
+      {
+        "name": "Kerrod",
+        "title_probability": 26.4,
+        "expected_teams_next_stage": 8.12,
+        "favourite_team": "France"
+      },
+      {
+        "name": "Mitchell",
+        "title_probability": 22.8,
+        "expected_teams_next_stage": 7.04,
+        "favourite_team": "Argentina"
+      },
+      {
+        "name": "Ryan",
+        "title_probability": 22.8,
+        "expected_teams_next_stage": 7.08,
+        "favourite_team": "Germany"
+      }
+    ],
+    "teams": [
+      {
+        "name": "Colombia",
+        "flag": "🇨🇴",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Australia",
+        "flag": "🇦🇺",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Ivory Coast",
+        "flag": "🇨🇮",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Ghana",
+        "flag": "🇬🇭",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "France",
+        "flag": "🇫🇷",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Mexico",
+        "flag": "🇲🇽",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "United States",
+        "flag": "🇺🇸",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Norway",
+        "flag": "🇳🇴",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "manager": "Mitchell",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "manager": "Mitchell",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Sweden",
+        "flag": "🇸🇪",
+        "manager": "Mitchell",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Scotland",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+        "manager": "Mitchell",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Austria",
+        "flag": "🇦🇹",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 98.0,
+        "title_probability": 3.3
+      },
+      {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Brazil",
+        "flag": "🇧🇷",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Switzerland",
+        "flag": "🇨🇭",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Egypt",
+        "flag": "🇪🇬",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Cape Verde Islands",
+        "flag": "🇨🇻",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Bosnia-Herzegovina",
+        "flag": "🇧🇦",
+        "manager": "Jay",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Uruguay",
+        "flag": "🇺🇾",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Iran",
+        "flag": "🇮🇷",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Qatar",
+        "flag": "🇶🇦",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "New Zealand",
+        "flag": "🇳🇿",
+        "manager": "Kerrod",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "manager": "Mitchell",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Saudi Arabia",
+        "flag": "🇸🇦",
+        "manager": "Mitchell",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Congo DR",
+        "flag": "🇨🇩",
+        "manager": "Ryan",
+        "status": "in",
+        "next_stage_probability": 66.0,
+        "title_probability": 2.1
+      },
+      {
+        "name": "Algeria",
+        "flag": "🇩🇿",
+        "manager": "Jay",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Turkey",
+        "flag": "🇹🇷",
+        "manager": "Kerrod",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Tunisia",
+        "flag": "🇹🇳",
+        "manager": "Kerrod",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Curaçao",
+        "flag": "🇨🇼",
+        "manager": "Kerrod",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Croatia",
+        "flag": "🇭🇷",
+        "manager": "Mitchell",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Senegal",
+        "flag": "🇸🇳",
+        "manager": "Mitchell",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Ecuador",
+        "flag": "🇪🇨",
+        "manager": "Mitchell",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Czechia",
+        "flag": "🇨🇿",
+        "manager": "Mitchell",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Uzbekistan",
+        "flag": "🇺🇿",
+        "manager": "Mitchell",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Haiti",
+        "flag": "🇭🇹",
+        "manager": "Mitchell",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "manager": "Ryan",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Panama",
+        "flag": "🇵🇦",
+        "manager": "Ryan",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Iraq",
+        "flag": "🇮🇶",
+        "manager": "Ryan",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "South Africa",
+        "flag": "🇿🇦",
+        "manager": "Ryan",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      },
+      {
+        "name": "Jordan",
+        "flag": "🇯🇴",
+        "manager": "Ryan",
+        "status": "at_risk",
+        "next_stage_probability": 30.0,
+        "title_probability": 0.9
+      }
+    ]
+  }
 }

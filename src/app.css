@@ -214,6 +214,17 @@ tr.tab .c-rank .n { color: var(--out); }
 tr.leader td { box-shadow: inset 3px 0 0 var(--accent); }
 tr.tab td { box-shadow: inset 3px 0 0 var(--out); }
 
+.projection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 18px; }
+.projection-card { border: 1px solid var(--line); background: var(--paper); padding: 18px; border-radius: 6px; }
+.projection-card.leader { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); box-shadow: inset 3px 0 0 var(--accent); }
+.projection-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.projection-name { font-size: 18px; font-weight: 900; letter-spacing: -0.02em; text-transform: uppercase; }
+.projection-odds { font-size: 42px; font-weight: 900; letter-spacing: -0.05em; color: var(--accent); line-height: 1; margin: 16px 0 18px; }
+.projection-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-top: 10px; margin-top: 10px; border-top: 1px solid var(--line-soft); font-size: 12px; color: var(--txt-2); }
+.projection-meta strong { color: var(--txt); font-size: 13px; }
+.projection-table-wrap { margin-top: 20px; }
+.projection-table .c-name .nm span { font-size: 16px; }
+
 .squads { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); }
 .sq { padding: 18px 18px 10px; border-right: 1px solid var(--line-soft); border-bottom: 1px solid var(--line); }
 .sq:nth-child(4n) { border-right: none; }
@@ -248,6 +259,7 @@ tr.tab td { box-shadow: inset 3px 0 0 var(--out); }
   .lede { grid-template-columns: 1fr; }
   .lede-main { border-right: none; padding-right: 0; }
   .lede-side { padding: 22px 0 26px; }
+  .projection-grid { grid-template-columns: repeat(2, 1fr); }
   .squads { grid-template-columns: repeat(2, 1fr); }
   .sq:nth-child(2n) { border-right: none; }
   .sq:nth-child(4n) { border-right: 1px solid var(--line-soft); }
@@ -258,6 +270,7 @@ tr.tab td { box-shadow: inset 3px 0 0 var(--out); }
   .brand-logo img { width: 52px; }
   .np-title { gap: 10px; }
   .report-cols { grid-template-columns: 1fr; }
+  .projection-grid { grid-template-columns: 1fr; }
   .squads { grid-template-columns: 1fr; }
   .sq { border-right: none !important; }
   .table thead { display: none; }

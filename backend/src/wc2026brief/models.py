@@ -12,8 +12,13 @@ class TeamRecord(BaseModel):
     w: int = 0
     d: int = 0
     l: int = 0
+    played: int = 0
+    points: int = 0
+    gf: int = 0
+    ga: int = 0
     last_result: str | None = None
     knocked_out: bool = False
+    current_stage: str = "GROUP_STAGE"
 
 
 class TeamResult(BaseModel):
@@ -69,12 +74,34 @@ class RecentResult(BaseModel):
     group: str
 
 
+class TeamProjection(BaseModel):
+    name: str
+    flag: str
+    manager: str
+    status: str
+    next_stage_probability: float
+    title_probability: float
+
+
+class ManagerProjection(BaseModel):
+    name: str
+    title_probability: float
+    expected_teams_next_stage: float
+    favourite_team: str | None = None
+
+
+class ProjectionsOutput(BaseModel):
+    managers: list[ManagerProjection]
+    teams: list[TeamProjection]
+
+
 class StatsOutput(BaseModel):
     generated_at: str
     summary: list[str]
     leaderboard: list[LeaderboardEntry]
     squads: dict[str, list[TeamResult]]
     recent_results: list[RecentResult]
+    projections: ProjectionsOutput
 
 
 class SummaryOutput(BaseModel):

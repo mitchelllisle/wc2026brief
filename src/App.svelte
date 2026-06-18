@@ -57,6 +57,10 @@
     return 'rag-out';
   }
 
+  function formatProbability(value) {
+    return typeof value === 'number' ? `${value.toFixed(1)}%` : '--';
+  }
+
   const pipOrder = (squad) => [...squad].sort((a, b) => {
     const aStatus = normalizeStatus(a.status);
     const bStatus = normalizeStatus(b.status);
@@ -108,6 +112,8 @@
   let stamp = $derived(data ? formatStamp(data.generated_at) : '');
   let totalAlive = $derived(ranked.reduce((s, p) => s + p.teams_remaining, 0));
   let totalOut = $derived(ranked.reduce((s, p) => s + p.eliminated, 0));
+  let projectedLeader = $derived(data?.projections?.managers?.[0] ?? null);
+  let projectedTeam = $derived(data?.projections?.teams?.[0] ?? null);
 </script>
 
 <div class="ribbon"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>
@@ -182,7 +188,7 @@
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
         <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the Secretary role</h1>
-        <p class="deck">{ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.</p>
+        <p class="deck">{#if projectedLeader}{projectedLeader.name} now leads the title race at {formatProbability(projectedLeader.title_probability)}, with {projectedTeam?.flag ?? ''} {projectedTeam?.name ?? 'nobody yet'} the likeliest squad pick to carry someone deep.{:else}{ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.{/if}</p>
         <div class="report-cols">
           {#each data.summary as p}
             <p>{@html renderPara(p)}</p>
@@ -245,7 +251,55 @@
       </tbody>
     </table>
 
-    <div class="sec"><span class="num">02</span><h2>The Squads</h2><span class="meta">12 teams drafted each</span></div>
+    {#if data.projections}
+      <div class="sec"><span class="num">02</span><h2>Prediction Market</h2><span class="meta">Odds update with every result</span></div>
+      <section class="projection-grid">
+        {#each data.projections.managers as manager}
+          <article class="projection-card" class:leader={manager.name === projectedLeader?.name}>
+            <div class="projection-head">
+              <span class="projection-name">{manager.name}</span>
+              {#if manager.name === projectedLeader?.name}
+                <span class="pill g">Favourite</span>
+              {/if}
+            </div>
+            <div class="projection-odds">{formatProbability(manager.title_probability)}</div>
+            <div class="projection-meta">
+              <span>Expected next round</span>
+              <strong>{manager.expected_teams_next_stage.toFixed(2)} teams</strong>
+            </div>
+            <div class="projection-meta">
+              <span>Best shot</span>
+              <strong>{manager.favourite_team ?? '--'}</strong>
+            </div>
+          </article>
+        {/each}
+      </section>
+
+      <div class="projection-table-wrap">
+        <table class="table projection-table">
+          <thead>
+            <tr>
+              <th class="l">Team</th><th class="l">Manager</th><th>Next stage</th><th>Title odds</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each data.projections.teams.slice(0, 8) as team}
+              <tr>
+                <td class="c-name">
+                  <div class="nm"><span>{team.flag}</span>{team.name}</div>
+                  <div class="sub">{team.status === 'out' ? 'Eliminated' : team.status === 'at_risk' ? 'On the ropes' : 'Alive'}</div>
+                </td>
+                <td class="c-name">{team.manager}</td>
+                <td class="num"><span class="v {normalizeStatus(team.status)}">{formatProbability(team.next_stage_probability)}</span></td>
+                <td class="num"><span class="v in">{formatProbability(team.title_probability)}</span></td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+    {/if}
+
+    <div class="sec"><span class="num">03</span><h2>The Squads</h2><span class="meta">12 teams drafted each</span></div>
     <section class="squads">
       {#each ranked as p, i}
         <article class="sq" class:leader={p.name === leaderName}>

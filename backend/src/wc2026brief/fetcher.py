@@ -12,12 +12,15 @@ from pydantic_ai.providers.anthropic import AnthropicProvider
 from wc2026brief.config import Config
 from wc2026brief.models import (
     LeaderboardEntry,
+    ManagerProjection,
     ParticipantStats,
+    ProjectionsOutput,
     RecentResult,
     Record,
     Squads,
     StatsOutput,
     SummaryOutput,
+    TeamProjection,
     TeamRecord,
     TeamResult,
 )
@@ -57,25 +60,45 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
         as_ = match["score"]["fullTime"]["away"]
         if hs is None or as_ is None:
             continue
-        stage = match.get("stage", "")
+        stage = match.get("stage") or "GROUP_STAGE"
         is_knockout = stage not in ("GROUP_STAGE", "")
+        winner = match.get("score", {}).get("winner")
 
         for team, is_home in [(home, True), (away, False)]:
             rec = records.setdefault(team, TeamRecord())
             score_for = hs if is_home else as_
             score_against = as_ if is_home else hs
+            rec.played += 1
+            rec.gf += score_for
+            rec.ga += score_against
+            rec.current_stage = stage
 
-            if score_for > score_against:
+            if is_knockout and winner in {"HOME_TEAM", "AWAY_TEAM"}:
+                team_won = (winner == "HOME_TEAM") == is_home
+                if team_won:
+                    rec.w += 1
+                    rec.last_result = "W"
+                else:
+                    rec.l += 1
+                    rec.last_result = "L"
+                    rec.knocked_out = True
+            elif score_for > score_against:
                 rec.w += 1
                 rec.last_result = "W"
+                if stage == "GROUP_STAGE":
+                    rec.points += 3
             elif score_for == score_against:
                 rec.d += 1
                 rec.last_result = "D"
+                if stage == "GROUP_STAGE":
+                    rec.points += 1
             else:
                 rec.l += 1
                 rec.last_result = "L"
                 if is_knockout:
                     rec.knocked_out = True
+                elif stage == "GROUP_STAGE":
+                    rec.points += 0
 
     return records
 
@@ -94,6 +117,8 @@ def team_status(rec: TeamRecord) -> str:
     """
     if rec.knocked_out or rec.l >= 2:
         return "out"
+    if rec.current_stage != "GROUP_STAGE" and rec.played >= 3:
+        return "in"
     if rec.l == 1:
         return "at_risk"
     return "in"
@@ -174,6 +199,80 @@ def _limit_words(text: str, max_words: int = MAX_SUMMARY_WORDS) -> str:
 
 def _enforce_summary_length(paragraphs: list[str]) -> list[str]:
     return [_limit_words(p, MAX_SUMMARY_WORDS) for p in paragraphs]
+
+
+def _clamp(value: float, lower: float = 0.0, upper: float = 1.0) -> float:
+    return max(lower, min(upper, value))
+
+
+def estimate_next_stage_probability(rec: TeamRecord) -> float:
+    if team_status(rec) == "out":
+        return 0.0
+    if rec.current_stage != "GROUP_STAGE" and rec.played >= 3:
+        return 1.0
+    if rec.played == 0:
+        return 0.55
+
+    remaining = max(0, 3 - rec.played)
+    goal_diff = rec.gf - rec.ga
+    estimate = 0.34 + (0.16 * rec.points) + (0.08 * remaining) - (0.18 * rec.l) + (0.02 * goal_diff)
+    if rec.l == 0 and rec.points >= 4:
+        estimate += 0.08
+    return _clamp(estimate, 0.03, 0.98)
+
+
+def _stage_factor(rec: TeamRecord) -> float:
+    return {
+        "GROUP_STAGE": 0.18,
+        "ROUND_OF_32": 0.32,
+        "ROUND_OF_16": 0.44,
+        "QUARTER_FINALS": 0.60,
+        "SEMI_FINALS": 0.78,
+        "THIRD_PLACE": 0.40,
+        "FINAL": 1.00,
+    }.get(rec.current_stage, 0.18)
+
+
+def build_projections(squads: Squads, team_records: dict[str, TeamRecord]) -> ProjectionsOutput:
+    team_entries: list[TeamProjection] = []
+    raw_title_scores: list[tuple[TeamProjection, float]] = []
+
+    for participant in squads.participants:
+        for team in participant.teams:
+            rec = team_records.get(team.name, TeamRecord())
+            status = team_status(rec)
+            next_stage_probability = estimate_next_stage_probability(rec)
+            strength = max(0.25, 0.85 + (0.07 * rec.w) + (0.02 * rec.d) - (0.05 * rec.l) + (0.01 * (rec.gf - rec.ga)))
+            title_score = next_stage_probability * strength * _stage_factor(rec)
+            projection = TeamProjection(
+                name=team.name,
+                flag=team.flag,
+                manager=participant.name,
+                status=status,
+                next_stage_probability=round(next_stage_probability * 100, 1),
+                title_probability=0.0,
+            )
+            team_entries.append(projection)
+            raw_title_scores.append((projection, title_score))
+
+    total_title_score = sum(score for _, score in raw_title_scores) or 1.0
+    for projection, title_score in raw_title_scores:
+        projection.title_probability = round((title_score / total_title_score) * 100, 1)
+
+    manager_entries: list[ManagerProjection] = []
+    for participant in squads.participants:
+        participant_teams = [team for team in team_entries if team.manager == participant.name]
+        favourite = max(participant_teams, key=lambda team: team.title_probability, default=None)
+        manager_entries.append(ManagerProjection(
+            name=participant.name,
+            title_probability=round(sum(team.title_probability for team in participant_teams), 1),
+            expected_teams_next_stage=round(sum(team.next_stage_probability for team in participant_teams) / 100, 2),
+            favourite_team=favourite.name if favourite else None,
+        ))
+
+    manager_entries.sort(key=lambda manager: manager.title_probability, reverse=True)
+    team_entries.sort(key=lambda team: (team.title_probability, team.next_stage_probability), reverse=True)
+    return ProjectionsOutput(managers=manager_entries, teams=team_entries)
 
 
 def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord]) -> list[ParticipantStats]:
@@ -352,6 +451,7 @@ class WCFetcher:
             ],
             squads={p.name: p.teams for p in participant_stats},
             recent_results=build_recent_results(matches, squads),
+            projections=build_projections(squads, team_records),
         )
 
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
