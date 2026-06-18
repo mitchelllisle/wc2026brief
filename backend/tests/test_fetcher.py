@@ -2,6 +2,7 @@ from wc2026brief.fetcher import (
     _enforce_summary_length,
     _limit_words,
     build_participant_stats,
+    build_projections,
     build_recent_results,
     compute_team_records,
     team_status,
@@ -25,6 +26,10 @@ def test_team_status_out_knocked_out():
     assert team_status(TeamRecord(w=2, d=0, l=1, knocked_out=True)) == "out"
 
 
+def test_team_status_knockout_survivor_is_in():
+    assert team_status(TeamRecord(w=2, d=0, l=1, played=4, current_stage="ROUND_OF_16")) == "in"
+
+
 def _match(home: str, away: str, hs: int, as_: int, stage: str = "GROUP_STAGE", status: str = "FINISHED") -> dict:
     return {
         "utcDate": "2026-06-15T12:00:00Z",
@@ -33,7 +38,7 @@ def _match(home: str, away: str, hs: int, as_: int, stage: str = "GROUP_STAGE", 
         "group": "GROUP_C",
         "homeTeam": {"name": home, "tla": home[:3].upper()},
         "awayTeam": {"name": away, "tla": away[:3].upper()},
-        "score": {"fullTime": {"home": hs, "away": as_}},
+        "score": {"fullTime": {"home": hs, "away": as_}, "winner": "HOME_TEAM" if hs > as_ else "AWAY_TEAM" if as_ > hs else "DRAW"},
     }
 
 
@@ -52,12 +57,15 @@ def test_compute_team_records_draw():
     assert records["France"].d == 1
     assert records["Germany"].d == 1
     assert records["France"].last_result == "D"
+    assert records["France"].points == 1
+    assert records["France"].played == 1
 
 
 def test_compute_team_records_knockout_loss_sets_knocked_out():
     records = compute_team_records([_match("Spain", "England", 0, 1, stage="ROUND_OF_16")])
     assert records["Spain"].knocked_out is True
     assert records["England"].knocked_out is False
+    assert records["England"].current_stage == "ROUND_OF_16"
 
 
 def test_compute_team_records_skips_unfinished():
@@ -159,6 +167,37 @@ def test_build_recent_results_skips_unfinished_and_handles_missing_scores():
 
     out = build_recent_results([scheduled, null_score], squads)
     assert out == []
+
+
+def test_build_projections_rolls_up_manager_odds():
+    squads = _squads(
+        ("Jay", [("Spain", "🇪🇸"), ("Brazil", "🇧🇷")]),
+        ("Ryan", [("Germany", "🇩🇪")]),
+    )
+    team_records = {
+        "Spain": TeamRecord(played=1, points=3, w=1, gf=2, ga=0),
+        "Brazil": TeamRecord(played=1, points=1, d=1, gf=1, ga=1),
+        "Germany": TeamRecord(played=1, points=0, l=1, gf=0, ga=1),
+    }
+
+    projections = build_projections(squads, team_records)
+
+    assert projections.managers[0].name == "Jay"
+    assert projections.teams[0].name == "Spain"
+    assert abs(sum(manager.title_probability for manager in projections.managers) - 100.0) < 0.2
+
+
+def test_build_projections_zeroes_title_odds_when_everyone_is_out():
+    squads = _squads(("Jay", [("Spain", "🇪🇸")]), ("Ryan", [("Germany", "🇩🇪")]))
+    team_records = {
+        "Spain": TeamRecord(l=2, played=2, current_stage="GROUP_STAGE"),
+        "Germany": TeamRecord(l=2, played=2, current_stage="GROUP_STAGE"),
+    }
+
+    projections = build_projections(squads, team_records)
+
+    assert all(manager.title_probability == 0.0 for manager in projections.managers)
+    assert all(team.title_probability == 0.0 for team in projections.teams)
 
 
 def test_limit_words_truncates_to_130_words():

@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
 
   let data = $state(null);
+  let prevData = $state(null);
   let loading = $state(true);
   let error = $state(false);
 
@@ -16,6 +17,10 @@
     } finally {
       loading = false;
     }
+    try {
+      const prevRes = await fetch(`${import.meta.env.BASE_URL}data/stats_prev.json`);
+      if (prevRes.ok) prevData = await prevRes.json();
+    } catch { /* prev data is optional */ }
   });
 
   function formatStamp(iso) {
@@ -55,6 +60,18 @@
     if (teamsRemaining >= 9) return 'rag-in';
     if (teamsRemaining >= 6) return 'rag-risk';
     return 'rag-out';
+  }
+
+  function formatProbability(value) {
+    return typeof value === 'number' ? `${value.toFixed(1)}%` : '--';
+  }
+
+  let showAllTeams = $state(false);
+
+  function managerTeams(name) {
+    return [...(data?.projections?.teams ?? [])]
+      .filter(t => t.manager === name)
+      .sort((a, b) => b.title_probability - a.title_probability);
   }
 
   const pipOrder = (squad) => [...squad].sort((a, b) => {
@@ -102,12 +119,64 @@
   const homeWin = (g) => g.hs > g.as;
   const awayWin = (g) => g.as > g.hs;
 
-  let ranked = $derived(data ? [...data.leaderboard] : []);
+  let managerTitleMap = $derived(
+    new Map(data?.projections?.managers?.map(m => [m.name, m.title_probability]) ?? [])
+  );
+  let prevTitleMap = $derived(
+    new Map(prevData?.projections?.managers?.map(m => [m.name, m.title_probability]) ?? [])
+  );
+  function titleDelta(name) {
+    const curr = managerTitleMap.get(name);
+    const prev = prevTitleMap.get(name);
+    if (curr == null || prev == null) return null;
+    const d = Math.round((curr - prev) * 10) / 10;
+    return d === 0 ? null : d;
+  }
+  let ranked = $derived(
+    data ? [...data.leaderboard].sort((a, b) =>
+      (managerTitleMap.get(b.name) ?? 0) - (managerTitleMap.get(a.name) ?? 0)
+    ) : []
+  );
   let leaderName = $derived(ranked[0]?.name);
   let tabName = $derived(ranked.at(-1)?.name);
   let stamp = $derived(data ? formatStamp(data.generated_at) : '');
   let totalAlive = $derived(ranked.reduce((s, p) => s + p.teams_remaining, 0));
   let totalOut = $derived(ranked.reduce((s, p) => s + p.eliminated, 0));
+  let projectedLeader = $derived(data?.projections?.managers?.[0] ?? null);
+  let projectedTeam = $derived(
+    projectedLeader?.favourite_team
+      ? (data?.projections?.teams?.find(t => t.name === projectedLeader.favourite_team) ?? null)
+      : null
+  );
+  let projectionDeck = $derived(
+    projectedLeader
+      ? `${projectedLeader.name} leads on title strength with ${projectedTeam?.flag ?? ''} ${projectedTeam?.name ?? 'nobody yet'} his highest-rated individual pick.`
+      : `${ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has ${tabName}'s name all over it.`
+  );
+  let teamFlagMap = $derived(
+    new Map(data?.projections?.teams?.map(t => [t.name, t.flag]) ?? [])
+  );
+
+  function withFlag(name) {
+    if (!name) return '--';
+    const flag = teamFlagMap.get(name);
+    return flag ? `${flag} ${name}` : name;
+  }
+
+  function injectFlags(text) {
+    if (teamFlagMap.size === 0) return text;
+    const names = [...teamFlagMap.keys()].sort((a, b) => b.length - a.length);
+    let result = text;
+    for (const name of names) {
+      const flag = teamFlagMap.get(name);
+      const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      result = result.replace(
+        new RegExp(`(?<!\\p{L})${escaped}(?!\\p{L})`, 'gu'),
+        `${flag} ${name}`
+      );
+    }
+    return result;
+  }
 </script>
 
 <div class="ribbon"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>
@@ -149,7 +218,7 @@
       </div>
       <h1>The [Joint] <b>Sweep</b> Desk</h1>
     </div>
-    <div class="np-sub">FIFA World Cup 2026 · United States · Canada · Mexico</div>
+    <div class="np-sub">FIFA World Cup 2026 · 🇺🇸 United States · 🇨🇦 Canada · 🇲🇽 Mexico</div>
   </header>
 
   {#if error}
@@ -182,10 +251,10 @@
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
         <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the Secretary role</h1>
-        <p class="deck">{ranked[0]?.teams_remaining} still alive and not a soul laying a glove on him — meanwhile the wooden spoon, and a 12-month stint as group Secretary handling plans and bookings, has {tabName}&apos;s name all over it.</p>
+        <p class="deck">{projectionDeck}</p>
         <div class="report-cols">
           {#each data.summary as p}
-            <p>{@html renderPara(p)}</p>
+            <p>{@html renderPara(injectFlags(p))}</p>
           {/each}
         </div>
       </div>
@@ -208,7 +277,7 @@
       <thead>
         <tr>
           <th class="l">#</th><th class="l">Manager</th>
-          <th class="hide-sm">Survival</th><th>Alive</th><th class="hide-sm">Risk</th><th>Out</th><th class="hide-sm">W·D·L</th>
+          <th class="hide-sm">Survival</th><th>Alive</th><th>Out</th><th class="hide-sm">W·D·L</th><th>Strength</th>
         </tr>
       </thead>
       <tbody>
@@ -226,26 +295,141 @@
               <div class="sub">{p.teams_remaining} of {p.teams_total} surviving</div>
             </td>
             <td class="hide-sm">
+              <div class="pip-count">{p.teams_remaining}/{p.teams_total}</div>
               <div class="pips">
                 {#each pipOrder(data.squads[p.name] ?? []) as t}
+                  {@const teamStatus = normalizeStatus(t.status)}
                   <span
-                    class="p {t.last_result === 'W' ? 'win' : t.last_result === 'D' ? 'draw' : t.last_result === 'L' ? 'loss' : 'none'}"
-                    data-tip="{t.name} · {t.last_result ?? 'No result'}"
-                    title="{t.name} · {t.last_result ?? 'No result'}"
+                    class="p {teamStatus === 'out' ? 'out' : 'in'}"
+                    data-tip="{t.name} · {teamStatus === 'out' ? 'Eliminated' : 'Alive'}"
+                    title="{t.name} · {teamStatus === 'out' ? 'Eliminated' : 'Alive'}"
                   ></span>
                 {/each}
               </div>
             </td>
             <td class="num"><span class="v in">{p.teams_remaining}</span></td>
-            <td class="num hide-sm"><span class="v risk">{p.at_risk}</span></td>
             <td class="num"><span class="v out">{p.eliminated}</span></td>
             <td class="num hide-sm"><span class="wdl"><b class="w">{p.record.w}</b>·<b>{p.record.d}</b>·<b class="l">{p.record.l}</b></span></td>
+            <td class="num">
+              <span class="v in">{managerTitleMap.get(p.name) ?? '--'}</span>
+              {#if titleDelta(p.name) !== null}
+                {@const d = titleDelta(p.name)}
+                <span class="delta {d > 0 ? 'up' : 'dn'}">{d > 0 ? '+' : ''}{d}</span>
+              {/if}
+            </td>
           </tr>
         {/each}
       </tbody>
     </table>
 
-    <div class="sec"><span class="num">02</span><h2>The Squads</h2><span class="meta">12 teams drafted each</span></div>
+    {#if data.projections}
+      <div class="sec">
+        <span class="num">02</span>
+        <h2>Title Race</h2>
+        <span class="meta">Powered by live FIFA rankings · updates with every result</span>
+      </div>
+      <section class="projection-grid">
+        {#each data.projections.managers as manager}
+          <article class="projection-card" class:leader={manager.name === projectedLeader?.name}>
+            <div class="projection-head">
+              <span class="projection-name">{manager.name}</span>
+              <div class="projection-head-right">
+                {#if manager.name === projectedLeader?.name}
+                  <span class="pill g">Favourite</span>
+                {/if}
+                <span class="tooltip-wrap">
+                  <span class="info-icon">ⓘ</span>
+                  <div class="tooltip-box">
+                    <p class="tooltip-title">What is title strength?</p>
+                    <p class="tooltip-desc">A composite index, not a probability. Each team is scored on three signals — stage reached, current form (W/D/L, goal diff), and FIFA world ranking — then all 48 scores are normalised to sum to 100. A manager's total is the sum of their teams' scores. Higher means stronger title credentials relative to the field, not a percentage chance of winning.</p>
+                    <table class="tooltip-table">
+                      <tbody>
+                        {#each managerTeams(manager.name) as team}
+                          <tr class="tooltip-row {normalizeStatus(team.status)}">
+                            <td class="tooltip-team">{team.flag} {team.name}{#if team.fifa_rank}<span class="tooltip-rank"> #{team.fifa_rank}</span>{/if}</td>
+                            <td class="tooltip-prob">{team.title_probability.toFixed(1)}</td>
+                          </tr>
+                        {/each}
+                      </tbody>
+                    </table>
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div class="projection-odds">{formatProbability(manager.title_probability)}</div>
+            <div class="projection-sublabel">Title strength</div>
+            <div class="projection-meta">
+              <span>Best shot</span>
+              <strong>{withFlag(manager.favourite_team)}</strong>
+            </div>
+          </article>
+        {/each}
+      </section>
+
+      <div class="projection-table-wrap">
+        <table class="table projection-table">
+          <thead>
+            <tr>
+              <th class="l">Team</th><th class="hide-sm">FIFA</th><th class="l">Manager</th><th>Title Strength</th><th class="hide-sm">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each (showAllTeams ? data.projections.teams : data.projections.teams.slice(0, 12)) as team}
+              <tr>
+                <td class="c-name">
+                  <div class="nm"><span>{team.flag}</span>{team.name}</div>
+                </td>
+                <td class="num hide-sm">
+                  {#if team.fifa_rank}
+                    <span class="fifa-rank">#{team.fifa_rank}</span>
+                  {:else}
+                    <span class="fifa-rank unranked">--</span>
+                  {/if}
+                </td>
+                <td class="c-name">{team.manager}</td>
+                <td class="num">
+                  <div class="adv-cell">
+                    <span class="v {normalizeStatus(team.status)}">{formatProbability(team.title_probability)}</span>
+                    {#if team.status !== 'out' && team.title_breakdown}
+                      {@const b = team.title_breakdown}
+                      <span class="tooltip-wrap">
+                        <span class="info-icon">ⓘ</span>
+                        <div class="tooltip-box adv-tooltip-box">
+                          <p class="tooltip-title">Title Strength — how it's calculated</p>
+                          <p class="tooltip-desc">A composite index of each team's tournament winning potential. All 48 teams are scored and normalised to sum to 100 — higher means more likely to win.</p>
+
+                          <p class="tooltip-section">Components <span class="tooltip-section-note">(each scored 0–1)</span></p>
+                          <table class="tooltip-table">
+                            <tbody>
+                              <tr class="tooltip-row"><td class="tooltip-team">Form <span class="tooltip-dim">points ÷ 24 + goals/game × 2% · {Math.round(b.form_weight * 100)}% weight</span></td><td class="tooltip-prob">{b.form_score}</td></tr>
+                              <tr class="tooltip-row"><td class="tooltip-team">Stage <span class="tooltip-dim">{b.stage_label} · 30% weight</span></td><td class="tooltip-prob">{b.stage_score}</td></tr>
+                              <tr class="tooltip-row"><td class="tooltip-team">Rank <span class="tooltip-dim">FIFA #{team.fifa_rank ?? '—'} · {Math.round(b.rank_weight * 100)}% weight</span></td><td class="tooltip-prob">{b.rank_score}</td></tr>
+                            </tbody>
+                          </table>
+
+                          <div class="tooltip-result">
+                            <span>Title Strength <span class="tooltip-dim" style="font-weight:normal">(normalised)</span></span>
+                            <strong>{team.title_probability}%</strong>
+                          </div>
+                        </div>
+                      </span>
+                    {/if}
+                  </div>
+                </td>
+                <td class="num hide-sm"><span class="v {normalizeStatus(team.status)}">{team.status === 'out' ? 'Out' : team.status === 'at_risk' ? 'At risk' : 'Alive'}</span></td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+        {#if data.projections.teams.length > 12}
+          <button class="show-all-btn" onclick={() => showAllTeams = !showAllTeams}>
+            {showAllTeams ? 'Show less' : `Show all ${data.projections.teams.length} teams`}
+          </button>
+        {/if}
+      </div>
+    {/if}
+
+    <div class="sec"><span class="num">03</span><h2>The Squads</h2><span class="meta">12 teams drafted each</span></div>
     <section class="squads">
       {#each ranked as p, i}
         <article class="sq" class:leader={p.name === leaderName}>

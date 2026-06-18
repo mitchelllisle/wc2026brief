@@ -13,3 +13,5 @@ Hard length limit: each paragraph must be 130 words or fewer.
 Style: conversational, punchy, specific — like a group chat message from a football-obsessed mate.
 Use **double asterisks** around key names, scores, and teams for emphasis.
 Do not add headers or bullet points. Times should be AEST.
+
+CRITICAL: Before mentioning any upcoming match under a participant's name, verify that participant actually owns at least one of the two teams in that match using the Team ownership data provided. Never attribute a match to a participant who owns neither team in it.
