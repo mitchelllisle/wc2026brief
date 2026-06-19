@@ -11,6 +11,7 @@ from pydantic_ai.providers.anthropic import AnthropicProvider
 
 from wc2026brief.config import Config
 from wc2026brief.models import (
+    FormEntry,
     LeaderboardEntry,
     ManagerProjection,
     ParticipantStats,
@@ -173,6 +174,8 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
             rec = records.setdefault(team, TeamRecord())
             score_for = hs if is_home else as_
             score_against = as_ if is_home else hs
+            opponent = away if is_home else home
+            score_str = f"{score_for}–{score_against}"
             rec.played += 1
             rec.gf += score_for
             rec.ga += score_against
@@ -184,23 +187,28 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
                     rec.w += 1
                     rec.points += 3
                     rec.last_result = "W"
+                    rec.form = (rec.form + [FormEntry(result="W", opponent=opponent, score=score_str)])[-5:]
                 else:
                     rec.l += 1
                     rec.last_result = "L"
                     rec.knocked_out = True
+                    rec.form = (rec.form + [FormEntry(result="L", opponent=opponent, score=score_str)])[-5:]
             elif score_for > score_against:
                 rec.w += 1
                 rec.points += 3
                 rec.last_result = "W"
+                rec.form = (rec.form + [FormEntry(result="W", opponent=opponent, score=score_str)])[-5:]
             elif score_for == score_against:
                 rec.d += 1
                 rec.points += 1
                 rec.last_result = "D"
+                rec.form = (rec.form + [FormEntry(result="D", opponent=opponent, score=score_str)])[-5:]
             else:
                 rec.l += 1
                 rec.last_result = "L"
                 if is_knockout:
                     rec.knocked_out = True
+                rec.form = (rec.form + [FormEntry(result="L", opponent=opponent, score=score_str)])[-5:]
 
     return records
 
@@ -396,7 +404,7 @@ def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord])
         for t in p.teams:
             rec = team_records.get(t.name, TeamRecord())
             status = team_status(rec)
-            teams_out.append(TeamResult(name=t.name, flag=t.flag, status=status, last_result=rec.last_result))
+            teams_out.append(TeamResult(name=t.name, flag=t.flag, status=status, last_result=rec.last_result, form=rec.form))
             if status == "out":
                 eliminated += 1
             elif status == "at_risk":
@@ -462,16 +470,8 @@ class WCFetcher:
             resp.raise_for_status()
         return resp.json()["matches"]
 
-    def _generate_summary(self, participant_stats: list[ParticipantStats], upcoming: list[dict], projections: ProjectionsOutput | None = None) -> list[str]:
-        """Generate a 2-paragraph AI briefing for the current sweep standings.
-
-        Args:
-            participant_stats: Sorted participant standings from build_participant_stats.
-            upcoming: List of scheduled/timed match dicts to preview (up to 12 used).
-
-        Returns:
-            List of paragraph strings as produced by the summary agent.
-        """
+    def _generate_summary(self, participant_stats: list[ParticipantStats], upcoming: list[dict], projections: ProjectionsOutput | None = None) -> SummaryOutput:
+        """Generate a headline and 2-paragraph AI briefing for the current sweep standings."""
         strength_by_name = {m.name: m.title_probability for m in projections.managers} if projections else {}
         leaderboard_text = "\n".join(
             f"{'💀' if i == len(participant_stats) - 1 else i + 1}. {p.name}: "
@@ -503,12 +503,14 @@ class WCFetcher:
             Team ownership (for reference):
             {json.dumps(team_to_owner, ensure_ascii=False)}
 
-            Write the 2-paragraph briefing now.
+            Write the headline and 2-paragraph briefing now.
             Each paragraph must be 130 words or fewer.
         """
 
         result = self._agent.run_sync(prompt)
-        return _enforce_summary_length(result.output.paragraphs)
+        output = result.output
+        output.paragraphs = _enforce_summary_length(output.paragraphs)
+        return output
 
     def run(self) -> None:
         """Fetch match data, compute standings, generate a summary, and write stats.json.
@@ -547,13 +549,14 @@ class WCFetcher:
         projections = build_projections(squads, team_records, rankings=rankings)
 
         logger.info("Generating summary…")
-        summary = self._generate_summary(participant_stats, upcoming, projections=projections)
+        summary_output = self._generate_summary(participant_stats, upcoming, projections=projections)
 
         now = datetime.now(AEST)
         output = StatsOutput(
             generated_at=now.isoformat(),
             stage=stage,
-            summary=summary,
+            headline=summary_output.headline,
+            summary=summary_output.paragraphs,
             leaderboard=[
                 LeaderboardEntry(
                     name=p.name,

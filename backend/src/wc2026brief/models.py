@@ -8,6 +8,12 @@ class Team(BaseModel):
     flag: str
 
 
+class FormEntry(BaseModel):
+    result: str       # "W" | "D" | "L"
+    opponent: str
+    score: str        # e.g. "2–1"
+
+
 class TeamRecord(BaseModel):
     w: int = 0
     d: int = 0
@@ -17,6 +23,7 @@ class TeamRecord(BaseModel):
     gf: int = 0
     ga: int = 0
     last_result: str | None = None
+    form: list[FormEntry] = []
     knocked_out: bool = False
     current_stage: str = "GROUP_STAGE"
 
@@ -26,6 +33,7 @@ class TeamResult(BaseModel):
     flag: str
     status: str  # "in" | "at_risk" | "out"
     last_result: str | None = None
+    form: list[FormEntry] = []
 
 
 class Record(BaseModel):
@@ -108,6 +116,7 @@ class ProjectionsOutput(BaseModel):
 class StatsOutput(BaseModel):
     generated_at: str
     stage: str  # "GROUP_STAGE" | "KNOCKOUT"
+    headline: str
     summary: list[str]
     leaderboard: list[LeaderboardEntry]
     squads: dict[str, list[TeamResult]]
@@ -116,4 +125,5 @@ class StatsOutput(BaseModel):
 
 
 class SummaryOutput(BaseModel):
+    headline: str
     paragraphs: list[str]
