@@ -44,6 +44,15 @@
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   }
 
+  // HTML-escape then convert *italic* markers to <em>
+  function renderHeadline(text) {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>');
+  }
+
   const ENDPOINT = `${import.meta.env.BASE_URL}data/stats.json`;
   const LOGO_SRC = `${import.meta.env.BASE_URL}fifa-logo.svg`;
   const ORDER = { in: 0, at_risk: 1, risk: 1, out: 2 };
@@ -156,6 +165,28 @@
   let teamFlagMap = $derived(
     new Map(data?.projections?.teams?.map(t => [t.name, t.flag]) ?? [])
   );
+  let teamStrengthMap = $derived(
+    new Map(data?.projections?.teams?.map(t => [t.name, t.title_probability]) ?? [])
+  );
+  let teamFormMap = $derived.by(() => {
+    const map = new Map();
+    for (const teams of Object.values(data?.squads ?? {})) {
+      for (const t of teams) {
+        map.set(t.name, (t.form ?? []).map(e => typeof e === 'string' ? { result: e } : e));
+      }
+    }
+    return map;
+  });
+  let prevTeamStrengthMap = $derived(
+    new Map(prevData?.projections?.teams?.map(t => [t.name, t.title_probability]) ?? [])
+  );
+  function teamStrengthDelta(name) {
+    const curr = teamStrengthMap.get(name);
+    const prev = prevTeamStrengthMap.get(name);
+    if (curr == null || prev == null) return null;
+    const d = Math.round((curr - prev) * 10) / 10;
+    return d === 0 ? null : d;
+  }
 
   function withFlag(name) {
     if (!name) return '--';
@@ -250,7 +281,7 @@
           <span class="kick">Match Report</span>
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
-        <h1 class="headline">{leaderName} stays <em>untouchable</em> as {tabName} eyes the Secretary role</h1>
+        <h1 class="headline">{@html data.headline ? renderHeadline(data.headline) : `${leaderName} leads as ${tabName} eyes the Secretary role`}</h1>
         <p class="deck">{projectionDeck}</p>
         <div class="report-cols">
           {#each data.summary as p}
@@ -276,14 +307,15 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="l">#</th><th class="l">Manager</th>
-          <th class="hide-sm">Survival</th><th>Alive</th><th>Out</th><th class="hide-sm">W·D·L</th><th>Strength</th>
+          <th class="l">#</th><th class="l">Manager</th><th>Strength <span class="tooltip-wrap th-tip"><span class="info-icon">ⓘ</span><div class="tooltip-box"><p class="tooltip-title">What is Strength?</p><p class="tooltip-desc" style="margin-bottom:0">A composite index, not a probability. Each team is scored on stage reached, current form, and FIFA world ranking — then normalised to sum to 100. A manager's score is the sum of their teams' scores.</p></div></span></th>
+          <th class="hide-sm">Survival</th><th>Alive</th><th>Out</th><th class="hide-sm">W·D·L</th>
         </tr>
       </thead>
       <tbody>
         {#each ranked as p, i}
           {@const isLeader = p.name === leaderName}
           {@const isTab = p.name === tabName}
+          {@const strDelta = titleDelta(p.name)}
           <tr class:leader={isLeader} class:tab={isTab}>
             <td class="c-rank"><span class="n">{i + 1}</span></td>
             <td class="c-name">
@@ -293,6 +325,12 @@
                 {:else if isTab}<span class="pill r">Secretary duty</span>{/if}
               </div>
               <div class="sub">{p.teams_remaining} of {p.teams_total} surviving</div>
+            </td>
+            <td class="c-str">
+              <span class="str-val {strDelta !== null ? (strDelta > 0 ? 'up' : 'dn') : ''}">{managerTitleMap.get(p.name) ?? '--'}</span>
+              {#if strDelta !== null}
+                <span class="str-chg {strDelta > 0 ? 'up' : 'dn'}">{strDelta > 0 ? '▲' : '▼'} {Math.abs(strDelta)}</span>
+              {/if}
             </td>
             <td class="hide-sm">
               <div class="pip-count">{p.teams_remaining}/{p.teams_total}</div>
@@ -310,13 +348,6 @@
             <td class="num"><span class="v in">{p.teams_remaining}</span></td>
             <td class="num"><span class="v out">{p.eliminated}</span></td>
             <td class="num hide-sm"><span class="wdl"><b class="w">{p.record.w}</b>·<b>{p.record.d}</b>·<b class="l">{p.record.l}</b></span></td>
-            <td class="num">
-              <span class="v in">{managerTitleMap.get(p.name) ?? '--'}</span>
-              {#if titleDelta(p.name) !== null}
-                {@const d = titleDelta(p.name)}
-                <span class="delta {d > 0 ? 'up' : 'dn'}">{d > 0 ? '+' : ''}{d}</span>
-              {/if}
-            </td>
           </tr>
         {/each}
       </tbody>
@@ -356,12 +387,19 @@
                 </span>
               </div>
             </div>
-            <div class="projection-odds">{formatProbability(manager.title_probability)}</div>
-            <div class="projection-sublabel">Title strength</div>
-            <div class="projection-meta">
-              <span>Best shot</span>
-              <strong>{withFlag(manager.favourite_team)}</strong>
+            <div class="best-shot">
+              {#if manager.favourite_team}
+                {@const bestTeam = managerTeams(manager.name).find(t => t.name === manager.favourite_team)}
+                <div class="bs-flag">{teamFlagMap.get(manager.favourite_team) ?? ''}</div>
+                <div class="bs-name">
+                  {manager.favourite_team}
+                  {#if bestTeam}<span class="bs-score">{bestTeam.title_probability.toFixed(1)}</span>{/if}
+                </div>
+              {:else}
+                <div class="bs-name">—</div>
+              {/if}
             </div>
+            <div class="bs-label">Best shot</div>
           </article>
         {/each}
       </section>
@@ -370,7 +408,7 @@
         <table class="table projection-table">
           <thead>
             <tr>
-              <th class="l">Team</th><th class="hide-sm">FIFA</th><th class="l">Manager</th><th>Title Strength</th><th class="hide-sm">Status</th>
+              <th class="l">Team</th><th class="hide-sm">FIFA</th><th class="l">Manager</th><th class="hide-sm">Form</th><th>Title Strength</th><th class="hide-sm">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -387,6 +425,16 @@
                   {/if}
                 </td>
                 <td class="c-name">{team.manager}</td>
+                <td class="num hide-sm">
+                  <span class="frm">
+                    {#each (teamFormMap.get(team.name) ?? []).slice(-5) as entry}
+                      <span
+                        class="fr {entry.result}"
+                        data-tip={entry.opponent ? `${entry.opponent} ${entry.score}` : undefined}
+                      ></span>
+                    {/each}
+                  </span>
+                </td>
                 <td class="num">
                   <div class="adv-cell">
                     <span class="v {normalizeStatus(team.status)}">{formatProbability(team.title_probability)}</span>
@@ -432,21 +480,40 @@
     <div class="sec"><span class="num">03</span><h2>The Squads</h2><span class="meta">12 teams drafted each</span></div>
     <section class="squads">
       {#each ranked as p, i}
+        {@const squadTeams = [...(data.squads[p.name] ?? [])].sort((a, b) => (teamStrengthMap.get(b.name) ?? 0) - (teamStrengthMap.get(a.name) ?? 0))}
         <article class="sq" class:leader={p.name === leaderName}>
           <div class="sqh">
             <span class="idx">{String(i + 1).padStart(2, '0')}</span>
             <span class="nm">{p.name}</span>
             <span class="av">{p.teams_remaining}<small>/{p.teams_total}</small></span>
           </div>
-          {#each data.squads[p.name] ?? [] as t}
-            {@const status = normalizeStatus(t.status)}
-            <div class="tm {status}">
-              <span class="fl">{t.flag}</span>
-              <span class="nm">{t.name}</span>
-              <span class="rr {t.last_result ?? 'none'}">{t.last_result ?? '–'}</span>
-              <span class="sd {status}"></span>
-            </div>
-          {/each}
+          <table class="sq-tbl">
+            <thead>
+              <tr>
+                <th colspan="2" class="l">Team</th>
+                <th>Str</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {#each squadTeams as t}
+                {@const status = normalizeStatus(t.status)}
+                {@const strength = teamStrengthMap.get(t.name)}
+                {@const tsDelta = teamStrengthDelta(t.name)}
+                <tr class={status}>
+                  <td class="sq-fl">{t.flag}</td>
+                  <td class="sq-nm">{t.name}</td>
+                  <td class="sq-ts">
+                    <span class="ts">{strength != null ? strength.toFixed(1) : '–'}</span>
+                    {#if tsDelta !== null}
+                      <span class="ts-delta {tsDelta > 0 ? 'up' : 'dn'}">{tsDelta > 0 ? '▲' : '▼'} {Math.abs(tsDelta)}</span>
+                    {/if}
+                  </td>
+                  <td class="sq-st">{status === 'out' ? 'Out' : status === 'at_risk' ? 'At risk' : 'Alive'}</td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
         </article>
       {/each}
     </section>
