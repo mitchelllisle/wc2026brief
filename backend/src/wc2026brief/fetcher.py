@@ -573,8 +573,13 @@ class WCFetcher:
             projections=projections,
         )
 
+        new_json = output.model_dump_json(indent=2, by_alias=True)
         prev_file = self._data_dir / "stats_prev.json"
         if self._stats_file.exists():
-            prev_file.write_text(self._stats_file.read_text())
-        self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
+            current_json = self._stats_file.read_text()
+            # Only rotate prev when results actually changed; keeps trends meaningful
+            # across runs where the source data hasn't updated yet
+            if current_json != new_json:
+                prev_file.write_text(current_json)
+        self._stats_file.write_text(new_json)
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))

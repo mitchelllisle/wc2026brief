@@ -31,9 +31,6 @@ jobs:
       - name: Install Node dependencies
         run: npm ci
 
-      - name: Rotate previous stats
-        run: cp data/stats.json data/stats_prev.json
-
       - name: Update stats
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
