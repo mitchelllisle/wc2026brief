@@ -582,6 +582,20 @@ class WCFetcher:
                 return [_strip_volatile(i) for i in obj]
             return obj
 
+        def _probs_changed(current_data: dict, new_data: dict) -> bool:
+            """Return True only when title_probability values themselves changed."""
+            curr_mgr = {m["name"]: m.get("title_probability")
+                        for m in current_data.get("projections", {}).get("managers", [])}
+            for m in new_data.get("projections", {}).get("managers", []):
+                if curr_mgr.get(m["name"]) != m.get("title_probability"):
+                    return True
+            curr_team = {t["name"]: t.get("title_probability")
+                         for t in current_data.get("projections", {}).get("teams", [])}
+            for t in new_data.get("projections", {}).get("teams", []):
+                if curr_team.get(t["name"]) != t.get("title_probability"):
+                    return True
+            return False
+
         snapshots_dir = self._data_dir / "snapshots"
 
         if self._stats_file.exists():
@@ -594,13 +608,14 @@ class WCFetcher:
                                for m in current_data.get("projections", {}).get("managers", [])}
             has_existing_deltas = any(v is not None for v in curr_mgr_deltas.values())
 
+            # Save a snapshot whenever any non-volatile data changes (form, results, etc.)
             if _strip_volatile(current_data) != _strip_volatile(new_data):
-                # Data changed — freeze the current file as a dated snapshot
                 snapshots_dir.mkdir(exist_ok=True)
                 snapshot_date = (current_data.get("generated_at") or "")[:10] or now.strftime("%Y-%m-%d")
                 (snapshots_dir / f"{snapshot_date}.json").write_text(current_json)
 
-                # Compute fresh deltas: new value − current value
+            if _probs_changed(current_data, new_data):
+                # Title probabilities changed — compute fresh deltas vs current values
                 curr_mgr = {m["name"]: m.get("title_probability")
                             for m in current_data.get("projections", {}).get("managers", [])}
                 curr_team = {t["name"]: t.get("title_probability")
@@ -613,7 +628,7 @@ class WCFetcher:
                     t.delta = round(t.title_probability - old, 1) if old is not None else None
 
             elif has_existing_deltas:
-                # Data unchanged and deltas already present — carry them forward
+                # Probabilities unchanged and deltas exist — carry them forward
                 curr_team_deltas = {t["name"]: t.get("delta")
                                     for t in current_data.get("projections", {}).get("teams", [])}
                 for m in output.projections.managers:
@@ -622,7 +637,7 @@ class WCFetcher:
                     t.delta = curr_team_deltas.get(t.name)
 
             else:
-                # Migration: stats.json has no deltas yet — seed from stats_prev.json if present
+                # Migration: no deltas yet — seed from stats_prev.json if present
                 prev_file = self._data_dir / "stats_prev.json"
                 if prev_file.exists():
                     prev_data = json.loads(prev_file.read_text())

@@ -955,14 +955,14 @@
         "title_probability": 25.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Colombia",
-        "delta": 0.0
+        "delta": 0.3
       },
       {
         "name": "Kerrod",
         "title_probability": 25.3,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Mexico",
-        "delta": 0.0
+        "delta": -0.1
       },
       {
         "name": "Mitchell",
@@ -995,7 +995,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.0
+        "delta": -0.1
       },
       {
         "name": "Germany",
@@ -1641,7 +1641,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.0
+        "delta": 0.3
       },
       {
         "name": "Tunisia",
