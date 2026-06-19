@@ -99,6 +99,7 @@ class TeamProjection(BaseModel):
     title_probability: float
     fifa_rank: int | None = None
     title_breakdown: TitleStrengthBreakdown | None = None
+    delta: float | None = None
 
 
 class ManagerProjection(BaseModel):
@@ -106,6 +107,7 @@ class ManagerProjection(BaseModel):
     title_probability: float
     expected_teams_next_stage: float
     favourite_team: str | None = None
+    delta: float | None = None
 
 
 class ProjectionsOutput(BaseModel):

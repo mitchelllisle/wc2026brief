@@ -2,7 +2,6 @@
   import { onMount } from 'svelte';
 
   let data = $state(null);
-  let prevData = $state(null);
   let loading = $state(true);
   let error = $state(false);
 
@@ -17,10 +16,6 @@
     } finally {
       loading = false;
     }
-    try {
-      const prevRes = await fetch(`${import.meta.env.BASE_URL}data/stats_prev.json`);
-      if (prevRes.ok) prevData = await prevRes.json();
-    } catch { /* prev data is optional */ }
   });
 
   function formatStamp(iso) {
@@ -131,15 +126,12 @@
   let managerTitleMap = $derived(
     new Map(data?.projections?.managers?.map(m => [m.name, m.title_probability]) ?? [])
   );
-  let prevTitleMap = $derived(
-    new Map(prevData?.projections?.managers?.map(m => [m.name, m.title_probability]) ?? [])
+  let managerDeltaMap = $derived(
+    new Map(data?.projections?.managers?.map(m => [m.name, m.delta]) ?? [])
   );
   function titleDelta(name) {
-    const curr = managerTitleMap.get(name);
-    const prev = prevTitleMap.get(name);
-    if (curr == null || prev == null) return null;
-    const d = Math.round((curr - prev) * 10) / 10;
-    return d === 0 ? null : d;
+    const d = managerDeltaMap.get(name);
+    return (d == null || d === 0) ? null : d;
   }
   let ranked = $derived(
     data ? [...data.leaderboard].sort((a, b) =>
@@ -177,15 +169,12 @@
     }
     return map;
   });
-  let prevTeamStrengthMap = $derived(
-    new Map(prevData?.projections?.teams?.map(t => [t.name, t.title_probability]) ?? [])
+  let teamDeltaMap = $derived(
+    new Map(data?.projections?.teams?.map(t => [t.name, t.delta]) ?? [])
   );
   function teamStrengthDelta(name) {
-    const curr = teamStrengthMap.get(name);
-    const prev = prevTeamStrengthMap.get(name);
-    if (curr == null || prev == null) return null;
-    const d = Math.round((curr - prev) * 10) / 10;
-    return d === 0 ? null : d;
+    const d = teamDeltaMap.get(name);
+    return (d == null || d === 0) ? null : d;
   }
 
 
