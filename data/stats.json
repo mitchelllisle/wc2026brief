@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-19T19:32:47.030598+10:00",
+  "generated_at": "2026-06-19T20:07:29.781156+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *spotless*, while Ryan looks *cooked*",
+  "headline": "Jay stays *fortress*, while Ryan *teeters* on the edge",
   "summary": [
-    "All 48 teams are still technically alive, but the pressure is real. **Jay** leads the pack with only **2 teams at risk** and a clean 5W-7D-2L record — remarkably composed. **Kerrod** sits second with **4 at risk**, while **Mitchell** and **Ryan** are both sweating with **6 teams at risk** each. Ryan's 3W-5D-6L record is the ugliest of the group — he's dangerously close to losing teams, and if the wrong results land this weekend, the Secretary role could start looming large.",
-    "Big matches incoming. **Jay** needs **Australia** to hold off the **United States** (Sat, 5:00AM) and watches **Brazil vs Haiti** (Sat, 10:30AM) nervously — **Mitchell** owns **Haiti**. **Kerrod** has **Belgium vs Iran** (Mon, 5:00AM) and **Uruguay vs Cape Verde Islands** (Mon, 8:00AM) — both massive for his survival count. **Ryan** faces crunch ties with **Netherlands vs Sweden** (Sun, 3:00AM) and **Germany vs Ivory Coast** (Sun, 6:00AM) — **Jay** owns Ivory Coast, so there's a tasty rivalry angle there. Carnage incoming."
+    "The standings are locked in — all **48 teams** still alive — but the cracks are showing. **Mitchell** and **Ryan** are both sitting on **6 at-risk teams**, the danger zone of this sweep. **Kerrod** isn't far behind with **4 at risk**, while **Jay** leads the pack with just **2** teams sweating. Nobody's been eliminated yet, but the pressure is building fast and this weekend's slate is loaded.",
+    "Big ones incoming. **Jay** needs **Australia** to hold firm against **United States** (Sat 5:00AM) — a Kerrod team — and watches **Ivory Coast** face **Germany** (Sun 6:00AM), a Ryan side. **Mitchell** has **Scotland vs Morocco** (Sat 8:00AM) and **Sweden vs Netherlands** (Sun 3:00AM) as must-watches. **Ryan** desperately needs **Germany**, **Netherlands**, **Morocco**, and **Paraguay** to perform. **Kerrod** eyes **Uruguay vs Cape Verde Islands** (Mon 8:00AM) — two of his own squaring off, guaranteeing one result either way."
   ],
   "leaderboard": [
     {
@@ -852,7 +852,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URU",
+      "a_code": "URY",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
@@ -955,28 +955,28 @@
         "title_probability": 25.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Colombia",
-        "delta": -1.2
+        "delta": 0.0
       },
       {
         "name": "Kerrod",
         "title_probability": 25.3,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Mexico",
-        "delta": 0.8
+        "delta": 0.0
       },
       {
         "name": "Mitchell",
         "title_probability": 24.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Ryan",
         "title_probability": 23.7,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Germany",
-        "delta": 0.7
+        "delta": 0.0
       }
     ],
     "teams": [
@@ -995,7 +995,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Germany",
@@ -1012,7 +1012,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Argentina",
@@ -1029,7 +1029,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "England",
@@ -1046,7 +1046,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "France",
@@ -1063,7 +1063,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "United States",
@@ -1080,7 +1080,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Colombia",
@@ -1097,7 +1097,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Switzerland",
@@ -1114,7 +1114,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Canada",
@@ -1131,7 +1131,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Austria",
@@ -1148,7 +1148,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Norway",
@@ -1165,7 +1165,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Australia",
@@ -1182,7 +1182,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Sweden",
@@ -1199,7 +1199,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Brazil",
@@ -1216,7 +1216,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Netherlands",
@@ -1233,7 +1233,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Morocco",
@@ -1250,7 +1250,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Spain",
@@ -1267,7 +1267,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Portugal",
@@ -1284,7 +1284,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "South Korea",
@@ -1301,7 +1301,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Japan",
@@ -1318,7 +1318,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Belgium",
@@ -1335,7 +1335,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Ivory Coast",
@@ -1352,7 +1352,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Uruguay",
@@ -1369,7 +1369,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Iran",
@@ -1386,7 +1386,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Croatia",
@@ -1403,7 +1403,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Scotland",
@@ -1420,7 +1420,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Senegal",
@@ -1437,7 +1437,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Egypt",
@@ -1454,7 +1454,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Turkey",
@@ -1471,7 +1471,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Ecuador",
@@ -1488,7 +1488,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Algeria",
@@ -1505,7 +1505,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Czechia",
@@ -1522,7 +1522,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Congo DR",
@@ -1539,7 +1539,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Ghana",
@@ -1556,7 +1556,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Paraguay",
@@ -1573,7 +1573,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Panama",
@@ -1590,7 +1590,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Qatar",
@@ -1607,7 +1607,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Saudi Arabia",
@@ -1624,7 +1624,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Bosnia-Herzegovina",
@@ -1640,7 +1640,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.0
       },
       {
         "name": "Tunisia",
@@ -1657,7 +1658,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Uzbekistan",
@@ -1674,7 +1675,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "South Africa",
@@ -1691,7 +1692,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Cape Verde Islands",
@@ -1708,7 +1709,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Iraq",
@@ -1725,7 +1726,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "New Zealand",
@@ -1742,7 +1743,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Jordan",
@@ -1759,7 +1760,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.3
+        "delta": 0.0
       },
       {
         "name": "Curaçao",
@@ -1776,7 +1777,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Haiti",
@@ -1793,7 +1794,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       }
     ]
   }
