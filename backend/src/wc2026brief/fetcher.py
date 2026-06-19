@@ -573,16 +573,75 @@ class WCFetcher:
             projections=projections,
         )
 
-        new_json = output.model_dump_json(indent=2, by_alias=True)
-        prev_file = self._data_dir / "stats_prev.json"
+        def _strip_volatile(obj: object) -> object:
+            """Recursively remove fields that vary every run or are derived state."""
+            if isinstance(obj, dict):
+                return {k: _strip_volatile(v) for k, v in obj.items()
+                        if k not in {"generated_at", "headline", "summary", "delta"}}
+            if isinstance(obj, list):
+                return [_strip_volatile(i) for i in obj]
+            return obj
+
+        snapshots_dir = self._data_dir / "snapshots"
+
         if self._stats_file.exists():
             current_json = self._stats_file.read_text()
-            # Compare only result-driven fields — generated_at/headline/summary
-            # change every run so raw string comparison always triggers rotation.
-            _SKIP = {"generated_at", "headline", "summary"}
-            def _data(raw):
-                return {k: v for k, v in json.loads(raw).items() if k not in _SKIP}
-            if _data(current_json) != _data(new_json):
-                prev_file.write_text(current_json)
-        self._stats_file.write_text(new_json)
+            current_data = json.loads(current_json)
+            new_data = json.loads(output.model_dump_json(by_alias=True))
+
+            # Detect whether stats.json already carries delta fields (post-migration state)
+            curr_mgr_deltas = {m["name"]: m.get("delta")
+                               for m in current_data.get("projections", {}).get("managers", [])}
+            has_existing_deltas = any(v is not None for v in curr_mgr_deltas.values())
+
+            if _strip_volatile(current_data) != _strip_volatile(new_data):
+                # Data changed — freeze the current file as a dated snapshot
+                snapshots_dir.mkdir(exist_ok=True)
+                snapshot_date = (current_data.get("generated_at") or "")[:10] or now.strftime("%Y-%m-%d")
+                (snapshots_dir / f"{snapshot_date}.json").write_text(current_json)
+
+                # Compute fresh deltas: new value − current value
+                curr_mgr = {m["name"]: m.get("title_probability")
+                            for m in current_data.get("projections", {}).get("managers", [])}
+                curr_team = {t["name"]: t.get("title_probability")
+                             for t in current_data.get("projections", {}).get("teams", [])}
+                for m in output.projections.managers:
+                    old = curr_mgr.get(m.name)
+                    m.delta = round(m.title_probability - old, 1) if old is not None else None
+                for t in output.projections.teams:
+                    old = curr_team.get(t.name)
+                    t.delta = round(t.title_probability - old, 1) if old is not None else None
+
+            elif has_existing_deltas:
+                # Data unchanged and deltas already present — carry them forward
+                curr_team_deltas = {t["name"]: t.get("delta")
+                                    for t in current_data.get("projections", {}).get("teams", [])}
+                for m in output.projections.managers:
+                    m.delta = curr_mgr_deltas.get(m.name)
+                for t in output.projections.teams:
+                    t.delta = curr_team_deltas.get(t.name)
+
+            else:
+                # Migration: stats.json has no deltas yet — seed from stats_prev.json if present
+                prev_file = self._data_dir / "stats_prev.json"
+                if prev_file.exists():
+                    prev_data = json.loads(prev_file.read_text())
+                    base_mgr = {m["name"]: m.get("title_probability")
+                                for m in prev_data.get("projections", {}).get("managers", [])}
+                    base_team = {t["name"]: t.get("title_probability")
+                                 for t in prev_data.get("projections", {}).get("teams", [])}
+                    for m in output.projections.managers:
+                        old = base_mgr.get(m.name)
+                        m.delta = round(m.title_probability - old, 1) if old is not None else None
+                    for t in output.projections.teams:
+                        old = base_team.get(t.name)
+                        t.delta = round(t.title_probability - old, 1) if old is not None else None
+                    # Archive stats_prev.json as the initial snapshot
+                    snapshots_dir.mkdir(exist_ok=True)
+                    prev_date = (prev_data.get("generated_at") or "")[:10] or now.strftime("%Y-%m-%d")
+                    snapshot_file = snapshots_dir / f"{prev_date}.json"
+                    if not snapshot_file.exists():
+                        snapshot_file.write_text(prev_file.read_text())
+
+        self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))

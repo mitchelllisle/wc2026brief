@@ -944,25 +944,29 @@
         "name": "Jay",
         "title_probability": 25.6,
         "expected_teams_next_stage": 0.0,
-        "favourite_team": "Colombia"
+        "favourite_team": "Colombia",
+        "delta": -1.2
       },
       {
         "name": "Kerrod",
         "title_probability": 25.4,
         "expected_teams_next_stage": 0.0,
-        "favourite_team": "Mexico"
+        "favourite_team": "Mexico",
+        "delta": 0.8
       },
       {
         "name": "Mitchell",
         "title_probability": 24.9,
         "expected_teams_next_stage": 0.0,
-        "favourite_team": "Argentina"
+        "favourite_team": "Argentina",
+        "delta": -0.3
       },
       {
         "name": "Ryan",
         "title_probability": 23.7,
         "expected_teams_next_stage": 0.0,
-        "favourite_team": "Germany"
+        "favourite_team": "Germany",
+        "delta": 0.7
       }
     ],
     "teams": [
@@ -980,7 +984,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Germany",
@@ -996,7 +1001,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Argentina",
@@ -1012,7 +1018,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "England",
@@ -1028,7 +1035,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "France",
@@ -1044,7 +1052,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.1
       },
       {
         "name": "United States",
@@ -1060,7 +1069,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Colombia",
@@ -1076,7 +1086,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Switzerland",
@@ -1092,7 +1103,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Canada",
@@ -1108,7 +1120,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Austria",
@@ -1124,7 +1137,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Norway",
@@ -1140,7 +1154,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Australia",
@@ -1156,7 +1171,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Sweden",
@@ -1172,7 +1188,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Brazil",
@@ -1188,7 +1205,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Netherlands",
@@ -1204,7 +1222,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Morocco",
@@ -1220,7 +1239,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.1
       },
       {
         "name": "Spain",
@@ -1236,7 +1256,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Portugal",
@@ -1252,7 +1273,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "South Korea",
@@ -1268,7 +1290,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Japan",
@@ -1284,7 +1307,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Belgium",
@@ -1300,7 +1324,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Ivory Coast",
@@ -1316,7 +1341,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Uruguay",
@@ -1332,7 +1358,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Iran",
@@ -1348,7 +1375,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Croatia",
@@ -1364,7 +1392,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Scotland",
@@ -1380,7 +1409,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Senegal",
@@ -1396,7 +1426,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Egypt",
@@ -1412,7 +1443,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Turkey",
@@ -1428,7 +1460,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Ecuador",
@@ -1444,7 +1477,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Algeria",
@@ -1460,7 +1494,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.1
       },
       {
         "name": "Czechia",
@@ -1476,7 +1511,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Congo DR",
@@ -1492,7 +1528,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.1
       },
       {
         "name": "Ghana",
@@ -1508,7 +1545,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.2
       },
       {
         "name": "Paraguay",
@@ -1524,7 +1562,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.1
       },
       {
         "name": "Panama",
@@ -1540,7 +1579,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Qatar",
@@ -1556,7 +1596,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Saudi Arabia",
@@ -1572,7 +1613,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.3
       },
       {
         "name": "Tunisia",
@@ -1588,7 +1630,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.1
       },
       {
         "name": "Uzbekistan",
@@ -1604,7 +1647,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.1
       },
       {
         "name": "South Africa",
@@ -1620,7 +1664,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.1
       },
       {
         "name": "Cape Verde Islands",
@@ -1636,7 +1681,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "Iraq",
@@ -1652,7 +1698,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.2
       },
       {
         "name": "New Zealand",
@@ -1668,7 +1715,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.1
       },
       {
         "name": "Bosnia-Herzegovina",
@@ -1684,7 +1732,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Jordan",
@@ -1700,7 +1749,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.3
       },
       {
         "name": "Curaçao",
@@ -1716,7 +1766,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": -0.1
       },
       {
         "name": "Haiti",
@@ -1732,7 +1783,8 @@
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
-        }
+        },
+        "delta": 0.1
       }
     ]
   }
