@@ -952,25 +952,25 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 25.9,
+        "title_probability": 27.1,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Colombia"
       },
       {
         "name": "Kerrod",
-        "title_probability": 25.3,
+        "title_probability": 24.5,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Mexico"
       },
       {
         "name": "Mitchell",
-        "title_probability": 24.9,
+        "title_probability": 25.2,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina"
       },
       {
         "name": "Ryan",
-        "title_probability": 23.7,
+        "title_probability": 23.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Germany"
       }
@@ -981,7 +981,7 @@
         "flag": "🇲🇽",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.8,
+        "title_probability": 4.1,
         "fifa_rank": 11,
         "title_breakdown": {
           "form_score": 0.28,
@@ -997,7 +997,7 @@
         "flag": "🇩🇪",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 3.8,
+        "title_probability": 3.5,
         "fifa_rank": 9,
         "title_breakdown": {
           "form_score": 0.265,
@@ -1013,7 +1013,7 @@
         "flag": "🇦🇷",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 3.6,
+        "title_probability": 3.3,
         "fifa_rank": 1,
         "title_breakdown": {
           "form_score": 0.185,
@@ -1029,7 +1029,7 @@
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 3.6,
+        "title_probability": 3.9,
         "fifa_rank": 4,
         "title_breakdown": {
           "form_score": 0.205,
@@ -1045,7 +1045,7 @@
         "flag": "🇫🇷",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.5,
+        "title_probability": 3.4,
         "fifa_rank": 2,
         "title_breakdown": {
           "form_score": 0.185,
@@ -1061,7 +1061,7 @@
         "flag": "🇺🇸",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.3,
+        "title_probability": 3.1,
         "fifa_rank": 15,
         "title_breakdown": {
           "form_score": 0.205,
@@ -1077,7 +1077,7 @@
         "flag": "🇨🇴",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.2,
+        "title_probability": 3.0,
         "fifa_rank": 12,
         "title_breakdown": {
           "form_score": 0.185,
@@ -1093,7 +1093,7 @@
         "flag": "🇨🇭",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.2,
+        "title_probability": 3.0,
         "fifa_rank": 19,
         "title_breakdown": {
           "form_score": 0.217,
@@ -1109,7 +1109,7 @@
         "flag": "🇨🇦",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 3.1,
+        "title_probability": 3.4,
         "fifa_rank": 28,
         "title_breakdown": {
           "form_score": 0.237,
@@ -1125,7 +1125,7 @@
         "flag": "🇦🇹",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 3.0,
+        "title_probability": 2.7,
         "fifa_rank": 21,
         "title_breakdown": {
           "form_score": 0.185,
@@ -1141,7 +1141,7 @@
         "flag": "🇳🇴",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 2.9,
+        "title_probability": 3.2,
         "fifa_rank": 27,
         "title_breakdown": {
           "form_score": 0.205,
@@ -1157,7 +1157,7 @@
         "flag": "🇦🇺",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 2.8,
+        "title_probability": 3.1,
         "fifa_rank": 22,
         "title_breakdown": {
           "form_score": 0.165,
@@ -1173,7 +1173,7 @@
         "flag": "🇸🇪",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 2.8,
+        "title_probability": 3.0,
         "fifa_rank": 34,
         "title_breakdown": {
           "form_score": 0.225,
@@ -1189,7 +1189,7 @@
         "flag": "🇧🇷",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 2.7,
+        "title_probability": 2.4,
         "fifa_rank": 5,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1205,7 +1205,7 @@
         "flag": "🇳🇱",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 2.7,
+        "title_probability": 2.9,
         "fifa_rank": 8,
         "title_breakdown": {
           "form_score": 0.082,
@@ -1221,7 +1221,7 @@
         "flag": "🇲🇦",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 2.7,
+        "title_probability": 2.8,
         "fifa_rank": 6,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1237,7 +1237,7 @@
         "flag": "🇪🇸",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 2.6,
+        "title_probability": 2.3,
         "fifa_rank": 3,
         "title_breakdown": {
           "form_score": 0.042,
@@ -1253,7 +1253,7 @@
         "flag": "🇵🇹",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 2.6,
+        "title_probability": 2.3,
         "fifa_rank": 7,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1269,7 +1269,7 @@
         "flag": "🇰🇷",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 2.6,
+        "title_probability": 2.3,
         "fifa_rank": 24,
         "title_breakdown": {
           "form_score": 0.145,
@@ -1285,7 +1285,7 @@
         "flag": "🇯🇵",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 2.5,
+        "title_probability": 2.3,
         "fifa_rank": 17,
         "title_breakdown": {
           "form_score": 0.082,
@@ -1301,7 +1301,7 @@
         "flag": "🇧🇪",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 2.5,
+        "title_probability": 2.3,
         "fifa_rank": 10,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1317,7 +1317,7 @@
         "flag": "🇨🇮",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 2.4,
+        "title_probability": 2.6,
         "fifa_rank": 31,
         "title_breakdown": {
           "form_score": 0.145,
@@ -1333,7 +1333,7 @@
         "flag": "🇺🇾",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 2.3,
+        "title_probability": 2.5,
         "fifa_rank": 18,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1349,7 +1349,7 @@
         "flag": "🇮🇷",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 2.3,
+        "title_probability": 2.0,
         "fifa_rank": 23,
         "title_breakdown": {
           "form_score": 0.082,
@@ -1365,7 +1365,7 @@
         "flag": "🇭🇷",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 2.3,
+        "title_probability": 2.5,
         "fifa_rank": 14,
         "title_breakdown": {
           "form_score": 0.04,
@@ -1381,7 +1381,7 @@
         "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 2.2,
+        "title_probability": 2.0,
         "fifa_rank": 37,
         "title_breakdown": {
           "form_score": 0.145,
@@ -1397,7 +1397,7 @@
         "flag": "🇸🇳",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 2.1,
+        "title_probability": 2.4,
         "fifa_rank": 16,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1413,7 +1413,7 @@
         "flag": "🇪🇬",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 1.9,
+        "title_probability": 2.2,
         "fifa_rank": 30,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1429,7 +1429,7 @@
         "flag": "🇹🇷",
         "manager": "Kerrod",
         "status": "at_risk",
-        "title_probability": 1.7,
+        "title_probability": 2.0,
         "fifa_rank": 26,
         "title_breakdown": {
           "form_score": 0.0,
@@ -1445,7 +1445,7 @@
         "flag": "🇪🇨",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 1.6,
+        "title_probability": 1.8,
         "fifa_rank": 29,
         "title_breakdown": {
           "form_score": 0.0,
@@ -1461,7 +1461,7 @@
         "flag": "🇩🇿",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 1.5,
+        "title_probability": 1.6,
         "fifa_rank": 32,
         "title_breakdown": {
           "form_score": 0.0,
@@ -1477,7 +1477,7 @@
         "flag": "🇨🇿",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 1.5,
+        "title_probability": 1.3,
         "fifa_rank": 44,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1493,7 +1493,7 @@
         "flag": "🇨🇩",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 1.5,
+        "title_probability": 1.6,
         "fifa_rank": 43,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1509,7 +1509,7 @@
         "flag": "🇬🇭",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 1.4,
+        "title_probability": 1.6,
         "fifa_rank": 65,
         "title_breakdown": {
           "form_score": 0.145,
@@ -1525,7 +1525,7 @@
         "flag": "🇵🇾",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 1.3,
+        "title_probability": 1.2,
         "fifa_rank": 42,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1541,7 +1541,7 @@
         "flag": "🇵🇦",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 1.3,
+        "title_probability": 1.0,
         "fifa_rank": 40,
         "title_breakdown": {
           "form_score": 0.0,
@@ -1557,7 +1557,7 @@
         "flag": "🇶🇦",
         "manager": "Kerrod",
         "status": "at_risk",
-        "title_probability": 1.0,
+        "title_probability": 0.8,
         "fifa_rank": 58,
         "title_breakdown": {
           "form_score": 0.052,
@@ -1573,7 +1573,7 @@
         "flag": "🇸🇦",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 1.0,
+        "title_probability": 1.3,
         "fifa_rank": 59,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1589,7 +1589,7 @@
         "flag": "🇧🇦",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 0.9,
+        "title_probability": 1.0,
         "fifa_rank": 64,
         "title_breakdown": {
           "form_score": 0.062,
@@ -1605,7 +1605,7 @@
         "flag": "🇹🇳",
         "manager": "Kerrod",
         "status": "at_risk",
-        "title_probability": 0.9,
+        "title_probability": 0.8,
         "fifa_rank": 54,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1621,7 +1621,7 @@
         "flag": "🇺🇿",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 0.9,
+        "title_probability": 0.8,
         "fifa_rank": 55,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1637,7 +1637,7 @@
         "flag": "🇿🇦",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 0.9,
+        "title_probability": 0.7,
         "fifa_rank": 61,
         "title_breakdown": {
           "form_score": 0.052,
@@ -1653,7 +1653,7 @@
         "flag": "🇨🇻",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 0.8,
+        "title_probability": 0.6,
         "fifa_rank": 63,
         "title_breakdown": {
           "form_score": 0.042,
@@ -1669,7 +1669,7 @@
         "flag": "🇮🇶",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 0.8,
+        "title_probability": 0.7,
         "fifa_rank": 60,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1685,7 +1685,7 @@
         "flag": "🇳🇿",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 0.7,
+        "title_probability": 0.4,
         "fifa_rank": 82,
         "title_breakdown": {
           "form_score": 0.082,
@@ -1701,7 +1701,7 @@
         "flag": "🇯🇴",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 0.5,
+        "title_probability": 0.2,
         "fifa_rank": 68,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1717,7 +1717,7 @@
         "flag": "🇨🇼",
         "manager": "Kerrod",
         "status": "at_risk",
-        "title_probability": 0.4,
+        "title_probability": 0.5,
         "fifa_rank": 83,
         "title_breakdown": {
           "form_score": 0.02,
@@ -1733,7 +1733,7 @@
         "flag": "🇭🇹",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 0.2,
+        "title_probability": 0.1,
         "fifa_rank": 85,
         "title_breakdown": {
           "form_score": 0.0,
