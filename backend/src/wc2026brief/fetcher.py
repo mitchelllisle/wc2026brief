@@ -577,9 +577,12 @@ class WCFetcher:
         prev_file = self._data_dir / "stats_prev.json"
         if self._stats_file.exists():
             current_json = self._stats_file.read_text()
-            # Only rotate prev when results actually changed; keeps trends meaningful
-            # across runs where the source data hasn't updated yet
-            if current_json != new_json:
+            # Compare only result-driven fields — generated_at/headline/summary
+            # change every run so raw string comparison always triggers rotation.
+            _SKIP = {"generated_at", "headline", "summary"}
+            def _data(raw):
+                return {k: v for k, v in json.loads(raw).items() if k not in _SKIP}
+            if _data(current_json) != _data(new_json):
                 prev_file.write_text(current_json)
         self._stats_file.write_text(new_json)
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))
