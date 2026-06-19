@@ -1,6 +1,6 @@
 .PHONY: dev build preview install update
 
-dev: update ## Start Vite dev server
+dev: ## Start Vite dev server
 	npm run dev
 
 build: ## Build for production (runs update first)
