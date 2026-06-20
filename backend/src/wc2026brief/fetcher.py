@@ -428,6 +428,92 @@ def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord])
     return stats
 
 
+_HISTORY_TOP_N = 48  # store all teams so the bump chart can show any team at any zoom level
+
+_KNOCKOUT_ROUND_LABELS: dict[str, str] = {
+    "ROUND_OF_32":    "R32",
+    "ROUND_OF_16":    "R16",
+    "QUARTER_FINALS": "QF",
+    "SEMI_FINALS":    "SF",
+    "THIRD_PLACE":    "3rd Place",
+    "FINAL":          "Final",
+}
+
+
+def _round_label(stage: str, existing: list[dict]) -> str:
+    """Return a short round label for the x-axis of the bump chart.
+
+    Group-stage entries are labelled MD1, MD2, MD3 based on how many
+    group-stage snapshots already exist. Knockout stages use fixed labels.
+    """
+    if stage in _KNOCKOUT_ROUND_LABELS:
+        return _KNOCKOUT_ROUND_LABELS[stage]
+    # Group stage — count prior group-stage entries to derive matchday
+    prior_gs = sum(1 for e in existing if e.get("stage") == "GROUP_STAGE")
+    return f"MD{prior_gs + 1}"
+
+
+def _write_history(data_dir: Path, current_stats: dict) -> None:
+    """Append team-ranking snapshot to data/history.json when title scores change.
+
+    Reads the existing history.json (committed in git, persists across CI runs),
+    then appends a new entry only when the top-team score vector differs from the
+    last recorded entry. One entry per calendar day maximum. Stores the top
+    _HISTORY_TOP_N teams so the bump chart can track teams that rise into the
+    visible top-10 from just outside it.
+    """
+    def _teams_from(data: dict) -> list[dict] | None:
+        teams = data.get("projections", {}).get("teams", [])
+        if not teams:
+            return None
+        ranked = sorted(teams, key=lambda t: t.get("title_probability", 0), reverse=True)
+        return [
+            {
+                "name": t["name"],
+                "flag": t.get("flag", ""),
+                "manager": t.get("manager", ""),
+                "rank": i + 1,
+                "score": t.get("title_probability", 0),
+            }
+            for i, t in enumerate(ranked[:_HISTORY_TOP_N])
+        ]
+
+    def _score_key(teams: list[dict]) -> tuple:
+        return tuple((t["name"], t["score"]) for t in sorted(teams, key=lambda t: t["name"]))
+
+    history_file = data_dir / "history.json"
+    existing: list[dict] = []
+    if history_file.exists():
+        try:
+            existing = json.loads(history_file.read_text()).get("snapshots", [])
+        except Exception:
+            existing = []
+
+    teams = _teams_from(current_stats)
+    if not teams:
+        return
+
+    stage = current_stats.get("stage", "GROUP_STAGE")
+    new_key = _score_key(teams)
+    ts = current_stats.get("generated_at", "")
+    today = ts[:10]  # YYYY-MM-DD
+
+    # Replace any existing entry for today; otherwise check if scores changed
+    same_day_idx = next((i for i, e in enumerate(existing) if e["ts"][:10] == today), None)
+    if same_day_idx is not None:
+        if _score_key(existing[same_day_idx]["teams"]) == new_key:
+            return  # same day, same scores — nothing to do
+        existing[same_day_idx] = {"ts": ts, "stage": stage, "round": existing[same_day_idx]["round"], "teams": teams}
+    else:
+        if existing and _score_key(existing[-1]["teams"]) == new_key:
+            return  # scores unchanged from last day — skip
+        label = _round_label(stage, existing)
+        existing.append({"ts": ts, "stage": stage, "round": label, "teams": teams})
+
+    history_file.write_text(json.dumps({"snapshots": existing}, indent=2))
+    logger.info("history.json updated with %d snapshots", len(existing))
+
+
 class WCFetcher:
     """Orchestrates fetching match data, computing standings, and writing stats.json."""
 
@@ -660,3 +746,5 @@ class WCFetcher:
 
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))
+
+        _write_history(self._data_dir, output.model_dump(by_alias=True))
