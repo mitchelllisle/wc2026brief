@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-21T02:29:51.635918+10:00",
+  "generated_at": "2026-06-21T04:27:24.201519+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *fortress*, while Mitchell eyes the *chop*",
+  "headline": "Jay stays *immaculate*, while Mitchell stares down the *chop*",
   "summary": [
-    "The group stage chaos is piling up and the sweepstake table is getting spicy. **Jay** leads the pack with all **12 teams alive** and just **3 at risk** — an iron grip. **Ryan** stays alive at **12/12** but has a worrying **6 at risk** after a rough run of results (**5W-6L**). **Kerrod** drops to **11/12** after losing one, but only **3 at risk** keeps him steady in third. **Mitchell** is in real trouble — also at **11/12** but a brutal **8 losses** and **6 teams at risk** have him sweating hard in last place with the Secretary curse looming.",
-    "Big games coming thick and fast. **Jay** fans watch **Germany vs Ivory Coast** (Sun 6AM) and **Tunisia vs Japan** (Sun 2PM) — both teams at risk, both must deliver. **Ryan** has **Netherlands vs Sweden** (Sun 3AM) and **Germany vs Ivory Coast** (Sun 6AM) on the radar, with **Austria** featuring in **Argentina vs Austria** (Tue 3AM). **Kerrod** needs **Belgium vs Iran** (Mon 5AM) and **Uruguay vs Cape Verde Islands** (Mon 8AM) to go his way. **Mitchell** is sweating **Ecuador vs Curaçao** (Sun 10AM), **Argentina vs Austria** (Tue 3AM), and **Norway vs Senegal** (Tue 10AM) — losses in any of those could see more teams wiped out and the Secretary role get very real."
+    "The table's looking cosy for **Jay** — all **12 teams alive** and still top of the pile. **Ryan** is right behind but sweating with **6 at risk**. **Kerrod** sits third after losing one team, while **Mitchell** is in genuine danger at the bottom — **8 losses**, **6 at risk**, and the Secretary clipboard inching closer by the day.",
+    "Huge weekend ahead. **Jay** will be watching **Spain vs Saudi Arabia (Mon, 2:00AM)** closely — **Saudi Arabia** is Mitchell's and could go deeper at risk. **Japan vs Tunisia (Sun, 2:00PM)** matters for both **Jay** (Japan) and **Kerrod** (Tunisia). **Ryan** has **Germany vs Ivory Coast (Sun, 6:00AM)** — Germany is his, Ivory Coast is Jay's. **Kerrod** tracks **Belgium vs Iran (Mon, 5:00AM)**, **Uruguay vs Cape Verde Islands (Mon, 8:00AM)**, and **France vs Iraq (Tue, 7:00AM)**. **Mitchell** eyes **Norway vs Senegal (Tue, 10:00AM)** and **Ecuador vs Curaçao (Sun, 10:00AM)** — all his teams, all precarious."
   ],
   "leaderboard": [
     {
@@ -982,7 +982,7 @@
       "h_code": "GER",
       "h_flag": "🇩🇪",
       "hs": 7,
-      "a_code": "CUW",
+      "a_code": "CUR",
       "a_flag": "🇨🇼",
       "as": 1,
       "group": "GRP E"
@@ -995,28 +995,28 @@
         "title_probability": 26.4,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Brazil",
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Ryan",
         "title_probability": 25.1,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Germany",
-        "delta": 1.0
-      },
-      {
-        "name": "Mitchell",
-        "title_probability": 24.3,
-        "expected_teams_next_stage": 0.0,
-        "favourite_team": "England",
-        "delta": 0.2
+        "delta": 0.0
       },
       {
         "name": "Kerrod",
         "title_probability": 24.2,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "United States",
-        "delta": -1.5
+        "delta": 0.0
+      },
+      {
+        "name": "Mitchell",
+        "title_probability": 24.2,
+        "expected_teams_next_stage": 0.0,
+        "favourite_team": "England",
+        "delta": -0.1
       }
     ],
     "teams": [
@@ -1069,7 +1069,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "England",
@@ -1086,7 +1086,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Brazil",
@@ -1205,7 +1205,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Norway",
@@ -1246,17 +1246,17 @@
         "flag": "🇸🇪",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 2.8,
-        "fifa_rank": 34,
+        "title_probability": 2.7,
+        "fifa_rank": 36,
         "title_breakdown": {
           "form_score": 0.225,
           "stage_score": 0.0,
-          "rank_score": 0.588,
+          "rank_score": 0.562,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.0
+        "delta": -0.1
       },
       {
         "name": "Netherlands",
@@ -1264,11 +1264,11 @@
         "manager": "Ryan",
         "status": "in",
         "title_probability": 2.7,
-        "fifa_rank": 8,
+        "fifa_rank": 7,
         "title_breakdown": {
           "form_score": 0.082,
           "stage_score": 0.0,
-          "rank_score": 0.912,
+          "rank_score": 0.925,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1307,7 +1307,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Portugal",
@@ -1315,11 +1315,11 @@
         "manager": "Ryan",
         "status": "in",
         "title_probability": 2.6,
-        "fifa_rank": 7,
+        "fifa_rank": 8,
         "title_breakdown": {
           "form_score": 0.062,
           "stage_score": 0.0,
-          "rank_score": 0.925,
+          "rank_score": 0.912,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1460,7 +1460,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.8
+        "delta": 0.0
       },
       {
         "name": "Senegal",
@@ -1596,7 +1596,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "Panama",
@@ -1749,7 +1749,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.0
       },
       {
         "name": "New Zealand",
@@ -1817,7 +1817,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -1.5
+        "delta": 0.0
       },
       {
         "name": "Haiti",
