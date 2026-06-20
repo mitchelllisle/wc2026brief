@@ -1,15 +1,31 @@
 <script>
   import { onMount } from 'svelte';
+  import BumpChart from './BumpChart.svelte';
 
   let data = $state(null);
+  let history = $state(null);
   let loading = $state(true);
   let error = $state(false);
+  let showTableModal = $state(false);
+  let showAllChart = $state(false);
+  let selectedManager = $state(null);
+
+  const MANAGER_COLORS = {
+    'Mitchell': '#6d12e6',
+    'Kerrod':   '#9fe635',
+    'Jay':      '#fb9a3c',
+    'Ryan':     '#14c46b',
+  };
 
   onMount(async () => {
     try {
-      const res = await fetch(ENDPOINT);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      data = await res.json();
+      const [statsRes, historyRes] = await Promise.all([
+        fetch(ENDPOINT),
+        fetch(HISTORY_ENDPOINT).catch(() => null),
+      ]);
+      if (!statsRes.ok) throw new Error(`HTTP ${statsRes.status}`);
+      data = await statsRes.json();
+      if (historyRes?.ok) history = await historyRes.json();
     } catch (e) {
       console.error('Failed to load stats:', e);
       error = true;
@@ -49,6 +65,7 @@
   }
 
   const ENDPOINT = `${import.meta.env.BASE_URL}data/stats.json`;
+  const HISTORY_ENDPOINT = `${import.meta.env.BASE_URL}data/history.json`;
   const LOGO_SRC = `${import.meta.env.BASE_URL}fifa-logo.svg`;
   const ORDER = { in: 0, at_risk: 1, risk: 1, out: 2 };
   const DAYS_TO_FINAL = 33;
@@ -69,8 +86,6 @@
   function formatProbability(value) {
     return typeof value === 'number' ? `${value.toFixed(1)}%` : '--';
   }
-
-  let showAllTeams = $state(false);
 
   function managerTeams(name) {
     return [...(data?.projections?.teams ?? [])]
@@ -384,9 +399,23 @@
         <h2>Title Race</h2>
         <span class="meta">Powered by live FIFA rankings · updates with every result</span>
       </div>
+
+      <!-- Manager projection cards — click to highlight that manager's teams in the chart -->
       <section class="projection-grid">
         {#each data.projections.managers as manager}
-          <article class="projection-card" class:leader={manager.name === projectedLeader?.name}>
+          {@const isSelected = selectedManager === manager.name}
+          {@const selColor = MANAGER_COLORS[manager.name]}
+          <article
+            class="projection-card"
+            class:leader={manager.name === projectedLeader?.name}
+            class:mgr-selected={isSelected}
+            style:--mgr-color={selColor}
+            onclick={() => selectedManager = isSelected ? null : manager.name}
+            role="button"
+            tabindex="0"
+            onkeydown={e => e.key === 'Enter' && (selectedManager = isSelected ? null : manager.name)}
+            aria-pressed={isSelected}
+          >
             <div class="projection-head">
               <span class="projection-name">{manager.name}</span>
               <div class="projection-head-right">
@@ -429,76 +458,117 @@
         {/each}
       </section>
 
-      <div class="projection-table-wrap">
-        <table class="table projection-table">
-          <thead>
-            <tr>
-              <th class="l">Team</th><th class="hide-sm">FIFA</th><th class="l">Manager</th><th class="hide-sm">Form</th><th>Title Strength</th><th class="hide-sm">Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {#each (showAllTeams ? data.projections.teams : data.projections.teams.slice(0, 12)) as team}
+      <!-- Team bump chart (replaces the teams table inline) -->
+      {#if history?.snapshots?.length > 0}
+        {@const totalTeams = history.snapshots[history.snapshots.length - 1]?.teams?.length ?? 0}
+        <div class="bump-section">
+          <BumpChart snapshots={history.snapshots} topN={showAllChart ? totalTeams : 10} highlightManager={selectedManager} />
+          <div class="bump-footer">
+            <button class="show-table-link" onclick={() => showAllChart = !showAllChart}>
+              {showAllChart ? 'Show top 10' : `Show all ${totalTeams} teams`}
+            </button>
+            <button class="show-table-link" onclick={() => showTableModal = true}>
+              View full team rankings
+            </button>
+          </div>
+        </div>
+      {:else}
+        <!-- Fallback: inline teams table if no history loaded -->
+        <div class="projection-table-wrap">
+          <table class="table projection-table">
+            <thead>
               <tr>
-                <td class="c-name">
-                  <div class="nm"><span>{team.flag}</span>{team.name}</div>
-                </td>
-                <td class="num hide-sm">
-                  {#if team.fifa_rank}
-                    <span class="fifa-rank">#{team.fifa_rank}</span>
-                  {:else}
-                    <span class="fifa-rank unranked">--</span>
-                  {/if}
-                </td>
-                <td class="c-name">{team.manager}</td>
-                <td class="num hide-sm">
-                  <span class="frm">
-                    {#each (teamFormMap.get(team.name) ?? []).slice(-5) as entry}
-                      <span
-                        class="fr {entry.result}"
-                        data-tip={entry.opponent ? `${entry.opponent} ${entry.score}` : undefined}
-                      ></span>
-                    {/each}
-                  </span>
-                </td>
-                <td class="num">
-                  <div class="adv-cell">
-                    <span class="v {normalizeStatus(team.status)}">{formatProbability(team.title_probability)}</span>
-                    {#if team.status !== 'out' && team.title_breakdown}
-                      {@const b = team.title_breakdown}
-                      <span class="tooltip-wrap">
-                        <span class="info-icon">ⓘ</span>
-                        <div class="tooltip-box adv-tooltip-box">
-                          <p class="tooltip-title">Title Strength — how it's calculated</p>
-                          <p class="tooltip-desc">A composite index of each team's tournament winning potential. All 48 teams are scored and normalised to sum to 100 — higher means more likely to win.</p>
-
-                          <p class="tooltip-section">Components <span class="tooltip-section-note">(each scored 0–1)</span></p>
-                          <table class="tooltip-table">
-                            <tbody>
-                              <tr class="tooltip-row"><td class="tooltip-team">Form <span class="tooltip-dim">points ÷ 24 + goals/game × 2% · {Math.round(b.form_weight * 100)}% weight</span></td><td class="tooltip-prob">{b.form_score}</td></tr>
-                              <tr class="tooltip-row"><td class="tooltip-team">Stage <span class="tooltip-dim">{b.stage_label} · 30% weight</span></td><td class="tooltip-prob">{b.stage_score}</td></tr>
-                              <tr class="tooltip-row"><td class="tooltip-team">Rank <span class="tooltip-dim">FIFA #{team.fifa_rank ?? '—'} · {Math.round(b.rank_weight * 100)}% weight</span></td><td class="tooltip-prob">{b.rank_score}</td></tr>
-                            </tbody>
-                          </table>
-
-                          <div class="tooltip-result">
-                            <span>Title Strength <span class="tooltip-dim" style="font-weight:normal">(normalised)</span></span>
-                            <strong>{team.title_probability}%</strong>
-                          </div>
-                        </div>
-                      </span>
-                    {/if}
-                  </div>
-                </td>
-                <td class="num hide-sm"><span class="v {normalizeStatus(team.status)}">{team.status === 'out' ? 'Out' : team.status === 'at_risk' ? 'At risk' : 'Alive'}</span></td>
+                <th class="l">Team</th><th class="hide-sm">FIFA</th><th class="l">Manager</th><th class="hide-sm">Form</th><th>Title Strength</th><th class="hide-sm">Status</th>
               </tr>
-            {/each}
-          </tbody>
-        </table>
-        {#if data.projections.teams.length > 12}
-          <button class="show-all-btn" onclick={() => showAllTeams = !showAllTeams}>
-            {showAllTeams ? 'Show less' : `Show all ${data.projections.teams.length} teams`}
-          </button>
-        {/if}
+            </thead>
+            <tbody>
+              {#each data.projections.teams.slice(0, 10) as team}
+                <tr>
+                  <td class="c-name"><div class="nm"><span>{team.flag}</span>{team.name}</div></td>
+                  <td class="num hide-sm">{#if team.fifa_rank}<span class="fifa-rank">#{team.fifa_rank}</span>{:else}<span class="fifa-rank unranked">--</span>{/if}</td>
+                  <td class="c-name">{team.manager}</td>
+                  <td class="num hide-sm"><span class="frm">{#each (teamFormMap.get(team.name) ?? []).slice(-5) as entry}<span class="fr {entry.result}" data-tip={entry.opponent ? `${entry.opponent} ${entry.score}` : undefined}></span>{/each}</span></td>
+                  <td class="num"><span class="v {normalizeStatus(team.status)}">{formatProbability(team.title_probability)}</span></td>
+                  <td class="num hide-sm"><span class="v {normalizeStatus(team.status)}">{team.status === 'out' ? 'Out' : team.status === 'at_risk' ? 'At risk' : 'Alive'}</span></td>
+                </tr>
+              {/each}
+            </tbody>
+          </table>
+        </div>
+      {/if}
+    {/if}
+
+    <!-- Team rankings modal -->
+    {#if showTableModal}
+      <!-- svelte-ignore a11y_click_events_have_key_events a11y_no_static_element_interactions -->
+      <div class="modal-overlay" onclick={() => showTableModal = false} role="presentation">
+        <div class="modal-box" onclick={e => e.stopPropagation()} role="dialog" aria-modal="true" aria-label="Team Rankings">
+          <div class="modal-head">
+            <h3>Team Rankings</h3>
+            <button class="modal-close" onclick={() => showTableModal = false} aria-label="Close">✕</button>
+          </div>
+          {#if data?.projections?.teams}
+            <table class="table modal-table">
+              <thead>
+                <tr>
+                  <th class="l">Team</th><th class="hide-sm">FIFA</th><th class="l">Manager</th><th class="hide-sm">Form</th><th>Title Strength</th><th class="hide-sm">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {#each data.projections.teams as team}
+                  <tr>
+                    <td class="c-name">
+                      <div class="nm"><span>{team.flag}</span>{team.name}</div>
+                    </td>
+                    <td class="num hide-sm">
+                      {#if team.fifa_rank}
+                        <span class="fifa-rank">#{team.fifa_rank}</span>
+                      {:else}
+                        <span class="fifa-rank unranked">--</span>
+                      {/if}
+                    </td>
+                    <td class="c-name">{team.manager}</td>
+                    <td class="num hide-sm">
+                      <span class="frm">
+                        {#each (teamFormMap.get(team.name) ?? []).slice(-5) as entry}
+                          <span class="fr {entry.result}" data-tip={entry.opponent ? `${entry.opponent} ${entry.score}` : undefined}></span>
+                        {/each}
+                      </span>
+                    </td>
+                    <td class="num">
+                      <div class="adv-cell">
+                        <span class="v {normalizeStatus(team.status)}">{formatProbability(team.title_probability)}</span>
+                        {#if team.status !== 'out' && team.title_breakdown}
+                          {@const b = team.title_breakdown}
+                          <span class="tooltip-wrap">
+                            <span class="info-icon">ⓘ</span>
+                            <div class="tooltip-box adv-tooltip-box">
+                              <p class="tooltip-title">Title Strength — how it's calculated</p>
+                              <p class="tooltip-desc">A composite index of each team's tournament winning potential. All 48 teams are scored and normalised to sum to 100 — higher means more likely to win.</p>
+                              <p class="tooltip-section">Components <span class="tooltip-section-note">(each scored 0–1)</span></p>
+                              <table class="tooltip-table">
+                                <tbody>
+                                  <tr class="tooltip-row"><td class="tooltip-team">Form <span class="tooltip-dim">points ÷ 24 + goals/game × 2% · {Math.round(b.form_weight * 100)}% weight</span></td><td class="tooltip-prob">{b.form_score}</td></tr>
+                                  <tr class="tooltip-row"><td class="tooltip-team">Stage <span class="tooltip-dim">{b.stage_label} · 30% weight</span></td><td class="tooltip-prob">{b.stage_score}</td></tr>
+                                  <tr class="tooltip-row"><td class="tooltip-team">Rank <span class="tooltip-dim">FIFA #{team.fifa_rank ?? '—'} · {Math.round(b.rank_weight * 100)}% weight</span></td><td class="tooltip-prob">{b.rank_score}</td></tr>
+                                </tbody>
+                              </table>
+                              <div class="tooltip-result">
+                                <span>Title Strength <span class="tooltip-dim" style="font-weight:normal">(normalised)</span></span>
+                                <strong>{team.title_probability}%</strong>
+                              </div>
+                            </div>
+                          </span>
+                        {/if}
+                      </div>
+                    </td>
+                    <td class="num hide-sm"><span class="v {normalizeStatus(team.status)}">{team.status === 'out' ? 'Out' : team.status === 'at_risk' ? 'At risk' : 'Alive'}</span></td>
+                  </tr>
+                {/each}
+              </tbody>
+            </table>
+          {/if}
+        </div>
       </div>
     {/if}
     <div class="ribbon ribbon-foot"><i class="v"></i><i class="m"></i><i class="r"></i><i class="l"></i><i class="g"></i></div>
