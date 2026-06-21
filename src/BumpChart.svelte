@@ -101,6 +101,10 @@
 
   const xLabels = $derived(snapshots.map(snap => snap.round ?? snap.ts?.slice(0, 10) ?? ''));
 
+  // Only show the label on the first snapshot for each round; subsequent snapshots
+  // in the same round get an empty string so the axis label doesn't repeat.
+  const tickLabels = $derived(xLabels.map((label, i) => xLabels.indexOf(label) === i ? label : ''));
+
   function halo({ stroke = 'currentColor', strokeWidth = 3 } = {}) {
     return (index, scales, values, dimensions, context, next) => {
       const g = next(index, scales, values, dimensions, context);
@@ -138,7 +142,7 @@
         label: null,
         grid: true,
         ticks: snapshots.map((_, i) => i),
-        tickFormat: i => xLabels[i] ?? '',
+        tickFormat: i => tickLabels[i] ?? '',
         tickRotate: -30,
       },
       y: { axis: null, inset: 40, reverse: true },
