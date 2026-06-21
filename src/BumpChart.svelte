@@ -137,6 +137,7 @@
       x: {
         label: null,
         grid: true,
+        ticks: snapshots.map((_, i) => i),
         tickFormat: i => xLabels[i] ?? '',
         tickRotate: -30,
       },
