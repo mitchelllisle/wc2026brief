@@ -103,7 +103,9 @@
 
   // Only show the label on the first snapshot for each round; subsequent snapshots
   // in the same round get an empty string so the axis label doesn't repeat.
-  const tickLabels = $derived(xLabels.map((label, i) => xLabels.indexOf(label) === i ? label : ''));
+const tickLabels = $derived(
+  xLabels.map((label, i) => (i === 0 || label !== xLabels[i - 1]) ? label : '')
+);
 
   function halo({ stroke = 'currentColor', strokeWidth = 3 } = {}) {
     return (index, scales, values, dimensions, context, next) => {
