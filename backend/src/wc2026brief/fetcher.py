@@ -440,20 +440,14 @@ _KNOCKOUT_ROUND_LABELS: dict[str, str] = {
 }
 
 
-def _round_label(stage: str, existing: list[dict]) -> str:
-    """Return a short round label for the x-axis of the bump chart.
-
-    Group-stage entries are labelled MD1, MD2, MD3 based on how many
-    group-stage snapshots already exist. Knockout stages use fixed labels.
-    """
+def _round_label(stage: str, matchday: int | None) -> str:
+    """Return a short round label for the x-axis of the bump chart."""
     if stage in _KNOCKOUT_ROUND_LABELS:
         return _KNOCKOUT_ROUND_LABELS[stage]
-    # Group stage — count prior group-stage entries to derive matchday
-    prior_gs = sum(1 for e in existing if e.get("stage") == "GROUP_STAGE")
-    return f"MD{prior_gs + 1}"
+    return f"MD{matchday}" if matchday else "MD?"
 
 
-def _write_history(data_dir: Path, current_stats: dict) -> None:
+def _write_history(data_dir: Path, current_stats: dict, matchday: int | None = None) -> None:
     """Append team-ranking snapshot to data/history.json when title scores change.
 
     Reads the existing history.json (committed in git, persists across CI runs),
@@ -507,7 +501,7 @@ def _write_history(data_dir: Path, current_stats: dict) -> None:
     else:
         if existing and _score_key(existing[-1]["teams"]) == new_key:
             return  # scores unchanged from last day — skip
-        label = _round_label(stage, existing)
+        label = _round_label(stage, matchday)
         existing.append({"ts": ts, "stage": stage, "round": label, "teams": teams})
 
     history_file.write_text(json.dumps({"snapshots": existing}, indent=2))
@@ -623,6 +617,13 @@ class WCFetcher:
             m.get("stage") in knockout_stages and m.get("status") == "FINISHED"
             for m in matches
         ) else "GROUP_STAGE"
+
+        finished_gs_matchdays = [
+            m.get("matchday", 0)
+            for m in matches
+            if m.get("status") == "FINISHED" and m.get("stage") not in knockout_stages
+        ]
+        current_matchday = max(finished_gs_matchdays) if finished_gs_matchdays else None
 
         team_records = compute_team_records(matches)
         participant_stats = build_participant_stats(squads, team_records)
@@ -747,4 +748,4 @@ class WCFetcher:
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))
 
-        _write_history(self._data_dir, output.model_dump(by_alias=True))
+        _write_history(self._data_dir, output.model_dump(by_alias=True), matchday=current_matchday)
