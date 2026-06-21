@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-22T04:29:22.973051+10:00",
+  "generated_at": "2026-06-22T06:30:23.994971+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *pristine*, while Kerrod courts the *chop*",
+  "headline": "Jay stays *golden*, while Kerrod eyes the *axe*",
   "summary": [
-    "The group stage is heating up and the standings couldn't be tighter. **Jay** leads with all **12 teams alive** and a healthy **27.5% strength**, while **Kerrod** is already feeling the heat at the bottom — **2 teams out** and **6 at risk** after a brutal run of results. **Ryan** sits second with his full squad intact but **6 teams at risk**, and **Mitchell** has dropped one team with **8 at risk** — a precarious position heading into a stacked schedule.",
-    "The next few days are massive. **Jay** will be watching **Egypt vs New Zealand (Mon, 11AM)**, **Algeria vs Jordan (Tue, 1PM)**, **Ghana vs England (Wed, 6AM)**, and **Colombia vs Congo DR (Wed, 12PM)** — and yes, that last one is a **Jay vs Ryan** head-to-head. **Kerrod** needs big results from **Belgium (Mon, 5AM)**, **Uruguay (Mon, 8AM)**, **France (Tue, 7AM)**, and **Norway (Tue, 10AM)** to stop the rot, or the Secretary role is looming large."
+    "The group stage is heating up and the stakes couldn't be higher. **Jay** leads the pack with all **12 teams** alive, though **4 are at risk** — his 8W-7D-4L record still the best on the board. **Ryan** sits close behind, also with **12/12 alive** but a shaky **6 at risk** from a rough run of results. **Mitchell** has already lost one team with **8 at risk** — things are looking nervy. **Kerrod** is firmly in last with **2 teams out** and the Secretary's chair getting uncomfortably close.",
+    "Big matches incoming for everyone. **Jay** will be sweating on **Cape Verde Islands vs Uruguay (Mon 8AM)**, **New Zealand vs Egypt (Mon 11AM)**, **Jordan vs Algeria (Tue 1PM)**, **England vs Ghana (Wed 6AM)**, and **Bosnia-Herzegovina vs Qatar (Thu 5AM)**. **Ryan** has skin in **Argentina vs Austria (Tue 3AM)**, **France vs Iraq (Tue 7AM)**, **Panama vs Croatia (Wed 9AM)**, and **Colombia vs Congo DR (Wed 12PM)**. **Mitchell** is watching **Norway vs Senegal (Tue 10AM)**, **Portugal vs Uzbekistan (Wed 3AM)**, **England vs Ghana (Wed 6AM)**, **Panama vs Croatia (Wed 9AM)**, and **Switzerland vs Canada (Thu 5AM)** — a brutal run. **Kerrod** needs **Uruguay, New Zealand, France, Norway** and **Qatar** to survive or that Secretary role becomes reality."
   ],
   "leaderboard": [
     {
@@ -15,7 +15,7 @@
       "at_risk": 4,
       "record": {
         "w": 8,
-        "d": 6,
+        "d": 7,
         "l": 4
       }
     },
@@ -39,7 +39,7 @@
       "at_risk": 8,
       "record": {
         "w": 5,
-        "d": 3,
+        "d": 4,
         "l": 10
       }
     },
@@ -224,6 +224,11 @@
         "status": "at_risk",
         "last_result": "L",
         "form": [
+          {
+            "result": "D",
+            "opponent": "Canada",
+            "score": "1–1"
+          },
           {
             "result": "L",
             "opponent": "Switzerland",
@@ -510,6 +515,11 @@
         "status": "in",
         "last_result": "W",
         "form": [
+          {
+            "result": "D",
+            "opponent": "Bosnia-Herzegovina",
+            "score": "1–1"
+          },
           {
             "result": "W",
             "opponent": "Qatar",
@@ -1013,7 +1023,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URY",
+      "a_code": "URU",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
@@ -1032,31 +1042,31 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 27.5,
+        "title_probability": 27.7,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": 0.8
+        "delta": 0.2
       },
       {
         "name": "Ryan",
-        "title_probability": 26.1,
+        "title_probability": 25.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Germany",
-        "delta": 0.0
+        "delta": -0.2
       },
       {
         "name": "Mitchell",
         "title_probability": 23.6,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "England",
-        "delta": -0.3
+        "delta": 0.0
       },
       {
         "name": "Kerrod",
         "title_probability": 22.8,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "United States",
-        "delta": -0.3
+        "delta": 0.0
       }
     ],
     "teams": [
@@ -1065,7 +1075,7 @@
         "flag": "🇩🇪",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 4.2,
+        "title_probability": 4.1,
         "fifa_rank": 8,
         "title_breakdown": {
           "form_score": 0.34,
@@ -1075,7 +1085,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.0
+        "delta": -0.1
       },
       {
         "name": "United States",
@@ -1092,7 +1102,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Mexico",
@@ -1126,7 +1136,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 1.0
+        "delta": 0.0
       },
       {
         "name": "Netherlands",
@@ -1194,7 +1204,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Argentina",
@@ -1207,23 +1217,6 @@
           "form_score": 0.185,
           "stage_score": 0.0,
           "rank_score": 1.0,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": -0.1
-      },
-      {
-        "name": "Japan",
-        "flag": "🇯🇵",
-        "manager": "Jay",
-        "status": "in",
-        "title_probability": 3.3,
-        "fifa_rank": 16,
-        "title_breakdown": {
-          "form_score": 0.227,
-          "stage_score": 0.0,
-          "rank_score": 0.812,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1248,6 +1241,23 @@
         "delta": 0.0
       },
       {
+        "name": "Japan",
+        "flag": "🇯🇵",
+        "manager": "Jay",
+        "status": "in",
+        "title_probability": 3.2,
+        "fifa_rank": 16,
+        "title_breakdown": {
+          "form_score": 0.227,
+          "stage_score": 0.0,
+          "rank_score": 0.812,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.1
+      },
+      {
         "name": "Colombia",
         "flag": "🇨🇴",
         "manager": "Jay",
@@ -1262,7 +1272,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Switzerland",
@@ -1289,14 +1299,14 @@
         "title_probability": 3.0,
         "fifa_rank": 27,
         "title_breakdown": {
-          "form_score": 0.245,
+          "form_score": 0.237,
           "stage_score": 0.0,
           "rank_score": 0.675,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Austria",
@@ -1330,7 +1340,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "South Korea",
@@ -1432,7 +1442,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Uruguay",
@@ -1490,7 +1500,7 @@
         "flag": "🇵🇾",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 2.2,
+        "title_probability": 2.1,
         "fifa_rank": 37,
         "title_breakdown": {
           "form_score": 0.145,
@@ -1500,7 +1510,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.0
+        "delta": -0.1
       },
       {
         "name": "Senegal",
@@ -1568,7 +1578,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Algeria",
@@ -1690,6 +1700,23 @@
         "delta": 0.0
       },
       {
+        "name": "Bosnia-Herzegovina",
+        "flag": "🇧🇦",
+        "manager": "Jay",
+        "status": "at_risk",
+        "title_probability": 0.9,
+        "fifa_rank": 64,
+        "title_breakdown": {
+          "form_score": 0.062,
+          "stage_score": 0.0,
+          "rank_score": 0.213,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": 0.3
+      },
+      {
         "name": "Uzbekistan",
         "flag": "🇺🇿",
         "manager": "Mitchell",
@@ -1768,23 +1795,6 @@
           "form_score": 0.02,
           "stage_score": 0.0,
           "rank_score": 0.262,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.0
-      },
-      {
-        "name": "Bosnia-Herzegovina",
-        "flag": "🇧🇦",
-        "manager": "Jay",
-        "status": "at_risk",
-        "title_probability": 0.6,
-        "fifa_rank": 64,
-        "title_breakdown": {
-          "form_score": 0.02,
-          "stage_score": 0.0,
-          "rank_score": 0.213,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2

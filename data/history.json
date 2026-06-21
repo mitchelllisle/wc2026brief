@@ -1030,7 +1030,7 @@
       ]
     },
     {
-      "ts": "2026-06-22T04:29:22.973051+10:00",
+      "ts": "2026-06-22T06:30:23.994971+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1039,7 +1039,7 @@
           "flag": "\ud83c\udde9\ud83c\uddea",
           "manager": "Ryan",
           "rank": 1,
-          "score": 4.2
+          "score": 4.1
         },
         {
           "name": "United States",
@@ -1098,18 +1098,18 @@
           "score": 3.4
         },
         {
-          "name": "Japan",
-          "flag": "\ud83c\uddef\ud83c\uddf5",
-          "manager": "Jay",
+          "name": "Morocco",
+          "flag": "\ud83c\uddf2\ud83c\udde6",
+          "manager": "Ryan",
           "rank": 10,
           "score": 3.3
         },
         {
-          "name": "Morocco",
-          "flag": "\ud83c\uddf2\ud83c\udde6",
-          "manager": "Ryan",
+          "name": "Japan",
+          "flag": "\ud83c\uddef\ud83c\uddf5",
+          "manager": "Jay",
           "rank": 11,
-          "score": 3.3
+          "score": 3.2
         },
         {
           "name": "Colombia",
@@ -1214,7 +1214,7 @@
           "flag": "\ud83c\uddf5\ud83c\uddfe",
           "manager": "Ryan",
           "rank": 26,
-          "score": 2.2
+          "score": 2.1
         },
         {
           "name": "Senegal",
@@ -1294,46 +1294,46 @@
           "score": 1.0
         },
         {
+          "name": "Bosnia-Herzegovina",
+          "flag": "\ud83c\udde7\ud83c\udde6",
+          "manager": "Jay",
+          "rank": 38,
+          "score": 0.9
+        },
+        {
           "name": "Uzbekistan",
           "flag": "\ud83c\uddfa\ud83c\uddff",
           "manager": "Mitchell",
-          "rank": 38,
+          "rank": 39,
           "score": 0.9
         },
         {
           "name": "South Africa",
           "flag": "\ud83c\uddff\ud83c\udde6",
           "manager": "Ryan",
-          "rank": 39,
+          "rank": 40,
           "score": 0.9
         },
         {
           "name": "Cape Verde Islands",
           "flag": "\ud83c\udde8\ud83c\uddfb",
           "manager": "Jay",
-          "rank": 40,
+          "rank": 41,
           "score": 0.8
         },
         {
           "name": "New Zealand",
           "flag": "\ud83c\uddf3\ud83c\uddff",
           "manager": "Kerrod",
-          "rank": 41,
+          "rank": 42,
           "score": 0.7
         },
         {
           "name": "Iraq",
           "flag": "\ud83c\uddee\ud83c\uddf6",
           "manager": "Ryan",
-          "rank": 42,
-          "score": 0.7
-        },
-        {
-          "name": "Bosnia-Herzegovina",
-          "flag": "\ud83c\udde7\ud83c\udde6",
-          "manager": "Jay",
           "rank": 43,
-          "score": 0.6
+          "score": 0.7
         },
         {
           "name": "Cura\u00e7ao",
