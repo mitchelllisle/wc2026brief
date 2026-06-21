@@ -57,11 +57,23 @@
 
   let container = $state(null);
 
+  // Collapse multiple snapshots that share the same round into one, keeping the
+  // last (most recent) snapshot for each round so the chart has one column per
+  // match day rather than one column per calendar date.
+  const roundSnapshots = $derived.by(() => {
+    const seen = new Map();
+    for (const snap of snapshots) {
+      const key = snap.round ?? snap.ts?.slice(0, 10) ?? '';
+      seen.set(key, snap);
+    }
+    return [...seen.values()];
+  });
+
   const plotData = $derived.by(() => {
-    if (!snapshots.length) return [];
-    const last = snapshots[snapshots.length - 1];
+    if (!roundSnapshots.length) return [];
+    const last = roundSnapshots[roundSnapshots.length - 1];
     const tracked = new Set(last.teams.slice(0, topN).map(t => t.name));
-    return snapshots.flatMap((snap, i) =>
+    return roundSnapshots.flatMap((snap, i) =>
       snap.teams
         .filter(t => tracked.has(t.name))
         .map(t => ({
@@ -99,11 +111,7 @@
     return map;
   });
 
-  const xLabels = $derived(snapshots.map(snap => snap.round ?? snap.ts?.slice(0, 10) ?? ''));
-
-  // Only show the label on the first snapshot for each round; subsequent snapshots
-  // in the same round get an empty string so the axis label doesn't repeat.
-  const tickLabels = $derived(xLabels.map((label, i) => xLabels.indexOf(label) === i ? label : ''));
+  const xLabels = $derived(roundSnapshots.map(snap => snap.round ?? snap.ts?.slice(0, 10) ?? ''));
 
   function halo({ stroke = 'currentColor', strokeWidth = 3 } = {}) {
     return (index, scales, values, dimensions, context, next) => {
@@ -141,8 +149,8 @@
       x: {
         label: null,
         grid: true,
-        ticks: snapshots.map((_, i) => i),
-        tickFormat: i => tickLabels[i] ?? '',
+        ticks: roundSnapshots.map((_, i) => i),
+        tickFormat: i => xLabels[i] ?? '',
         tickRotate: -30,
       },
       y: { axis: null, inset: 40, reverse: true },
