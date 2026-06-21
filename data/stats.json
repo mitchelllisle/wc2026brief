@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-21T08:24:51.733623+10:00",
+  "generated_at": "2026-06-21T10:27:23.154069+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *pristine*, while Mitchell *crumbles* under pressure",
+  "headline": "Jay stays *pristine*, while Mitchell hangs by a *thread*",
   "summary": [
-    "The group stage is heating up and the standings are looking spicy. **Jay** and **Ryan** are both sitting pretty with all **12 teams alive**, though **Ryan** has a worrying **6 at risk** after a rocky run of results. **Kerrod** is one team down but relatively composed with just **3 at risk**. **Mitchell**, though? A disaster — **9 losses**, **7 teams at risk**, and already **1 out**. The Secretary role is practically being gift-wrapped for him.",
-    "Buckle up for a massive few days. **Jay** needs **Japan** to handle **Tunisia** (Sun, 2:00PM) and sweats on **Algeria** vs **Jordan** (Tue, 1:00PM) and **Ghana** vs **England** (Wed, 6:00AM). **Kerrod** has huge stakes in **Belgium vs Iran** (Mon, 5:00AM), **Uruguay vs Cape Verde Islands** (Mon, 8:00AM), and **Norway vs Senegal** (Tue, 10:00AM). **Mitchell** watches **Ecuador vs Curaçao** (Sun, 10:00AM) and desperately needs **Argentina** to beat **Austria** (Tue, 3:00AM). **Ryan** is sweating on **Portugal vs Uzbekistan** (Wed, 3:00AM) and **France vs Iraq** (Tue, 7:00AM)."
+    "The table is tightening. **Jay** and **Ryan** both sit on **12/12 alive** but **Jay** edges it on fewer teams at risk. **Kerrod** is one step behind after losing a team, but **Mitchell** is in real trouble — **9 losses**, **7 teams at risk**, and already **1 out**. The threat of 12 months of secretary duties is creeping closer for **Mitchell** with every result.",
+    "Big matches incoming. **Kerrod** needs **Tunisia**, **Belgium**, **Uruguay**, and **Norway** to hold firm across Sunday and Monday. **Jay** watches anxiously as **Spain**, **Japan**, **Egypt**, **Algeria**, **Cape Verde Islands**, and **Ghana** all take the field. **Ryan** has **Austria**, **Iraq**, **Jordan**, **Portugal**, and **Panama** in action. **Mitchell** sweats on **Saudi Arabia**, **Argentina**, **England**, **Croatia**, **Senegal**, and **Uzbekistan** — a horror run that could seal the secretaryship early."
   ],
   "leaderboard": [
     {
@@ -966,7 +966,7 @@
       "h_code": "KSA",
       "h_flag": "🇸🇦",
       "hs": 1,
-      "a_code": "URU",
+      "a_code": "URY",
       "a_flag": "🇺🇾",
       "as": 1,
       "group": "GRP H"
@@ -1011,29 +1011,29 @@
   "projections": {
     "managers": [
       {
+        "name": "Jay",
+        "title_probability": 26.2,
+        "expected_teams_next_stage": 0.0,
+        "favourite_team": "Brazil",
+        "delta": 0.1
+      },
+      {
         "name": "Ryan",
         "title_probability": 26.2,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Germany",
-        "delta": 0.4
-      },
-      {
-        "name": "Jay",
-        "title_probability": 26.1,
-        "expected_teams_next_stage": 0.0,
-        "favourite_team": "Brazil",
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Kerrod",
         "title_probability": 24.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "United States",
-        "delta": -0.2
+        "delta": 0.0
       },
       {
         "name": "Mitchell",
-        "title_probability": 23.7,
+        "title_probability": 23.6,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
         "delta": -0.1
@@ -1055,7 +1055,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.5
+        "delta": 0.0
       },
       {
         "name": "United States",
@@ -1225,7 +1225,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Canada",
@@ -1361,7 +1361,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Japan",
@@ -1395,7 +1395,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Sweden",
@@ -1412,7 +1412,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Uruguay",
@@ -1429,7 +1429,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Iran",
@@ -1446,7 +1446,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.0
       },
       {
         "name": "Croatia",
@@ -1522,26 +1522,9 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 1.9,
-        "fifa_rank": 29,
-        "title_breakdown": {
-          "form_score": 0.062,
-          "stage_score": 0.0,
-          "rank_score": 0.65,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.0
-      },
-      {
-        "name": "Ecuador",
-        "flag": "🇪🇨",
-        "manager": "Mitchell",
-        "status": "at_risk",
-        "title_probability": 1.6,
         "fifa_rank": 28,
         "title_breakdown": {
-          "form_score": 0.0,
+          "form_score": 0.062,
           "stage_score": 0.0,
           "rank_score": 0.662,
           "stage_label": "Group stage",
@@ -1555,6 +1538,23 @@
         "flag": "🇩🇿",
         "manager": "Jay",
         "status": "at_risk",
+        "title_probability": 1.6,
+        "fifa_rank": 29,
+        "title_breakdown": {
+          "form_score": 0.0,
+          "stage_score": 0.0,
+          "rank_score": 0.65,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": 0.1
+      },
+      {
+        "name": "Ecuador",
+        "flag": "🇪🇨",
+        "manager": "Mitchell",
+        "status": "at_risk",
         "title_probability": 1.5,
         "fifa_rank": 30,
         "title_breakdown": {
@@ -1565,7 +1565,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.0
+        "delta": -0.1
       },
       {
         "name": "Czechia",
@@ -1760,7 +1760,7 @@
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 0.7,
-        "fifa_rank": 82,
+        "fifa_rank": 83,
         "title_breakdown": {
           "form_score": 0.082,
           "stage_score": 0.0,
@@ -1811,7 +1811,7 @@
         "manager": "Kerrod",
         "status": "at_risk",
         "title_probability": 0.4,
-        "fifa_rank": 83,
+        "fifa_rank": 81,
         "title_breakdown": {
           "form_score": 0.02,
           "stage_score": 0.0,
