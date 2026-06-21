@@ -687,7 +687,7 @@
       ]
     },
     {
-      "ts": "2026-06-21T14:54:09.259194+10:00",
+      "ts": "2026-06-21T15:11:18.275997+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -710,7 +710,7 @@
           "flag": "\ud83c\uddf2\ud83c\uddfd",
           "manager": "Kerrod",
           "rank": 3,
-          "score": 3.8
+          "score": 3.7
         },
         {
           "name": "Netherlands",
@@ -727,25 +727,25 @@
           "score": 3.5
         },
         {
-          "name": "France",
-          "flag": "\ud83c\uddeb\ud83c\uddf7",
-          "manager": "Kerrod",
-          "rank": 6,
-          "score": 3.5
-        },
-        {
           "name": "Argentina",
           "flag": "\ud83c\udde6\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 7,
+          "rank": 6,
           "score": 3.5
         },
         {
           "name": "England",
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
           "manager": "Mitchell",
-          "rank": 8,
+          "rank": 7,
           "score": 3.5
+        },
+        {
+          "name": "France",
+          "flag": "\ud83c\uddeb\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 8,
+          "score": 3.4
         },
         {
           "name": "Morocco",
@@ -759,7 +759,7 @@
           "flag": "\ud83c\udde8\ud83c\uddf4",
           "manager": "Jay",
           "rank": 10,
-          "score": 3.2
+          "score": 3.1
         },
         {
           "name": "Switzerland",
@@ -773,7 +773,7 @@
           "flag": "\ud83c\udde8\ud83c\udde6",
           "manager": "Mitchell",
           "rank": 12,
-          "score": 3.1
+          "score": 3.0
         },
         {
           "name": "Norway",
@@ -832,18 +832,18 @@
           "score": 2.4
         },
         {
-          "name": "Ivory Coast",
-          "flag": "\ud83c\udde8\ud83c\uddee",
-          "manager": "Jay",
+          "name": "Sweden",
+          "flag": "\ud83c\uddf8\ud83c\uddea",
+          "manager": "Mitchell",
           "rank": 21,
           "score": 2.4
         },
         {
-          "name": "Sweden",
-          "flag": "\ud83c\uddf8\ud83c\uddea",
-          "manager": "Mitchell",
+          "name": "Ivory Coast",
+          "flag": "\ud83c\udde8\ud83c\uddee",
+          "manager": "Jay",
           "rank": 22,
-          "score": 2.4
+          "score": 2.3
         },
         {
           "name": "Uruguay",
@@ -951,53 +951,53 @@
           "score": 1.0
         },
         {
+          "name": "Bosnia-Herzegovina",
+          "flag": "\ud83c\udde7\ud83c\udde6",
+          "manager": "Jay",
+          "rank": 38,
+          "score": 0.9
+        },
+        {
           "name": "Uzbekistan",
           "flag": "\ud83c\uddfa\ud83c\uddff",
           "manager": "Mitchell",
-          "rank": 38,
+          "rank": 39,
           "score": 0.9
         },
         {
           "name": "South Africa",
           "flag": "\ud83c\uddff\ud83c\udde6",
           "manager": "Ryan",
-          "rank": 39,
+          "rank": 40,
           "score": 0.9
         },
         {
           "name": "Cape Verde Islands",
           "flag": "\ud83c\udde8\ud83c\uddfb",
           "manager": "Jay",
-          "rank": 40,
+          "rank": 41,
           "score": 0.8
         },
         {
           "name": "Tunisia",
           "flag": "\ud83c\uddf9\ud83c\uddf3",
           "manager": "Kerrod",
-          "rank": 41,
+          "rank": 42,
           "score": 0.8
         },
         {
           "name": "New Zealand",
           "flag": "\ud83c\uddf3\ud83c\uddff",
           "manager": "Kerrod",
-          "rank": 42,
+          "rank": 43,
           "score": 0.7
         },
         {
           "name": "Iraq",
           "flag": "\ud83c\uddee\ud83c\uddf6",
           "manager": "Ryan",
-          "rank": 43,
-          "score": 0.7
-        },
-        {
-          "name": "Bosnia-Herzegovina",
-          "flag": "\ud83c\udde7\ud83c\udde6",
-          "manager": "Jay",
           "rank": 44,
-          "score": 0.6
+          "score": 0.7
         },
         {
           "name": "Cura\u00e7ao",
