@@ -1373,7 +1373,7 @@
       ]
     },
     {
-      "ts": "2026-06-23T06:59:52.456725+10:00",
+      "ts": "2026-06-23T08:32:55.733724+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1651,25 +1651,25 @@
           "score": 0.9
         },
         {
+          "name": "Iraq",
+          "flag": "\ud83c\uddee\ud83c\uddf6",
+          "manager": "Ryan",
+          "rank": 40,
+          "score": 0.9
+        },
+        {
           "name": "South Africa",
           "flag": "\ud83c\uddff\ud83c\udde6",
           "manager": "Ryan",
-          "rank": 40,
+          "rank": 41,
           "score": 0.9
         },
         {
           "name": "Bosnia-Herzegovina",
           "flag": "\ud83c\udde7\ud83c\udde6",
           "manager": "Jay",
-          "rank": 41,
-          "score": 0.8
-        },
-        {
-          "name": "Iraq",
-          "flag": "\ud83c\uddee\ud83c\uddf6",
-          "manager": "Ryan",
           "rank": 42,
-          "score": 0.7
+          "score": 0.8
         },
         {
           "name": "New Zealand",
