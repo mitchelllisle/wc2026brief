@@ -1,6 +1,7 @@
 from wc2026brief.fetcher import (
     _enforce_summary_length,
     _limit_words,
+    _sticky_delta,
     build_participant_stats,
     build_projections,
     build_recent_results,
@@ -213,3 +214,32 @@ def test_enforce_summary_length_caps_each_paragraph_independently():
     out = _enforce_summary_length([short, long])
     assert out[0] == short
     assert len(out[1].split()) == 130
+
+
+def test_sticky_delta_fresh_change_on_movement():
+    # Score moved up by 0.3 -> trend reflects the fresh change, ignoring old trend.
+    assert _sticky_delta(3.4, 3.1, -0.2) == 0.3
+
+
+def test_sticky_delta_carries_forward_when_unchanged():
+    # Score unchanged -> keep the previous trend so it survives quiet days.
+    assert _sticky_delta(3.4, 3.4, -0.2) == -0.2
+
+
+def test_sticky_delta_tiny_change_rounds_to_zero_carries_forward():
+    # Change rounds to 0.0 -> treated as no movement, previous trend retained.
+    assert _sticky_delta(3.43, 3.40, 0.5) == 0.5
+
+
+def test_sticky_delta_no_prior_score_and_no_prior_trend_is_none():
+    # Brand-new entity with no history -> no trend yet.
+    assert _sticky_delta(2.0, None, None) is None
+
+
+def test_sticky_delta_no_prior_score_keeps_existing_trend():
+    # No comparable prior score but a stored trend exists -> keep it.
+    assert _sticky_delta(2.0, None, 0.4) == 0.4
+
+
+def test_sticky_delta_negative_movement():
+    assert _sticky_delta(0.0, 1.7, 0.1) == -1.7
