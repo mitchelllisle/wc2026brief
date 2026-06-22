@@ -1373,7 +1373,7 @@
       ]
     },
     {
-      "ts": "2026-06-23T03:31:32.221466+10:00",
+      "ts": "2026-06-23T05:04:52.874302+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1399,18 +1399,18 @@
           "score": 3.6
         },
         {
-          "name": "Netherlands",
-          "flag": "\ud83c\uddf3\ud83c\uddf1",
-          "manager": "Ryan",
+          "name": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "manager": "Jay",
           "rank": 4,
           "score": 3.5
         },
         {
-          "name": "Spain",
-          "flag": "\ud83c\uddea\ud83c\uddf8",
-          "manager": "Jay",
+          "name": "Netherlands",
+          "flag": "\ud83c\uddf3\ud83c\uddf1",
+          "manager": "Ryan",
           "rank": 5,
-          "score": 3.4
+          "score": 3.5
         },
         {
           "name": "Brazil",
