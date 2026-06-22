@@ -1030,7 +1030,7 @@
       ]
     },
     {
-      "ts": "2026-06-22T10:34:39.919914+10:00",
+      "ts": "2026-06-22T13:05:37.565754+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1130,7 +1130,7 @@
           "flag": "\ud83c\udde8\ud83c\udde6",
           "manager": "Mitchell",
           "rank": 14,
-          "score": 3.0
+          "score": 2.9
         },
         {
           "name": "Norway",
@@ -1217,25 +1217,25 @@
           "score": 2.1
         },
         {
+          "name": "Egypt",
+          "flag": "\ud83c\uddea\ud83c\uddec",
+          "manager": "Jay",
+          "rank": 27,
+          "score": 2.0
+        },
+        {
           "name": "Senegal",
           "flag": "\ud83c\uddf8\ud83c\uddf3",
           "manager": "Mitchell",
-          "rank": 27,
+          "rank": 28,
           "score": 2.0
         },
         {
           "name": "Scotland",
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
           "manager": "Mitchell",
-          "rank": 28,
-          "score": 2.0
-        },
-        {
-          "name": "Egypt",
-          "flag": "\ud83c\uddea\ud83c\uddec",
-          "manager": "Jay",
           "rank": 29,
-          "score": 1.9
+          "score": 2.0
         },
         {
           "name": "Ecuador",
