@@ -9,6 +9,7 @@ from wc2026brief.fetcher import (
     team_status,
 )
 from wc2026brief.models import Participant, Squads, Team, TeamRecord
+from hypothesis import given, strategies as st
 
 
 def test_team_status_in():
@@ -243,3 +244,16 @@ def test_sticky_delta_no_prior_score_keeps_existing_trend():
 
 def test_sticky_delta_negative_movement():
     assert _sticky_delta(0.0, 1.7, 0.1) == -1.7
+
+
+@given(
+    new=st.floats(min_value=0, max_value=100),
+    old=st.floats(min_value=0, max_value=100),
+    prev=st.one_of(st.none(), st.floats(min_value=-100, max_value=100)),
+)
+def test_sticky_delta_carries_forward_iff_no_movement(new, old, prev):
+    result = _sticky_delta(new, old, prev)
+    if round(new - old, 1):
+        assert result == round(new - old, 1)  # moved -> fresh change
+    else:
+        assert result == prev  # quiet day -> previous trend carried forward

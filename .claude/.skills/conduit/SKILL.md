@@ -36,7 +36,7 @@ Stop at the first rung that holds:
 1. **Does this need to exist at all?** Speculative transform = skip it, say so in one line. (YAGNI)
 2. **Does an internal library already do it?** Use it. Never write what you can import.
 3. **Does stdlib do it?** `itertools`, `functools`, `operator` before any custom logic.
-4. **Is this data from outside the system?** It needs a Pydantic model — no raw dicts, no `.get()` chains.
+4. **Does this data cross a serialization boundary?** Any file read, `json.loads`, API payload, env var, or cross-process message — *including data this system itself wrote* — gets a Pydantic model. If a model for that shape already exists, parse into it with `model_validate`; raw dicts and `.get()` chains over deserialized data are never the answer.
 5. **Is this a transformation?** Pure function. Input → output, no side effects, no mutation.
 6. **Can it be a pipeline?** Compose. One function per concern.
 7. **Does it cross a trust boundary?** Validate in, sanitize out, log the action (never the secret).
@@ -46,7 +46,8 @@ Stop at the first rung that holds:
 ## Rules
 
 **Data & Types**
-- Pydantic models at every trust boundary: API inputs, file reads, env vars (`BaseSettings`), external service responses, job parameters, and pipeline config.
+- Pydantic models at every serialization boundary: API inputs, file reads (including JSON this system wrote itself), env vars (`BaseSettings`), external service responses, job parameters, and pipeline config. A round-trip through disk or the wire is a boundary regardless of who produced the data.
+- Never reach into deserialized JSON with `.get()` chains when a model exists for that shape. `Model.model_validate(data)` then read typed fields — `.get("a", {}).get("b")` over parsed data is a bug, not a shortcut.
 - Pipeline config and job parameters are always Pydantic models — no raw dicts, no `argparse` without a Pydantic layer on top.
 - Type hints on every function signature, return type included.
 - Immutable by default: frozen Pydantic models, tuples or sets over lists where mutation adds nothing.
@@ -131,8 +132,12 @@ Example: "Filter orders to last 90 days, join to customers, write to Delta."
 Never strip: input validation at real trust boundaries, error handling that
 prevents data loss, security measures, or anything the user explicitly requested.
 
-Pydantic is not always the answer: for internal-only data with no external
-origin, a `TypedDict` or `dataclass` is lighter and fine.
+Pydantic is not always the answer: for in-memory internal data that never
+crosses a serialization boundary, a `TypedDict` or `dataclass` is lighter and
+fine. But the moment data is written to or read from disk, network, or JSON —
+even data this system produced — it has crossed a boundary and gets a model.
+"It's our own file" is not an exemption; if a model for that shape exists,
+parse into it.
 
 Functional style over clarity is a trap. If the `reduce` is harder to read
 than the loop, write the loop and mark it: `# conduit: loop preferred here, reduce obscures intent`.

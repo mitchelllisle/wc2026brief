@@ -450,14 +450,21 @@ def _round_label(stage: str, matchday: int | None) -> str:
 def _sticky_delta(
     new_prob: float, old_prob: float | None, prev_delta: float | None
 ) -> float | None:
-    """Return the trend to display for a manager/team's title score.
+    """Return the sticky trend for a manager/team's title score.
 
-    The trend is *sticky*: it reflects the most recent run where the score
-    actually moved. When the score changes, the fresh change (rounded to one
-    decimal) becomes the new trend; when it is unchanged, the previous trend is
-    carried forward so every entity keeps showing its latest change rather than
-    being reset to zero on quiet days. A change that rounds to 0.0 is treated as
-    no movement and also carries the previous trend forward.
+    Keeps the latest run where the score actually moved: a non-zero rounded
+    change becomes the new trend, otherwise the previous trend carries forward
+    so each entity always shows its latest change rather than resetting to zero
+    on quiet days. A change that rounds to 0.0 counts as no movement.
+
+    Args:
+        new_prob: Current title-strength score.
+        old_prob: Previous score, or None when the entity is newly tracked.
+        prev_delta: Trend stored on the previous run.
+
+    Returns:
+        The fresh rounded change when the score moved, else the carried-forward
+        trend (which may be None).
     """
     change = round(new_prob - old_prob, 1) if old_prob is not None else None
     return change if change else prev_delta
@@ -703,22 +710,24 @@ class WCFetcher:
             # to day. Recompute a delta only when the score actually moves; otherwise
             # carry the previous delta forward so each entity always shows its latest
             # change instead of being reset to zero on days it didn't move.
-            curr_mgr_probs = {m["name"]: m.get("title_probability")
-                              for m in current_data.get("projections", {}).get("managers", [])}
-            curr_team_probs = {t["name"]: t.get("title_probability")
-                               for t in current_data.get("projections", {}).get("teams", [])}
-            curr_mgr_deltas = {m["name"]: m.get("delta")
-                               for m in current_data.get("projections", {}).get("managers", [])}
-            curr_team_deltas = {t["name"]: t.get("delta")
-                                for t in current_data.get("projections", {}).get("teams", [])}
+            # Validate the previous file at the read boundary, then read typed fields.
+            prev = StatsOutput.model_validate(current_data)
+            prev_mgr = {m.name: m for m in prev.projections.managers}
+            prev_team = {t.name: t for t in prev.projections.teams}
 
             for m in output.projections.managers:
+                old = prev_mgr.get(m.name)
                 m.delta = _sticky_delta(
-                    m.title_probability, curr_mgr_probs.get(m.name), curr_mgr_deltas.get(m.name)
+                    m.title_probability,
+                    old.title_probability if old else None,
+                    old.delta if old else None,
                 )
             for t in output.projections.teams:
+                old = prev_team.get(t.name)
                 t.delta = _sticky_delta(
-                    t.title_probability, curr_team_probs.get(t.name), curr_team_deltas.get(t.name)
+                    t.title_probability,
+                    old.title_probability if old else None,
+                    old.delta if old else None,
                 )
 
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
