@@ -696,13 +696,17 @@ class WCFetcher:
 
         if self._stats_file.exists():
             current_json = self._stats_file.read_text()
+            # Validate the previous file the moment it is read — everything below
+            # (snapshot filename included) works off typed `prev`, never a raw
+            # dict, and no snapshot is written from unvalidated data.
+            prev = StatsOutput.model_validate_json(current_json)
             current_data = json.loads(current_json)
             new_data = json.loads(output.model_dump_json(by_alias=True))
 
             # Save a snapshot whenever any non-volatile data changes (form, results, etc.)
             if _strip_volatile(current_data) != _strip_volatile(new_data):
                 snapshots_dir.mkdir(exist_ok=True)
-                snapshot_date = (current_data.get("generated_at") or "")[:10] or now.strftime("%Y-%m-%d")
+                snapshot_date = (prev.generated_at or "")[:10] or now.strftime("%Y-%m-%d")
                 (snapshots_dir / f"{snapshot_date}.json").write_text(current_json)
 
             # Sticky trend: every manager and team carries its most recent *non-zero*
@@ -710,8 +714,6 @@ class WCFetcher:
             # to day. Recompute a delta only when the score actually moves; otherwise
             # carry the previous delta forward so each entity always shows its latest
             # change instead of being reset to zero on days it didn't move.
-            # Validate the previous file at the read boundary, then read typed fields.
-            prev = StatsOutput.model_validate(current_data)
             prev_mgr = {m.name: m for m in prev.projections.managers}
             prev_team = {t.name: t for t in prev.projections.teams}
 
