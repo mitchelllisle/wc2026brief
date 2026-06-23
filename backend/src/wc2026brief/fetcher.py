@@ -447,6 +447,29 @@ def _round_label(stage: str, matchday: int | None) -> str:
     return f"MD{matchday}" if matchday else "MD?"
 
 
+def _sticky_delta(
+    new_prob: float, old_prob: float | None, prev_delta: float | None
+) -> float | None:
+    """Return the sticky trend for a manager/team's title score.
+
+    Keeps the latest run where the score actually moved: a non-zero rounded
+    change becomes the new trend, otherwise the previous trend carries forward
+    so each entity always shows its latest change rather than resetting to zero
+    on quiet days. A change that rounds to 0.0 counts as no movement.
+
+    Args:
+        new_prob: Current title-strength score.
+        old_prob: Previous score, or None when the entity is newly tracked.
+        prev_delta: Trend stored on the previous run.
+
+    Returns:
+        The fresh rounded change when the score moved, else the carried-forward
+        trend (which may be None).
+    """
+    change = round(new_prob - old_prob, 1) if old_prob is not None else None
+    return change if change else prev_delta
+
+
 def _write_history(data_dir: Path, current_stats: dict, matchday: int | None = None) -> None:
     """Append team-ranking snapshot to data/history.json when title scores change.
 
@@ -669,81 +692,45 @@ class WCFetcher:
                 return [_strip_volatile(i) for i in obj]
             return obj
 
-        def _probs_changed(current_data: dict, new_data: dict) -> bool:
-            """Return True only when title_probability values themselves changed."""
-            curr_mgr = {m["name"]: m.get("title_probability")
-                        for m in current_data.get("projections", {}).get("managers", [])}
-            for m in new_data.get("projections", {}).get("managers", []):
-                if curr_mgr.get(m["name"]) != m.get("title_probability"):
-                    return True
-            curr_team = {t["name"]: t.get("title_probability")
-                         for t in current_data.get("projections", {}).get("teams", [])}
-            for t in new_data.get("projections", {}).get("teams", []):
-                if curr_team.get(t["name"]) != t.get("title_probability"):
-                    return True
-            return False
-
         snapshots_dir = self._data_dir / "snapshots"
 
         if self._stats_file.exists():
             current_json = self._stats_file.read_text()
+            # Validate the previous file the moment it is read — everything below
+            # (snapshot filename included) works off typed `prev`, never a raw
+            # dict, and no snapshot is written from unvalidated data.
+            prev = StatsOutput.model_validate_json(current_json)
             current_data = json.loads(current_json)
             new_data = json.loads(output.model_dump_json(by_alias=True))
-
-            # Detect whether stats.json already carries delta fields (post-migration state)
-            curr_mgr_deltas = {m["name"]: m.get("delta")
-                               for m in current_data.get("projections", {}).get("managers", [])}
-            has_existing_deltas = any(v is not None for v in curr_mgr_deltas.values())
 
             # Save a snapshot whenever any non-volatile data changes (form, results, etc.)
             if _strip_volatile(current_data) != _strip_volatile(new_data):
                 snapshots_dir.mkdir(exist_ok=True)
-                snapshot_date = (current_data.get("generated_at") or "")[:10] or now.strftime("%Y-%m-%d")
+                snapshot_date = (prev.generated_at or "")[:10] or now.strftime("%Y-%m-%d")
                 (snapshots_dir / f"{snapshot_date}.json").write_text(current_json)
 
-            if _probs_changed(current_data, new_data):
-                # Title probabilities changed — compute fresh deltas vs current values
-                curr_mgr = {m["name"]: m.get("title_probability")
-                            for m in current_data.get("projections", {}).get("managers", [])}
-                curr_team = {t["name"]: t.get("title_probability")
-                             for t in current_data.get("projections", {}).get("teams", [])}
-                for m in output.projections.managers:
-                    old = curr_mgr.get(m.name)
-                    m.delta = round(m.title_probability - old, 1) if old is not None else None
-                for t in output.projections.teams:
-                    old = curr_team.get(t.name)
-                    t.delta = round(t.title_probability - old, 1) if old is not None else None
+            # Sticky trend: every manager and team carries its most recent *non-zero*
+            # change in title score, persisted in stats.json so the trend survives day
+            # to day. Recompute a delta only when the score actually moves; otherwise
+            # carry the previous delta forward so each entity always shows its latest
+            # change instead of being reset to zero on days it didn't move.
+            prev_mgr = {m.name: m for m in prev.projections.managers}
+            prev_team = {t.name: t for t in prev.projections.teams}
 
-            elif has_existing_deltas:
-                # Probabilities unchanged and deltas exist — carry them forward
-                curr_team_deltas = {t["name"]: t.get("delta")
-                                    for t in current_data.get("projections", {}).get("teams", [])}
-                for m in output.projections.managers:
-                    m.delta = curr_mgr_deltas.get(m.name)
-                for t in output.projections.teams:
-                    t.delta = curr_team_deltas.get(t.name)
-
-            else:
-                # Migration: no deltas yet — seed from stats_prev.json if present
-                prev_file = self._data_dir / "stats_prev.json"
-                if prev_file.exists():
-                    prev_data = json.loads(prev_file.read_text())
-                    base_mgr = {m["name"]: m.get("title_probability")
-                                for m in prev_data.get("projections", {}).get("managers", [])}
-                    base_team = {t["name"]: t.get("title_probability")
-                                 for t in prev_data.get("projections", {}).get("teams", [])}
-                    for m in output.projections.managers:
-                        old = base_mgr.get(m.name)
-                        m.delta = round(m.title_probability - old, 1) if old is not None else None
-                    for t in output.projections.teams:
-                        old = base_team.get(t.name)
-                        t.delta = round(t.title_probability - old, 1) if old is not None else None
-                    # Archive stats_prev.json as the initial snapshot
-                    snapshots_dir.mkdir(exist_ok=True)
-                    prev_date = (prev_data.get("generated_at") or "")[:10] or now.strftime("%Y-%m-%d")
-                    snapshot_file = snapshots_dir / f"{prev_date}.json"
-                    if not snapshot_file.exists():
-                        snapshot_file.write_text(prev_file.read_text())
+            for m in output.projections.managers:
+                old = prev_mgr.get(m.name)
+                m.delta = _sticky_delta(
+                    m.title_probability,
+                    old.title_probability if old else None,
+                    old.delta if old else None,
+                )
+            for t in output.projections.teams:
+                old = prev_team.get(t.name)
+                t.delta = _sticky_delta(
+                    t.title_probability,
+                    old.title_probability if old else None,
+                    old.delta if old else None,
+                )
 
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))
