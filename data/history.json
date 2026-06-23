@@ -1373,7 +1373,7 @@
       ]
     },
     {
-      "ts": "2026-06-23T13:03:20.283518+10:00",
+      "ts": "2026-06-23T15:18:49.252672+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1511,22 +1511,22 @@
           "score": 2.5
         },
         {
-          "name": "Portugal",
-          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "name": "South Korea",
+          "flag": "\ud83c\uddf0\ud83c\uddf7",
           "manager": "Ryan",
           "rank": 20,
           "score": 2.5
         },
         {
-          "name": "South Korea",
-          "flag": "\ud83c\uddf0\ud83c\uddf7",
-          "manager": "Ryan",
-          "rank": 21,
-          "score": 2.5
-        },
-        {
           "name": "Australia",
           "flag": "\ud83c\udde6\ud83c\uddfa",
+          "manager": "Jay",
+          "rank": 21,
+          "score": 2.4
+        },
+        {
+          "name": "Algeria",
+          "flag": "\ud83c\udde9\ud83c\uddff",
           "manager": "Jay",
           "rank": 22,
           "score": 2.4
@@ -1539,53 +1539,53 @@
           "score": 2.4
         },
         {
+          "name": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 24,
+          "score": 2.4
+        },
+        {
           "name": "Ivory Coast",
           "flag": "\ud83c\udde8\ud83c\uddee",
           "manager": "Jay",
-          "rank": 24,
+          "rank": 25,
           "score": 2.3
         },
         {
           "name": "Iran",
           "flag": "\ud83c\uddee\ud83c\uddf7",
           "manager": "Kerrod",
-          "rank": 25,
+          "rank": 26,
           "score": 2.3
         },
         {
           "name": "Croatia",
           "flag": "\ud83c\udded\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 26,
-          "score": 2.2
+          "rank": 27,
+          "score": 2.1
         },
         {
           "name": "Paraguay",
           "flag": "\ud83c\uddf5\ud83c\uddfe",
           "manager": "Ryan",
-          "rank": 27,
+          "rank": 28,
           "score": 2.1
         },
         {
           "name": "Scotland",
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
           "manager": "Mitchell",
-          "rank": 28,
-          "score": 2.0
+          "rank": 29,
+          "score": 1.9
         },
         {
           "name": "Ecuador",
           "flag": "\ud83c\uddea\ud83c\udde8",
           "manager": "Mitchell",
-          "rank": 29,
-          "score": 1.8
-        },
-        {
-          "name": "Algeria",
-          "flag": "\ud83c\udde9\ud83c\uddff",
-          "manager": "Jay",
           "rank": 30,
-          "score": 1.5
+          "score": 1.7
         },
         {
           "name": "Congo DR",
@@ -1662,53 +1662,53 @@
           "flag": "\ud83c\uddf3\ud83c\uddff",
           "manager": "Kerrod",
           "rank": 41,
-          "score": 0.7
-        },
-        {
-          "name": "Jordan",
-          "flag": "\ud83c\uddef\ud83c\uddf4",
-          "manager": "Ryan",
-          "rank": 42,
           "score": 0.6
         },
         {
           "name": "Cura\u00e7ao",
           "flag": "\ud83c\udde8\ud83c\uddfc",
           "manager": "Kerrod",
-          "rank": 43,
+          "rank": 42,
           "score": 0.5
         },
         {
           "name": "Turkey",
           "flag": "\ud83c\uddf9\ud83c\uddf7",
           "manager": "Kerrod",
-          "rank": 44,
+          "rank": 43,
           "score": 0.0
         },
         {
           "name": "Tunisia",
           "flag": "\ud83c\uddf9\ud83c\uddf3",
           "manager": "Kerrod",
-          "rank": 45,
+          "rank": 44,
           "score": 0.0
         },
         {
           "name": "Senegal",
           "flag": "\ud83c\uddf8\ud83c\uddf3",
           "manager": "Mitchell",
-          "rank": 46,
+          "rank": 45,
           "score": 0.0
         },
         {
           "name": "Haiti",
           "flag": "\ud83c\udded\ud83c\uddf9",
           "manager": "Mitchell",
-          "rank": 47,
+          "rank": 46,
           "score": 0.0
         },
         {
           "name": "Iraq",
           "flag": "\ud83c\uddee\ud83c\uddf6",
+          "manager": "Ryan",
+          "rank": 47,
+          "score": 0.0
+        },
+        {
+          "name": "Jordan",
+          "flag": "\ud83c\uddef\ud83c\uddf4",
           "manager": "Ryan",
           "rank": 48,
           "score": 0.0
