@@ -1373,7 +1373,7 @@
       ]
     },
     {
-      "ts": "2026-06-23T12:58:36.859229+10:00",
+      "ts": "2026-06-23T13:03:20.283518+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1578,7 +1578,7 @@
           "flag": "\ud83c\uddea\ud83c\udde8",
           "manager": "Mitchell",
           "rank": 29,
-          "score": 1.7
+          "score": 1.8
         },
         {
           "name": "Algeria",
@@ -1665,16 +1665,16 @@
           "score": 0.7
         },
         {
-          "name": "Cura\u00e7ao",
-          "flag": "\ud83c\udde8\ud83c\uddfc",
-          "manager": "Kerrod",
-          "rank": 42,
-          "score": 0.5
-        },
-        {
           "name": "Jordan",
           "flag": "\ud83c\uddef\ud83c\uddf4",
           "manager": "Ryan",
+          "rank": 42,
+          "score": 0.6
+        },
+        {
+          "name": "Cura\u00e7ao",
+          "flag": "\ud83c\udde8\ud83c\uddfc",
+          "manager": "Kerrod",
           "rank": 43,
           "score": 0.5
         },
