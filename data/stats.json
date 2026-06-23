@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-24T06:41:51.372533+10:00",
+  "generated_at": "2026-06-24T08:25:12.783460+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *pristine*, Mitchell teeters on the *brink*",
+  "headline": "Jay stays *spotless*, while Mitchell eyes the *chop*",
   "summary": [
-    "The group stage carnage is piling up and **Mitchell** is feeling it hardest — **3 teams out, 6 at risk**, and a Secretary badge getting uncomfortably close. **Ryan** and **Kerrod** are level on eliminations at **2 out each**, but **Ryan's 5 at-risk teams** make him nervous company. **Jay**, meanwhile, is cruising with all **12 teams still alive** and a comp-high **29.4% strength** — genuinely untouchable right now.",
-    "Massive days ahead. **Jay** sweats through **Switzerland vs Canada (Thu 5AM)**, **Bosnia-Herzegovina vs Qatar (Thu 5AM)**, **Colombia vs Congo DR (Wed 12PM)**, and **Morocco vs Haiti (Thu 8AM)** — huge exposure. **Mitchell** watches nervously as **Croatia faces Panama (Wed 9AM)**, **Scotland takes on Brazil (Thu 8AM)**, and **Czechia meets Mexico (Thu 11AM)**. **Kerrod** has **Tunisia vs Netherlands (Fri 9AM)** and **Curaçao vs Ivory Coast (Fri 6AM)** in play. **Ryan** eyes **South Africa vs South Korea (Thu 11AM)**, **Ecuador vs Germany (Fri 6AM)**, and **Japan vs Sweden (Fri 9AM)** — with at-risk teams scattered everywhere."
+    "The sweep table is getting spicy. **Jay** remains the only player with all **12 teams alive**, while **Mitchell** is already down to **9/12** after a brutal run — his **6W-5D-12L** record is cooked. **Ryan** and **Kerrod** are level on **10 alive** but **Ryan** has a scary **5 at-risk** teams threatening to avalanche. **Kerrod** has trimmed his damage to just **3 at risk**, so he's the steadier of the two. The standings are tightening fast heading into Wednesday's action.",
+    "Wednesday kicks off with **Panama vs Croatia** at **9AM AEST** — massive for **Ryan** (Panama) and **Mitchell** (Croatia), both sides desperate to avoid a second loss. Then **Colombia vs Congo DR** at **12PM AEST** puts **Jay's Colombia** against **Ryan's Congo DR** — winner stays alive, loser goes at risk. Thursday heats up with **Switzerland vs Canada** (Jay vs Mitchell), **Bosnia-Herzegovina vs Qatar** (Jay vs Kerrod), **Morocco vs Haiti** (Ryan vs Mitchell), **Scotland vs Brazil** (Mitchell vs Jay), and **South Africa vs South Korea** (Ryan vs Ryan — wild)."
   ],
   "leaderboard": [
     {
@@ -15,7 +15,7 @@
       "at_risk": 4,
       "record": {
         "w": 10,
-        "d": 8,
+        "d": 9,
         "l": 4
       }
     },
@@ -51,7 +51,7 @@
       "at_risk": 6,
       "record": {
         "w": 6,
-        "d": 4,
+        "d": 5,
         "l": 12
       }
     }
@@ -255,12 +255,17 @@
         "name": "Ghana",
         "flag": "🇬🇭",
         "status": "in",
-        "last_result": "W",
+        "last_result": "D",
         "form": [
           {
             "result": "W",
             "opponent": "Panama",
             "score": "1–0"
+          },
+          {
+            "result": "D",
+            "opponent": "England",
+            "score": "0–0"
           }
         ]
       }
@@ -714,12 +719,17 @@
         "name": "England",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "status": "in",
-        "last_result": "W",
+        "last_result": "D",
         "form": [
           {
             "result": "W",
             "opponent": "Croatia",
             "score": "4–2"
+          },
+          {
+            "result": "D",
+            "opponent": "Ghana",
+            "score": "0–0"
           }
         ]
       },
@@ -901,6 +911,15 @@
     ]
   },
   "recent_results": [
+    {
+      "h_code": "ENG",
+      "h_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "hs": 0,
+      "a_code": "GHA",
+      "a_flag": "🇬🇭",
+      "as": 0,
+      "group": "GRP L"
+    },
     {
       "h_code": "POR",
       "h_flag": "🇵🇹",
@@ -1107,25 +1126,16 @@
       "a_flag": "🇵🇦",
       "as": 0,
       "group": "GRP L"
-    },
-    {
-      "h_code": "ENG",
-      "h_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "hs": 4,
-      "a_code": "CRO",
-      "a_flag": "🇭🇷",
-      "as": 2,
-      "group": "GRP L"
     }
   ],
   "projections": {
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 29.4,
+        "title_probability": 29.6,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": -0.1
+        "delta": 0.2
       },
       {
         "name": "Ryan",
@@ -1136,7 +1146,7 @@
       },
       {
         "name": "Kerrod",
-        "title_probability": 24.7,
+        "title_probability": 24.6,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "France",
         "delta": -0.1
@@ -1223,7 +1233,7 @@
         "flag": "🇲🇽",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.7,
+        "title_probability": 3.6,
         "fifa_rank": 11,
         "title_breakdown": {
           "form_score": 0.28,
@@ -1233,7 +1243,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Norway",
@@ -1328,7 +1338,7 @@
         "title_probability": 3.4,
         "fifa_rank": 4,
         "title_breakdown": {
-          "form_score": 0.205,
+          "form_score": 0.207,
           "stage_score": 0.0,
           "rank_score": 0.963,
           "stage_label": "Group stage",
@@ -1661,6 +1671,23 @@
         "delta": -0.1
       },
       {
+        "name": "Ghana",
+        "flag": "🇬🇭",
+        "manager": "Jay",
+        "status": "in",
+        "title_probability": 1.5,
+        "fifa_rank": 64,
+        "title_breakdown": {
+          "form_score": 0.177,
+          "stage_score": 0.0,
+          "rank_score": 0.213,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": 0.2
+      },
+      {
         "name": "Congo DR",
         "flag": "🇨🇩",
         "manager": "Ryan",
@@ -1688,23 +1715,6 @@
           "form_score": 0.062,
           "stage_score": 0.0,
           "rank_score": 0.463,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": -0.1
-      },
-      {
-        "name": "Ghana",
-        "flag": "🇬🇭",
-        "manager": "Jay",
-        "status": "in",
-        "title_probability": 1.3,
-        "fifa_rank": 64,
-        "title_breakdown": {
-          "form_score": 0.145,
-          "stage_score": 0.0,
-          "rank_score": 0.213,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
