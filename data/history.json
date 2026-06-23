@@ -1716,7 +1716,7 @@
       ]
     },
     {
-      "ts": "2026-06-24T04:38:42.024499+10:00",
+      "ts": "2026-06-24T06:41:51.372533+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD2",
       "teams": [
@@ -1770,93 +1770,93 @@
           "score": 3.5
         },
         {
+          "name": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 8,
+          "score": 3.5
+        },
+        {
           "name": "Netherlands",
           "flag": "\ud83c\uddf3\ud83c\uddf1",
           "manager": "Ryan",
-          "rank": 8,
+          "rank": 9,
           "score": 3.5
         },
         {
           "name": "Brazil",
           "flag": "\ud83c\udde7\ud83c\uddf7",
           "manager": "Jay",
-          "rank": 9,
+          "rank": 10,
           "score": 3.4
         },
         {
           "name": "England",
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
           "manager": "Mitchell",
-          "rank": 10,
+          "rank": 11,
           "score": 3.4
         },
         {
           "name": "Morocco",
           "flag": "\ud83c\uddf2\ud83c\udde6",
           "manager": "Ryan",
-          "rank": 11,
+          "rank": 12,
           "score": 3.3
         },
         {
           "name": "Japan",
           "flag": "\ud83c\uddef\ud83c\uddf5",
           "manager": "Jay",
-          "rank": 12,
+          "rank": 13,
           "score": 3.2
         },
         {
           "name": "Colombia",
           "flag": "\ud83c\udde8\ud83c\uddf4",
           "manager": "Jay",
-          "rank": 13,
+          "rank": 14,
           "score": 3.1
         },
         {
           "name": "Switzerland",
           "flag": "\ud83c\udde8\ud83c\udded",
           "manager": "Jay",
-          "rank": 14,
+          "rank": 15,
           "score": 3.1
         },
         {
           "name": "Canada",
           "flag": "\ud83c\udde8\ud83c\udde6",
           "manager": "Mitchell",
-          "rank": 15,
+          "rank": 16,
           "score": 2.9
         },
         {
           "name": "Egypt",
           "flag": "\ud83c\uddea\ud83c\uddec",
           "manager": "Jay",
-          "rank": 16,
+          "rank": 17,
           "score": 2.8
         },
         {
           "name": "Belgium",
           "flag": "\ud83c\udde7\ud83c\uddea",
           "manager": "Kerrod",
-          "rank": 17,
+          "rank": 18,
           "score": 2.6
         },
         {
           "name": "Austria",
           "flag": "\ud83c\udde6\ud83c\uddf9",
           "manager": "Ryan",
-          "rank": 18,
+          "rank": 19,
           "score": 2.6
         },
         {
           "name": "Uruguay",
           "flag": "\ud83c\uddfa\ud83c\uddfe",
           "manager": "Kerrod",
-          "rank": 19,
-          "score": 2.5
-        },
-        {
-          "name": "Portugal",
-          "flag": "\ud83c\uddf5\ud83c\uddf9",
-          "manager": "Ryan",
           "rank": 20,
           "score": 2.5
         },
@@ -1973,64 +1973,64 @@
           "score": 1.0
         },
         {
-          "name": "Bosnia-Herzegovina",
-          "flag": "\ud83c\udde7\ud83c\udde6",
-          "manager": "Jay",
-          "rank": 37,
-          "score": 0.9
-        },
-        {
           "name": "Saudi Arabia",
           "flag": "\ud83c\uddf8\ud83c\udde6",
           "manager": "Mitchell",
-          "rank": 38,
+          "rank": 37,
           "score": 0.9
         },
         {
           "name": "South Africa",
           "flag": "\ud83c\uddff\ud83c\udde6",
           "manager": "Ryan",
-          "rank": 39,
+          "rank": 38,
           "score": 0.9
         },
         {
-          "name": "Uzbekistan",
-          "flag": "\ud83c\uddfa\ud83c\uddff",
-          "manager": "Mitchell",
-          "rank": 40,
+          "name": "Bosnia-Herzegovina",
+          "flag": "\ud83c\udde7\ud83c\udde6",
+          "manager": "Jay",
+          "rank": 39,
           "score": 0.8
         },
         {
           "name": "New Zealand",
           "flag": "\ud83c\uddf3\ud83c\uddff",
           "manager": "Kerrod",
-          "rank": 41,
+          "rank": 40,
           "score": 0.6
         },
         {
           "name": "Cura\u00e7ao",
           "flag": "\ud83c\udde8\ud83c\uddfc",
           "manager": "Kerrod",
-          "rank": 42,
+          "rank": 41,
           "score": 0.5
         },
         {
           "name": "Turkey",
           "flag": "\ud83c\uddf9\ud83c\uddf7",
           "manager": "Kerrod",
-          "rank": 43,
+          "rank": 42,
           "score": 0.0
         },
         {
           "name": "Tunisia",
           "flag": "\ud83c\uddf9\ud83c\uddf3",
           "manager": "Kerrod",
-          "rank": 44,
+          "rank": 43,
           "score": 0.0
         },
         {
           "name": "Senegal",
           "flag": "\ud83c\uddf8\ud83c\uddf3",
+          "manager": "Mitchell",
+          "rank": 44,
+          "score": 0.0
+        },
+        {
+          "name": "Uzbekistan",
+          "flag": "\ud83c\uddfa\ud83c\uddff",
           "manager": "Mitchell",
           "rank": 45,
           "score": 0.0
