@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T04:42:05.040675+10:00",
+  "generated_at": "2026-06-26T06:38:19.711949+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *fortress*, while Mitchell stares down the *axe*",
+  "headline": "Jay stays *immaculate*, Mitchell stares down the *abyss*",
   "summary": [
-    "The group stage is heating up and the sweep standings are getting spicy. **Jay** remains the only participant with all 12 teams still breathing — an absolute marvel. **Kerrod** is holding steady in second despite losing three teams already, while **Ryan** is in danger territory with four already eliminated. **Mitchell** is the one sweating hardest — five teams gone, five more *at risk*, and a record of **7W-5D-16L** that tells its own brutal story. That Secretary role is looming large.",
-    "Massive Friday slate incoming. **Mitchell's** **Ecuador** faces **Ryan's** **Germany** at **6:00AM** — a huge clash either way. **Mitchell's** **Sweden** meets **Jay's** **Japan** at **9:00AM**, while **Kerrod's** **Turkey** clashes with **Kerrod's** **United States** at **12:00PM** — his own civil war. **Jay's** **Australia** faces **Ryan's** **Paraguay** at **12:00PM** too. Saturday brings **Kerrod's** **Norway** vs **Kerrod's** **France**, **Jay's** **Spain** vs **Kerrod's** **Uruguay**, and **Mitchell's** **Senegal** vs **Ryan's** **Iraq** — absolutely stacked."
+    "The group stage pressure is mounting fast. **Jay** remains the only player with all 12 teams breathing, though **4 are at risk** — a wobble could change that quickly. **Kerrod** and **Ryan** have both taken hits, sitting on **3 and 4 teams out** respectively, while **Mitchell** is teetering at the bottom with **5 gone** and 5 more on the danger list. The Secretary chair has Mitchell's name all over it right now.",
+    "Big ones incoming: **Jay's** sides get tested hard — **Japan vs Sweden (Fri 9AM)**, **Paraguay vs Australia (Fri 12PM)**, **Egypt vs Iran (Sat 1PM)**, and **Cape Verde Islands vs Saudi Arabia (Sat 10AM)** all involve his teams. **Kerrod** watches **Turkey vs United States (Fri 12PM)**, **Norway vs France (Sat 5AM)**, and **Uruguay vs Spain (Sat 10AM)** nervously. **Mitchell** needs **England (Sun 7AM)** and **Senegal (Sat 5AM)** to survive — losses there make the Secretary role almost a certainty."
   ],
   "leaderboard": [
     {
@@ -1127,7 +1127,7 @@
       "group": "GRP G"
     },
     {
-      "h_code": "URY",
+      "h_code": "URU",
       "h_flag": "🇺🇾",
       "hs": 2,
       "a_code": "CPV",
@@ -1219,10 +1219,10 @@
       },
       {
         "name": "Kerrod",
-        "title_probability": 24.9,
+        "title_probability": 24.8,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Mexico",
-        "delta": 1.4
+        "delta": -0.1
       },
       {
         "name": "Ryan",
@@ -1245,7 +1245,7 @@
         "flag": "🇲🇽",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 4.6,
+        "title_probability": 4.5,
         "fifa_rank": 10,
         "title_breakdown": {
           "form_score": 0.415,
@@ -1255,7 +1255,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 1.0
+        "delta": -0.1
       },
       {
         "name": "Brazil",
@@ -1637,11 +1637,11 @@
         "manager": "Jay",
         "status": "at_risk",
         "title_probability": 2.4,
-        "fifa_rank": 30,
+        "fifa_rank": 29,
         "title_breakdown": {
           "form_score": 0.145,
           "stage_score": 0.0,
-          "rank_score": 0.637,
+          "rank_score": 0.65,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1722,11 +1722,11 @@
         "manager": "Mitchell",
         "status": "at_risk",
         "title_probability": 1.8,
-        "fifa_rank": 29,
+        "fifa_rank": 28,
         "title_breakdown": {
           "form_score": 0.042,
           "stage_score": 0.0,
-          "rank_score": 0.65,
+          "rank_score": 0.662,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1841,7 +1841,7 @@
         "manager": "Kerrod",
         "status": "at_risk",
         "title_probability": 0.5,
-        "fifa_rank": 81,
+        "fifa_rank": 82,
         "title_breakdown": {
           "form_score": 0.052,
           "stage_score": 0.0,
@@ -1994,11 +1994,11 @@
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 28,
+        "fifa_rank": 30,
         "title_breakdown": {
           "form_score": 0.138,
           "stage_score": 0.0,
-          "rank_score": 0.662,
+          "rank_score": 0.637,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
