@@ -1,5 +1,7 @@
 import json
 import logging
+from collections import defaultdict
+from itertools import combinations, product
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -213,23 +215,179 @@ def compute_team_records(matches: list[dict]) -> dict[str, TeamRecord]:
     return records
 
 
-def team_status(rec: TeamRecord) -> str:
-    """Derive a sweep status string from a team's match record.
+def compute_advancement(
+    matches: list[dict],
+    advance_per_group: int = 2,
+    best_thirds: int = 8,
+) -> dict[str, str]:
+    """Classify every group-stage team's chance of reaching the knockout round.
 
-    Group stage: 0 losses → "in", 1 loss → "at_risk", 2+ losses → "out".
-    Knockout: any loss sets knocked_out, which immediately → "out".
+    FIFA World Cup 2026 uses 12 groups of four and sends 32 of the 48 teams
+    through: the top ``advance_per_group`` (2) of every group **plus** the
+    ``best_thirds`` (8) best third-placed teams across all groups. A team is
+    therefore only eliminated once it can neither finish in the top two of its
+    group nor reach a points total that could still rank among the best
+    third-placed teams — losing two matches is no longer enough on its own.
+
+    Remaining group fixtures are reconstructed from the round-robin structure
+    (each pair of a group's four teams meets exactly once), so the verdict is
+    correct whether or not the as-yet-unplayed matches appear in ``matches`` —
+    this keeps historical back-fill snapshots honest, where only finished
+    matches are supplied.
+
+    Elimination is decided conservatively: a rival group only counts against a
+    team when it is *guaranteed* a better third-placed team. Goal difference and
+    goals scored break ties only between groups that have both finished (where
+    those numbers can no longer change); while matches remain, comparison is on
+    points alone, so a team is never declared out while a winnable tie-breaker
+    could still save it.
+
+    Args:
+        matches: Raw match dicts as returned by the football-data.org API.
+        advance_per_group: Automatic qualifiers per group (default 2).
+        best_thirds: Third-placed teams that also advance (default 8).
+
+    Returns:
+        Mapping of team name to ``"clinched"`` (guaranteed a top-two finish),
+        ``"eliminated"`` (cannot reach the knockout round), or ``"alive"``.
+        Teams with no group-stage matches are absent from the mapping.
+    """
+    teams_by_group: dict[str, set[str]] = defaultdict(set)
+    played_pairs: dict[str, set[frozenset[str]]] = defaultdict(set)
+    pts: dict[str, int] = defaultdict(int)
+    gd: dict[str, int] = defaultdict(int)
+    gf: dict[str, int] = defaultdict(int)
+
+    for match in matches:
+        group = match.get("group")
+        if match.get("stage") != "GROUP_STAGE" or not group:
+            continue
+        home = match["homeTeam"]["name"]
+        away = match["awayTeam"]["name"]
+        teams_by_group[group].update((home, away))
+        if match.get("status") != "FINISHED":
+            continue
+        hs = match.get("score", {}).get("fullTime", {}).get("home")
+        as_ = match.get("score", {}).get("fullTime", {}).get("away")
+        if hs is None or as_ is None:
+            continue
+        played_pairs[group].add(frozenset((home, away)))
+        gf[home] += hs; gd[home] += hs - as_
+        gf[away] += as_; gd[away] += as_ - hs
+        if hs > as_:
+            pts[home] += 3
+        elif hs < as_:
+            pts[away] += 3
+        else:
+            pts[home] += 1; pts[away] += 1
+
+    # Enumerate every still-possible final points table for each group.
+    group_outcomes: dict[str, list[dict[str, int]]] = {}
+    third_floor: dict[str, int] = {}       # fewest points the 3rd-placed slot can end on
+    third_exact: dict[str, tuple[int, int, int] | None] = {}  # set only once a group has finished
+    for group, members in teams_by_group.items():
+        gteams = sorted(members)
+        remaining = [
+            pair for pair in combinations(gteams, 2)
+            if frozenset(pair) not in played_pairs[group]
+        ]
+        outcomes: list[dict[str, int]] = []
+        for combo in product((0, 1, 2), repeat=len(remaining)):
+            table = {t: pts[t] for t in gteams}
+            for (home, away), result in zip(remaining, combo):
+                if result == 0:
+                    table[home] += 3
+                elif result == 1:
+                    table[home] += 1; table[away] += 1
+                else:
+                    table[away] += 3
+            outcomes.append(table)
+        group_outcomes[group] = outcomes
+        third_floor[group] = min(
+            sorted(o.values(), reverse=True)[2] for o in outcomes
+        ) if len(gteams) >= 3 else 0
+        if not remaining and len(gteams) >= 3:
+            order = sorted(gteams, key=lambda t: (-pts[t], -gd[t], -gf[t]))
+            third = order[2]
+            third_exact[group] = (pts[third], gd[third], gf[third])
+        else:
+            third_exact[group] = None
+
+    outlook: dict[str, str] = {}
+    for group, members in teams_by_group.items():
+        gteams = sorted(members)
+        outcomes = group_outcomes[group]
+        complete = third_exact[group] is not None
+        for team in gteams:
+            best_ranks: list[int] = []   # rank if this team wins every remaining tie-breaker
+            worst_ranks: list[int] = []  # rank if it loses every remaining tie-breaker
+            third_points: list[int] = [] # points in scenarios where it can finish exactly 3rd
+            for table in outcomes:
+                p = table[team]
+                above = sum(1 for x in gteams if x != team and table[x] > p)
+                level = sum(1 for x in gteams if x != team and table[x] == p)
+                best_ranks.append(1 + above)
+                worst_ranks.append(1 + above + level)
+                if 1 + above == advance_per_group + 1:
+                    third_points.append(p)
+
+            if all(r <= advance_per_group for r in worst_ranks):
+                outlook[team] = "clinched"
+                continue
+            if any(r <= advance_per_group for r in best_ranks):
+                outlook[team] = "alive"
+                continue
+            # Cannot reach the top two — survival now depends on the best-thirds race.
+            if not third_points:
+                outlook[team] = "eliminated"
+                continue
+            ceiling = max(third_points)
+            guaranteed_better = 0
+            for other in teams_by_group:
+                if other == group:
+                    continue
+                floor = third_floor[other]
+                if floor > ceiling:
+                    guaranteed_better += 1
+                elif (
+                    complete
+                    and third_exact[other] is not None
+                    and floor == ceiling
+                    and third_exact[other] > third_exact[group]
+                ):
+                    guaranteed_better += 1
+            outlook[team] = "eliminated" if guaranteed_better >= best_thirds else "alive"
+
+    return outlook
+
+
+def team_status(rec: TeamRecord, outlook: str | None = None) -> str:
+    """Derive a sweep status string from a team's record and advancement outlook.
+
+    A team is "out" only once it is actually eliminated: knocked out of a
+    knockout tie, or — per the 2026 group format — unable to reach the knockout
+    round via a top-two or best-third finish (``outlook == "eliminated"``).
+    Simply losing matches in the group stage no longer forces "out"; a beaten
+    team that can still sneak through as a best third stays alive.
 
     Args:
         rec: Accumulated win/draw/loss record for a single team.
+        outlook: This team's group-stage outlook from :func:`compute_advancement`
+            (``"clinched"``, ``"eliminated"``, ``"alive"``), or ``None`` when no
+            group-stage context is available.
 
     Returns:
         One of "in", "at_risk", or "out".
     """
-    if rec.knocked_out or rec.l >= 2:
+    if rec.knocked_out:
         return "out"
-    if rec.current_stage != "GROUP_STAGE" and rec.played >= 3:
+    if rec.current_stage != "GROUP_STAGE" and rec.played >= 1:
+        return "in"  # survived into (or through) a knockout round
+    if outlook == "eliminated":
+        return "out"
+    if outlook == "clinched":
         return "in"
-    if rec.l == 1:
+    if rec.l >= 1:
         return "at_risk"
     return "in"
 
@@ -321,6 +479,7 @@ def build_projections(
     squads: Squads,
     team_records: dict[str, TeamRecord],
     rankings: dict[str, int] | None = None,
+    advancement: dict[str, str] | None = None,
 ) -> ProjectionsOutput:
     team_entries: list[TeamProjection] = []
     raw_title_scores: list[tuple[TeamProjection, float]] = []
@@ -329,7 +488,7 @@ def build_projections(
         for team in participant.teams:
             rec = team_records.get(team.name, TeamRecord())
             fifa_rank = rankings.get(team.name) if rankings else None
-            status = team_status(rec)
+            status = team_status(rec, (advancement or {}).get(team.name))
             form  = _form_score(rec)
             stage = _stage_score(rec)
             rank  = _rank_score(fifa_rank)
@@ -382,7 +541,11 @@ def build_projections(
     return ProjectionsOutput(managers=manager_entries, teams=team_entries)
 
 
-def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord]) -> list[ParticipantStats]:
+def build_participant_stats(
+    squads: Squads,
+    team_records: dict[str, TeamRecord],
+    advancement: dict[str, str] | None = None,
+) -> list[ParticipantStats]:
     """Compute per-participant standings by combining squad data with team records.
 
     Teams not present in team_records are treated as having played no matches
@@ -392,6 +555,9 @@ def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord])
     Args:
         squads: Parsed squads.json containing each participant's drafted teams.
         team_records: Output of compute_team_records.
+        advancement: Output of compute_advancement, mapping team name to its
+            knockout-round outlook. Drives the "out" verdict so a team is only
+            eliminated when it truly cannot advance.
 
     Returns:
         List of ParticipantStats sorted from safest to most-at-risk participant.
@@ -403,7 +569,7 @@ def build_participant_stats(squads: Squads, team_records: dict[str, TeamRecord])
 
         for t in p.teams:
             rec = team_records.get(t.name, TeamRecord())
-            status = team_status(rec)
+            status = team_status(rec, (advancement or {}).get(t.name))
             teams_out.append(TeamResult(name=t.name, flag=t.flag, status=status, last_result=rec.last_result, form=rec.form))
             if status == "out":
                 eliminated += 1
@@ -649,14 +815,15 @@ class WCFetcher:
         current_matchday = max(finished_gs_matchdays) if finished_gs_matchdays else None
 
         team_records = compute_team_records(matches)
-        participant_stats = build_participant_stats(squads, team_records)
+        advancement = compute_advancement(matches)
+        participant_stats = build_participant_stats(squads, team_records, advancement=advancement)
 
         upcoming = sorted(
             [m for m in matches if m["status"] in ("SCHEDULED", "TIMED")],
             key=lambda m: m["utcDate"],
         )
 
-        projections = build_projections(squads, team_records, rankings=rankings)
+        projections = build_projections(squads, team_records, rankings=rankings, advancement=advancement)
 
         logger.info("Generating summary…")
         summary_output = self._generate_summary(participant_stats, upcoming, projections=projections)

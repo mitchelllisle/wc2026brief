@@ -24,6 +24,7 @@ from wc2026brief.fetcher import (
     _HISTORY_TOP_N,
     _KNOCKOUT_ROUND_LABELS,
     build_projections,
+    compute_advancement,
     compute_team_records,
     fetch_fifa_rankings,
 )
@@ -84,7 +85,8 @@ def main() -> None:
         # Matches from this and all earlier matchdays
         subset = [m for m in finished if m.get("matchday", 0) <= md]
         team_records = compute_team_records(subset)
-        projections = build_projections(squads, team_records, rankings=rankings)
+        advancement = compute_advancement(subset)
+        projections = build_projections(squads, team_records, rankings=rankings, advancement=advancement)
 
         # Determine stage: any knockout match finished → KNOCKOUT, else GROUP_STAGE
         knockout_stages = {"ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
