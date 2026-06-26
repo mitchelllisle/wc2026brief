@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T08:29:28.719021+10:00",
+  "generated_at": "2026-06-26T10:33:26.684012+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *flawless* while Mitchell stares down the *axe*",
+  "headline": "Jay stays *fortress*, Mitchell teeters on the *brink*",
   "summary": [
-    "The group stage is heating up and the pressure is real. **Jay** remains the only participant without a single elimination — incredible across **12 teams** — while **Mitchell** has already lost **5** and sits in the danger zone with **5 more at risk**. **Kerrod** and **Ryan** are both sitting on **8/12 alive** but **Ryan's** teams are bleeding out fast with **5 at risk** and a brutal **13 losses** on the board. Meanwhile **Kerrod** looks comparatively composed with just **1 at risk** and a balanced record.",
-    "Big ones incoming. **Jay** will be sweating through **Japan vs Sweden (Fri 9AM)**, **Paraguay vs Australia (Fri 12PM)**, **Uruguay vs Spain (Sat 10AM)**, **Cape Verde Islands vs Saudi Arabia (Sat 10AM)**, and **Croatia vs Ghana (Sun 7AM)**. **Kerrod** watches **Tunisia vs Netherlands (Fri 9AM)**, **Turkey vs United States (Fri 12PM)**, **Norway vs France (Sat 5AM)**, **Uruguay vs Spain (Sat 10AM)**, and **New Zealand vs Belgium (Sat 1PM)**. **Ryan** has skin in **Tunisia vs Netherlands**, **Paraguay vs Australia**, **Senegal vs Iraq (Sat 5AM)**, **Egypt vs Iran (Sat 1PM)**, and **Panama vs England (Sun 7AM)**. **Mitchell** sweats **Japan vs Sweden**, **Norway vs France**, **Senegal vs Iraq**, **New Zealand vs Belgium**, **Croatia vs Ghana**, and **Panama vs England**."
+    "The group stage is heating up and the pressure is real. **Jay** remains the only participant with all 12 teams still alive, though **4 are at risk** after recent losses. **Kerrod** and **Ryan** are both sitting at **8/12 alive**, but **Ryan's** situation looks shakier with **5 at risk** compared to Kerrod's 1. **Mitchell** is in genuine trouble — **5 out, 5 at risk** — and is firmly planted in the 💀 spot with a horror record of **8W-5D-16L**.",
+    "This weekend is massive. **Jay** has eyes on **Australia vs Paraguay (Fri 12PM)**, **Egypt vs Iran (Sat 1PM)**, **Cape Verde Islands vs Saudi Arabia (Sat 10AM)**, and **Uruguay vs Spain (Sat 10AM)** — that last one is a brutal Jay vs Kerrod clash. **Kerrod** also sweats **Turkey vs United States (Fri 12PM)** and **New Zealand vs Belgium (Sat 1PM)**. **Ryan** watches **Colombia vs Portugal (Sun 9:30AM)** and **Panama vs England (Sun 7AM)**. **Mitchell** needs **Senegal vs Iraq (Sat 5AM)**, **Croatia vs Ghana (Sun 7AM)**, and **Congo DR vs Uzbekistan (Sun 9:30AM)** to go his way — or the Secretary curse gets closer."
   ],
   "leaderboard": [
     {
@@ -1253,10 +1253,10 @@
       },
       {
         "name": "Mitchell",
-        "title_probability": 19.2,
+        "title_probability": 19.3,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
-        "delta": 0.7
+        "delta": 0.1
       }
     ],
     "teams": [
@@ -1351,11 +1351,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 3.9,
-        "fifa_rank": 17,
+        "fifa_rank": 16,
         "title_breakdown": {
           "form_score": 0.338,
           "stage_score": 0.0,
-          "rank_score": 0.8,
+          "rank_score": 0.812,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1470,11 +1470,11 @@
         "manager": "Ryan",
         "status": "in",
         "title_probability": 3.5,
-        "fifa_rank": 7,
+        "fifa_rank": 8,
         "title_breakdown": {
           "form_score": 0.227,
           "stage_score": 0.0,
-          "rank_score": 0.925,
+          "rank_score": 0.912,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1487,11 +1487,11 @@
         "manager": "Ryan",
         "status": "in",
         "title_probability": 3.5,
-        "fifa_rank": 8,
+        "fifa_rank": 7,
         "title_breakdown": {
           "form_score": 0.237,
           "stage_score": 0.0,
-          "rank_score": 0.912,
+          "rank_score": 0.925,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1504,11 +1504,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 3.2,
-        "fifa_rank": 16,
+        "fifa_rank": 17,
         "title_breakdown": {
           "form_score": 0.227,
           "stage_score": 0.0,
-          "rank_score": 0.812,
+          "rank_score": 0.8,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1826,17 +1826,17 @@
         "flag": "🇸🇦",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 0.9,
-        "fifa_rank": 59,
+        "title_probability": 1.0,
+        "fifa_rank": 58,
         "title_breakdown": {
           "form_score": 0.052,
           "stage_score": 0.0,
-          "rank_score": 0.275,
+          "rank_score": 0.287,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.1
       },
       {
         "name": "New Zealand",
@@ -1878,11 +1878,11 @@
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 57,
+        "fifa_rank": 59,
         "title_breakdown": {
           "form_score": 0.01,
           "stage_score": 0.0,
-          "rank_score": 0.3,
+          "rank_score": 0.275,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1980,11 +1980,11 @@
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 58,
+        "fifa_rank": 57,
         "title_breakdown": {
           "form_score": 0.01,
           "stage_score": 0.0,
-          "rank_score": 0.287,
+          "rank_score": 0.3,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2

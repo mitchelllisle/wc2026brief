@@ -2402,7 +2402,7 @@
       ]
     },
     {
-      "ts": "2026-06-26T08:29:28.719021+10:00",
+      "ts": "2026-06-26T10:33:26.684012+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD3",
       "teams": [
@@ -2642,7 +2642,7 @@
           "flag": "\ud83c\uddf8\ud83c\udde6",
           "manager": "Mitchell",
           "rank": 34,
-          "score": 0.9
+          "score": 1.0
         },
         {
           "name": "New Zealand",
