@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import BumpChart from './BumpChart.svelte';
+  import KnockoutBracket from './KnockoutBracket.svelte';
 
   let data = $state(null);
   let history = $state(null);
@@ -496,6 +497,10 @@
           </table>
         </div>
       {/if}
+
+    <div class="sec"><span class="num">04</span><h2>Knockout Predictor</h2><span class="meta">Strength-based · FIFA rank tiebreaker</span></div>
+    <KnockoutBracket teams={data.projections.teams} managerColors={MANAGER_COLORS} />
+
     {/if}
 
     <!-- Team rankings modal -->
