@@ -5,6 +5,7 @@ from wc2026brief.fetcher import (
     build_participant_stats,
     build_projections,
     build_recent_results,
+    compute_advancement,
     compute_team_records,
     team_status,
 )
@@ -20,8 +21,22 @@ def test_team_status_risk():
     assert team_status(TeamRecord(w=1, d=0, l=1)) == "at_risk"
 
 
-def test_team_status_out_two_losses():
-    assert team_status(TeamRecord(w=0, d=0, l=2)) == "out"
+def test_team_status_two_group_losses_still_alive():
+    # 2026 format: two group defeats no longer mean elimination on their own —
+    # a beaten team can still go through as a best third, so it stays "at risk".
+    assert team_status(TeamRecord(w=0, d=0, l=2)) == "at_risk"
+
+
+def test_team_status_out_when_eliminated_outlook():
+    assert team_status(TeamRecord(w=0, d=0, l=2), "eliminated") == "out"
+
+
+def test_team_status_in_when_clinched_outlook():
+    assert team_status(TeamRecord(w=1, d=0, l=1), "clinched") == "in"
+
+
+def test_team_status_alive_outlook_with_loss_is_at_risk():
+    assert team_status(TeamRecord(w=1, d=0, l=1), "alive") == "at_risk"
 
 
 def test_team_status_out_knocked_out():
@@ -32,12 +47,12 @@ def test_team_status_knockout_survivor_is_in():
     assert team_status(TeamRecord(w=2, d=0, l=1, played=4, current_stage="ROUND_OF_16")) == "in"
 
 
-def _match(home: str, away: str, hs: int, as_: int, stage: str = "GROUP_STAGE", status: str = "FINISHED") -> dict:
+def _match(home: str, away: str, hs: int, as_: int, stage: str = "GROUP_STAGE", status: str = "FINISHED", group: str = "GROUP_C") -> dict:
     return {
         "utcDate": "2026-06-15T12:00:00Z",
         "status": status,
         "stage": stage,
-        "group": "GROUP_C",
+        "group": group,
         "homeTeam": {"name": home, "tla": home[:3].upper()},
         "awayTeam": {"name": away, "tla": away[:3].upper()},
         "score": {"fullTime": {"home": hs, "away": as_}, "winner": "HOME_TEAM" if hs > as_ else "AWAY_TEAM" if as_ > hs else "DRAW"},
@@ -108,7 +123,8 @@ def test_build_participant_stats_basic():
         "France": TeamRecord(w=2, d=0, l=0),   # in
         "Germany": TeamRecord(w=0, d=0, l=2),  # out
     }
-    stats = build_participant_stats(squads, team_records)
+    advancement = {"Germany": "eliminated"}
+    stats = build_participant_stats(squads, team_records, advancement=advancement)
 
     alice = next(p for p in stats if p.name == "Alice")
     bob = next(p for p in stats if p.name == "Bob")
@@ -196,7 +212,8 @@ def test_build_projections_zeroes_title_odds_when_everyone_is_out():
         "Germany": TeamRecord(l=2, played=2, current_stage="GROUP_STAGE"),
     }
 
-    projections = build_projections(squads, team_records)
+    advancement = {"Spain": "eliminated", "Germany": "eliminated"}
+    projections = build_projections(squads, team_records, advancement=advancement)
 
     assert all(manager.title_probability == 0.0 for manager in projections.managers)
     assert all(team.title_probability == 0.0 for team in projections.teams)
@@ -257,3 +274,71 @@ def test_sticky_delta_carries_forward_iff_no_movement(new, old, prev):
         assert result == round(new - old, 1)  # moved -> fresh change
     else:
         assert result == prev  # quiet day -> previous trend carried forward
+
+
+def _decisive_group(group: str, order: list[str]) -> list[dict]:
+    """Finished round-robin where order[i] beats order[j] for i<j → 9/6/3/0 pts.
+
+    The third-placed team finishes on 3 points with a -1 goal difference.
+    """
+    return [
+        _match(order[i], order[j], 1, 0, group=group)
+        for i in range(len(order))
+        for j in range(i + 1, len(order))
+    ]
+
+
+def _group_third_on_four(group: str, teams: list[str]) -> list[dict]:
+    """Finished group whose third-placed team finishes on 4 points (1W-1D-1L)."""
+    e, f, g, h = teams
+    return [
+        _match(e, f, 1, 0, group=group),  # E beats F
+        _match(e, g, 1, 1, group=group),  # E draws G
+        _match(e, h, 1, 0, group=group),  # E beats H
+        _match(f, g, 1, 0, group=group),  # F beats G
+        _match(f, h, 1, 0, group=group),  # F beats H
+        _match(g, h, 1, 0, group=group),  # G beats H -> G third on 4 pts
+    ]
+
+
+def test_advancement_complete_group_top_two_clinched_last_out():
+    out = compute_advancement(_decisive_group("GROUP_A", ["A1", "B1", "C1", "D1"]))
+    assert out["A1"] == "clinched"
+    assert out["B1"] == "clinched"
+    assert out["C1"] == "alive"        # third place can still go through as a best third
+    assert out["D1"] == "eliminated"   # fourth place can never advance
+
+
+def test_advancement_best_thirds_cutoff_squeezes_weaker_third():
+    weak = _decisive_group("GROUP_A", ["A1", "B1", "C1", "D1"])      # C1 third: 3 pts
+    strong = _group_third_on_four("GROUP_B", ["E1", "F1", "G1", "H1"])  # G1 third: 4 pts
+    matches = weak + strong
+
+    # Only one best-third slot: the stronger third (G1) takes it, eliminating C1.
+    tight = compute_advancement(matches, best_thirds=1)
+    assert tight["C1"] == "eliminated"
+    assert tight["G1"] == "alive"
+
+    # Two slots: only one rival third outranks C1, so it survives.
+    loose = compute_advancement(matches, best_thirds=2)
+    assert loose["C1"] == "alive"
+
+
+def test_advancement_reconstructs_remaining_fixtures_without_schedule():
+    # Only finished matches supplied (as in history back-fill); the unplayed
+    # round-robin games are inferred, so a beaten team is not falsely eliminated.
+    matches = [
+        _match("A1", "C1", 2, 0, group="GROUP_A"),  # C1 loses
+        _match("B1", "D1", 1, 0, group="GROUP_A"),
+        _match("A1", "B1", 1, 0, group="GROUP_A"),
+    ]
+    out = compute_advancement(matches)
+    assert out["C1"] == "alive"  # one loss, two group games still to come
+
+
+def test_advancement_ignores_knockout_matches():
+    matches = _decisive_group("GROUP_A", ["A1", "B1", "C1", "D1"]) + [
+        _match("A1", "B1", 1, 0, stage="ROUND_OF_32", group=""),
+    ]
+    out = compute_advancement(matches)
+    assert set(out) == {"A1", "B1", "C1", "D1"}
