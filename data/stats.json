@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-27T04:33:39.736596+10:00",
+  "generated_at": "2026-06-27T06:32:37.848075+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *pristine*, Kerrod stares down the *chop*",
+  "headline": "Jay stays *pristine*, Kerrod stares down the *abyss*",
   "summary": [
-    "The group stage is heating up and the standings are telling a story. **Jay** sits pretty at the top — all **12 teams alive**, just **3 at risk**, and a healthy **30.8% strength** index. **Ryan** hangs tight in second, but **7 teams at risk** is a nervous number. **Mitchell** has already lost **2 teams** with **8 more on the edge**, while **Kerrod** is firmly in the danger seat — **4 teams already out** and the Secretary role looming large over him.",
-    "A huge slate of games coming up. **Kerrod** sweats through **Norway vs France** (5:00AM Sat), **New Zealand vs Belgium** (1:00PM Sat), and **Uruguay vs Spain** (10:00AM Sat) — all his teams in action. **Jay** watches **Egypt vs Iran** (1:00PM Sat) and **Algeria vs Austria** (12:00PM Sun), while **Mitchell** has **Senegal vs Iraq** (5:00AM Sat), **Croatia vs Ghana** (7:00AM Sun), **Panama vs England** (7:00AM Sun), and **Jordan vs Argentina** (12:00PM Sun) all threatening to reshape his survival picture. Big weekend ahead."
+    "The group stage is heating up fast. **Jay** is the envy of the sweep with all **12 teams alive**, while **Mitchell** absorbed more pain this round — his two eliminated sides dragging him to third. **Kerrod** is in genuine trouble: four teams already gone and only **8/12 surviving**, with his record sitting at a bruising **10W-9D-11L**. **Ryan** has everyone alive but a whopping **7 at risk**, meaning any bad weekend could flip the script dramatically. The margins between second and last are razor-thin on strength, with **Mitchell (21.9%)** and **Kerrod (21.8%)** virtually identical — one bad result separates a lifeline from the Secretary's clipboard.",
+    "This weekend is absolutely loaded. **Jay** will be watching **Spain vs Uruguay** (Sat 10AM) closely — Spain are his, Uruguay are Kerrod's, so bragging rights are on the line. **Jay's Egypt** face **Kerrod's Iran** (Sat 1PM), a direct sweep battle. **Ryan's Panama** take on **Mitchell's England** (Sun 7AM), while **Mitchell's Croatia** clash with **Jay's Ghana** at the same time. Then **Jay's Colombia** meet **Ryan's Portugal** (Sun 9:30AM) in a massive six-pointer. **Ryan's Jordan** face **Mitchell's Argentina** (Sun 12PM) — a potential knockout preview. **Ryan's Congo DR** vs **Mitchell's Uzbekistan** (Sun 9:30AM) also looms large with both owners desperately needing points."
   ],
   "leaderboard": [
     {
@@ -1279,17 +1279,10 @@
       },
       {
         "name": "Ryan",
-        "title_probability": 25.6,
+        "title_probability": 25.5,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Netherlands",
-        "delta": 0.5
-      },
-      {
-        "name": "Kerrod",
-        "title_probability": 21.9,
-        "expected_teams_next_stage": 0.0,
-        "favourite_team": "Mexico",
-        "delta": -1.1
+        "delta": -0.1
       },
       {
         "name": "Mitchell",
@@ -1297,6 +1290,13 @@
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
         "delta": 0.3
+      },
+      {
+        "name": "Kerrod",
+        "title_probability": 21.8,
+        "expected_teams_next_stage": 0.0,
+        "favourite_team": "Mexico",
+        "delta": -0.1
       }
     ],
     "teams": [
@@ -1356,17 +1356,17 @@
         "flag": "🇫🇷",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.7,
-        "fifa_rank": 2,
+        "title_probability": 3.8,
+        "fifa_rank": 1,
         "title_breakdown": {
           "form_score": 0.31,
           "stage_score": 0.0,
-          "rank_score": 0.988,
+          "rank_score": 1.0,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.4
+        "delta": 0.1
       },
       {
         "name": "Argentina",
@@ -1374,11 +1374,11 @@
         "manager": "Mitchell",
         "status": "in",
         "title_probability": 3.7,
-        "fifa_rank": 1,
+        "fifa_rank": 2,
         "title_breakdown": {
           "form_score": 0.3,
           "stage_score": 0.0,
-          "rank_score": 1.0,
+          "rank_score": 0.988,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1471,23 +1471,6 @@
         "delta": -0.4
       },
       {
-        "name": "Norway",
-        "flag": "🇳🇴",
-        "manager": "Kerrod",
-        "status": "in",
-        "title_probability": 3.3,
-        "fifa_rank": 22,
-        "title_breakdown": {
-          "form_score": 0.32,
-          "stage_score": 0.0,
-          "rank_score": 0.738,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.1
-      },
-      {
         "name": "Spain",
         "flag": "🇪🇸",
         "manager": "Jay",
@@ -1503,6 +1486,23 @@
           "rank_weight": 0.2
         },
         "delta": 0.1
+      },
+      {
+        "name": "Norway",
+        "flag": "🇳🇴",
+        "manager": "Kerrod",
+        "status": "in",
+        "title_probability": 3.2,
+        "fifa_rank": 23,
+        "title_breakdown": {
+          "form_score": 0.32,
+          "stage_score": 0.0,
+          "rank_score": 0.725,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.1
       },
       {
         "name": "England",
@@ -1680,28 +1680,11 @@
         "manager": "Ryan",
         "status": "at_risk",
         "title_probability": 2.4,
-        "fifa_rank": 23,
+        "fifa_rank": 22,
         "title_breakdown": {
           "form_score": 0.155,
           "stage_score": 0.0,
-          "rank_score": 0.725,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.1
-      },
-      {
-        "name": "Uruguay",
-        "flag": "🇺🇾",
-        "manager": "Kerrod",
-        "status": "in",
-        "title_probability": 2.3,
-        "fifa_rank": 18,
-        "title_breakdown": {
-          "form_score": 0.113,
-          "stage_score": 0.0,
-          "rank_score": 0.787,
+          "rank_score": 0.738,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1719,6 +1702,23 @@
           "form_score": 0.213,
           "stage_score": 0.0,
           "rank_score": 0.562,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.1
+      },
+      {
+        "name": "Uruguay",
+        "flag": "🇺🇾",
+        "manager": "Kerrod",
+        "status": "in",
+        "title_probability": 2.2,
+        "fifa_rank": 19,
+        "title_breakdown": {
+          "form_score": 0.113,
+          "stage_score": 0.0,
+          "rank_score": 0.775,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1799,11 +1799,11 @@
         "manager": "Mitchell",
         "status": "at_risk",
         "title_probability": 1.8,
-        "fifa_rank": 19,
+        "fifa_rank": 18,
         "title_breakdown": {
           "form_score": 0.03,
           "stage_score": 0.0,
-          "rank_score": 0.775,
+          "rank_score": 0.787,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1850,11 +1850,11 @@
         "manager": "Jay",
         "status": "at_risk",
         "title_probability": 1.6,
-        "fifa_rank": 62,
+        "fifa_rank": 61,
         "title_breakdown": {
           "form_score": 0.2,
           "stage_score": 0.0,
-          "rank_score": 0.238,
+          "rank_score": 0.25,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1985,17 +1985,17 @@
         "flag": "🇮🇶",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 0.6,
-        "fifa_rank": 60,
+        "title_probability": 0.5,
+        "fifa_rank": 63,
         "title_breakdown": {
           "form_score": 0.01,
           "stage_score": 0.0,
-          "rank_score": 0.262,
+          "rank_score": 0.225,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.6
+        "delta": -0.1
       },
       {
         "name": "Jordan",
@@ -2054,11 +2054,11 @@
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 61,
+        "fifa_rank": 60,
         "title_breakdown": {
           "form_score": 0.055,
           "stage_score": 0.0,
-          "rank_score": 0.25,
+          "rank_score": 0.262,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
