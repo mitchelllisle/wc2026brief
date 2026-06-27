@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-27T15:16:22.222452+10:00",
+  "generated_at": "2026-06-27T17:01:39.018375+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *untouchable*, Kerrod stares down the *abyss*",
+  "headline": "Jay stays *pristine*, Kerrod stares down the *guillotine*",
   "summary": [
-    "The group stage drama is heating up. **Jay** remains the only participant with all 12 teams alive, though **Ghana** and **Algeria** are among his four sides at risk. **Ryan** lost **Panama** (already out) and has six teams sweating, including **Congo DR** and **Jordan**. **Mitchell** is in real trouble — **Argentina**, **England**, and **Croatia** all have work to do — while **Kerrod** has watched six teams pack their bags already, leaving him firmly in Secretary territory.",
-    "Big Sunday kicks off with **Mitchell**'s **England** vs **Ryan**'s **Panama** at **7:00AM**, and **Mitchell**'s **Croatia** vs **Jay**'s **Ghana** at the same time. Then **Jay**'s **Colombia** faces **Ryan**'s **Portugal** at **9:30AM** — massive clash. **Mitchell**'s **Uzbekistan** meets **Ryan**'s **Congo DR** at **9:30AM** too. **Mitchell**'s **Argentina** takes on **Ryan**'s **Jordan** at **12:00PM**, and **Jay**'s **Algeria** battles **Ryan**'s **Austria** straight after. Tuesday brings **Jay**'s **Brazil** vs **Jay**'s **Japan**, and **Ryan**'s **Netherlands** vs **Jay**'s **Morocco** — wait, **Morocco** is **Ryan**'s. Huge points on the board this weekend."
+    "The sweep rolls on and **Jay** remains the only participant with all 12 teams alive — a remarkable position. **Mitchell** is feeling the squeeze with seven teams at risk, including **Croatia** and **England** both in action Sunday at **7:00AM AEST** against **Ghana** (Jay) and **Panama** (Ryan) respectively. **Ryan's** **Congo DR** face **Mitchell's** **Uzbekistan** at **9:30AM AEST**, a tasty cross-sweep scrap. Then **Mitchell's** **Argentina** host **Ryan's** **Jordan** at **12:00PM AEST**. Meanwhile **Jay's** **Algeria** take on **Ryan's** **Austria** at midday too — six of Sunday's early matches directly involve our top three.",
+    "Monday brings **Ryan's** **South Africa** vs **Mitchell's** **Canada** at **5:00AM AEST** — both sides need points badly. **Jay's** **Brazil** face **Jay's** **Japan** on Tuesday at **3:00AM AEST**, a rare internal sweep clash. **Ryan's** **Germany** and **Netherlands** are also in action Tuesday, with **Ryan's** **Morocco** squaring off against the Dutch at **11:00AM AEST**. **Jay's** **Ivory Coast** round things out Wednesday. **Kerrod** sits on the sidelines this window with zero matches — six teams already gone, no movement possible. The Secretary trophy is looming large over him. Everyone else has plenty to play for."
   ],
   "leaderboard": [
     {
@@ -12,11 +12,11 @@
       "teams_remaining": 12,
       "teams_total": 12,
       "eliminated": 0,
-      "at_risk": 4,
+      "at_risk": 3,
       "record": {
         "w": 16,
-        "d": 12,
-        "l": 5
+        "d": 13,
+        "l": 4
       }
     },
     {
@@ -50,8 +50,8 @@
       "eliminated": 6,
       "at_risk": 0,
       "record": {
-        "w": 13,
-        "d": 9,
+        "w": 12,
+        "d": 10,
         "l": 14
       }
     }
@@ -194,8 +194,8 @@
       {
         "name": "Egypt",
         "flag": "🇪🇬",
-        "status": "at_risk",
-        "last_result": "L",
+        "status": "in",
+        "last_result": "D",
         "form": [
           {
             "result": "D",
@@ -208,9 +208,9 @@
             "score": "3–1"
           },
           {
-            "result": "L",
+            "result": "D",
             "opponent": "Iran",
-            "score": "1–2"
+            "score": "1–1"
           }
         ]
       },
@@ -951,7 +951,7 @@
         "name": "Iran",
         "flag": "🇮🇷",
         "status": "in",
-        "last_result": "W",
+        "last_result": "D",
         "form": [
           {
             "result": "D",
@@ -964,9 +964,9 @@
             "score": "0–0"
           },
           {
-            "result": "W",
+            "result": "D",
             "opponent": "Egypt",
-            "score": "2–1"
+            "score": "1–1"
           }
         ]
       },
@@ -1126,7 +1126,7 @@
       "hs": 1,
       "a_code": "IRN",
       "a_flag": "🇮🇷",
-      "as": 2,
+      "as": 1,
       "group": "GRP G"
     },
     {
@@ -1332,10 +1332,10 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 31.7,
+        "title_probability": 32.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": -0.5
+        "delta": 0.3
       },
       {
         "name": "Ryan",
@@ -1353,10 +1353,10 @@
       },
       {
         "name": "Kerrod",
-        "title_probability": 21.3,
+        "title_probability": 20.8,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "France",
-        "delta": 0.9
+        "delta": -0.5
       }
     ],
     "teams": [
@@ -1633,21 +1633,21 @@
         "delta": 0.1
       },
       {
-        "name": "Iran",
-        "flag": "🇮🇷",
-        "manager": "Kerrod",
+        "name": "Egypt",
+        "flag": "🇪🇬",
+        "manager": "Jay",
         "status": "in",
-        "title_probability": 2.9,
-        "fifa_rank": 21,
+        "title_probability": 2.8,
+        "fifa_rank": 26,
         "title_breakdown": {
-          "form_score": 0.235,
+          "form_score": 0.242,
           "stage_score": 0.0,
-          "rank_score": 0.75,
+          "rank_score": 0.688,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.7
+        "delta": 0.3
       },
       {
         "name": "Ivory Coast",
@@ -1694,23 +1694,6 @@
           "form_score": 0.178,
           "stage_score": 0.0,
           "rank_score": 0.787,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": -0.1
-      },
-      {
-        "name": "Egypt",
-        "flag": "🇪🇬",
-        "manager": "Jay",
-        "status": "at_risk",
-        "title_probability": 2.5,
-        "fifa_rank": 26,
-        "title_breakdown": {
-          "form_score": 0.2,
-          "stage_score": 0.0,
-          "rank_score": 0.688,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1767,6 +1750,23 @@
           "rank_weight": 0.2
         },
         "delta": 0.1
+      },
+      {
+        "name": "Iran",
+        "flag": "🇮🇷",
+        "manager": "Kerrod",
+        "status": "in",
+        "title_probability": 2.4,
+        "fifa_rank": 21,
+        "title_breakdown": {
+          "form_score": 0.145,
+          "stage_score": 0.0,
+          "rank_score": 0.75,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.5
       },
       {
         "name": "Austria",

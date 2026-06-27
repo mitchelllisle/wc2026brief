@@ -2745,7 +2745,7 @@
       ]
     },
     {
-      "ts": "2026-06-27T15:16:22.222452+10:00",
+      "ts": "2026-06-27T17:01:39.018375+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD3",
       "teams": [
@@ -2862,11 +2862,11 @@
           "score": 3.1
         },
         {
-          "name": "Iran",
-          "flag": "\ud83c\uddee\ud83c\uddf7",
-          "manager": "Kerrod",
+          "name": "Egypt",
+          "flag": "\ud83c\uddea\ud83c\uddec",
+          "manager": "Jay",
           "rank": 17,
-          "score": 2.9
+          "score": 2.8
         },
         {
           "name": "Ivory Coast",
@@ -2890,30 +2890,30 @@
           "score": 2.6
         },
         {
-          "name": "Egypt",
-          "flag": "\ud83c\uddea\ud83c\uddec",
-          "manager": "Jay",
-          "rank": 21,
-          "score": 2.5
-        },
-        {
           "name": "Ecuador",
           "flag": "\ud83c\uddea\ud83c\udde8",
           "manager": "Mitchell",
-          "rank": 22,
+          "rank": 21,
           "score": 2.5
         },
         {
           "name": "Canada",
           "flag": "\ud83c\udde8\ud83c\udde6",
           "manager": "Mitchell",
-          "rank": 23,
+          "rank": 22,
           "score": 2.5
         },
         {
           "name": "Australia",
           "flag": "\ud83c\udde6\ud83c\uddfa",
           "manager": "Jay",
+          "rank": 23,
+          "score": 2.4
+        },
+        {
+          "name": "Iran",
+          "flag": "\ud83c\uddee\ud83c\uddf7",
+          "manager": "Kerrod",
           "rank": 24,
           "score": 2.4
         },
