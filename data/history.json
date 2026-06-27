@@ -2745,7 +2745,7 @@
       ]
     },
     {
-      "ts": "2026-06-27T08:25:12.191073+10:00",
+      "ts": "2026-06-27T10:31:12.500674+10:00",
       "stage": "GROUP_STAGE",
       "round": "MD3",
       "teams": [
@@ -2918,18 +2918,18 @@
           "score": 2.3
         },
         {
-          "name": "Sweden",
-          "flag": "\ud83c\uddf8\ud83c\uddea",
-          "manager": "Mitchell",
+          "name": "Uruguay",
+          "flag": "\ud83c\uddfa\ud83c\uddfe",
+          "manager": "Kerrod",
           "rank": 25,
           "score": 2.3
         },
         {
-          "name": "Uruguay",
-          "flag": "\ud83c\uddfa\ud83c\uddfe",
-          "manager": "Kerrod",
+          "name": "Sweden",
+          "flag": "\ud83c\uddf8\ud83c\uddea",
+          "manager": "Mitchell",
           "rank": 26,
-          "score": 2.2
+          "score": 2.3
         },
         {
           "name": "Algeria",
@@ -3013,7 +3013,7 @@
           "flag": "\ud83c\uddf8\ud83c\udde6",
           "manager": "Mitchell",
           "rank": 38,
-          "score": 0.9
+          "score": 0.8
         },
         {
           "name": "Uzbekistan",
