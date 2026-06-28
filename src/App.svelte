@@ -398,7 +398,7 @@
             <td class="c-str">
               <span class="str-val {strDelta !== null ? (strDelta > 0 ? 'up' : 'dn') : ''}">{managerAdjustedStrengthMap.get(p.name) ?? '--'}</span>
               {#if strDelta !== null}
-                <span class="str-chg {strDelta > 0 ? 'up' : 'dn'}">{strDelta > 0 ? '▲' : '▼'} {Math.abs(strDelta)}</span>
+                <span class="str-chg {strDelta > 0 ? 'up' : 'dn'}" title="Change in base score (excludes stage bonus)">{strDelta > 0 ? '▲' : '▼'} {Math.abs(strDelta)} <span class="str-chg-lbl">base</span></span>
               {/if}
             </td>
             <td class="hide-sm">
@@ -416,8 +416,8 @@
             </td>
             <td class="c-outlook hide-sm">
               {#each managerOutlookMap.get(p.name) ?? [] as pick}
-                <div class="ol-row">
-                  <span class="ol-flag">{pick.flag}</span>
+                <div class="ol-row" title="{pick.name}: predicted {stageLabel(pick.depth)}" aria-label="{pick.name}: predicted {stageLabel(pick.depth)}">
+                  <span class="ol-flag" aria-hidden="true">{pick.flag}</span>
                   <span class="ol-stage {stageDepthClass(pick.depth)}">{stageLabel(pick.depth)}</span>
                 </div>
               {/each}
