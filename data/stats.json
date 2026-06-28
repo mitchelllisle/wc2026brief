@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-29T04:22:45.328594+10:00",
+  "generated_at": "2026-06-29T06:25:01.706933+10:00",
   "stage": "GROUP_STAGE",
-  "headline": "Jay stays *untouchable*, Kerrod stares down the *chop*",
+  "headline": "Jay stays *immaculate*, Kerrod stares down the *secretary* desk",
   "summary": [
-    "The group stage is heating up and the sweep is getting spicy. **Jay** remains the only person with all **12 teams alive**, a fortress nobody else can claim. **Mitchell** has seen **5 teams** crash out but still has **7 alive**, keeping him ahead of **Kerrod**, who's down to just **5 survivors** and sits bottom of the table. **Ryan** sits second with **8 alive** after **4 exits**, while both **Ryan** and **Mitchell** each have **3–4 teams at risk** — one bad run of results and the gap could slam shut fast.",
-    "Massive week ahead. **Jay** watches anxiously as **Brazil vs Japan** (Tue 3AM) is a sweep showdown — he owns *both*. **Ryan** has **Germany vs Paraguay** (Tue 6:30AM), **Netherlands vs Morocco** (Tue 11AM), and **South Africa vs Canada** (Mon 5AM, vs **Mitchell**'s Canada). **Mitchell** sweats **Ivory Coast vs Norway** (Wed 3AM) — **Jay** owns Ivory Coast, **Kerrod** owns Norway. **Kerrod** has a massive day Thursday: **England vs Congo DR** (2AM), **Belgium vs Senegal** (6AM), and **United States vs Bosnia-Herzegovina** (10AM) — all involving his teams, with **Mitchell** and **Jay** also having skin in each of those ties."
+    "The sweep rolls on with **Jay** the only participant still carrying a full squad — all **12 teams alive** and looking imperious at **34.0% strength**. **Ryan** and **Mitchell** are scrapping in mid-table with **8** and **7** teams left respectively, while **Kerrod** is already down to **5**, has shed **7 teams**, and is firmly in danger of spending the next year booking restaurants and sorting group-chat logistics.",
+    "Massive week ahead. **Jay** is double-dipping Tuesday with **Brazil vs Japan** (3:00AM) and needs both sides to survive — awkward. **Ryan** sweats **Germany vs Paraguay** (6:30AM) and **Netherlands vs Morocco** (11:00AM), with three teams across those two clashes. **Mitchell** watches **France vs Sweden** (Wed, 7:00AM) for **Sweden**, and **England vs Congo DR** (Thu, 2:00AM) plus **Belgium vs Senegal** (Thu, 6:00AM) for **Senegal**. **Kerrod** desperately needs **France, Belgium, Mexico, and USA** to fire — any slip tightens the noose."
   ],
   "leaderboard": [
     {
@@ -1902,11 +1902,11 @@
         "manager": "Ryan",
         "status": "in",
         "title_probability": 1.8,
-        "fifa_rank": 54,
+        "fifa_rank": 52,
         "title_breakdown": {
           "form_score": 0.18,
           "stage_score": 0.0,
-          "rank_score": 0.338,
+          "rank_score": 0.363,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
