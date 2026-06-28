@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import BumpChart from './BumpChart.svelte';
   import KnockoutBracket from './KnockoutBracket.svelte';
+  import { runBracket, computeTeamDepths } from './simulation.js';
 
   let data = $state(null);
   let history = $state(null);
@@ -149,9 +150,77 @@
     const d = managerDeltaMap.get(name);
     return (d == null || d === 0) ? null : d;
   }
+
+  // ── Bracket-simulation stage bonus ───────────────────────────────────────
+  // Runs the same strength-based knockout simulation as KnockoutBracket.svelte
+  // and assigns each team a depth (0 = exits R32 … 5 = champion).
+  // A manager's stage score = Σ (depth × team_strength) across their teams,
+  // rewarding both advancing further AND having multiple teams in late rounds.
+  // Weight 0.5 blends the bonus into the base title_probability without
+  // overwhelming the underlying team-quality signal.
+  const STAGE_WEIGHT = 0.5;
+
+  let bracketSim = $derived.by(() => {
+    const teams = data?.projections?.teams;
+    if (!teams?.length) return null;
+    return runBracket(teams);
+  });
+
+  let teamDepths = $derived(
+    bracketSim ? computeTeamDepths(bracketSim) : new Map()
+  );
+
+  // Per-manager sum of (predicted_round_depth × team_title_probability)
+  let managerStageScoreMap = $derived.by(() => {
+    const map = new Map();
+    for (const t of (data?.projections?.teams ?? [])) {
+      if (!t.manager) continue;
+      const depth = teamDepths.get(t.name) ?? 0;
+      map.set(t.manager, (map.get(t.manager) ?? 0) + depth * t.title_probability);
+    }
+    return map;
+  });
+
+  // Outlook column: top 1–2 teams per manager by predicted bracket depth,
+  // filtered to QF or deeper (depth ≥ 2); falls back to the single best team
+  // if none reach the quarters. Explains why the stage bonus moves the ranking.
+  const STAGE_LABELS  = ['R32', 'Last 16', 'QF', 'Semi-final', 'Finalist', 'Champion'];
+  const STAGE_CLASSES = ['ol-dim', 'ol-dim', 'ol-mid', 'ol-sf', 'ol-final', 'ol-champ'];
+  function stageLabel(depth)      { return STAGE_LABELS[depth]  ?? '--'; }
+  function stageDepthClass(depth) { return STAGE_CLASSES[depth] ?? 'ol-dim'; }
+
+  let managerOutlookMap = $derived.by(() => {
+    const map = new Map();
+    for (const t of (data?.projections?.teams ?? [])) {
+      if (!t.manager) continue;
+      const depth = teamDepths.get(t.name) ?? 0;
+      const arr = map.get(t.manager) ?? [];
+      arr.push({ name: t.name, flag: t.flag ?? '', depth, prob: t.title_probability });
+      map.set(t.manager, arr);
+    }
+    const result = new Map();
+    for (const [mgr, teams] of map) {
+      teams.sort((a, b) => b.depth - a.depth || b.prob - a.prob);
+      const notable = teams.filter(t => t.depth >= 2); // QF or deeper
+      result.set(mgr, notable.length > 0 ? notable.slice(0, 2) : teams.slice(0, 1));
+    }
+    return result;
+  });
+
+  // Adjusted strength = base title_probability + 0.5 × stage bonus
+  // (base scores remain unchanged; this is additive on top)
+  let managerAdjustedStrengthMap = $derived(
+    new Map(
+      [...managerTitleMap.entries()].map(([name, tp]) => [
+        name,
+        +(tp + (managerStageScoreMap.get(name) ?? 0) * STAGE_WEIGHT).toFixed(1),
+      ])
+    )
+  );
+
   let ranked = $derived(
     data ? [...data.leaderboard].sort((a, b) =>
-      (managerTitleMap.get(b.name) ?? 0) - (managerTitleMap.get(a.name) ?? 0)
+      (managerAdjustedStrengthMap.get(b.name) ?? 0) - (managerAdjustedStrengthMap.get(a.name) ?? 0)
     ) : []
   );
   let leaderName = $derived(ranked[0]?.name);
@@ -307,8 +376,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="l">#</th><th class="l">Manager</th><th>Strength <span class="tooltip-wrap th-tip"><span class="info-icon">ⓘ</span><div class="tooltip-box"><p class="tooltip-title">What is Strength?</p><p class="tooltip-desc" style="margin-bottom:0">A composite index, not a probability. Each team is scored on stage reached, current form, and FIFA world ranking — then normalised to sum to 100. A manager's score is the sum of their teams' scores.</p></div></span></th>
-          <th class="hide-sm">Survival</th><th>Alive</th><th>Out</th><th class="hide-sm">W·D·L</th>
+          <th class="l">#</th><th class="l">Manager</th><th>Strength <span class="tooltip-wrap th-tip"><span class="info-icon">ⓘ</span><div class="tooltip-box"><p class="tooltip-title">What is Strength?</p><p class="tooltip-desc" style="margin-bottom:0">A composite index, not a probability. Base score = sum of each team's strength (form + FIFA rank, normalised to 100). A stage bonus is added: each team earns its strength score × predicted knockout rounds survived — so teams projected deep in the bracket count more, and having multiple teams in late rounds compounds the advantage.</p></div></span></th>
+          <th class="hide-sm">Survival</th><th class="c-outlook-hd hide-sm">Outlook</th><th>Alive</th><th>Out</th><th class="hide-sm">W·D·L</th>
         </tr>
       </thead>
       <tbody>
@@ -327,7 +396,7 @@
               <div class="sub">{p.teams_remaining} of {p.teams_total} surviving</div>
             </td>
             <td class="c-str">
-              <span class="str-val {strDelta !== null ? (strDelta > 0 ? 'up' : 'dn') : ''}">{managerTitleMap.get(p.name) ?? '--'}</span>
+              <span class="str-val {strDelta !== null ? (strDelta > 0 ? 'up' : 'dn') : ''}">{managerAdjustedStrengthMap.get(p.name) ?? '--'}</span>
               {#if strDelta !== null}
                 <span class="str-chg {strDelta > 0 ? 'up' : 'dn'}">{strDelta > 0 ? '▲' : '▼'} {Math.abs(strDelta)}</span>
               {/if}
@@ -344,6 +413,14 @@
                   ></span>
                 {/each}
               </div>
+            </td>
+            <td class="c-outlook hide-sm">
+              {#each managerOutlookMap.get(p.name) ?? [] as pick}
+                <div class="ol-row">
+                  <span class="ol-flag">{pick.flag}</span>
+                  <span class="ol-stage {stageDepthClass(pick.depth)}">{stageLabel(pick.depth)}</span>
+                </div>
+              {/each}
             </td>
             <td class="num"><span class="v in">{p.teams_remaining}</span></td>
             <td class="num"><span class="v out">{p.eliminated}</span></td>
