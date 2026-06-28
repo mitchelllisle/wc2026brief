@@ -229,6 +229,17 @@ tr.tab .c-rank .n { color: var(--out); }
 .str-chg { display: block; font-family: var(--mono); font-size: 11px; font-weight: 700; letter-spacing: 0.02em; margin-top: 4px; }
 .str-chg.up { color: var(--in); }
 .str-chg.dn { color: var(--out); }
+.str-chg-lbl { font-size: 8px; font-weight: 400; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; }
+.c-outlook-hd { text-align: left !important; }
+.c-outlook { vertical-align: middle; padding: 14px 10px; min-width: 110px; }
+.ol-row { display: flex; align-items: center; gap: 6px; padding: 2px 0; }
+.ol-flag { font-size: 17px; line-height: 1; }
+.ol-stage { font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; white-space: nowrap; }
+.ol-champ { color: var(--wc-gold); }
+.ol-final { color: #c0c0c8; }
+.ol-sf    { color: var(--accent); }
+.ol-mid   { color: var(--txt-2); }
+.ol-dim   { color: var(--txt-3); }
 .wdl { font-family: var(--mono); font-size: 12.5px; color: var(--txt-2); white-space: nowrap; }
 .wdl b { color: var(--txt); }
 .wdl .w { color: var(--in); }

@@ -1,4 +1,6 @@
 <script>
+  import { R32 } from './simulation.js';
+
   let { teams = [], managerColors = {} } = $props();
 
   // Fast name-keyed lookup (reactive so downstream $derived re-run if prop changes)
@@ -12,40 +14,6 @@
     return (T.get(a)?.fifa_rank ?? 999) <= (T.get(b)?.fifa_rank ?? 999) ? a : b;
   }
 
-  // WC2026 Round of 32 matchups in bracket display order.
-  // Adjacent pairs feed into the same R16 match; that rule cascades through every round.
-  // Sources: FIFA official bracket (wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage)
-  // Confirmed: M73 South Africa/Canada, M75 Netherlands/Morocco,
-  //            M76 Brazil/Japan, M81 USA/Bosnia-Herzegovina.
-  // Remaining: predicted from most likely group finishes (str + current standings).
-  const R32 = [
-    // — SF1 side ————————————————————————————————————
-    // R16 M89 → QF M97
-    ['Canada',            'South Africa'       ], // M73: A2 vs B2 – confirmed
-    ['Netherlands',       'Morocco'            ], // M75: F1 vs C2 – confirmed
-    // R16 M90 → QF M97
-    ['Germany',           'Sweden'             ], // M74: E1 vs F3
-    ['France',            'Paraguay'           ], // M77: I1 vs D3
-    // R16 M93 → QF M98
-    ['Portugal',          'Croatia'            ], // M83: K2 vs L2
-    ['Spain',             'Austria'            ], // M84: H1 vs J2
-    // R16 M94 → QF M98
-    ['United States',     'Bosnia-Herzegovina' ], // M81: D1 vs B3 – confirmed
-    ['Egypt',             'South Korea'        ], // M82: G1 vs A3
-    // — SF2 side ————————————————————————————————————
-    // R16 M91 → QF M99
-    ['Brazil',            'Japan'              ], // M76: C1 vs F2 – confirmed
-    ['Ivory Coast',       'Norway'             ], // M78: E2 vs I2
-    // R16 M92 → QF M99
-    ['Mexico',            'Senegal'            ], // M79: A1 vs 3rd CEFHI
-    ['England',           'Ecuador'            ], // M80: L1 vs 3rd EHIJK
-    // R16 M95 → QF M100
-    ['Argentina',         'Uruguay'            ], // M86: J1 vs H2
-    ['Australia',         'Belgium'            ], // M88: D2 vs G2
-    // R16 M96 → QF M100
-    ['Switzerland',       'Iran'               ], // M85: B1 vs 3rd EFGIJ
-    ['Colombia',          'Algeria'            ], // M87: K1 vs 3rd DEIJL
-  ];
 
   function sim(pairs) {
     return pairs.map(([a, b]) => ({ a, b, w: pick(a, b) }));
