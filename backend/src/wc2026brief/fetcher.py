@@ -808,9 +808,11 @@ class WCFetcher:
         ) else "GROUP_STAGE"
 
         finished_gs_matchdays = [
-            m.get("matchday", 0)
+            m.get("matchday")
             for m in matches
-            if m.get("status") == "FINISHED" and m.get("stage") not in knockout_stages
+            if m.get("status") == "FINISHED"
+            and m.get("stage") not in knockout_stages
+            and m.get("matchday") is not None
         ]
         current_matchday = max(finished_gs_matchdays) if finished_gs_matchdays else None
 
