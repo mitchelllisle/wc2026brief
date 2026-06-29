@@ -71,19 +71,33 @@
 
   const plotData = $derived.by(() => {
     if (!roundSnapshots.length) return [];
-    const last = roundSnapshots[roundSnapshots.length - 1];
-    const tracked = new Set(last.teams.slice(0, topN).map(t => t.name));
-    return roundSnapshots.flatMap((snap, i) =>
-      snap.teams
-        .filter(t => tracked.has(t.name))
-        .map(t => ({
-          x: i,
-          rank: t.rank,
-          team: t.name,
-          label: `${t.flag} ${t.name}`,
-          manager: t.manager,
-        }))
-    );
+
+    // gsTracked enforces topN throughout the whole chart.
+    // We anchor on the last group-stage snapshot so the visible teams are
+    // consistent whether or not a knockout snapshot exists yet.
+    const lastGsSnap = [...roundSnapshots].reverse().find(s => s.round?.startsWith('MD'));
+    const gsTracked = lastGsSnap
+      ? new Set(lastGsSnap.teams.slice(0, topN).map(t => t.name))
+      : new Set(roundSnapshots[roundSnapshots.length - 1].teams.slice(0, topN).map(t => t.name));
+
+    return roundSnapshots.flatMap((snap, i) => {
+      const isKnockout = !snap.round?.startsWith('MD');
+      const shown = snap.teams.filter(t => {
+        if (!gsTracked.has(t.name)) return false;
+        if (!isKnockout) return true;  // GS snapshots: status backfill is unreliable, always show
+        if ((t.status ?? 'in') !== 'out') return true;  // alive — show
+        // Eliminated: show only at the round they exited, not after.
+        return t.stage != null && t.stage === snap.stage;
+      });
+      // Re-rank 1..N within shown teams so there are no rank gaps.
+      return shown.map((t, idx) => ({
+        x: i,
+        rank: idx + 1,
+        team: t.name,
+        label: `${t.flag} ${t.name}`,
+        manager: t.manager,
+      }));
+    });
   });
 
   const numTeams = $derived([...new Set(plotData.map(d => d.team))].length);
