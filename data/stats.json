@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-29T21:08:03.688707+10:00",
-  "stage": "GROUP_STAGE",
-  "headline": "Jay stays *immaculate*, Kerrod stares down the *chop*",
+  "generated_at": "2026-06-29T21:12:55.307452+10:00",
+  "stage": "LAST_32",
+  "headline": "Jay stays *immaculate*, Kerrod stares down the *secretary* desk",
   "summary": [
-    "The group stage rolls on and **Jay** remains the only player yet to lose a single team — all **12 still alive**, a remarkable feat. **Ryan** is keeping pace in second thanks to his strong European core, while **Mitchell** sits just behind with **7/12** surviving. The real story is **Kerrod**, who's haemorrhaged **7 teams** already and has **zero at risk** — meaning his remaining five are currently safe, but the Secretary trophy looms large if results turn ugly.",
-    "Eyes on **Tuesday** first: **Brazil vs Japan** (3:00AM) is a massive **Jay** double-header — he owns both sides. **Ryan** then gets a full day with **Germany vs Paraguay** (6:30AM) and **Netherlands vs Morocco** (11:00AM) — three Ryan teams, all on the pitch. **Wednesday** brings **Ivory Coast vs Norway** (3:00AM), a **Jay vs Kerrod** clash, before **France vs Sweden** (7:00AM) pits **Kerrod** against **Mitchell**, and **Mexico vs Ecuador** (11:00AM) is another **Kerrod vs Mitchell** battle."
+    "The group stage is heating up and the standings are stark. **Jay** remains the only participant with all **12 teams alive**, a genuinely ridiculous feat, while **Kerrod** has haemorrhaged down to just **5/12** — seven already buried. **Mitchell** and **Ryan** are locked in a tense mid-table scrap at **7/12** each, both sitting on five eliminations. The losses are piling up for both, but their remaining squads still carry enough quality to stay in the fight. Nobody's safe, and with knockout-round pressure building, every result from here bites harder.",
+    "Big ones incoming. **Jay** has eyes everywhere — **Brazil vs Japan** (Tue 3:00AM), **Switzerland vs Algeria** (Fri 1:00PM), and **Ivory Coast vs Norway** (Wed 3:00AM) all feature his teams. **Ryan** watches nervously as **Germany vs Paraguay**, **Netherlands vs Morocco**, and **Portugal vs Croatia** all land this week — three matches, both sides owned by him each time. **Mitchell** needs **England** (Thu 2:00AM), **Senegal** (Thu 6:00AM), **Ecuador** (Wed 11:00AM), and **Sweden** (Wed 7:00AM) to hold firm. **Kerrod** is praying **France**, **Belgium**, **Mexico**, and **United States** can arrest the bleeding before the secretary clipboard has his name on it."
   ],
   "leaderboard": [
     {
@@ -1402,17 +1402,17 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 34.5,
+        "title_probability": 34.2,
         "expected_teams_next_stage": 0.0,
-        "favourite_team": "Brazil",
-        "delta": 0.5
+        "favourite_team": "Spain",
+        "delta": -0.3
       },
       {
         "name": "Mitchell",
-        "title_probability": 23.5,
+        "title_probability": 24.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
-        "delta": 0.9
+        "delta": 0.5
       },
       {
         "name": "Ryan",
@@ -1423,10 +1423,10 @@
       },
       {
         "name": "Kerrod",
-        "title_probability": 19.5,
+        "title_probability": 19.4,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "France",
-        "delta": 0.3
+        "delta": -0.1
       }
     ],
     "teams": [
@@ -1482,40 +1482,6 @@
         "delta": 0.1
       },
       {
-        "name": "Brazil",
-        "flag": "🇧🇷",
-        "manager": "Jay",
-        "status": "in",
-        "title_probability": 4.1,
-        "fifa_rank": 5,
-        "title_breakdown": {
-          "form_score": 0.338,
-          "stage_score": 0.0,
-          "rank_score": 0.95,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.1
-      },
-      {
-        "name": "England",
-        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-        "manager": "Mitchell",
-        "status": "in",
-        "title_probability": 4.1,
-        "fifa_rank": 4,
-        "title_breakdown": {
-          "form_score": 0.332,
-          "stage_score": 0.0,
-          "rank_score": 0.963,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.1
-      },
-      {
         "name": "Netherlands",
         "flag": "🇳🇱",
         "manager": "Ryan",
@@ -1550,6 +1516,40 @@
         "delta": 0.1
       },
       {
+        "name": "Brazil",
+        "flag": "🇧🇷",
+        "manager": "Jay",
+        "status": "in",
+        "title_probability": 4.0,
+        "fifa_rank": 5,
+        "title_breakdown": {
+          "form_score": 0.338,
+          "stage_score": 0.0,
+          "rank_score": 0.95,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.1
+      },
+      {
+        "name": "England",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "manager": "Mitchell",
+        "status": "in",
+        "title_probability": 4.0,
+        "fifa_rank": 4,
+        "title_breakdown": {
+          "form_score": 0.332,
+          "stage_score": 0.0,
+          "rank_score": 0.963,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.1
+      },
+      {
         "name": "Morocco",
         "flag": "🇲🇦",
         "manager": "Ryan",
@@ -1565,6 +1565,23 @@
           "rank_weight": 0.2
         },
         "delta": 0.1
+      },
+      {
+        "name": "Canada",
+        "flag": "🇨🇦",
+        "manager": "Mitchell",
+        "status": "in",
+        "title_probability": 3.9,
+        "fifa_rank": 30,
+        "title_breakdown": {
+          "form_score": 0.337,
+          "stage_score": 0.2,
+          "rank_score": 0.637,
+          "stage_label": "Round of 32",
+          "form_weight": 0.54,
+          "rank_weight": 0.16
+        },
+        "delta": 0.6
       },
       {
         "name": "Colombia",
@@ -1588,7 +1605,7 @@
         "flag": "🇨🇭",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.8,
+        "title_probability": 3.7,
         "fifa_rank": 16,
         "title_breakdown": {
           "form_score": 0.338,
@@ -1598,7 +1615,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Germany",
@@ -1690,7 +1707,7 @@
         "flag": "🇳🇴",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.4,
+        "title_probability": 3.3,
         "fifa_rank": 23,
         "title_breakdown": {
           "form_score": 0.303,
@@ -1700,14 +1717,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Japan",
         "flag": "🇯🇵",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.3,
+        "title_probability": 3.2,
         "fifa_rank": 17,
         "title_breakdown": {
           "form_score": 0.255,
@@ -1717,24 +1734,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
-      },
-      {
-        "name": "Canada",
-        "flag": "🇨🇦",
-        "manager": "Mitchell",
-        "status": "in",
-        "title_probability": 3.3,
-        "fifa_rank": 30,
-        "title_breakdown": {
-          "form_score": 0.337,
-          "stage_score": 0.0,
-          "rank_score": 0.637,
-          "stage_label": "LAST_32",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.7
+        "delta": -0.1
       },
       {
         "name": "Ivory Coast",
@@ -2221,11 +2221,11 @@
         "fifa_rank": 54,
         "title_breakdown": {
           "form_score": 0.177,
-          "stage_score": 0.0,
+          "stage_score": 0.2,
           "rank_score": 0.338,
-          "stage_label": "LAST_32",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
+          "stage_label": "Round of 32",
+          "form_weight": 0.54,
+          "rank_weight": 0.16
         },
         "delta": -1.8
       },
