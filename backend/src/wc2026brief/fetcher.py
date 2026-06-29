@@ -636,7 +636,7 @@ def _sticky_delta(
     return change if change else prev_delta
 
 
-def _write_history(data_dir: Path, current_stats: dict, matchday: int | None = None) -> None:
+def _write_history(data_dir: Path, current_stats: dict, matchday: int | None = None, team_records: dict | None = None) -> None:
     """Append team-ranking snapshot to data/history.json when title scores change.
 
     Reads the existing history.json (committed in git, persists across CI runs),
@@ -657,6 +657,8 @@ def _write_history(data_dir: Path, current_stats: dict, matchday: int | None = N
                 "manager": t.get("manager", ""),
                 "rank": i + 1,
                 "score": t.get("title_probability", 0),
+                "status": t.get("status", "in"),
+                "stage": team_records[t["name"]].current_stage if team_records and t["name"] in team_records else None,
             }
             for i, t in enumerate(ranked[:_HISTORY_TOP_N])
         ]
@@ -802,10 +804,15 @@ class WCFetcher:
             rankings = None
 
         knockout_stages = {"ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
-        stage = "KNOCKOUT" if any(
-            m.get("stage") in knockout_stages and m.get("status") == "FINISHED"
-            for m in matches
-        ) else "GROUP_STAGE"
+        _knockout_order = ["ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"]
+        finished_knockout_stages = {
+            m.get("stage") for m in matches
+            if m.get("stage") in knockout_stages and m.get("status") == "FINISHED"
+        }
+        stage = next(
+            (s for s in _knockout_order if s in finished_knockout_stages),
+            "GROUP_STAGE",
+        )
 
         finished_gs_matchdays = [
             m.get("matchday")
@@ -904,4 +911,4 @@ class WCFetcher:
         self._stats_file.write_text(output.model_dump_json(indent=2, by_alias=True))
         logger.info("stats.json updated at %s", now.strftime("%Y-%m-%d %H:%M:%S %Z"))
 
-        _write_history(self._data_dir, output.model_dump(by_alias=True), matchday=current_matchday)
+        _write_history(self._data_dir, output.model_dump(by_alias=True), matchday=current_matchday, team_records=team_records)
