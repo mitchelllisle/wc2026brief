@@ -44,8 +44,8 @@ _BASE_RANK_WEIGHT = 0.20
 # keeping cross-team scores on a uniform basis inside the normalisation sum.
 _STAGE_DEPTH: dict[str, int] = {
     "GROUP_STAGE":    0,
-    "ROUND_OF_32":    1,
-    "ROUND_OF_16":    2,
+    "LAST_32":        1,
+    "LAST_16":        2,
     "QUARTER_FINALS": 3,
     "SEMI_FINALS":    4,
     "THIRD_PLACE":    4,
@@ -101,23 +101,23 @@ def fetch_fifa_rankings() -> dict[str, int]:
 
 
 _STAGE_SCORES: dict[str, float] = {
-    "GROUP_STAGE":   0.00,
-    "ROUND_OF_32":   0.20,
-    "ROUND_OF_16":   0.40,
+    "GROUP_STAGE":    0.00,
+    "LAST_32":        0.20,
+    "LAST_16":        0.40,
     "QUARTER_FINALS": 0.60,
-    "SEMI_FINALS":   0.80,
-    "THIRD_PLACE":   0.85,
-    "FINAL":         1.00,
+    "SEMI_FINALS":    0.80,
+    "THIRD_PLACE":    0.85,
+    "FINAL":          1.00,
 }
 
 _STAGE_LABELS: dict[str, str] = {
-    "GROUP_STAGE":   "Group stage",
-    "ROUND_OF_32":   "Round of 32",
-    "ROUND_OF_16":   "Round of 16",
+    "GROUP_STAGE":    "Group stage",
+    "LAST_32":        "Round of 32",
+    "LAST_16":        "Round of 16",
     "QUARTER_FINALS": "Quarter-final",
-    "SEMI_FINALS":   "Semi-final",
-    "THIRD_PLACE":   "Third place",
-    "FINAL":         "Final",
+    "SEMI_FINALS":    "Semi-final",
+    "THIRD_PLACE":    "Third place",
+    "FINAL":          "Final",
 }
 
 
@@ -597,8 +597,8 @@ def build_participant_stats(
 _HISTORY_TOP_N = 48  # store all teams so the bump chart can show any team at any zoom level
 
 _KNOCKOUT_ROUND_LABELS: dict[str, str] = {
-    "ROUND_OF_32":    "R32",
-    "ROUND_OF_16":    "R16",
+    "LAST_32":        "R32",
+    "LAST_16":        "R16",
     "QUARTER_FINALS": "QF",
     "SEMI_FINALS":    "SF",
     "THIRD_PLACE":    "3rd Place",
@@ -686,9 +686,11 @@ def _write_history(data_dir: Path, current_stats: dict, matchday: int | None = N
     # Replace any existing entry for today; otherwise check if scores changed
     same_day_idx = next((i for i, e in enumerate(existing) if e["ts"][:10] == today), None)
     if same_day_idx is not None:
-        if _score_key(existing[same_day_idx]["teams"]) == new_key:
-            return  # same day, same scores — nothing to do
-        existing[same_day_idx] = {"ts": ts, "stage": stage, "round": existing[same_day_idx]["round"], "teams": teams}
+        old = existing[same_day_idx]
+        new_round = _round_label(stage, matchday)
+        if _score_key(old["teams"]) == new_key and old.get("stage") == stage:
+            return  # same day, same scores, same stage — nothing to do
+        existing[same_day_idx] = {"ts": ts, "stage": stage, "round": new_round, "teams": teams}
     else:
         if existing and _score_key(existing[-1]["teams"]) == new_key:
             return  # scores unchanged from last day — skip
@@ -803,8 +805,8 @@ class WCFetcher:
             logger.warning("Could not fetch FIFA rankings, proceeding without them: %s", exc)
             rankings = None
 
-        knockout_stages = {"ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
-        _knockout_order = ["ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"]
+        knockout_stages = {"LAST_32", "LAST_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
+        _knockout_order = ["LAST_32", "LAST_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"]
         finished_knockout_stages = {
             m.get("stage") for m in matches
             if m.get("stage") in knockout_stages and m.get("status") == "FINISHED"
