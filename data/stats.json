@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-30T15:21:24.324477+10:00",
+  "generated_at": "2026-06-30T17:13:54.830267+10:00",
   "stage": "LAST_32",
-  "headline": "Jay stays *dominant* while Kerrod stares down the *axe*",
+  "headline": "Jay stays *fortress*, Ryan stares down the *chop*",
   "summary": [
-    "**Jay** is cruising at the top with **11/12 teams** still alive and a healthy **33% strength** rating — remarkable. **Mitchell** sits second but is bleeding badly with **5 teams already out** and **3 more at risk**, while **Ryan** isn't far behind on casualties with **6 gone**. **Kerrod** is rooted to the bottom with **7 eliminated** and somehow has **zero teams at risk** — meaning the survivors are safe for now, but there's not many left to protect the Secretary throne.",
-    "Big ones incoming: **Jay** has a stacked slate — **Ivory Coast vs Norway** (Wed 3AM), **Switzerland vs Algeria** (Fri 1PM), **Australia vs Egypt** (Sat 4AM), and **Colombia vs Ghana** (Sat 11:30AM) — all Jay-on-Jay carnage. **Mitchell** watches **England vs Congo DR** (Thu 2AM) and **Argentina vs Cape Verde Islands** (Sat 8AM). **Ryan** sweats **Spain vs Austria** (Fri 5AM) and **Portugal vs Croatia** (Fri 9AM). **Kerrod** needs **France vs Sweden** (Wed 7AM), **Belgium vs Senegal** (Thu 6AM), and **United States vs Bosnia-Herzegovina** (Thu 10AM) to go his way."
+    "The group stage is heating up fast. **Jay** leads the pack with **11/12 teams** alive, though **Ivory Coast**, **Switzerland**, **Algeria**, and **Bosnia-Herzegovina** are sweating in at-risk territory. **Mitchell** has taken some serious hits — **5 teams already out** — but **Argentina**, **England**, and **Croatia** are still flying the flag. **Kerrod** is tidy with **0 teams at risk**, despite sitting mid-table, while **Ryan** is on the 💀 spot with **7 gone** and **Congo DR** and **Austria** both dangling by a thread.",
+    "Big fixtures incoming. **Jay** has a stacked schedule — **Ivory Coast vs Norway** (Wed 3AM), **Switzerland vs Algeria** (Fri 1PM), **Australia vs Egypt** (Sat 4AM), and **Colombia vs Ghana** (Sat 11:30AM) — massive for his depth. **Kerrod** watches nervously as **France vs Sweden** (Wed 7AM) pits him against **Mitchell's Sweden**, and **Belgium vs Senegal** (Thu 6AM) is Kerrod vs Mitchell again. **Ryan** needs **Spain vs Austria** (Fri 5AM) and **Portugal vs Croatia** (Fri 9AM) — though the Croatia clash is Ryan vs Mitchell's finest."
   ],
   "leaderboard": [
     {
@@ -32,18 +32,6 @@
       }
     },
     {
-      "name": "Ryan",
-      "teams_remaining": 6,
-      "teams_total": 12,
-      "eliminated": 6,
-      "at_risk": 2,
-      "record": {
-        "w": 13,
-        "d": 10,
-        "l": 18
-      }
-    },
-    {
       "name": "Kerrod",
       "teams_remaining": 5,
       "teams_total": 12,
@@ -53,6 +41,18 @@
         "w": 12,
         "d": 10,
         "l": 14
+      }
+    },
+    {
+      "name": "Ryan",
+      "teams_remaining": 5,
+      "teams_total": 12,
+      "eliminated": 7,
+      "at_risk": 2,
+      "record": {
+        "w": 14,
+        "d": 8,
+        "l": 19
       }
     }
   ],
@@ -628,309 +628,6 @@
         ]
       }
     ],
-    "Ryan": [
-      {
-        "name": "Portugal",
-        "flag": "🇵🇹",
-        "status": "in",
-        "last_result": "D",
-        "form": [
-          {
-            "result": "D",
-            "opponent": "Congo DR",
-            "score": "1–1"
-          },
-          {
-            "result": "W",
-            "opponent": "Uzbekistan",
-            "score": "5–0"
-          },
-          {
-            "result": "D",
-            "opponent": "Colombia",
-            "score": "0–0"
-          }
-        ]
-      },
-      {
-        "name": "Netherlands",
-        "flag": "🇳🇱",
-        "status": "in",
-        "last_result": "D",
-        "form": [
-          {
-            "result": "D",
-            "opponent": "Japan",
-            "score": "2–2"
-          },
-          {
-            "result": "W",
-            "opponent": "Sweden",
-            "score": "5–1"
-          },
-          {
-            "result": "W",
-            "opponent": "Tunisia",
-            "score": "3–1"
-          },
-          {
-            "result": "D",
-            "opponent": "Morocco",
-            "score": "4–4"
-          }
-        ]
-      },
-      {
-        "name": "Morocco",
-        "flag": "🇲🇦",
-        "status": "in",
-        "last_result": "D",
-        "form": [
-          {
-            "result": "D",
-            "opponent": "Brazil",
-            "score": "1–1"
-          },
-          {
-            "result": "W",
-            "opponent": "Scotland",
-            "score": "1–0"
-          },
-          {
-            "result": "W",
-            "opponent": "Haiti",
-            "score": "4–2"
-          },
-          {
-            "result": "D",
-            "opponent": "Netherlands",
-            "score": "4–4"
-          }
-        ]
-      },
-      {
-        "name": "Germany",
-        "flag": "🇩🇪",
-        "status": "out",
-        "last_result": "L",
-        "form": [
-          {
-            "result": "W",
-            "opponent": "Curaçao",
-            "score": "7–1"
-          },
-          {
-            "result": "W",
-            "opponent": "Ivory Coast",
-            "score": "2–1"
-          },
-          {
-            "result": "L",
-            "opponent": "Ecuador",
-            "score": "1–2"
-          },
-          {
-            "result": "L",
-            "opponent": "Paraguay",
-            "score": "4–5"
-          }
-        ]
-      },
-      {
-        "name": "Austria",
-        "flag": "🇦🇹",
-        "status": "at_risk",
-        "last_result": "D",
-        "form": [
-          {
-            "result": "W",
-            "opponent": "Jordan",
-            "score": "3–1"
-          },
-          {
-            "result": "L",
-            "opponent": "Argentina",
-            "score": "0–2"
-          },
-          {
-            "result": "D",
-            "opponent": "Algeria",
-            "score": "3–3"
-          }
-        ]
-      },
-      {
-        "name": "South Korea",
-        "flag": "🇰🇷",
-        "status": "out",
-        "last_result": "L",
-        "form": [
-          {
-            "result": "W",
-            "opponent": "Czechia",
-            "score": "2–1"
-          },
-          {
-            "result": "L",
-            "opponent": "Mexico",
-            "score": "0–1"
-          },
-          {
-            "result": "L",
-            "opponent": "South Africa",
-            "score": "0–1"
-          }
-        ]
-      },
-      {
-        "name": "Paraguay",
-        "flag": "🇵🇾",
-        "status": "in",
-        "last_result": "W",
-        "form": [
-          {
-            "result": "L",
-            "opponent": "United States",
-            "score": "1–4"
-          },
-          {
-            "result": "W",
-            "opponent": "Turkey",
-            "score": "1–0"
-          },
-          {
-            "result": "D",
-            "opponent": "Australia",
-            "score": "0–0"
-          },
-          {
-            "result": "W",
-            "opponent": "Germany",
-            "score": "5–4"
-          }
-        ]
-      },
-      {
-        "name": "Panama",
-        "flag": "🇵🇦",
-        "status": "out",
-        "last_result": "L",
-        "form": [
-          {
-            "result": "L",
-            "opponent": "Ghana",
-            "score": "0–1"
-          },
-          {
-            "result": "L",
-            "opponent": "Croatia",
-            "score": "0–1"
-          },
-          {
-            "result": "L",
-            "opponent": "England",
-            "score": "0–2"
-          }
-        ]
-      },
-      {
-        "name": "Congo DR",
-        "flag": "🇨🇩",
-        "status": "at_risk",
-        "last_result": "W",
-        "form": [
-          {
-            "result": "D",
-            "opponent": "Portugal",
-            "score": "1–1"
-          },
-          {
-            "result": "L",
-            "opponent": "Colombia",
-            "score": "0–1"
-          },
-          {
-            "result": "W",
-            "opponent": "Uzbekistan",
-            "score": "3–1"
-          }
-        ]
-      },
-      {
-        "name": "Iraq",
-        "flag": "🇮🇶",
-        "status": "out",
-        "last_result": "L",
-        "form": [
-          {
-            "result": "L",
-            "opponent": "Norway",
-            "score": "1–4"
-          },
-          {
-            "result": "L",
-            "opponent": "France",
-            "score": "0–3"
-          },
-          {
-            "result": "L",
-            "opponent": "Senegal",
-            "score": "0–5"
-          }
-        ]
-      },
-      {
-        "name": "South Africa",
-        "flag": "🇿🇦",
-        "status": "out",
-        "last_result": "L",
-        "form": [
-          {
-            "result": "L",
-            "opponent": "Mexico",
-            "score": "0–2"
-          },
-          {
-            "result": "D",
-            "opponent": "Czechia",
-            "score": "1–1"
-          },
-          {
-            "result": "W",
-            "opponent": "South Korea",
-            "score": "1–0"
-          },
-          {
-            "result": "L",
-            "opponent": "Canada",
-            "score": "0–1"
-          }
-        ]
-      },
-      {
-        "name": "Jordan",
-        "flag": "🇯🇴",
-        "status": "out",
-        "last_result": "L",
-        "form": [
-          {
-            "result": "L",
-            "opponent": "Austria",
-            "score": "1–3"
-          },
-          {
-            "result": "L",
-            "opponent": "Algeria",
-            "score": "1–2"
-          },
-          {
-            "result": "L",
-            "opponent": "Argentina",
-            "score": "1–3"
-          }
-        ]
-      }
-    ],
     "Kerrod": [
       {
         "name": "France",
@@ -1208,13 +905,316 @@
           }
         ]
       }
+    ],
+    "Ryan": [
+      {
+        "name": "Portugal",
+        "flag": "🇵🇹",
+        "status": "in",
+        "last_result": "D",
+        "form": [
+          {
+            "result": "D",
+            "opponent": "Congo DR",
+            "score": "1–1"
+          },
+          {
+            "result": "W",
+            "opponent": "Uzbekistan",
+            "score": "5–0"
+          },
+          {
+            "result": "D",
+            "opponent": "Colombia",
+            "score": "0–0"
+          }
+        ]
+      },
+      {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "D",
+            "opponent": "Japan",
+            "score": "2–2"
+          },
+          {
+            "result": "W",
+            "opponent": "Sweden",
+            "score": "5–1"
+          },
+          {
+            "result": "W",
+            "opponent": "Tunisia",
+            "score": "3–1"
+          },
+          {
+            "result": "L",
+            "opponent": "Morocco",
+            "score": "3–4"
+          }
+        ]
+      },
+      {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "status": "in",
+        "last_result": "W",
+        "form": [
+          {
+            "result": "D",
+            "opponent": "Brazil",
+            "score": "1–1"
+          },
+          {
+            "result": "W",
+            "opponent": "Scotland",
+            "score": "1–0"
+          },
+          {
+            "result": "W",
+            "opponent": "Haiti",
+            "score": "4–2"
+          },
+          {
+            "result": "W",
+            "opponent": "Netherlands",
+            "score": "4–3"
+          }
+        ]
+      },
+      {
+        "name": "Germany",
+        "flag": "🇩🇪",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "W",
+            "opponent": "Curaçao",
+            "score": "7–1"
+          },
+          {
+            "result": "W",
+            "opponent": "Ivory Coast",
+            "score": "2–1"
+          },
+          {
+            "result": "L",
+            "opponent": "Ecuador",
+            "score": "1–2"
+          },
+          {
+            "result": "L",
+            "opponent": "Paraguay",
+            "score": "4–5"
+          }
+        ]
+      },
+      {
+        "name": "Austria",
+        "flag": "🇦🇹",
+        "status": "at_risk",
+        "last_result": "D",
+        "form": [
+          {
+            "result": "W",
+            "opponent": "Jordan",
+            "score": "3–1"
+          },
+          {
+            "result": "L",
+            "opponent": "Argentina",
+            "score": "0–2"
+          },
+          {
+            "result": "D",
+            "opponent": "Algeria",
+            "score": "3–3"
+          }
+        ]
+      },
+      {
+        "name": "South Korea",
+        "flag": "🇰🇷",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "W",
+            "opponent": "Czechia",
+            "score": "2–1"
+          },
+          {
+            "result": "L",
+            "opponent": "Mexico",
+            "score": "0–1"
+          },
+          {
+            "result": "L",
+            "opponent": "South Africa",
+            "score": "0–1"
+          }
+        ]
+      },
+      {
+        "name": "Paraguay",
+        "flag": "🇵🇾",
+        "status": "in",
+        "last_result": "W",
+        "form": [
+          {
+            "result": "L",
+            "opponent": "United States",
+            "score": "1–4"
+          },
+          {
+            "result": "W",
+            "opponent": "Turkey",
+            "score": "1–0"
+          },
+          {
+            "result": "D",
+            "opponent": "Australia",
+            "score": "0–0"
+          },
+          {
+            "result": "W",
+            "opponent": "Germany",
+            "score": "5–4"
+          }
+        ]
+      },
+      {
+        "name": "Panama",
+        "flag": "🇵🇦",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "L",
+            "opponent": "Ghana",
+            "score": "0–1"
+          },
+          {
+            "result": "L",
+            "opponent": "Croatia",
+            "score": "0–1"
+          },
+          {
+            "result": "L",
+            "opponent": "England",
+            "score": "0–2"
+          }
+        ]
+      },
+      {
+        "name": "Congo DR",
+        "flag": "🇨🇩",
+        "status": "at_risk",
+        "last_result": "W",
+        "form": [
+          {
+            "result": "D",
+            "opponent": "Portugal",
+            "score": "1–1"
+          },
+          {
+            "result": "L",
+            "opponent": "Colombia",
+            "score": "0–1"
+          },
+          {
+            "result": "W",
+            "opponent": "Uzbekistan",
+            "score": "3–1"
+          }
+        ]
+      },
+      {
+        "name": "Iraq",
+        "flag": "🇮🇶",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "L",
+            "opponent": "Norway",
+            "score": "1–4"
+          },
+          {
+            "result": "L",
+            "opponent": "France",
+            "score": "0–3"
+          },
+          {
+            "result": "L",
+            "opponent": "Senegal",
+            "score": "0–5"
+          }
+        ]
+      },
+      {
+        "name": "South Africa",
+        "flag": "🇿🇦",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "L",
+            "opponent": "Mexico",
+            "score": "0–2"
+          },
+          {
+            "result": "D",
+            "opponent": "Czechia",
+            "score": "1–1"
+          },
+          {
+            "result": "W",
+            "opponent": "South Korea",
+            "score": "1–0"
+          },
+          {
+            "result": "L",
+            "opponent": "Canada",
+            "score": "0–1"
+          }
+        ]
+      },
+      {
+        "name": "Jordan",
+        "flag": "🇯🇴",
+        "status": "out",
+        "last_result": "L",
+        "form": [
+          {
+            "result": "L",
+            "opponent": "Austria",
+            "score": "1–3"
+          },
+          {
+            "result": "L",
+            "opponent": "Algeria",
+            "score": "1–2"
+          },
+          {
+            "result": "L",
+            "opponent": "Argentina",
+            "score": "1–3"
+          }
+        ]
+      }
     ]
   },
   "recent_results": [
     {
       "h_code": "NED",
       "h_flag": "🇳🇱",
-      "hs": 4,
+      "hs": 3,
       "a_code": "MAR",
       "a_flag": "🇲🇦",
       "as": 4,
@@ -1432,31 +1432,31 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 33.0,
+        "title_probability": 34.6,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Brazil",
-        "delta": -0.4
+        "delta": 1.6
       },
       {
         "name": "Mitchell",
-        "title_probability": 24.7,
+        "title_probability": 25.7,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
-        "delta": -0.2
-      },
-      {
-        "name": "Ryan",
-        "title_probability": 22.3,
-        "expected_teams_next_stage": 0.0,
-        "favourite_team": "Netherlands",
         "delta": 1.0
       },
       {
         "name": "Kerrod",
-        "title_probability": 20.0,
+        "title_probability": 20.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "France",
-        "delta": -0.3
+        "delta": 0.9
+      },
+      {
+        "name": "Ryan",
+        "title_probability": 18.7,
+        "expected_teams_next_stage": 0.0,
+        "favourite_team": "Morocco",
+        "delta": -3.6
       }
     ],
     "teams": [
@@ -1465,7 +1465,7 @@
         "flag": "🇧🇷",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 5.3,
+        "title_probability": 5.6,
         "fifa_rank": 5,
         "title_breakdown": {
           "form_score": 0.462,
@@ -1475,14 +1475,31 @@
           "form_weight": 0.54,
           "rank_weight": 0.16
         },
-        "delta": -0.1
+        "delta": 0.3
+      },
+      {
+        "name": "Morocco",
+        "flag": "🇲🇦",
+        "manager": "Ryan",
+        "status": "in",
+        "title_probability": 5.6,
+        "fifa_rank": 6,
+        "title_breakdown": {
+          "form_score": 0.467,
+          "stage_score": 0.2,
+          "rank_score": 0.938,
+          "stage_label": "Round of 32",
+          "form_weight": 0.54,
+          "rank_weight": 0.16
+        },
+        "delta": 0.8
       },
       {
         "name": "France",
         "flag": "🇫🇷",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 4.9,
+        "title_probability": 5.1,
         "fifa_rank": 2,
         "title_breakdown": {
           "form_score": 0.442,
@@ -1492,31 +1509,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
-      },
-      {
-        "name": "Netherlands",
-        "flag": "🇳🇱",
-        "manager": "Ryan",
-        "status": "in",
-        "title_probability": 4.9,
-        "fifa_rank": 7,
-        "title_breakdown": {
-          "form_score": 0.403,
-          "stage_score": 0.2,
-          "rank_score": 0.925,
-          "stage_label": "Round of 32",
-          "form_weight": 0.54,
-          "rank_weight": 0.16
-        },
-        "delta": 0.6
+        "delta": 0.2
       },
       {
         "name": "Argentina",
         "flag": "🇦🇷",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 4.8,
+        "title_probability": 5.0,
         "fifa_rank": 1,
         "title_breakdown": {
           "form_score": 0.428,
@@ -1526,31 +1526,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
-      },
-      {
-        "name": "Morocco",
-        "flag": "🇲🇦",
-        "manager": "Ryan",
-        "status": "in",
-        "title_probability": 4.8,
-        "fifa_rank": 6,
-        "title_breakdown": {
-          "form_score": 0.383,
-          "stage_score": 0.2,
-          "rank_score": 0.938,
-          "stage_label": "Round of 32",
-          "form_weight": 0.54,
-          "rank_weight": 0.16
-        },
-        "delta": 0.6
+        "delta": 0.2
       },
       {
         "name": "Mexico",
         "flag": "🇲🇽",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 4.5,
+        "title_probability": 4.7,
         "fifa_rank": 9,
         "title_breakdown": {
           "form_score": 0.415,
@@ -1560,14 +1543,31 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.2
+      },
+      {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "manager": "Jay",
+        "status": "in",
+        "title_probability": 4.3,
+        "fifa_rank": 3,
+        "title_breakdown": {
+          "form_score": 0.325,
+          "stage_score": 0.0,
+          "rank_score": 0.975,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": 0.2
       },
       {
         "name": "England",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 4.2,
+        "title_probability": 4.3,
         "fifa_rank": 4,
         "title_breakdown": {
           "form_score": 0.332,
@@ -1580,28 +1580,11 @@
         "delta": 0.1
       },
       {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "manager": "Jay",
-        "status": "in",
-        "title_probability": 4.1,
-        "fifa_rank": 3,
-        "title_breakdown": {
-          "form_score": 0.325,
-          "stage_score": 0.0,
-          "rank_score": 0.975,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": -0.1
-      },
-      {
         "name": "Canada",
         "flag": "🇨🇦",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 4.0,
+        "title_probability": 4.2,
         "fifa_rank": 30,
         "title_breakdown": {
           "form_score": 0.337,
@@ -1611,14 +1594,14 @@
           "form_weight": 0.54,
           "rank_weight": 0.16
         },
-        "delta": 0.1
+        "delta": 0.2
       },
       {
         "name": "Colombia",
         "flag": "🇨🇴",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.9,
+        "title_probability": 4.1,
         "fifa_rank": 11,
         "title_breakdown": {
           "form_score": 0.318,
@@ -1628,14 +1611,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.2
       },
       {
         "name": "Switzerland",
         "flag": "🇨🇭",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.8,
+        "title_probability": 4.0,
         "fifa_rank": 16,
         "title_breakdown": {
           "form_score": 0.338,
@@ -1645,14 +1628,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.2
       },
       {
         "name": "Paraguay",
         "flag": "🇵🇾",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 3.8,
+        "title_probability": 4.0,
         "fifa_rank": 34,
         "title_breakdown": {
           "form_score": 0.327,
@@ -1662,14 +1645,14 @@
           "form_weight": 0.54,
           "rank_weight": 0.16
         },
-        "delta": -0.1
+        "delta": 0.2
       },
       {
         "name": "United States",
         "flag": "🇺🇸",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.7,
+        "title_probability": 3.8,
         "fifa_rank": 15,
         "title_breakdown": {
           "form_score": 0.303,
@@ -1686,7 +1669,7 @@
         "flag": "🇭🇷",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 3.6,
+        "title_probability": 3.8,
         "fifa_rank": 13,
         "title_breakdown": {
           "form_score": 0.283,
@@ -1696,14 +1679,31 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.2
+      },
+      {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "manager": "Kerrod",
+        "status": "in",
+        "title_probability": 3.7,
+        "fifa_rank": 10,
+        "title_breakdown": {
+          "form_score": 0.248,
+          "stage_score": 0.0,
+          "rank_score": 0.887,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": 0.2
       },
       {
         "name": "Portugal",
         "flag": "🇵🇹",
         "manager": "Ryan",
         "status": "in",
-        "title_probability": 3.6,
+        "title_probability": 3.7,
         "fifa_rank": 8,
         "title_breakdown": {
           "form_score": 0.248,
@@ -1716,28 +1716,11 @@
         "delta": 0.1
       },
       {
-        "name": "Belgium",
-        "flag": "🇧🇪",
-        "manager": "Kerrod",
-        "status": "in",
-        "title_probability": 3.5,
-        "fifa_rank": 10,
-        "title_breakdown": {
-          "form_score": 0.248,
-          "stage_score": 0.0,
-          "rank_score": 0.887,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": -0.1
-      },
-      {
         "name": "Norway",
         "flag": "🇳🇴",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 3.4,
+        "title_probability": 3.6,
         "fifa_rank": 23,
         "title_breakdown": {
           "form_score": 0.303,
@@ -1747,14 +1730,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.2
       },
       {
         "name": "Ivory Coast",
         "flag": "🇨🇮",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.1,
+        "title_probability": 3.2,
         "fifa_rank": 31,
         "title_breakdown": {
           "form_score": 0.277,
@@ -1771,7 +1754,7 @@
         "flag": "🇪🇬",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.0,
+        "title_probability": 3.1,
         "fifa_rank": 26,
         "title_breakdown": {
           "form_score": 0.242,
@@ -1788,7 +1771,7 @@
         "flag": "🇸🇳",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 2.9,
+        "title_probability": 3.0,
         "fifa_rank": 18,
         "title_breakdown": {
           "form_score": 0.178,
@@ -1805,7 +1788,7 @@
         "flag": "🇦🇹",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 2.9,
+        "title_probability": 3.0,
         "fifa_rank": 22,
         "title_breakdown": {
           "form_score": 0.207,
@@ -1815,14 +1798,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.1
       },
       {
         "name": "Algeria",
         "flag": "🇩🇿",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 2.7,
+        "title_probability": 2.8,
         "fifa_rank": 29,
         "title_breakdown": {
           "form_score": 0.2,
@@ -1839,7 +1822,7 @@
         "flag": "🇪🇨",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 2.7,
+        "title_probability": 2.8,
         "fifa_rank": 24,
         "title_breakdown": {
           "form_score": 0.18,
@@ -1856,7 +1839,7 @@
         "flag": "🇦🇺",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 2.6,
+        "title_probability": 2.7,
         "fifa_rank": 28,
         "title_breakdown": {
           "form_score": 0.18,
@@ -1873,7 +1856,7 @@
         "flag": "🇸🇪",
         "manager": "Mitchell",
         "status": "at_risk",
-        "title_probability": 2.5,
+        "title_probability": 2.6,
         "fifa_rank": 37,
         "title_breakdown": {
           "form_score": 0.213,
@@ -1890,7 +1873,7 @@
         "flag": "🇨🇩",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 2.3,
+        "title_probability": 2.4,
         "fifa_rank": 41,
         "title_breakdown": {
           "form_score": 0.193,
@@ -1907,7 +1890,7 @@
         "flag": "🇧🇦",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 1.7,
+        "title_probability": 1.8,
         "fifa_rank": 61,
         "title_breakdown": {
           "form_score": 0.2,
@@ -1917,14 +1900,14 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": -0.1
+        "delta": 0.1
       },
       {
         "name": "Ghana",
         "flag": "🇬🇭",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 1.5,
+        "title_probability": 1.6,
         "fifa_rank": 65,
         "title_breakdown": {
           "form_score": 0.18,
@@ -1941,7 +1924,7 @@
         "flag": "🇨🇻",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 1.3,
+        "title_probability": 1.4,
         "fifa_rank": 64,
         "title_breakdown": {
           "form_score": 0.138,
@@ -2173,6 +2156,23 @@
           "rank_weight": 0.2
         },
         "delta": -0.3
+      },
+      {
+        "name": "Netherlands",
+        "flag": "🇳🇱",
+        "manager": "Ryan",
+        "status": "out",
+        "title_probability": 0.0,
+        "fifa_rank": 7,
+        "title_breakdown": {
+          "form_score": 0.357,
+          "stage_score": 0.2,
+          "rank_score": 0.925,
+          "stage_label": "Round of 32",
+          "form_weight": 0.54,
+          "rank_weight": 0.16
+        },
+        "delta": -4.9
       },
       {
         "name": "Germany",
