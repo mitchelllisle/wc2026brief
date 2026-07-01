@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-02T00:57:54.189190+10:00",
+  "generated_at": "2026-07-02T02:46:25.384314+10:00",
   "stage": "LAST_32",
-  "headline": "Jay stays *dominant*, but Ryan stares down the *chop*",
+  "headline": "Jay stays *untouchable*, Ryan stares down the *chop*",
   "summary": [
-    "The group stage drama continues with **Jay** holding a commanding lead — **10 of 12** teams still alive and only **2 out**. **Kerrod**, **Mitchell**, and **Ryan** are all knotted on **5 teams alive**, but **Ryan** is in real trouble with **7 teams out** and **2 at risk**, sitting last on **19.7% strength**. **Mitchell** has one team at risk and owns the wooden spoon threat alongside Ryan. Meanwhile **Kerrod** is quietly sitting clean with **zero teams at risk** — no drama, just survival.",
-    "Big ones incoming. **Mitchell** sweats on **England vs Congo DR** (Thu 2 Jul, 2AM) and **Belgium vs Senegal** (6AM) is Kerrod vs Mitchell. **Jay** has six matches to navigate including **Switzerland vs Algeria** (Fri 3 Jul, 1PM), **Australia vs Egypt** (Sat 4 Jul, 4AM) and **Colombia vs Ghana** (11:30AM) — all Jay vs Jay! **Ryan** watches **Spain vs Austria** (Fri 3 Jul, 5AM) and **Portugal vs Croatia** (9AM) nervously, while **Kerrod** fancies **Norway vs Brazil** (Mon 6 Jul, 6AM) to dent Jay's lead."
+    "The group stage is heating up fast. **Jay** had teams scattered across the results — **Bosnia-Herzegovina**, **Algeria**, **Egypt**, **Ghana**, and **Australia** all in action recently — and his 10 alive keeps him firmly on top. **Mitchell** is hanging in there with **Senegal** fighting through and **Croatia** still kicking, while **Kerrod's** **Belgium** and **United States** have been doing enough to keep him off the bottom. **Ryan** is in real danger though — only 5 teams alive with **2 at risk**, and the losses are piling up at **19** already. One more rough patch and he's staring down the Secretary's calendar.",
+    "Massive week incoming. **Jay** will be watching nervously as **Spain vs Austria** (Fri 3 Jul, 5:00AM) pits his **Spain** directly against **Ryan's Austria** — winner pulls ahead. **Portugal vs Croatia** (Fri 3 Jul, 9:00AM) is huge for **Ryan** and **Mitchell**. **Jay** has eyes on **Switzerland vs Algeria** (Fri 3 Jul, 1:00PM), **Australia vs Egypt** (Sat 4 Jul, 4:00AM), and **Colombia vs Ghana** (Sat 4 Jul, 11:30AM) — three all-Jay clashes that could swing his at-risk count dramatically. **Mitchell** watches **Argentina vs Cape Verde Islands** (Sat 4 Jul, 8:00AM) and **Canada vs Morocco** (Sun 5 Jul, 3:00AM), while **Kerrod** is sweating on **Paraguay vs France** (Sun 5 Jul, 7:00AM) and **Brazil vs Norway** (Mon 6 Jul, 6:00AM)."
   ],
   "leaderboard": [
     {
@@ -1462,10 +1462,10 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 33.0,
+        "title_probability": 32.8,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Brazil",
-        "delta": 0.5
+        "delta": -0.2
       },
       {
         "name": "Kerrod",
@@ -1483,10 +1483,10 @@
       },
       {
         "name": "Ryan",
-        "title_probability": 19.7,
+        "title_probability": 19.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Morocco",
-        "delta": 0.4
+        "delta": 0.2
       }
     ],
     "teams": [
@@ -1593,23 +1593,6 @@
         "delta": 0.2
       },
       {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "manager": "Jay",
-        "status": "in",
-        "title_probability": 4.6,
-        "fifa_rank": 3,
-        "title_breakdown": {
-          "form_score": 0.325,
-          "stage_score": 0.0,
-          "rank_score": 0.975,
-          "stage_label": "Group stage",
-          "form_weight": 0.5,
-          "rank_weight": 0.2
-        },
-        "delta": 0.1
-      },
-      {
         "name": "England",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "manager": "Mitchell",
@@ -1625,6 +1608,23 @@
           "rank_weight": 0.2
         },
         "delta": 0.1
+      },
+      {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "manager": "Jay",
+        "status": "in",
+        "title_probability": 4.5,
+        "fifa_rank": 3,
+        "title_breakdown": {
+          "form_score": 0.325,
+          "stage_score": 0.0,
+          "rank_score": 0.975,
+          "stage_label": "Group stage",
+          "form_weight": 0.5,
+          "rank_weight": 0.2
+        },
+        "delta": -0.1
       },
       {
         "name": "Canada",
@@ -1648,7 +1648,7 @@
         "flag": "🇨🇴",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 4.3,
+        "title_probability": 4.2,
         "fifa_rank": 11,
         "title_breakdown": {
           "form_score": 0.318,
@@ -1658,7 +1658,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Switzerland",
@@ -1852,17 +1852,17 @@
         "flag": "🇨🇩",
         "manager": "Ryan",
         "status": "at_risk",
-        "title_probability": 2.5,
-        "fifa_rank": 41,
+        "title_probability": 2.7,
+        "fifa_rank": 35,
         "title_breakdown": {
           "form_score": 0.193,
           "stage_score": 0.0,
-          "rank_score": 0.5,
+          "rank_score": 0.575,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": 0.2
       },
       {
         "name": "Bosnia-Herzegovina",
@@ -2091,11 +2091,11 @@
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 37,
+        "fifa_rank": 38,
         "title_breakdown": {
           "form_score": 0.202,
           "stage_score": 0.2,
-          "rank_score": 0.55,
+          "rank_score": 0.537,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
