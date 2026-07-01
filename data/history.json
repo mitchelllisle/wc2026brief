@@ -5708,7 +5708,7 @@
       ]
     },
     {
-      "ts": "2026-07-02T06:33:18.263030+10:00",
+      "ts": "2026-07-02T08:27:25.458194+10:00",
       "stage": "LAST_32",
       "round": "R32",
       "teams": [
@@ -5803,29 +5803,29 @@
           "stage": "GROUP_STAGE"
         },
         {
-          "name": "Paraguay",
-          "flag": "\ud83c\uddf5\ud83c\uddfe",
-          "manager": "Ryan",
-          "rank": 11,
-          "score": 4.3,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
           "name": "Switzerland",
           "flag": "\ud83c\udde8\ud83c\udded",
           "manager": "Jay",
-          "rank": 12,
-          "score": 4.2,
+          "rank": 11,
+          "score": 4.3,
           "status": "in",
           "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Paraguay",
+          "flag": "\ud83c\uddf5\ud83c\uddfe",
+          "manager": "Ryan",
+          "rank": 12,
+          "score": 4.3,
+          "status": "in",
+          "stage": "LAST_32"
         },
         {
           "name": "United States",
           "flag": "\ud83c\uddfa\ud83c\uddf8",
           "manager": "Kerrod",
           "rank": 13,
-          "score": 4.0,
+          "score": 4.1,
           "status": "in",
           "stage": "GROUP_STAGE"
         },
@@ -5870,7 +5870,7 @@
           "flag": "\ud83c\uddf8\ud83c\uddf3",
           "manager": "Mitchell",
           "rank": 18,
-          "score": 3.3,
+          "score": 3.2,
           "status": "at_risk",
           "stage": "GROUP_STAGE"
         },
