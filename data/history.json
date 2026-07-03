@@ -6586,7 +6586,7 @@
       ]
     },
     {
-      "ts": "2026-07-04T04:26:07.892375+10:00",
+      "ts": "2026-07-04T06:24:25.369624+10:00",
       "stage": "LAST_32",
       "round": "R32",
       "teams": [
@@ -6604,7 +6604,7 @@
           "flag": "\ud83c\uddf2\ud83c\uddfd",
           "manager": "Kerrod",
           "rank": 2,
-          "score": 6.9,
+          "score": 7.0,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -6663,10 +6663,19 @@
           "stage": "LAST_32"
         },
         {
+          "name": "Belgium",
+          "flag": "\ud83c\udde7\ud83c\uddea",
+          "manager": "Kerrod",
+          "rank": 9,
+          "score": 5.8,
+          "status": "in",
+          "stage": "LAST_32"
+        },
+        {
           "name": "Norway",
           "flag": "\ud83c\uddf3\ud83c\uddf4",
           "manager": "Kerrod",
-          "rank": 9,
+          "rank": 10,
           "score": 5.8,
           "status": "in",
           "stage": "LAST_32"
@@ -6675,7 +6684,7 @@
           "name": "Argentina",
           "flag": "\ud83c\udde6\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 10,
+          "rank": 11,
           "score": 5.8,
           "status": "in",
           "stage": "GROUP_STAGE"
@@ -6684,17 +6693,8 @@
           "name": "Portugal",
           "flag": "\ud83c\uddf5\ud83c\uddf9",
           "manager": "Ryan",
-          "rank": 11,
-          "score": 5.8,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
-          "name": "Belgium",
-          "flag": "\ud83c\udde7\ud83c\uddea",
-          "manager": "Kerrod",
           "rank": 12,
-          "score": 5.7,
+          "score": 5.8,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -6730,7 +6730,7 @@
           "flag": "\ud83c\uddea\ud83c\uddec",
           "manager": "Jay",
           "rank": 16,
-          "score": 3.7,
+          "score": 3.6,
           "status": "in",
           "stage": "GROUP_STAGE"
         },

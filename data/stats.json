@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-04T04:26:07.892375+10:00",
+  "generated_at": "2026-07-04T06:24:25.369624+10:00",
   "stage": "LAST_32",
-  "headline": "Jay stays *electric*, Mitchell stares down the *chop*",
+  "headline": "Jay stays *dominant*, Mitchell stares down the *chop*",
   "summary": [
-    "The sweep is deep into the business end now. **Jay** leads the pack with **8 teams** still breathing, including **Cape Verde Islands** and **Ghana** both up this Saturday. **Kerrod** sits comfortably second with **5 alive** and nothing at risk — a clean position heading into a big week. **Ryan** and **Mitchell** are locked in a desperate fight at the bottom, both on just **3 teams** remaining, but **Mitchell** holds that dreaded 💀 tag as Secretary-in-waiting with the weaker record.",
-    "Eyes on Saturday first — **Jay's** double-header kicks off with **Cape Verde Islands vs Argentina** at **8:00AM** and **Colombia vs Ghana** at **11:30AM**, two shots to extend his lead. **Ryan** will be sweating **Morocco vs Canada** (**Sun, 3:00AM**) and **Paraguay vs France** (**Sun, 7:00AM**) — both his. **Kerrod** gets **Brazil vs Norway** and **Mexico vs England** back-to-back Monday, while **Mitchell** watches **Canada**, **England**, **United States vs Belgium** (**Tue, 10:00AM**) with everything on the line. One bad week could seal the Secretary fate."
+    "The sweep is heating up with **Jay** holding a commanding lead — **8 teams** still alive and a **34%** strength rating that's pulling away from the pack. **Kerrod** sits second with **5 alive** but has shed **7 teams** already. **Ryan** and **Mitchell** are both down to **3 alive**, though **Mitchell** sits last on wins and is currently wearing the 💀 — one bad weekend away from Secretary duties for the next 12 months.",
+    "Huge weekend incoming. **Jay** has horses in three cracking matches — **Colombia vs Ghana (Sat, 11:30AM)**, **Argentina vs Cape Verde Islands (Sat, 8:00AM)** — wait, Cape Verde is Jay's, Argentina is Mitchell's, so that one's a head-to-head! Then **Ryan's Paraguay** takes on **Kerrod's France (Sun, 7:00AM)**, and **Jay's Brazil** faces **Kerrod's Norway (Mon, 6:00AM)**. Mitchell's **Canada** meet **Ryan's Morocco (Sun, 3:00AM)** and **Mitchell's England** clash with **Kerrod's Mexico (Mon, 10:00AM)**. Plenty of sweep carnage on the way."
   ],
   "leaderboard": [
     {
@@ -1522,17 +1522,17 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 34.1,
+        "title_probability": 34.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Kerrod",
-        "title_probability": 31.7,
+        "title_probability": 31.9,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "France",
-        "delta": -0.2
+        "delta": 0.2
       },
       {
         "name": "Mitchell",
@@ -1572,7 +1572,7 @@
         "flag": "🇲🇽",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 6.9,
+        "title_probability": 7.0,
         "fifa_rank": 10,
         "title_breakdown": {
           "form_score": 0.54,
@@ -1582,7 +1582,7 @@
           "form_weight": 0.54,
           "rank_weight": 0.16
         },
-        "delta": -0.1
+        "delta": 0.1
       },
       {
         "name": "Spain",
@@ -1687,6 +1687,23 @@
         "delta": 0.1
       },
       {
+        "name": "Belgium",
+        "flag": "🇧🇪",
+        "manager": "Kerrod",
+        "status": "in",
+        "title_probability": 5.8,
+        "fifa_rank": 9,
+        "title_breakdown": {
+          "form_score": 0.378,
+          "stage_score": 0.2,
+          "rank_score": 0.9,
+          "stage_label": "Round of 32",
+          "form_weight": 0.54,
+          "rank_weight": 0.16
+        },
+        "delta": 0.1
+      },
+      {
         "name": "Norway",
         "flag": "🇳🇴",
         "manager": "Kerrod",
@@ -1736,23 +1753,6 @@
           "rank_weight": 0.16
         },
         "delta": 0.1
-      },
-      {
-        "name": "Belgium",
-        "flag": "🇧🇪",
-        "manager": "Kerrod",
-        "status": "in",
-        "title_probability": 5.7,
-        "fifa_rank": 9,
-        "title_breakdown": {
-          "form_score": 0.378,
-          "stage_score": 0.2,
-          "rank_score": 0.9,
-          "stage_label": "Round of 32",
-          "form_weight": 0.54,
-          "rank_weight": 0.16
-        },
-        "delta": -0.1
       },
       {
         "name": "Canada",
@@ -1810,17 +1810,17 @@
         "flag": "🇪🇬",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 3.7,
-        "fifa_rank": 23,
+        "title_probability": 3.6,
+        "fifa_rank": 26,
         "title_breakdown": {
           "form_score": 0.242,
           "stage_score": 0.0,
-          "rank_score": 0.725,
+          "rank_score": 0.688,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Australia",
@@ -2100,11 +2100,11 @@
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 25,
+        "fifa_rank": 24,
         "title_breakdown": {
           "form_score": 0.177,
           "stage_score": 0.2,
-          "rank_score": 0.7,
+          "rank_score": 0.713,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
@@ -2253,11 +2253,11 @@
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 24,
+        "fifa_rank": 23,
         "title_breakdown": {
           "form_score": 0.197,
           "stage_score": 0.2,
-          "rank_score": 0.713,
+          "rank_score": 0.725,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
