@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-03T08:21:59.915794+10:00",
+  "generated_at": "2026-07-03T10:27:33.668221+10:00",
   "stage": "LAST_32",
-  "headline": "Jay stays *dominant*, while Ryan faces the *chop*",
+  "headline": "Jay stays *dominant*, Ryan stares down the *chop*",
   "summary": [
-    "Jay's squad is the envy of the group — **9 of 12** teams still alive, though **Switzerland**, **Algeria**, **Egypt**, **Colombia**, and **Ghana** are all in action this week and could swing that **3 at risk** tally quickly. **Mitchell** is hanging in with **4 alive**, while **Kerrod** holds **5** but has no teams on the edge right now. **Ryan** is in the danger zone at just **3 alive** and **9 out**, making him the early favourite for Secretary duties.",
-    "Big ones to watch: **Jay** has a massive double-header with **Switzerland vs Algeria** (Fri 1PM AEST) — an all-Jay affair — then **Australia vs Egypt** (Sat 4AM) and **Colombia vs Ghana** (Sat 11:30AM), again both all-Jay matchups. **Mitchell** watches **Argentina vs Cape Verde Islands** (Sat 8AM) and **Canada vs Morocco** (Sun 3AM). **Ryan** needs **Paraguay vs France** (Sun 7AM) and **Portugal vs Croatia** (Fri 9AM) to go his way, while **Kerrod** sweats on **Mexico vs England** (Mon 10AM) and **Brazil vs Norway** (Mon 6AM)."
+    "The group stage is heating up and the sweep standings are getting spicy. **Jay** is the clear frontrunner with **9/12** teams still breathing, while **Ryan** is clinging on with just **3** survivors and no safety net. **Kerrod** sits second with **5** alive, none at risk, and **Mitchell** holds third with **4** teams still in it. No dramatic eliminations dropped overnight, but the pressure is building fast as knockout football cranks up — every result from here sends someone home for real.",
+    "Big ones incoming for **Jay** — **Switzerland vs Algeria** (Fri 1PM) is a straight-up sweep civil war, with both teams his. He also sweats **Australia vs Egypt** (Sat 4AM) and **Colombia vs Ghana** (Sat 11:30AM) — all his. **Mitchell** needs **Canada** (Sun 3AM) and **Argentina** (Sat 8AM) to deliver. **Kerrod** watches **Paraguay vs France** (Sun 7AM, France his), **Brazil vs Norway** (Mon 6AM, Norway his), **Mexico vs England** (Mon 10AM, Mexico his), and **United States vs Belgium** (Tue 10AM, both his). **Ryan** prays for **Paraguay** (Sun 7AM) and **Morocco** (Sun 3AM) to survive."
   ],
   "leaderboard": [
     {
@@ -1502,10 +1502,10 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 34.3,
+        "title_probability": 34.2,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": 2.2
+        "delta": -0.1
       },
       {
         "name": "Kerrod",
@@ -1516,10 +1516,10 @@
       },
       {
         "name": "Mitchell",
-        "title_probability": 20.5,
+        "title_probability": 20.6,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "England",
-        "delta": 0.4
+        "delta": 0.1
       },
       {
         "name": "Ryan",
@@ -1723,11 +1723,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 4.5,
-        "fifa_rank": 11,
+        "fifa_rank": 12,
         "title_breakdown": {
           "form_score": 0.318,
           "stage_score": 0.0,
-          "rank_score": 0.875,
+          "rank_score": 0.863,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1773,12 +1773,12 @@
         "flag": "🇭🇷",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 4.2,
-        "fifa_rank": 13,
+        "title_probability": 4.3,
+        "fifa_rank": 11,
         "title_breakdown": {
           "form_score": 0.283,
           "stage_score": 0.0,
-          "rank_score": 0.85,
+          "rank_score": 0.875,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -1858,7 +1858,7 @@
         "flag": "🇬🇭",
         "manager": "Jay",
         "status": "at_risk",
-        "title_probability": 1.8,
+        "title_probability": 1.7,
         "fifa_rank": 65,
         "title_breakdown": {
           "form_score": 0.18,
@@ -1868,7 +1868,7 @@
           "form_weight": 0.5,
           "rank_weight": 0.2
         },
-        "delta": 0.1
+        "delta": -0.1
       },
       {
         "name": "Cape Verde Islands",
@@ -2216,11 +2216,11 @@
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 12,
+        "fifa_rank": 13,
         "title_breakdown": {
           "form_score": 0.32,
           "stage_score": 0.2,
-          "rank_score": 0.863,
+          "rank_score": 0.85,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
