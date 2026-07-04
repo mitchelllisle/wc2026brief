@@ -263,6 +263,29 @@
   }
 
 
+  // Build a map of actual KO results: sorted-team-key → actual winner name
+  // Used by KnockoutBracket to highlight prediction mismatches.
+  let actualKoResults = $derived.by(() => {
+    const teams = data?.projections?.teams;
+    const results = data?.recent_results;
+    if (!teams?.length || !results?.length) return new Map();
+
+    const flagToName = new Map(teams.map(t => [t.flag, t.name]));
+    const map = new Map();
+    for (const r of results) {
+      if (r.group !== 'KO') continue;
+      const home = flagToName.get(r.h_flag);
+      const away = flagToName.get(r.a_flag);
+      if (!home || !away) continue;
+      let winner = null;
+      if (r.hs > r.as) winner = home;
+      else if (r.as > r.hs) winner = away;
+      if (!winner) continue;
+      map.set([home, away].sort().join('|'), winner);
+    }
+    return map;
+  });
+
   function injectFlags(text) {
     if (teamFlagMap.size === 0) return text;
     const names = [...teamFlagMap.keys()].sort((a, b) => b.length - a.length);
@@ -576,7 +599,7 @@
       {/if}
 
     <div class="sec"><span class="num">04</span><h2>Knockout Predictor</h2><span class="meta">Strength-based · FIFA rank tiebreaker</span></div>
-    <KnockoutBracket teams={data.projections.teams} managerColors={MANAGER_COLORS} />
+    <KnockoutBracket teams={data.projections.teams} managerColors={MANAGER_COLORS} actualResults={actualKoResults} />
 
     {/if}
 
