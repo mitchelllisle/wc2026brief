@@ -286,6 +286,47 @@
     return map;
   });
 
+  // Build a map of expected KO winners from the latest historical snapshot
+  // where both teams were still alive (pre-result expectation).
+  function pickExpectedWinner(teamsByName, a, b) {
+    const sa = teamsByName.get(a)?.score ?? 0;
+    const sb = teamsByName.get(b)?.score ?? 0;
+    if (sa !== sb) return sa > sb ? a : b;
+    const ra = teamsByName.get(a)?.rank ?? 999;
+    const rb = teamsByName.get(b)?.rank ?? 999;
+    return ra <= rb ? a : b;
+  }
+
+  let expectedKoResults = $derived.by(() => {
+    const teams = data?.projections?.teams;
+    const results = data?.recent_results;
+    const snapshots = history?.snapshots;
+    if (!teams?.length || !results?.length || !snapshots?.length) return new Map();
+
+    const flagToName = new Map(teams.map(t => [t.flag, t.name]));
+    const map = new Map();
+
+    for (const r of results) {
+      if (r.group !== 'KO') continue;
+      const home = flagToName.get(r.h_flag);
+      const away = flagToName.get(r.a_flag);
+      if (!home || !away) continue;
+
+      const key = [home, away].sort().join('|');
+      for (let i = snapshots.length - 1; i >= 0; i -= 1) {
+        const snapTeams = new Map((snapshots[i]?.teams ?? []).map(t => [t.name, t]));
+        const homeTeam = snapTeams.get(home);
+        const awayTeam = snapTeams.get(away);
+        if (!homeTeam || !awayTeam) continue;
+        if (homeTeam.status === 'out' || awayTeam.status === 'out') continue;
+        map.set(key, pickExpectedWinner(snapTeams, home, away));
+        break;
+      }
+    }
+
+    return map;
+  });
+
   function injectFlags(text) {
     if (teamFlagMap.size === 0) return text;
     const names = [...teamFlagMap.keys()].sort((a, b) => b.length - a.length);
@@ -599,7 +640,12 @@
       {/if}
 
     <div class="sec"><span class="num">04</span><h2>Knockout Predictor</h2><span class="meta">Strength-based · FIFA rank tiebreaker</span></div>
-    <KnockoutBracket teams={data.projections.teams} managerColors={MANAGER_COLORS} actualResults={actualKoResults} />
+    <KnockoutBracket
+      teams={data.projections.teams}
+      managerColors={MANAGER_COLORS}
+      actualResults={actualKoResults}
+      expectedResults={expectedKoResults}
+    />
 
     {/if}
 
