@@ -7025,7 +7025,7 @@
       ]
     },
     {
-      "ts": "2026-07-05T06:20:03.304706+10:00",
+      "ts": "2026-07-05T08:17:51.265731+10:00",
       "stage": "LAST_32",
       "round": "R32",
       "teams": [
@@ -7093,17 +7093,17 @@
           "stage": "LAST_32"
         },
         {
-          "name": "Switzerland",
-          "flag": "\ud83c\udde8\ud83c\udded",
+          "name": "Colombia",
+          "flag": "\ud83c\udde8\ud83c\uddf4",
           "manager": "Jay",
           "rank": 8,
-          "score": 6.6,
+          "score": 6.5,
           "status": "in",
           "stage": "LAST_32"
         },
         {
-          "name": "Colombia",
-          "flag": "\ud83c\udde8\ud83c\uddf4",
+          "name": "Switzerland",
+          "flag": "\ud83c\udde8\ud83c\udded",
           "manager": "Jay",
           "rank": 9,
           "score": 6.5,
