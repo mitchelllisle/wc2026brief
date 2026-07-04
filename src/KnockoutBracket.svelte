@@ -1,7 +1,7 @@
 <script>
   import { R32 } from './simulation.js';
 
-  let { teams = [], managerColors = {}, actualResults = new Map() } = $props();
+  let { teams = [], managerColors = {}, actualResults = new Map(), expectedResults = new Map() } = $props();
 
   // Fast name-keyed lookup (reactive so downstream $derived re-run if prop changes)
   const T = $derived(new Map(teams.map(t => [t.name, t])));
@@ -39,6 +39,7 @@
   function mc(n)    { const m = mgrOf(n); return m ? (managerColors[m] ?? null) : null; }
   function delta(n) { return T.get(n)?.delta ?? null; }
   function actualW(a, b) { return actualResults.get([a, b].sort().join('|')) ?? null; }
+  function expectedW(a, b) { return expectedResults.get([a, b].sort().join('|')) ?? null; }
 
   // Group array into consecutive pairs
   function pair(arr) {
@@ -191,8 +192,8 @@
             <div class="bkt-seg">
               {#each seg as m}
                 <div class="bkt-m">
-                  {@render trow(m.a, m.w === m.a, actualW(m.a, m.b))}
-                  {@render trow(m.b, m.w === m.b, actualW(m.a, m.b))}
+                  {@render trow(m.a, m.w === m.a, actualW(m.a, m.b), expectedW(m.a, m.b))}
+                  {@render trow(m.b, m.w === m.b, actualW(m.a, m.b), expectedW(m.a, m.b))}
                 </div>
               {/each}
             </div>
@@ -220,8 +221,8 @@
       <div class="bkt-ms bkt-fin-ms">
         {#each fin as m}
           <div class="bkt-m bkt-fin-m">
-            {@render trow(m.a, m.w === m.a, actualW(m.a, m.b))}
-            {@render trow(m.b, m.w === m.b, actualW(m.a, m.b))}
+            {@render trow(m.a, m.w === m.a, actualW(m.a, m.b), expectedW(m.a, m.b))}
+            {@render trow(m.b, m.w === m.b, actualW(m.a, m.b), expectedW(m.a, m.b))}
           </div>
         {/each}
       </div>
@@ -230,14 +231,15 @@
   </div><!-- /bkt-body -->
 </div><!-- /bkt-scroll -->
 
-{#snippet trow(name, isWin, aw)}
+{#snippet trow(name, isWin, aw, ew)}
   {@const col = mc(name)}
   {@const d = delta(name)}
+  {@const predictedWin = ew !== null ? ew === name : isWin}
   {@const isActualWin  = aw !== null && aw === name}
   {@const isActualLose = aw !== null && aw !== name}
   <div class="bkt-t"
-       class:win={isWin}
-       class:lose={!isWin}
+       class:win={predictedWin}
+       class:lose={!predictedWin}
        class:actual-win={isActualWin}
        class:actual-lose={isActualLose}
        style:--mc={col ?? 'transparent'}>
@@ -247,11 +249,11 @@
     {#if d !== null && d !== 0}
       <span class="bkt-dl" class:up={d > 0} class:dn={d < 0}>{d > 0 ? '▲' : '▼'}</span>
     {/if}
-    {#if isActualWin && !isWin}
+    {#if isActualWin && !predictedWin}
       <span class="bkt-verdict bkt-upset" title="Upset — won against prediction" aria-label="Upset: won against prediction">⚡</span>
-    {:else if isActualLose && isWin}
+    {:else if isActualLose && predictedWin}
       <span class="bkt-verdict bkt-wrong" title="Predicted winner — actually lost" aria-label="Wrong prediction: predicted winner actually lost">✗</span>
-    {:else if isActualWin && isWin}
+    {:else if isActualWin && predictedWin}
       <span class="bkt-verdict bkt-correct" title="Prediction correct" aria-label="Prediction correct">✓</span>
     {/if}
   </div>
