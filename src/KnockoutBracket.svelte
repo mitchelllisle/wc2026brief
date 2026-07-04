@@ -1,7 +1,7 @@
 <script>
   import { R32 } from './simulation.js';
 
-  let { teams = [], managerColors = {} } = $props();
+  let { teams = [], managerColors = {}, actualResults = new Map() } = $props();
 
   // Fast name-keyed lookup (reactive so downstream $derived re-run if prop changes)
   const T = $derived(new Map(teams.map(t => [t.name, t])));
@@ -38,6 +38,7 @@
   function mgrOf(n) { return T.get(n)?.manager ?? null; }
   function mc(n)    { const m = mgrOf(n); return m ? (managerColors[m] ?? null) : null; }
   function delta(n) { return T.get(n)?.delta ?? null; }
+  function actualW(a, b) { return actualResults.get([a, b].sort().join('|')) ?? null; }
 
   // Group array into consecutive pairs
   function pair(arr) {
@@ -190,8 +191,8 @@
             <div class="bkt-seg">
               {#each seg as m}
                 <div class="bkt-m">
-                  {@render trow(m.a, m.w === m.a)}
-                  {@render trow(m.b, m.w === m.b)}
+                  {@render trow(m.a, m.w === m.a, actualW(m.a, m.b))}
+                  {@render trow(m.b, m.w === m.b, actualW(m.a, m.b))}
                 </div>
               {/each}
             </div>
@@ -219,8 +220,8 @@
       <div class="bkt-ms bkt-fin-ms">
         {#each fin as m}
           <div class="bkt-m bkt-fin-m">
-            {@render trow(m.a, m.w === m.a)}
-            {@render trow(m.b, m.w === m.b)}
+            {@render trow(m.a, m.w === m.a, actualW(m.a, m.b))}
+            {@render trow(m.b, m.w === m.b, actualW(m.a, m.b))}
           </div>
         {/each}
       </div>
@@ -229,15 +230,29 @@
   </div><!-- /bkt-body -->
 </div><!-- /bkt-scroll -->
 
-{#snippet trow(name, isWin)}
+{#snippet trow(name, isWin, aw)}
   {@const col = mc(name)}
   {@const d = delta(name)}
-  <div class="bkt-t" class:win={isWin} class:lose={!isWin} style:--mc={col ?? 'transparent'}>
+  {@const isActualWin  = aw !== null && aw === name}
+  {@const isActualLose = aw !== null && aw !== name}
+  <div class="bkt-t"
+       class:win={isWin}
+       class:lose={!isWin}
+       class:actual-win={isActualWin}
+       class:actual-lose={isActualLose}
+       style:--mc={col ?? 'transparent'}>
     <span class="bkt-fl">{flag(name)}</span>
     <span class="bkt-nm">{name}</span>
     <span class="bkt-sc">{str(name)}</span>
     {#if d !== null && d !== 0}
       <span class="bkt-dl" class:up={d > 0} class:dn={d < 0}>{d > 0 ? '▲' : '▼'}</span>
+    {/if}
+    {#if isActualWin && !isWin}
+      <span class="bkt-verdict bkt-upset" title="Upset — won against prediction">⚡</span>
+    {:else if isActualLose && isWin}
+      <span class="bkt-verdict bkt-wrong" title="Predicted winner — actually lost">✗</span>
+    {:else if isActualWin && isWin}
+      <span class="bkt-verdict bkt-correct" title="Prediction correct">✓</span>
     {/if}
   </div>
 {/snippet}
@@ -393,6 +408,43 @@
   }
   .bkt-dl.up { color: var(--in); }
   .bkt-dl.dn { color: var(--out); }
+
+  /* ── Actual result verdict icons ───────────────────────── */
+  .bkt-verdict {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 900;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-left: 1px;
+  }
+  .bkt-correct { color: var(--in); }
+  .bkt-wrong   { color: var(--out); }
+  .bkt-upset   { color: #f9a825; }
+
+  /* Predicted winner who actually lost — muted error tint */
+  .bkt-t.win.actual-lose {
+    background: color-mix(in srgb, var(--out) 10%, var(--bg-2));
+    border-left-color: var(--out);
+    color: color-mix(in srgb, var(--out) 60%, var(--txt));
+  }
+  .bkt-t.win.actual-lose .bkt-sc { color: var(--out); }
+
+  /* Predicted loser who actually won — show as real winner */
+  .bkt-t.lose.actual-win {
+    opacity: 1;
+    background: color-mix(in srgb, var(--in) 10%, var(--bg-2));
+    border-left-color: var(--in);
+    font-weight: 700;
+    color: var(--txt);
+  }
+  .bkt-t.lose.actual-win .bkt-sc { color: var(--in); }
+
+  /* Correctly predicted winner */
+  .bkt-t.win.actual-win {
+    border-left-color: var(--in);
+  }
+  .bkt-t.win.actual-win .bkt-sc { color: var(--in); }
 
   /* ── Bracket connector lines ───────────────────────────── */
   /*
