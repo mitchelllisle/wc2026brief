@@ -248,11 +248,11 @@
       <span class="bkt-dl" class:up={d > 0} class:dn={d < 0}>{d > 0 ? '▲' : '▼'}</span>
     {/if}
     {#if isActualWin && !isWin}
-      <span class="bkt-verdict bkt-upset" title="Upset — won against prediction">⚡</span>
+      <span class="bkt-verdict bkt-upset" title="Upset — won against prediction" aria-label="Upset: won against prediction">⚡</span>
     {:else if isActualLose && isWin}
-      <span class="bkt-verdict bkt-wrong" title="Predicted winner — actually lost">✗</span>
+      <span class="bkt-verdict bkt-wrong" title="Predicted winner — actually lost" aria-label="Wrong prediction: predicted winner actually lost">✗</span>
     {:else if isActualWin && isWin}
-      <span class="bkt-verdict bkt-correct" title="Prediction correct">✓</span>
+      <span class="bkt-verdict bkt-correct" title="Prediction correct" aria-label="Prediction correct">✓</span>
     {/if}
   </div>
 {/snippet}

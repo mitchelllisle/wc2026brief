@@ -277,7 +277,9 @@
       const home = flagToName.get(r.h_flag);
       const away = flagToName.get(r.a_flag);
       if (!home || !away) continue;
-      const winner = r.hs > r.as ? home : r.as > r.hs ? away : null;
+      let winner = null;
+      if (r.hs > r.as) winner = home;
+      else if (r.as > r.hs) winner = away;
       if (!winner) continue;
       map.set([home, away].sort().join('|'), winner);
     }
