@@ -65,6 +65,22 @@
     'FINAL':          5,
   };
 
+  // Next knockout stage after each stage. FINAL has no entry — the tournament ends there.
+  const STAGE_NEXT = {
+    'LAST_32':        'LAST_16',
+    'LAST_16':        'QUARTER_FINALS',
+    'QUARTER_FINALS': 'SEMI_FINALS',
+    'SEMI_FINALS':    'FINAL',
+  };
+
+  // Short x-axis label for each stage used in projected columns.
+  const STAGE_LABEL = {
+    'LAST_16':        'R16',
+    'QUARTER_FINALS': 'QF',
+    'SEMI_FINALS':    'SF',
+    'FINAL':          'Final',
+  };
+
   let container = $state(null);
 
   // Collapse snapshots that share the same round into one, keeping the latest
@@ -79,6 +95,25 @@
     return [...seen.values()];
   });
 
+  // Synthetic projected round: once a team has survived the last actual snapshot's
+  // stage (t.stage === snap.stage, status !== 'out'), they've qualified for the next
+  // round — show them there even before matches start. Null when no teams have
+  // advanced (or when we're at the Final, which has no successor stage).
+  const projectedRound = $derived.by(() => {
+    const lastSnap = roundSnapshots[roundSnapshots.length - 1];
+    if (!lastSnap) return null;
+    const nextStage = STAGE_NEXT[lastSnap.stage];
+    if (!nextStage) return null;
+    const qualified = lastSnap.teams.filter(t =>
+      t.stage === lastSnap.stage && (t.status ?? 'in') !== 'out'
+    );
+    if (!qualified.length) return null;
+    return { round: STAGE_LABEL[nextStage] ?? nextStage, stage: nextStage, ts: lastSnap.ts, teams: qualified };
+  });
+
+  // effectiveRounds: actual deduplicated snapshots plus the optional synthetic entry.
+  const effectiveRounds = $derived(projectedRound ? [...roundSnapshots, projectedRound] : roundSnapshots);
+
   const plotData = $derived.by(() => {
     if (!roundSnapshots.length) return [];
 
@@ -90,16 +125,15 @@
       ? new Set(lastGsSnap.teams.slice(0, topN).map(t => t.name))
       : new Set(roundSnapshots[roundSnapshots.length - 1].teams.slice(0, topN).map(t => t.name));
 
-    return roundSnapshots.flatMap((snap, i) => {
+    return effectiveRounds.flatMap((snap, i) => {
       const isKnockout = !snap.round?.startsWith('MD');
+      const isProjected = snap === projectedRound;
       const shown = snap.teams.filter(t => {
         if (!gsTracked.has(t.name)) return false;
-        if (!isKnockout) return true;  // GS snapshots: status backfill is unreliable, always show
-        if ((t.status ?? 'in') !== 'out') return true;  // alive — show
-        // Eliminated: show at this round and any earlier rounds they still participated in.
-        // A team's line ends at the round matching their elimination stage; if that stage
-        // has no dedicated round yet (e.g. R16 results captured inside an R32 snapshot),
-        // they still appear at the latest available round (stageOrder[t.stage] > snap).
+        if (!isKnockout) return true;  // GS snapshots: always show
+        if (isProjected) return true;  // projected: already filtered to qualified survivors
+        if ((t.status ?? 'in') !== 'out') return true;  // alive in actual snapshot — show
+        // Eliminated: show at this round and any earlier snapshot where they still participated.
         return t.stage != null && (STAGE_ORDER[t.stage] ?? -1) >= (STAGE_ORDER[snap.stage] ?? 0);
       });
       // Re-rank 1..N within shown teams so there are no rank gaps.
@@ -138,7 +172,7 @@
     return map;
   });
 
-  const xLabels = $derived(roundSnapshots.map(snap => snap.round ?? snap.ts?.slice(0, 10) ?? ''));
+  const xLabels = $derived(effectiveRounds.map(snap => snap.round ?? snap.ts?.slice(0, 10) ?? ''));
 
   function halo({ stroke = 'currentColor', strokeWidth = 3 } = {}) {
     return (index, scales, values, dimensions, context, next) => {
@@ -176,7 +210,7 @@
       x: {
         label: null,
         grid: true,
-        ticks: roundSnapshots.map((_, i) => i),
+        ticks: effectiveRounds.map((_, i) => i),
         tickFormat: i => xLabels[i] ?? '',
         tickRotate: -30,
       },
