@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-06T08:32:36.864467+10:00",
+  "generated_at": "2026-07-06T08:40:58.933125+10:00",
   "stage": "LAST_16",
   "headline": "{leader} stays *untouchable* while {tab} clings on *desperately*",
   "summary": [
-    "We're deep into the knockout rounds now and the standings are crystallising fast. **Kerrod** leads the pack with **5 teams alive** and a commanding **40.3% strength**, while **Jay** keeps pace with **4 survivors** at **27.9%**. **Ryan** and **Mitchell** are both clinging on with just **2 teams each** \u2014 but it's **Mitchell** wearing the \ud83d\udc80 skull, sitting on the bottom by the thinnest of margins on record. No at-risk teams for anyone right now, but that's about to change in a hurry with a stacked week of quarter-final and semi-final action ahead.",
-    "The action kicks off with **Mexico vs England** on **Mon 6 Jul, 10:00AM** \u2014 **Kerrod's Mexico** against **Mitchell's England**, a massive clash for both. **Portugal vs Spain** on **Tue 7 Jul, 5:00AM** pits **Ryan's Portugal** against **Jay's Spain** \u2014 huge. Then **United States vs Belgium** at **10:00AM Tuesday** is an all-**Kerrod** affair. **Argentina vs Egypt** on **Wed 8 Jul, 2:00AM** has **Mitchell's Argentina** facing **Jay's Egypt**, before **Switzerland vs Colombia** at **6:00AM** is all **Jay**. Finally, **France vs Morocco** on **Fri 10 Jul, 6:00AM** \u2014 **Kerrod's France** versus **Ryan's Morocco**. Massive stakes everywhere."
+    "We're into the knockout rounds and the group stage carnage has left its mark — **Kerrod** leads the pack with **5 teams** still alive and a hefty **40.3% strength** rating, while **Jay** sits second with **4 teams** surviving. **Ryan** and **Mitchell** are both propped up on life support with just **2 teams** each, but **Mitchell** loses on the tiebreaker, earning him an early sniff of the Secretary's clipboard. No new results to digest just yet, but the quarter-final bracket is shaping up beautifully with some absolute crackers on the way.",
+    "This week is *stacked*. **Kerrod** has four massive stakes — **Mexico vs England** (Mon 10AM), **United States vs Belgium** (Tue 10AM), where he owns both sides, plus **France vs Morocco** (Fri 6AM). **Mitchell** sweats on **England** (vs Mexico) and **Argentina vs Egypt** (Wed 2AM) is huge for him too — **Jay** owns Egypt there. **Jay** also watches **Switzerland vs Colombia** (Wed 6AM) and **Portugal vs Spain** (Tue 5AM) is a pure **Ryan vs Jay** grudge match. Every result matters now — no hiding place."
   ],
   "leaderboard": [
     {
@@ -60,312 +60,312 @@
     "Kerrod": [
       {
         "name": "France",
-        "flag": "\ud83c\uddeb\ud83c\uddf7",
+        "flag": "🇫🇷",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "Senegal",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "W",
             "opponent": "Iraq",
-            "score": "3\u20130"
+            "score": "3–0"
           },
           {
             "result": "W",
             "opponent": "Norway",
-            "score": "4\u20131"
+            "score": "4–1"
           },
           {
             "result": "W",
             "opponent": "Sweden",
-            "score": "3\u20130"
+            "score": "3–0"
           },
           {
             "result": "W",
             "opponent": "Paraguay",
-            "score": "1\u20130"
+            "score": "1–0"
           }
         ]
       },
       {
         "name": "Belgium",
-        "flag": "\ud83c\udde7\ud83c\uddea",
+        "flag": "🇧🇪",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "D",
             "opponent": "Egypt",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "D",
             "opponent": "Iran",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "New Zealand",
-            "score": "5\u20131"
+            "score": "5–1"
           },
           {
             "result": "W",
             "opponent": "Senegal",
-            "score": "3\u20132"
+            "score": "3–2"
           }
         ]
       },
       {
         "name": "Mexico",
-        "flag": "\ud83c\uddf2\ud83c\uddfd",
+        "flag": "🇲🇽",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "South Africa",
-            "score": "2\u20130"
+            "score": "2–0"
           },
           {
             "result": "W",
             "opponent": "South Korea",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "W",
             "opponent": "Czechia",
-            "score": "3\u20130"
+            "score": "3–0"
           },
           {
             "result": "W",
             "opponent": "Ecuador",
-            "score": "2\u20130"
+            "score": "2–0"
           }
         ]
       },
       {
         "name": "United States",
-        "flag": "\ud83c\uddfa\ud83c\uddf8",
+        "flag": "🇺🇸",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "Paraguay",
-            "score": "4\u20131"
+            "score": "4–1"
           },
           {
             "result": "W",
             "opponent": "Australia",
-            "score": "2\u20130"
+            "score": "2–0"
           },
           {
             "result": "L",
             "opponent": "Turkey",
-            "score": "2\u20133"
+            "score": "2–3"
           },
           {
             "result": "W",
             "opponent": "Bosnia-Herzegovina",
-            "score": "2\u20130"
+            "score": "2–0"
           }
         ]
       },
       {
         "name": "Uruguay",
-        "flag": "\ud83c\uddfa\ud83c\uddfe",
+        "flag": "🇺🇾",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Saudi Arabia",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "D",
             "opponent": "Cape Verde Islands",
-            "score": "2\u20132"
+            "score": "2–2"
           },
           {
             "result": "L",
             "opponent": "Spain",
-            "score": "0\u20131"
+            "score": "0–1"
           }
         ]
       },
       {
         "name": "Iran",
-        "flag": "\ud83c\uddee\ud83c\uddf7",
+        "flag": "🇮🇷",
         "status": "out",
         "last_result": "D",
         "form": [
           {
             "result": "D",
             "opponent": "New Zealand",
-            "score": "2\u20132"
+            "score": "2–2"
           },
           {
             "result": "D",
             "opponent": "Belgium",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "D",
             "opponent": "Egypt",
-            "score": "1\u20131"
+            "score": "1–1"
           }
         ]
       },
       {
         "name": "Turkey",
-        "flag": "\ud83c\uddf9\ud83c\uddf7",
+        "flag": "🇹🇷",
         "status": "out",
         "last_result": "W",
         "form": [
           {
             "result": "L",
             "opponent": "Australia",
-            "score": "0\u20132"
+            "score": "0–2"
           },
           {
             "result": "L",
             "opponent": "Paraguay",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "W",
             "opponent": "United States",
-            "score": "3\u20132"
+            "score": "3–2"
           }
         ]
       },
       {
         "name": "Norway",
-        "flag": "\ud83c\uddf3\ud83c\uddf4",
+        "flag": "🇳🇴",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "Iraq",
-            "score": "4\u20131"
+            "score": "4–1"
           },
           {
             "result": "W",
             "opponent": "Senegal",
-            "score": "3\u20132"
+            "score": "3–2"
           },
           {
             "result": "L",
             "opponent": "France",
-            "score": "1\u20134"
+            "score": "1–4"
           },
           {
             "result": "W",
             "opponent": "Ivory Coast",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "W",
             "opponent": "Brazil",
-            "score": "2\u20131"
+            "score": "2–1"
           }
         ]
       },
       {
         "name": "Tunisia",
-        "flag": "\ud83c\uddf9\ud83c\uddf3",
+        "flag": "🇹🇳",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Sweden",
-            "score": "1\u20135"
+            "score": "1–5"
           },
           {
             "result": "L",
             "opponent": "Japan",
-            "score": "0\u20134"
+            "score": "0–4"
           },
           {
             "result": "L",
             "opponent": "Netherlands",
-            "score": "1\u20133"
+            "score": "1–3"
           }
         ]
       },
       {
         "name": "Qatar",
-        "flag": "\ud83c\uddf6\ud83c\udde6",
+        "flag": "🇶🇦",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Switzerland",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "Canada",
-            "score": "0\u20136"
+            "score": "0–6"
           },
           {
             "result": "L",
             "opponent": "Bosnia-Herzegovina",
-            "score": "1\u20133"
+            "score": "1–3"
           }
         ]
       },
       {
-        "name": "Cura\u00e7ao",
-        "flag": "\ud83c\udde8\ud83c\uddfc",
+        "name": "Curaçao",
+        "flag": "🇨🇼",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Germany",
-            "score": "1\u20137"
+            "score": "1–7"
           },
           {
             "result": "D",
             "opponent": "Ecuador",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "L",
             "opponent": "Ivory Coast",
-            "score": "0\u20132"
+            "score": "0–2"
           }
         ]
       },
       {
         "name": "New Zealand",
-        "flag": "\ud83c\uddf3\ud83c\uddff",
+        "flag": "🇳🇿",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Iran",
-            "score": "2\u20132"
+            "score": "2–2"
           },
           {
             "result": "L",
             "opponent": "Egypt",
-            "score": "1\u20133"
+            "score": "1–3"
           },
           {
             "result": "L",
             "opponent": "Belgium",
-            "score": "1\u20135"
+            "score": "1–5"
           }
         ]
       }
@@ -373,342 +373,342 @@
     "Jay": [
       {
         "name": "Spain",
-        "flag": "\ud83c\uddea\ud83c\uddf8",
+        "flag": "🇪🇸",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "D",
             "opponent": "Cape Verde Islands",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "Saudi Arabia",
-            "score": "4\u20130"
+            "score": "4–0"
           },
           {
             "result": "W",
             "opponent": "Uruguay",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "W",
             "opponent": "Austria",
-            "score": "3\u20130"
+            "score": "3–0"
           }
         ]
       },
       {
         "name": "Brazil",
-        "flag": "\ud83c\udde7\ud83c\uddf7",
+        "flag": "🇧🇷",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Morocco",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "Haiti",
-            "score": "3\u20130"
+            "score": "3–0"
           },
           {
             "result": "W",
             "opponent": "Scotland",
-            "score": "3\u20130"
+            "score": "3–0"
           },
           {
             "result": "W",
             "opponent": "Japan",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "L",
             "opponent": "Norway",
-            "score": "1\u20132"
+            "score": "1–2"
           }
         ]
       },
       {
         "name": "Colombia",
-        "flag": "\ud83c\udde8\ud83c\uddf4",
+        "flag": "🇨🇴",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "Uzbekistan",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "W",
             "opponent": "Congo DR",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "D",
             "opponent": "Portugal",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "Ghana",
-            "score": "1\u20130"
+            "score": "1–0"
           }
         ]
       },
       {
         "name": "Japan",
-        "flag": "\ud83c\uddef\ud83c\uddf5",
+        "flag": "🇯🇵",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Netherlands",
-            "score": "2\u20132"
+            "score": "2–2"
           },
           {
             "result": "W",
             "opponent": "Tunisia",
-            "score": "4\u20130"
+            "score": "4–0"
           },
           {
             "result": "D",
             "opponent": "Sweden",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "Brazil",
-            "score": "1\u20132"
+            "score": "1–2"
           }
         ]
       },
       {
         "name": "Switzerland",
-        "flag": "\ud83c\udde8\ud83c\udded",
+        "flag": "🇨🇭",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "D",
             "opponent": "Qatar",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "Bosnia-Herzegovina",
-            "score": "4\u20131"
+            "score": "4–1"
           },
           {
             "result": "W",
             "opponent": "Canada",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "W",
             "opponent": "Algeria",
-            "score": "2\u20130"
+            "score": "2–0"
           }
         ]
       },
       {
         "name": "Australia",
-        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "flag": "🇦🇺",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Turkey",
-            "score": "2\u20130"
+            "score": "2–0"
           },
           {
             "result": "L",
             "opponent": "United States",
-            "score": "0\u20132"
+            "score": "0–2"
           },
           {
             "result": "D",
             "opponent": "Paraguay",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "L",
             "opponent": "Egypt",
-            "score": "3\u20135"
+            "score": "3–5"
           }
         ]
       },
       {
         "name": "Egypt",
-        "flag": "\ud83c\uddea\ud83c\uddec",
+        "flag": "🇪🇬",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "D",
             "opponent": "Belgium",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "New Zealand",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "D",
             "opponent": "Iran",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "Australia",
-            "score": "5\u20133"
+            "score": "5–3"
           }
         ]
       },
       {
         "name": "Algeria",
-        "flag": "\ud83c\udde9\ud83c\uddff",
+        "flag": "🇩🇿",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Argentina",
-            "score": "0\u20133"
+            "score": "0–3"
           },
           {
             "result": "W",
             "opponent": "Jordan",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "D",
             "opponent": "Austria",
-            "score": "3\u20133"
+            "score": "3–3"
           },
           {
             "result": "L",
             "opponent": "Switzerland",
-            "score": "0\u20132"
+            "score": "0–2"
           }
         ]
       },
       {
         "name": "Ivory Coast",
-        "flag": "\ud83c\udde8\ud83c\uddee",
+        "flag": "🇨🇮",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Ecuador",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "L",
             "opponent": "Germany",
-            "score": "1\u20132"
+            "score": "1–2"
           },
           {
             "result": "W",
-            "opponent": "Cura\u00e7ao",
-            "score": "2\u20130"
+            "opponent": "Curaçao",
+            "score": "2–0"
           },
           {
             "result": "L",
             "opponent": "Norway",
-            "score": "1\u20132"
+            "score": "1–2"
           }
         ]
       },
       {
         "name": "Cape Verde Islands",
-        "flag": "\ud83c\udde8\ud83c\uddfb",
+        "flag": "🇨🇻",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Spain",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "D",
             "opponent": "Uruguay",
-            "score": "2\u20132"
+            "score": "2–2"
           },
           {
             "result": "D",
             "opponent": "Saudi Arabia",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "L",
             "opponent": "Argentina",
-            "score": "2\u20133"
+            "score": "2–3"
           }
         ]
       },
       {
         "name": "Bosnia-Herzegovina",
-        "flag": "\ud83c\udde7\ud83c\udde6",
+        "flag": "🇧🇦",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Canada",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "Switzerland",
-            "score": "1\u20134"
+            "score": "1–4"
           },
           {
             "result": "W",
             "opponent": "Qatar",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "L",
             "opponent": "United States",
-            "score": "0\u20132"
+            "score": "0–2"
           }
         ]
       },
       {
         "name": "Ghana",
-        "flag": "\ud83c\uddec\ud83c\udded",
+        "flag": "🇬🇭",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Panama",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "D",
             "opponent": "England",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "L",
             "opponent": "Croatia",
-            "score": "1\u20132"
+            "score": "1–2"
           },
           {
             "result": "L",
             "opponent": "Colombia",
-            "score": "0\u20131"
+            "score": "0–1"
           }
         ]
       }
@@ -716,327 +716,327 @@
     "Ryan": [
       {
         "name": "Portugal",
-        "flag": "\ud83c\uddf5\ud83c\uddf9",
+        "flag": "🇵🇹",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "D",
             "opponent": "Congo DR",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "Uzbekistan",
-            "score": "5\u20130"
+            "score": "5–0"
           },
           {
             "result": "D",
             "opponent": "Colombia",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "Croatia",
-            "score": "2\u20131"
+            "score": "2–1"
           }
         ]
       },
       {
         "name": "Netherlands",
-        "flag": "\ud83c\uddf3\ud83c\uddf1",
+        "flag": "🇳🇱",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Japan",
-            "score": "2\u20132"
+            "score": "2–2"
           },
           {
             "result": "W",
             "opponent": "Sweden",
-            "score": "5\u20131"
+            "score": "5–1"
           },
           {
             "result": "W",
             "opponent": "Tunisia",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "L",
             "opponent": "Morocco",
-            "score": "3\u20134"
+            "score": "3–4"
           }
         ]
       },
       {
         "name": "Morocco",
-        "flag": "\ud83c\uddf2\ud83c\udde6",
+        "flag": "🇲🇦",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "D",
             "opponent": "Brazil",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "Scotland",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "W",
             "opponent": "Haiti",
-            "score": "4\u20132"
+            "score": "4–2"
           },
           {
             "result": "W",
             "opponent": "Netherlands",
-            "score": "4\u20133"
+            "score": "4–3"
           },
           {
             "result": "W",
             "opponent": "Canada",
-            "score": "3\u20130"
+            "score": "3–0"
           }
         ]
       },
       {
         "name": "Germany",
-        "flag": "\ud83c\udde9\ud83c\uddea",
+        "flag": "🇩🇪",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
-            "opponent": "Cura\u00e7ao",
-            "score": "7\u20131"
+            "opponent": "Curaçao",
+            "score": "7–1"
           },
           {
             "result": "W",
             "opponent": "Ivory Coast",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "L",
             "opponent": "Ecuador",
-            "score": "1\u20132"
+            "score": "1–2"
           },
           {
             "result": "L",
             "opponent": "Paraguay",
-            "score": "4\u20135"
+            "score": "4–5"
           }
         ]
       },
       {
         "name": "Austria",
-        "flag": "\ud83c\udde6\ud83c\uddf9",
+        "flag": "🇦🇹",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Jordan",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "L",
             "opponent": "Argentina",
-            "score": "0\u20132"
+            "score": "0–2"
           },
           {
             "result": "D",
             "opponent": "Algeria",
-            "score": "3\u20133"
+            "score": "3–3"
           },
           {
             "result": "L",
             "opponent": "Spain",
-            "score": "0\u20133"
+            "score": "0–3"
           }
         ]
       },
       {
         "name": "South Korea",
-        "flag": "\ud83c\uddf0\ud83c\uddf7",
+        "flag": "🇰🇷",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Czechia",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "L",
             "opponent": "Mexico",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "L",
             "opponent": "South Africa",
-            "score": "0\u20131"
+            "score": "0–1"
           }
         ]
       },
       {
         "name": "Paraguay",
-        "flag": "\ud83c\uddf5\ud83c\uddfe",
+        "flag": "🇵🇾",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "United States",
-            "score": "1\u20134"
+            "score": "1–4"
           },
           {
             "result": "W",
             "opponent": "Turkey",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "D",
             "opponent": "Australia",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "Germany",
-            "score": "5\u20134"
+            "score": "5–4"
           },
           {
             "result": "L",
             "opponent": "France",
-            "score": "0\u20131"
+            "score": "0–1"
           }
         ]
       },
       {
         "name": "Panama",
-        "flag": "\ud83c\uddf5\ud83c\udde6",
+        "flag": "🇵🇦",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Ghana",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "L",
             "opponent": "Croatia",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "L",
             "opponent": "England",
-            "score": "0\u20132"
+            "score": "0–2"
           }
         ]
       },
       {
         "name": "Congo DR",
-        "flag": "\ud83c\udde8\ud83c\udde9",
+        "flag": "🇨🇩",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Portugal",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "Colombia",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "W",
             "opponent": "Uzbekistan",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "L",
             "opponent": "England",
-            "score": "1\u20132"
+            "score": "1–2"
           }
         ]
       },
       {
         "name": "Iraq",
-        "flag": "\ud83c\uddee\ud83c\uddf6",
+        "flag": "🇮🇶",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Norway",
-            "score": "1\u20134"
+            "score": "1–4"
           },
           {
             "result": "L",
             "opponent": "France",
-            "score": "0\u20133"
+            "score": "0–3"
           },
           {
             "result": "L",
             "opponent": "Senegal",
-            "score": "0\u20135"
+            "score": "0–5"
           }
         ]
       },
       {
         "name": "South Africa",
-        "flag": "\ud83c\uddff\ud83c\udde6",
+        "flag": "🇿🇦",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Mexico",
-            "score": "0\u20132"
+            "score": "0–2"
           },
           {
             "result": "D",
             "opponent": "Czechia",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "South Korea",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "L",
             "opponent": "Canada",
-            "score": "0\u20131"
+            "score": "0–1"
           }
         ]
       },
       {
         "name": "Jordan",
-        "flag": "\ud83c\uddef\ud83c\uddf4",
+        "flag": "🇯🇴",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Austria",
-            "score": "1\u20133"
+            "score": "1–3"
           },
           {
             "result": "L",
             "opponent": "Algeria",
-            "score": "1\u20132"
+            "score": "1–2"
           },
           {
             "result": "L",
             "opponent": "Argentina",
-            "score": "1\u20133"
+            "score": "1–3"
           }
         ]
       }
@@ -1044,317 +1044,317 @@
     "Mitchell": [
       {
         "name": "Argentina",
-        "flag": "\ud83c\udde6\ud83c\uddf7",
+        "flag": "🇦🇷",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "Algeria",
-            "score": "3\u20130"
+            "score": "3–0"
           },
           {
             "result": "W",
             "opponent": "Austria",
-            "score": "2\u20130"
+            "score": "2–0"
           },
           {
             "result": "W",
             "opponent": "Jordan",
-            "score": "3\u20131"
+            "score": "3–1"
           },
           {
             "result": "W",
             "opponent": "Cape Verde Islands",
-            "score": "3\u20132"
+            "score": "3–2"
           }
         ]
       },
       {
         "name": "England",
-        "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "status": "in",
         "last_result": "W",
         "form": [
           {
             "result": "W",
             "opponent": "Croatia",
-            "score": "4\u20132"
+            "score": "4–2"
           },
           {
             "result": "D",
             "opponent": "Ghana",
-            "score": "0\u20130"
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "Panama",
-            "score": "2\u20130"
+            "score": "2–0"
           },
           {
             "result": "W",
             "opponent": "Congo DR",
-            "score": "2\u20131"
+            "score": "2–1"
           }
         ]
       },
       {
         "name": "Croatia",
-        "flag": "\ud83c\udded\ud83c\uddf7",
+        "flag": "🇭🇷",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "England",
-            "score": "2\u20134"
+            "score": "2–4"
           },
           {
             "result": "W",
             "opponent": "Panama",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "W",
             "opponent": "Ghana",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "L",
             "opponent": "Portugal",
-            "score": "1\u20132"
+            "score": "1–2"
           }
         ]
       },
       {
         "name": "Senegal",
-        "flag": "\ud83c\uddf8\ud83c\uddf3",
+        "flag": "🇸🇳",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "France",
-            "score": "1\u20133"
+            "score": "1–3"
           },
           {
             "result": "L",
             "opponent": "Norway",
-            "score": "2\u20133"
+            "score": "2–3"
           },
           {
             "result": "W",
             "opponent": "Iraq",
-            "score": "5\u20130"
+            "score": "5–0"
           },
           {
             "result": "L",
             "opponent": "Belgium",
-            "score": "2\u20133"
+            "score": "2–3"
           }
         ]
       },
       {
         "name": "Ecuador",
-        "flag": "\ud83c\uddea\ud83c\udde8",
+        "flag": "🇪🇨",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Ivory Coast",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "D",
-            "opponent": "Cura\u00e7ao",
-            "score": "0\u20130"
+            "opponent": "Curaçao",
+            "score": "0–0"
           },
           {
             "result": "W",
             "opponent": "Germany",
-            "score": "2\u20131"
+            "score": "2–1"
           },
           {
             "result": "L",
             "opponent": "Mexico",
-            "score": "0\u20132"
+            "score": "0–2"
           }
         ]
       },
       {
         "name": "Canada",
-        "flag": "\ud83c\udde8\ud83c\udde6",
+        "flag": "🇨🇦",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "D",
             "opponent": "Bosnia-Herzegovina",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "W",
             "opponent": "Qatar",
-            "score": "6\u20130"
+            "score": "6–0"
           },
           {
             "result": "L",
             "opponent": "Switzerland",
-            "score": "1\u20132"
+            "score": "1–2"
           },
           {
             "result": "W",
             "opponent": "South Africa",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "L",
             "opponent": "Morocco",
-            "score": "0\u20133"
+            "score": "0–3"
           }
         ]
       },
       {
         "name": "Sweden",
-        "flag": "\ud83c\uddf8\ud83c\uddea",
+        "flag": "🇸🇪",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Tunisia",
-            "score": "5\u20131"
+            "score": "5–1"
           },
           {
             "result": "L",
             "opponent": "Netherlands",
-            "score": "1\u20135"
+            "score": "1–5"
           },
           {
             "result": "D",
             "opponent": "Japan",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "France",
-            "score": "0\u20133"
+            "score": "0–3"
           }
         ]
       },
       {
         "name": "Czechia",
-        "flag": "\ud83c\udde8\ud83c\uddff",
+        "flag": "🇨🇿",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "South Korea",
-            "score": "1\u20132"
+            "score": "1–2"
           },
           {
             "result": "D",
             "opponent": "South Africa",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "Mexico",
-            "score": "0\u20133"
+            "score": "0–3"
           }
         ]
       },
       {
         "name": "Scotland",
-        "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "W",
             "opponent": "Haiti",
-            "score": "1\u20130"
+            "score": "1–0"
           },
           {
             "result": "L",
             "opponent": "Morocco",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "L",
             "opponent": "Brazil",
-            "score": "0\u20133"
+            "score": "0–3"
           }
         ]
       },
       {
         "name": "Uzbekistan",
-        "flag": "\ud83c\uddfa\ud83c\uddff",
+        "flag": "🇺🇿",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Colombia",
-            "score": "1\u20133"
+            "score": "1–3"
           },
           {
             "result": "L",
             "opponent": "Portugal",
-            "score": "0\u20135"
+            "score": "0–5"
           },
           {
             "result": "L",
             "opponent": "Congo DR",
-            "score": "1\u20133"
+            "score": "1–3"
           }
         ]
       },
       {
         "name": "Saudi Arabia",
-        "flag": "\ud83c\uddf8\ud83c\udde6",
+        "flag": "🇸🇦",
         "status": "out",
         "last_result": "D",
         "form": [
           {
             "result": "D",
             "opponent": "Uruguay",
-            "score": "1\u20131"
+            "score": "1–1"
           },
           {
             "result": "L",
             "opponent": "Spain",
-            "score": "0\u20134"
+            "score": "0–4"
           },
           {
             "result": "D",
             "opponent": "Cape Verde Islands",
-            "score": "0\u20130"
+            "score": "0–0"
           }
         ]
       },
       {
         "name": "Haiti",
-        "flag": "\ud83c\udded\ud83c\uddf9",
+        "flag": "🇭🇹",
         "status": "out",
         "last_result": "L",
         "form": [
           {
             "result": "L",
             "opponent": "Scotland",
-            "score": "0\u20131"
+            "score": "0–1"
           },
           {
             "result": "L",
             "opponent": "Brazil",
-            "score": "0\u20133"
+            "score": "0–3"
           },
           {
             "result": "L",
             "opponent": "Morocco",
-            "score": "2\u20134"
+            "score": "2–4"
           }
         ]
       }
@@ -1363,217 +1363,217 @@
   "recent_results": [
     {
       "h_code": "BRA",
-      "h_flag": "\ud83c\udde7\ud83c\uddf7",
+      "h_flag": "🇧🇷",
       "hs": 1,
       "a_code": "NOR",
-      "a_flag": "\ud83c\uddf3\ud83c\uddf4",
+      "a_flag": "🇳🇴",
       "as": 2,
       "group": "KO"
     },
     {
       "h_code": "PAR",
-      "h_flag": "\ud83c\uddf5\ud83c\uddfe",
+      "h_flag": "🇵🇾",
       "hs": 0,
       "a_code": "FRA",
-      "a_flag": "\ud83c\uddeb\ud83c\uddf7",
+      "a_flag": "🇫🇷",
       "as": 1,
       "group": "KO"
     },
     {
       "h_code": "CAN",
-      "h_flag": "\ud83c\udde8\ud83c\udde6",
+      "h_flag": "🇨🇦",
       "hs": 0,
       "a_code": "MAR",
-      "a_flag": "\ud83c\uddf2\ud83c\udde6",
+      "a_flag": "🇲🇦",
       "as": 3,
       "group": "KO"
     },
     {
       "h_code": "COL",
-      "h_flag": "\ud83c\udde8\ud83c\uddf4",
+      "h_flag": "🇨🇴",
       "hs": 1,
       "a_code": "GHA",
-      "a_flag": "\ud83c\uddec\ud83c\udded",
+      "a_flag": "🇬🇭",
       "as": 0,
       "group": "KO"
     },
     {
       "h_code": "ARG",
-      "h_flag": "\ud83c\udde6\ud83c\uddf7",
+      "h_flag": "🇦🇷",
       "hs": 3,
       "a_code": "CPV",
-      "a_flag": "\ud83c\udde8\ud83c\uddfb",
+      "a_flag": "🇨🇻",
       "as": 2,
       "group": "KO"
     },
     {
       "h_code": "AUS",
-      "h_flag": "\ud83c\udde6\ud83c\uddfa",
+      "h_flag": "🇦🇺",
       "hs": 3,
       "a_code": "EGY",
-      "a_flag": "\ud83c\uddea\ud83c\uddec",
+      "a_flag": "🇪🇬",
       "as": 5,
       "group": "KO"
     },
     {
       "h_code": "SUI",
-      "h_flag": "\ud83c\udde8\ud83c\udded",
+      "h_flag": "🇨🇭",
       "hs": 2,
       "a_code": "ALG",
-      "a_flag": "\ud83c\udde9\ud83c\uddff",
+      "a_flag": "🇩🇿",
       "as": 0,
       "group": "KO"
     },
     {
       "h_code": "POR",
-      "h_flag": "\ud83c\uddf5\ud83c\uddf9",
+      "h_flag": "🇵🇹",
       "hs": 2,
       "a_code": "CRO",
-      "a_flag": "\ud83c\udded\ud83c\uddf7",
+      "a_flag": "🇭🇷",
       "as": 1,
       "group": "KO"
     },
     {
       "h_code": "ESP",
-      "h_flag": "\ud83c\uddea\ud83c\uddf8",
+      "h_flag": "🇪🇸",
       "hs": 3,
       "a_code": "AUT",
-      "a_flag": "\ud83c\udde6\ud83c\uddf9",
+      "a_flag": "🇦🇹",
       "as": 0,
       "group": "KO"
     },
     {
       "h_code": "USA",
-      "h_flag": "\ud83c\uddfa\ud83c\uddf8",
+      "h_flag": "🇺🇸",
       "hs": 2,
       "a_code": "BIH",
-      "a_flag": "\ud83c\udde7\ud83c\udde6",
+      "a_flag": "🇧🇦",
       "as": 0,
       "group": "KO"
     },
     {
       "h_code": "BEL",
-      "h_flag": "\ud83c\udde7\ud83c\uddea",
+      "h_flag": "🇧🇪",
       "hs": 3,
       "a_code": "SEN",
-      "a_flag": "\ud83c\uddf8\ud83c\uddf3",
+      "a_flag": "🇸🇳",
       "as": 2,
       "group": "KO"
     },
     {
       "h_code": "ENG",
-      "h_flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "h_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "hs": 2,
       "a_code": "COD",
-      "a_flag": "\ud83c\udde8\ud83c\udde9",
+      "a_flag": "🇨🇩",
       "as": 1,
       "group": "KO"
     },
     {
       "h_code": "MEX",
-      "h_flag": "\ud83c\uddf2\ud83c\uddfd",
+      "h_flag": "🇲🇽",
       "hs": 2,
       "a_code": "ECU",
-      "a_flag": "\ud83c\uddea\ud83c\udde8",
+      "a_flag": "🇪🇨",
       "as": 0,
       "group": "KO"
     },
     {
       "h_code": "FRA",
-      "h_flag": "\ud83c\uddeb\ud83c\uddf7",
+      "h_flag": "🇫🇷",
       "hs": 3,
       "a_code": "SWE",
-      "a_flag": "\ud83c\uddf8\ud83c\uddea",
+      "a_flag": "🇸🇪",
       "as": 0,
       "group": "KO"
     },
     {
       "h_code": "CIV",
-      "h_flag": "\ud83c\udde8\ud83c\uddee",
+      "h_flag": "🇨🇮",
       "hs": 1,
       "a_code": "NOR",
-      "a_flag": "\ud83c\uddf3\ud83c\uddf4",
+      "a_flag": "🇳🇴",
       "as": 2,
       "group": "KO"
     },
     {
       "h_code": "NED",
-      "h_flag": "\ud83c\uddf3\ud83c\uddf1",
+      "h_flag": "🇳🇱",
       "hs": 3,
       "a_code": "MAR",
-      "a_flag": "\ud83c\uddf2\ud83c\udde6",
+      "a_flag": "🇲🇦",
       "as": 4,
       "group": "KO"
     },
     {
       "h_code": "GER",
-      "h_flag": "\ud83c\udde9\ud83c\uddea",
+      "h_flag": "🇩🇪",
       "hs": 4,
       "a_code": "PAR",
-      "a_flag": "\ud83c\uddf5\ud83c\uddfe",
+      "a_flag": "🇵🇾",
       "as": 5,
       "group": "KO"
     },
     {
       "h_code": "BRA",
-      "h_flag": "\ud83c\udde7\ud83c\uddf7",
+      "h_flag": "🇧🇷",
       "hs": 2,
       "a_code": "JPN",
-      "a_flag": "\ud83c\uddef\ud83c\uddf5",
+      "a_flag": "🇯🇵",
       "as": 1,
       "group": "KO"
     },
     {
       "h_code": "RSA",
-      "h_flag": "\ud83c\uddff\ud83c\udde6",
+      "h_flag": "🇿🇦",
       "hs": 0,
       "a_code": "CAN",
-      "a_flag": "\ud83c\udde8\ud83c\udde6",
+      "a_flag": "🇨🇦",
       "as": 1,
       "group": "KO"
     },
     {
       "h_code": "JOR",
-      "h_flag": "\ud83c\uddef\ud83c\uddf4",
+      "h_flag": "🇯🇴",
       "hs": 1,
       "a_code": "ARG",
-      "a_flag": "\ud83c\udde6\ud83c\uddf7",
+      "a_flag": "🇦🇷",
       "as": 3,
       "group": "GRP J"
     },
     {
       "h_code": "ALG",
-      "h_flag": "\ud83c\udde9\ud83c\uddff",
+      "h_flag": "🇩🇿",
       "hs": 3,
       "a_code": "AUT",
-      "a_flag": "\ud83c\udde6\ud83c\uddf9",
+      "a_flag": "🇦🇹",
       "as": 3,
       "group": "GRP J"
     },
     {
       "h_code": "COL",
-      "h_flag": "\ud83c\udde8\ud83c\uddf4",
+      "h_flag": "🇨🇴",
       "hs": 0,
       "a_code": "POR",
-      "a_flag": "\ud83c\uddf5\ud83c\uddf9",
+      "a_flag": "🇵🇹",
       "as": 0,
       "group": "GRP K"
     },
     {
       "h_code": "COD",
-      "h_flag": "\ud83c\udde8\ud83c\udde9",
+      "h_flag": "🇨🇩",
       "hs": 3,
       "a_code": "UZB",
-      "a_flag": "\ud83c\uddfa\ud83c\uddff",
+      "a_flag": "🇺🇿",
       "as": 1,
       "group": "GRP K"
     },
     {
       "h_code": "PAN",
-      "h_flag": "\ud83c\uddf5\ud83c\udde6",
+      "h_flag": "🇵🇦",
       "hs": 0,
       "a_code": "ENG",
-      "a_flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+      "a_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "as": 2,
       "group": "GRP L"
     }
@@ -1612,7 +1612,7 @@
     "teams": [
       {
         "name": "France",
-        "flag": "\ud83c\uddeb\ud83c\uddf7",
+        "flag": "🇫🇷",
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 10.3,
@@ -1629,7 +1629,7 @@
       },
       {
         "name": "Morocco",
-        "flag": "\ud83c\uddf2\ud83c\udde6",
+        "flag": "🇲🇦",
         "manager": "Ryan",
         "status": "in",
         "title_probability": 9.3,
@@ -1646,7 +1646,7 @@
       },
       {
         "name": "Norway",
-        "flag": "\ud83c\uddf3\ud83c\uddf4",
+        "flag": "🇳🇴",
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 8.6,
@@ -1663,7 +1663,7 @@
       },
       {
         "name": "Argentina",
-        "flag": "\ud83c\udde6\ud83c\uddf7",
+        "flag": "🇦🇷",
         "manager": "Mitchell",
         "status": "in",
         "title_probability": 8.4,
@@ -1680,7 +1680,7 @@
       },
       {
         "name": "Mexico",
-        "flag": "\ud83c\uddf2\ud83c\uddfd",
+        "flag": "🇲🇽",
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 8.0,
@@ -1697,7 +1697,7 @@
       },
       {
         "name": "Spain",
-        "flag": "\ud83c\uddea\ud83c\uddf8",
+        "flag": "🇪🇸",
         "manager": "Jay",
         "status": "in",
         "title_probability": 7.5,
@@ -1714,7 +1714,7 @@
       },
       {
         "name": "England",
-        "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "manager": "Mitchell",
         "status": "in",
         "title_probability": 7.5,
@@ -1731,7 +1731,7 @@
       },
       {
         "name": "Colombia",
-        "flag": "\ud83c\udde8\ud83c\uddf4",
+        "flag": "🇨🇴",
         "manager": "Jay",
         "status": "in",
         "title_probability": 7.1,
@@ -1748,7 +1748,7 @@
       },
       {
         "name": "Switzerland",
-        "flag": "\ud83c\udde8\ud83c\udded",
+        "flag": "🇨🇭",
         "manager": "Jay",
         "status": "in",
         "title_probability": 7.1,
@@ -1765,7 +1765,7 @@
       },
       {
         "name": "United States",
-        "flag": "\ud83c\uddfa\ud83c\uddf8",
+        "flag": "🇺🇸",
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 6.8,
@@ -1782,7 +1782,7 @@
       },
       {
         "name": "Belgium",
-        "flag": "\ud83c\udde7\ud83c\uddea",
+        "flag": "🇧🇪",
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 6.6,
@@ -1799,7 +1799,7 @@
       },
       {
         "name": "Portugal",
-        "flag": "\ud83c\uddf5\ud83c\uddf9",
+        "flag": "🇵🇹",
         "manager": "Ryan",
         "status": "in",
         "title_probability": 6.6,
@@ -1816,7 +1816,7 @@
       },
       {
         "name": "Egypt",
-        "flag": "\ud83c\uddea\ud83c\uddec",
+        "flag": "🇪🇬",
         "manager": "Jay",
         "status": "in",
         "title_probability": 6.2,
@@ -1833,7 +1833,7 @@
       },
       {
         "name": "Brazil",
-        "flag": "\ud83c\udde7\ud83c\uddf7",
+        "flag": "🇧🇷",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1850,7 +1850,7 @@
       },
       {
         "name": "Japan",
-        "flag": "\ud83c\uddef\ud83c\uddf5",
+        "flag": "🇯🇵",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1867,7 +1867,7 @@
       },
       {
         "name": "Australia",
-        "flag": "\ud83c\udde6\ud83c\uddfa",
+        "flag": "🇦🇺",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1884,7 +1884,7 @@
       },
       {
         "name": "Algeria",
-        "flag": "\ud83c\udde9\ud83c\uddff",
+        "flag": "🇩🇿",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1901,7 +1901,7 @@
       },
       {
         "name": "Ivory Coast",
-        "flag": "\ud83c\udde8\ud83c\uddee",
+        "flag": "🇨🇮",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1918,7 +1918,7 @@
       },
       {
         "name": "Cape Verde Islands",
-        "flag": "\ud83c\udde8\ud83c\uddfb",
+        "flag": "🇨🇻",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1935,7 +1935,7 @@
       },
       {
         "name": "Bosnia-Herzegovina",
-        "flag": "\ud83c\udde7\ud83c\udde6",
+        "flag": "🇧🇦",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1952,7 +1952,7 @@
       },
       {
         "name": "Ghana",
-        "flag": "\ud83c\uddec\ud83c\udded",
+        "flag": "🇬🇭",
         "manager": "Jay",
         "status": "out",
         "title_probability": 0.0,
@@ -1969,7 +1969,7 @@
       },
       {
         "name": "Uruguay",
-        "flag": "\ud83c\uddfa\ud83c\uddfe",
+        "flag": "🇺🇾",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -1986,7 +1986,7 @@
       },
       {
         "name": "Iran",
-        "flag": "\ud83c\uddee\ud83c\uddf7",
+        "flag": "🇮🇷",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -2003,7 +2003,7 @@
       },
       {
         "name": "Turkey",
-        "flag": "\ud83c\uddf9\ud83c\uddf7",
+        "flag": "🇹🇷",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -2020,7 +2020,7 @@
       },
       {
         "name": "Tunisia",
-        "flag": "\ud83c\uddf9\ud83c\uddf3",
+        "flag": "🇹🇳",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -2037,7 +2037,7 @@
       },
       {
         "name": "Qatar",
-        "flag": "\ud83c\uddf6\ud83c\udde6",
+        "flag": "🇶🇦",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -2053,8 +2053,8 @@
         "delta": -0.9
       },
       {
-        "name": "Cura\u00e7ao",
-        "flag": "\ud83c\udde8\ud83c\uddfc",
+        "name": "Curaçao",
+        "flag": "🇨🇼",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -2071,7 +2071,7 @@
       },
       {
         "name": "New Zealand",
-        "flag": "\ud83c\uddf3\ud83c\uddff",
+        "flag": "🇳🇿",
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
@@ -2088,7 +2088,7 @@
       },
       {
         "name": "Croatia",
-        "flag": "\ud83c\udded\ud83c\uddf7",
+        "flag": "🇭🇷",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2105,7 +2105,7 @@
       },
       {
         "name": "Senegal",
-        "flag": "\ud83c\uddf8\ud83c\uddf3",
+        "flag": "🇸🇳",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2122,7 +2122,7 @@
       },
       {
         "name": "Ecuador",
-        "flag": "\ud83c\uddea\ud83c\udde8",
+        "flag": "🇪🇨",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2139,7 +2139,7 @@
       },
       {
         "name": "Canada",
-        "flag": "\ud83c\udde8\ud83c\udde6",
+        "flag": "🇨🇦",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2156,7 +2156,7 @@
       },
       {
         "name": "Sweden",
-        "flag": "\ud83c\uddf8\ud83c\uddea",
+        "flag": "🇸🇪",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2173,7 +2173,7 @@
       },
       {
         "name": "Czechia",
-        "flag": "\ud83c\udde8\ud83c\uddff",
+        "flag": "🇨🇿",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2190,7 +2190,7 @@
       },
       {
         "name": "Scotland",
-        "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+        "flag": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2207,7 +2207,7 @@
       },
       {
         "name": "Uzbekistan",
-        "flag": "\ud83c\uddfa\ud83c\uddff",
+        "flag": "🇺🇿",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2224,7 +2224,7 @@
       },
       {
         "name": "Saudi Arabia",
-        "flag": "\ud83c\uddf8\ud83c\udde6",
+        "flag": "🇸🇦",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2241,7 +2241,7 @@
       },
       {
         "name": "Haiti",
-        "flag": "\ud83c\udded\ud83c\uddf9",
+        "flag": "🇭🇹",
         "manager": "Mitchell",
         "status": "out",
         "title_probability": 0.0,
@@ -2258,7 +2258,7 @@
       },
       {
         "name": "Netherlands",
-        "flag": "\ud83c\uddf3\ud83c\uddf1",
+        "flag": "🇳🇱",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2275,7 +2275,7 @@
       },
       {
         "name": "Germany",
-        "flag": "\ud83c\udde9\ud83c\uddea",
+        "flag": "🇩🇪",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2292,7 +2292,7 @@
       },
       {
         "name": "Austria",
-        "flag": "\ud83c\udde6\ud83c\uddf9",
+        "flag": "🇦🇹",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2309,7 +2309,7 @@
       },
       {
         "name": "South Korea",
-        "flag": "\ud83c\uddf0\ud83c\uddf7",
+        "flag": "🇰🇷",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2326,7 +2326,7 @@
       },
       {
         "name": "Paraguay",
-        "flag": "\ud83c\uddf5\ud83c\uddfe",
+        "flag": "🇵🇾",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2343,7 +2343,7 @@
       },
       {
         "name": "Panama",
-        "flag": "\ud83c\uddf5\ud83c\udde6",
+        "flag": "🇵🇦",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2360,7 +2360,7 @@
       },
       {
         "name": "Congo DR",
-        "flag": "\ud83c\udde8\ud83c\udde9",
+        "flag": "🇨🇩",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2377,7 +2377,7 @@
       },
       {
         "name": "Iraq",
-        "flag": "\ud83c\uddee\ud83c\uddf6",
+        "flag": "🇮🇶",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2394,7 +2394,7 @@
       },
       {
         "name": "South Africa",
-        "flag": "\ud83c\uddff\ud83c\udde6",
+        "flag": "🇿🇦",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
@@ -2411,7 +2411,7 @@
       },
       {
         "name": "Jordan",
-        "flag": "\ud83c\uddef\ud83c\uddf4",
+        "flag": "🇯🇴",
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
