@@ -80,8 +80,22 @@ def main() -> None:
     matchdays_seen = sorted(set(m["matchday"] for m in finished if m.get("matchday")))
     print(f"  Matchdays with finished games: {matchdays_seen}")
 
-    snapshots: list[dict] = []
+    # Load existing history so we can merge rather than overwrite.
+    # The live CI fetcher accumulates daily snapshots; backfill must not
+    # destroy entries it cannot regenerate (e.g. GS data once knockout begins).
+    history_file = DATA_DIR / "history.json"
+    wt_file = Path(__file__).parents[1] / "data" / "history.json"
+    target = wt_file if (wt_file != history_file and wt_file.parent.exists()) else history_file
 
+    existing: dict[str, dict] = {}
+    if target.exists():
+        try:
+            for s in json.loads(target.read_text()).get("snapshots", []):
+                existing[s["round"]] = s
+        except Exception:
+            pass
+
+    generated: dict[str, dict] = {}
     for md in matchdays_seen:
         # Matches from this and all earlier matchdays
         subset = [m for m in finished if m.get("matchday", 0) <= md]
@@ -105,18 +119,19 @@ def main() -> None:
             for i, t in enumerate(ranked)  # store all teams so the chart can show any zoom level
         ]
 
-        snapshots.append({"ts": ts, "stage": stage, "round": label, "teams": teams})
+        snap = {"ts": ts, "stage": stage, "round": label, "teams": teams}
+        generated[label] = snap
         print(f"  {label}: top5 = {[t['name'] for t in teams[:5]]}  (ts={ts[:10]})")
 
-    history_file = DATA_DIR / "history.json"
-    history_file.write_text(json.dumps({"snapshots": snapshots}, indent=2))
-    print(f"\nWrote {len(snapshots)} snapshots to {history_file}")
+    # Merge: backfill-generated entries win over existing for the same round;
+    # rounds only the live fetcher has (e.g. daily R32 entries) are preserved.
+    merged: dict[str, dict] = {**existing, **generated}
 
-    # Also write to the worktree copy
-    wt_file = Path(__file__).parents[1] / "data" / "history.json"
-    if wt_file != history_file and wt_file.parent.exists():
-        wt_file.write_text(json.dumps({"snapshots": snapshots}, indent=2))
-        print(f"Also wrote to {wt_file}")
+    # Sort by ts so the chart x-axis is chronological
+    snapshots = sorted(merged.values(), key=lambda s: s["ts"])
+
+    target.write_text(json.dumps({"snapshots": snapshots}, indent=2))
+    print(f"\nWrote {len(snapshots)} snapshots to {target}")
 
 
 if __name__ == "__main__":
