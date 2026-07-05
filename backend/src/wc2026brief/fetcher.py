@@ -604,6 +604,20 @@ _KNOCKOUT_ROUND_LABELS: dict[str, str] = {
     "THIRD_PLACE":    "3rd Place",
     "FINAL":          "Final",
 }
+_KNOCKOUT_STAGE_ORDER = tuple(_KNOCKOUT_ROUND_LABELS)
+
+
+def deepest_finished_stage(matches: list[dict]) -> str:
+    """Return the deepest knockout stage with a finished match, else group stage."""
+    finished_knockout_stages = {
+        m.get("stage")
+        for m in matches
+        if m.get("stage") in _KNOCKOUT_STAGE_ORDER and m.get("status") == "FINISHED"
+    }
+    for stage in reversed(_KNOCKOUT_STAGE_ORDER):
+        if stage in finished_knockout_stages:
+            return stage
+    return "GROUP_STAGE"
 
 
 def _round_label(stage: str, matchday: int | None) -> str:
@@ -805,22 +819,13 @@ class WCFetcher:
             logger.warning("Could not fetch FIFA rankings, proceeding without them: %s", exc)
             rankings = None
 
-        knockout_stages = {"LAST_32", "LAST_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
-        _knockout_order = ["LAST_32", "LAST_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"]
-        finished_knockout_stages = {
-            m.get("stage") for m in matches
-            if m.get("stage") in knockout_stages and m.get("status") == "FINISHED"
-        }
-        stage = next(
-            (s for s in _knockout_order if s in finished_knockout_stages),
-            "GROUP_STAGE",
-        )
+        stage = deepest_finished_stage(matches)
 
         finished_gs_matchdays = [
             m.get("matchday")
             for m in matches
             if m.get("status") == "FINISHED"
-            and m.get("stage") not in knockout_stages
+            and m.get("stage") not in set(_KNOCKOUT_ROUND_LABELS)
             and m.get("matchday") is not None
         ]
         current_matchday = max(finished_gs_matchdays) if finished_gs_matchdays else None

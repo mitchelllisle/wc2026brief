@@ -2,8 +2,8 @@
   "snapshots": [
     {
       "ts": "2026-06-18T23:59:00+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD1",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "Germany",
@@ -441,8 +441,8 @@
     },
     {
       "ts": "2026-06-20T15:28:03.393901+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD2",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "United States",
@@ -880,8 +880,8 @@
     },
     {
       "ts": "2026-06-21T17:34:33.449552+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD2",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "Germany",
@@ -1319,8 +1319,8 @@
     },
     {
       "ts": "2026-06-22T15:46:38.219764+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD2",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "Germany",
@@ -1758,8 +1758,8 @@
     },
     {
       "ts": "2026-06-23T15:18:49.252672+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD2",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "France",
@@ -2197,8 +2197,8 @@
     },
     {
       "ts": "2026-06-24T15:18:16.418563+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD2",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "France",
@@ -2636,8 +2636,8 @@
     },
     {
       "ts": "2026-06-25T13:03:06.216722+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD2",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "Mexico",
@@ -3075,8 +3075,8 @@
     },
     {
       "ts": "2026-06-26T15:24:25.469604+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD3",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "Mexico",
@@ -3514,8 +3514,8 @@
     },
     {
       "ts": "2026-06-27T17:01:39.018375+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD3",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "France",
@@ -3953,8 +3953,8 @@
     },
     {
       "ts": "2026-06-28T15:28:40.037905+10:00",
-      "stage": "GROUP_STAGE",
-      "round": "MD3",
+      "stage": "LAST_32",
+      "round": "R32",
       "teams": [
         {
           "name": "France",
@@ -7026,8 +7026,8 @@
     },
     {
       "ts": "2026-07-05T10:26:55.903174+10:00",
-      "stage": "LAST_32",
-      "round": "R32",
+      "stage": "LAST_16",
+      "round": "R16",
       "teams": [
         {
           "name": "France",
@@ -7465,8 +7465,8 @@
     },
     {
       "ts": "2026-07-06T08:19:17.684891+10:00",
-      "stage": "LAST_32",
-      "round": "R32",
+      "stage": "LAST_16",
+      "round": "R16",
       "teams": [
         {
           "name": "France",

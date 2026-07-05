@@ -7,6 +7,7 @@ from wc2026brief.fetcher import (
     build_recent_results,
     compute_advancement,
     compute_team_records,
+    deepest_finished_stage,
     team_status,
 )
 from wc2026brief.models import Participant, Squads, Team, TeamRecord
@@ -104,6 +105,19 @@ def test_compute_team_records_multiple_matches_accumulate():
     assert records["Brazil"].w == 1
     assert records["Brazil"].l == 1
     assert records["Brazil"].last_result == "L"
+
+
+def test_deepest_finished_stage_prefers_latest_knockout_round():
+    matches = [
+        _match("A", "B", 1, 0, stage="LAST_32"),
+        _match("C", "D", 2, 1, stage="LAST_16"),
+    ]
+    assert deepest_finished_stage(matches) == "LAST_16"
+
+
+def test_deepest_finished_stage_defaults_to_group_stage_without_finished_knockout():
+    matches = [_match("A", "B", 1, 0, status="SCHEDULED", stage="LAST_32")]
+    assert deepest_finished_stage(matches) == "GROUP_STAGE"
 
 
 def _squads(*participants: tuple[str, list[tuple[str, str]]]) -> Squads:

@@ -26,6 +26,7 @@ from wc2026brief.fetcher import (
     build_projections,
     compute_advancement,
     compute_team_records,
+    deepest_finished_stage,
     fetch_fifa_rankings,
 )
 from wc2026brief.models import Squads
@@ -52,8 +53,8 @@ def snapshot_ts(matches: list[dict]) -> str:
     return dt.replace(hour=23, minute=59, second=0, microsecond=0).isoformat()
 
 
-def round_label(matchday: int) -> str:
-    return f"MD{matchday}"
+def round_label(matchday: int | None) -> str:
+    return f"MD{matchday}" if matchday else "MD?"
 
 
 def main() -> None:
@@ -88,10 +89,7 @@ def main() -> None:
         advancement = compute_advancement(subset)
         projections = build_projections(squads, team_records, rankings=rankings, advancement=advancement)
 
-        # Determine stage: any knockout match finished → KNOCKOUT, else GROUP_STAGE
-        knockout_stages = {"ROUND_OF_32", "ROUND_OF_16", "QUARTER_FINALS", "SEMI_FINALS", "THIRD_PLACE", "FINAL"}
-        stage = "KNOCKOUT" if any(m.get("stage") in knockout_stages for m in subset) else "GROUP_STAGE"
-
+        stage = deepest_finished_stage(subset)
         label = _KNOCKOUT_ROUND_LABELS.get(stage, round_label(md))
         ts = snapshot_ts(subset)
 
