@@ -53,8 +53,8 @@ def snapshot_ts(matches: list[dict]) -> str:
     return dt.replace(hour=23, minute=59, second=0, microsecond=0).isoformat()
 
 
-def round_label(matchday: int) -> str:
-    return f"MD{matchday}"
+def round_label(matchday: int | None) -> str:
+    return f"MD{matchday}" if matchday else "MD?"
 
 
 def main() -> None:
