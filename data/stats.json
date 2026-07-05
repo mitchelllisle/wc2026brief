@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-06T04:21:21.850032+10:00",
+  "generated_at": "2026-07-06T06:23:29.072243+10:00",
   "stage": "LAST_32",
-  "headline": "{leader} stays *untouchable* while {tab} looks *cooked*",
+  "headline": "{leader} stays *untouchable* while {tab} clings on *desperately*",
   "summary": [
-    "The dust is settling and the standings are brutal. **Jay** and **Kerrod** are locked in a proper two-horse race at the top — both with **5 teams alive** and combined strength sitting around **35%**. Meanwhile, **Ryan** and **Mitchell** are gasping with just **2 teams each**, and **Mitchell** sits in the dreaded 💀 spot, clinging on by a thread with the lowest strength rating of the comp at **15.0%**.",
-    "Big matches coming up fast. **Jay** needs **Brazil** (vs **Norway**, Mon 6 Jul 6AM) and **Switzerland** (vs **Colombia**, Wed 8 Jul 6AM) to keep delivering — he owns both sides of that Swiss-Colombia clash! **Kerrod** has massive interest in **Mexico vs England** (Mon 6 Jul 10AM) and **United States vs Belgium** (Tue 7 Jul 10AM). **Ryan** watches nervously as **Portugal vs Spain** (Tue 7 Jul 5AM) and **France vs Morocco** (Fri 10 Jul 6AM) could cut his squad in half."
+    "The group stage dust has settled and the standings are locked in. **Jay** and **Kerrod** are the last men standing with **5 teams each** still alive, while **Ryan** and **Mitchell** are clinging on with just **2 teams apiece**. **Mitchell** sits in the dreaded 💀 spot — one bad result away from booking his Secretary duties. Ryan isn't much safer at **15.2%** strength. No one's been eliminated yet this round, but the knockout pressure is mounting fast.",
+    "Big ones incoming. **Kerrod** has a massive week — **Mexico vs England** (Mon 10:00AM) pits his **Mexico** against **Mitchell's England**, then **United States vs Belgium** (Tue 10:00AM) is an all-Kerrod affair. **Jay** watches nervously as **Switzerland vs Colombia** (Wed 6:00AM) is a pure Jay internal — one of his own is going home. **Ryan** then faces **France vs Morocco** (Fri 6:00AM) with his **Morocco** up against **Kerrod's France**. Massive stakes all round."
   ],
   "leaderboard": [
     {
@@ -1793,11 +1793,11 @@
         "manager": "Kerrod",
         "status": "in",
         "title_probability": 6.3,
-        "fifa_rank": 21,
+        "fifa_rank": 20,
         "title_breakdown": {
           "form_score": 0.425,
           "stage_score": 0.2,
-          "rank_score": 0.75,
+          "rank_score": 0.762,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
