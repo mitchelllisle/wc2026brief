@@ -66,6 +66,11 @@
       .replace(/\*(.*?)\*/g, '<em>$1</em>');
   }
 
+  // Replace {leader}/{tab} tokens with live-computed names before rendering
+  function injectHeadlineTokens(text, leader, tab) {
+    return text.replace(/\{leader\}/g, () => leader ?? '').replace(/\{tab\}/g, () => tab ?? '');
+  }
+
   const ENDPOINT = `${import.meta.env.BASE_URL}data/stats.json`;
   const HISTORY_ENDPOINT = `${import.meta.env.BASE_URL}data/history.json`;
   const LOGO_SRC = `${import.meta.env.BASE_URL}fifa-logo.svg`;
@@ -414,7 +419,7 @@
           <span class="kick">Match Report</span>
           <span class="byline">The Sweep Desk · Auto Anchor · {stamp}</span>
         </div>
-        <h1 class="headline">{@html data.headline ? renderHeadline(data.headline) : `${leaderName} leads as ${tabName} eyes the Secretary role`}</h1>
+        <h1 class="headline">{@html data.headline ? renderHeadline(injectHeadlineTokens(data.headline, leaderName, tabName)) : `${leaderName} leads as ${tabName} eyes the Secretary role`}</h1>
         <p class="deck">{projectionDeck}</p>
         <div class="report-cols">
           {#each data.summary as p}
