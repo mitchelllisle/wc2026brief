@@ -228,7 +228,7 @@
   let stamp = $derived(data ? formatStamp(data.generated_at) : '');
   let totalAlive = $derived(ranked.reduce((s, p) => s + p.teams_remaining, 0));
   let totalOut = $derived(ranked.reduce((s, p) => s + p.eliminated, 0));
-  let projectedLeader = $derived(data?.projections?.managers?.[0] ?? null);
+  let projectedLeader = $derived(data?.projections?.managers?.find(m => m.name === ranked[0]?.name) ?? null);
   let projectedTeam = $derived(
     projectedLeader?.favourite_team
       ? (data?.projections?.teams?.find(t => t.name === projectedLeader.favourite_team) ?? null)
