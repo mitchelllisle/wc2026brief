@@ -55,6 +55,16 @@
     'Uzbekistan':         '#1EB53A',
   };
 
+  // Numeric depth for each tournament stage — higher means further in the tournament.
+  const STAGE_ORDER = {
+    'GROUP_STAGE':    0,
+    'LAST_32':        1,
+    'LAST_16':        2,
+    'QUARTER_FINALS': 3,
+    'SEMI_FINALS':    4,
+    'FINAL':          5,
+  };
+
   let container = $state(null);
 
   // Collapse snapshots that share the same round into one, keeping the latest
@@ -86,8 +96,11 @@
         if (!gsTracked.has(t.name)) return false;
         if (!isKnockout) return true;  // GS snapshots: status backfill is unreliable, always show
         if ((t.status ?? 'in') !== 'out') return true;  // alive — show
-        // Eliminated: show only at the round they exited, not after.
-        return t.stage != null && t.stage === snap.stage;
+        // Eliminated: show at this round and any earlier rounds they still participated in.
+        // A team's line ends at the round matching their elimination stage; if that stage
+        // has no dedicated round yet (e.g. R16 results captured inside an R32 snapshot),
+        // they still appear at the latest available round (stageOrder[t.stage] > snap).
+        return t.stage != null && (STAGE_ORDER[t.stage] ?? -1) >= (STAGE_ORDER[snap.stage] ?? 0);
       });
       // Re-rank 1..N within shown teams so there are no rank gaps.
       return shown.map((t, idx) => ({
