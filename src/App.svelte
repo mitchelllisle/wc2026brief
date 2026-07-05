@@ -68,7 +68,7 @@
 
   // Replace {leader}/{tab} tokens with live-computed names before rendering
   function injectHeadlineTokens(text, leader, tab) {
-    return text.replace(/\{leader\}/g, leader ?? '').replace(/\{tab\}/g, tab ?? '');
+    return text.replace(/\{leader\}/g, () => leader ?? '').replace(/\{tab\}/g, () => tab ?? '');
   }
 
   const ENDPOINT = `${import.meta.env.BASE_URL}data/stats.json`;

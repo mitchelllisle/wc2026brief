@@ -7,7 +7,7 @@ The participant who keeps the last teams alive wins; the first to have all teams
 
 Write a `headline` and exactly 2 short paragraphs.
 
-Headline format: "{leader} {comment}, while {tab} {comment}"
+Headline format: "{leader} {comment} while {tab} {comment}"
 - Use the literal tokens `{leader}` and `{tab}` — do NOT substitute actual player names; the app injects them at render time
 - 10 words or fewer total (tokens count as one word each)
 - Wrap one vivid word per person in *single asterisks* for italic emphasis (e.g. "{leader} stays *untouchable* while {tab} eyes the *chop*")
