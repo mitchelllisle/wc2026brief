@@ -9220,7 +9220,7 @@
       ]
     },
     {
-      "ts": "2026-07-07T08:25:56.599092+10:00",
+      "ts": "2026-07-07T10:28:42.959420+10:00",
       "stage": "LAST_16",
       "round": "R16",
       "teams": [
@@ -9229,7 +9229,7 @@
           "flag": "\ud83c\uddeb\ud83c\uddf7",
           "manager": "Kerrod",
           "rank": 1,
-          "score": 11.6,
+          "score": 11.5,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -9310,7 +9310,7 @@
           "flag": "\ud83c\udde7\ud83c\uddea",
           "manager": "Kerrod",
           "rank": 10,
-          "score": 7.4,
+          "score": 7.5,
           "status": "in",
           "stage": "LAST_32"
         },

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-07T08:25:56.599092+10:00",
+  "generated_at": "2026-07-07T10:28:42.959420+10:00",
   "stage": "LAST_16",
-  "headline": "{leader} stays *untouchable* while {tab} hangs by a *thread*",
+  "headline": "{leader} stays *relentless* while {tab} hangs by a *thread*",
   "summary": [
-    "We're deep in the knockout rounds now and the survivor count is thinning fast. **Jay** leads the pack with **4 teams alive** and a healthy **33.3% strength**, while **Kerrod** is right on his heels with **4 alive** at **36.3%**. **Mitchell** is clinging on with just **2 teams** standing, and **Ryan** is the last man breathing with a solitary survivor — one more loss and he's booking restaurants for the next 12 months. No fresh results to digest right now, but the bracket is doing the dirty work slowly.",
-    "Big ones coming up — **Jay** will be sweating on **Switzerland vs Colombia** (Wed 8 Jul, 6:00AM AEST), a mouth-watering all-Jay affair that guarantees one of his teams goes home. He also has **Egypt** in **Argentina vs Egypt** (Wed 8 Jul, 2:00AM AEST), with **Mitchell's Argentina** looking to end that run. **Kerrod** gets **United States vs Belgium** (Tue 7 Jul, 10:00AM AEST) — another internal scrap — plus **Norway vs England** (Sun 12 Jul, 7:00AM AEST) pitting his **Norway** against **Mitchell's England**. High stakes all round."
+    "The group stage carnage is real — **Jay** and **Kerrod** are both sitting pretty with **4 teams alive** each, while **Mitchell** clings on with just **2**, and **Ryan** is on life support with a solitary survivor. **Jay's Egypt** face **Mitchell's Argentina** on **Wed 8 Jul at 2:00AM AEST**, and **Jay's Switzerland** take on **Jay's Colombia** (an all-Jay affair!) at **6:00AM AEST** the same morning — those results could shuffle things fast. **Kerrod's France** meet **Ryan's Morocco** on **Fri 10 Jul at 6:00AM AEST**, a massive clash where a Morocco exit would leave **Ryan** one loss from complete elimination.",
+    "Eyes on **Sun 12 Jul at 7:00AM AEST** when **Kerrod's Norway** face **Mitchell's England** — a crunch knockout tie where both men desperately need the win. **Mitchell** is fighting with just **Argentina and England** still standing, so a loss for **England** here would be a gut punch. **Kerrod** meanwhile needs **Norway** to keep rolling to stay in the hunt for the title. **Jay** looks comfortable with the best squad depth remaining, but **Colombia and Switzerland** both playing midweek means he could rocket further ahead — or take a hit. **Ryan** just needs his last team (**Morocco**) to survive **France** on Friday. One slip and it's the **Secretary** seat for him."
   ],
   "leaderboard": [
     {
@@ -1635,7 +1635,7 @@
         "flag": "🇫🇷",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 11.6,
+        "title_probability": 11.5,
         "fifa_rank": 1,
         "title_breakdown": {
           "form_score": 0.681,
@@ -1645,7 +1645,7 @@
           "form_weight": 0.58,
           "rank_weight": 0.12
         },
-        "delta": 0.6
+        "delta": -0.1
       },
       {
         "name": "England",
@@ -1788,17 +1788,17 @@
         "flag": "🇧🇪",
         "manager": "Kerrod",
         "status": "in",
-        "title_probability": 7.4,
-        "fifa_rank": 9,
+        "title_probability": 7.5,
+        "fifa_rank": 8,
         "title_breakdown": {
           "form_score": 0.378,
           "stage_score": 0.2,
-          "rank_score": 0.9,
+          "rank_score": 0.912,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
         },
-        "delta": 0.4
+        "delta": 0.1
       },
       {
         "name": "Egypt",
@@ -2282,11 +2282,11 @@
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 8,
+        "fifa_rank": 9,
         "title_breakdown": {
           "form_score": 0.357,
           "stage_score": 0.2,
-          "rank_score": 0.912,
+          "rank_score": 0.9,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
