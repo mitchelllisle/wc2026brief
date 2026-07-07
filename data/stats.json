@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-08T00:59:03.198786+10:00",
+  "generated_at": "2026-07-08T02:46:30.315640+10:00",
   "stage": "LAST_16",
-  "headline": "{leader} stays *untouchable* while {tab} hangs by a *thread*",
+  "headline": "{leader} stays *dominant* while {tab} clings on *desperately*",
   "summary": [
-    "We're deep into the tournament and the gap at the top is real. **Jay** leads with **4 teams alive** and a fat **35.2% strength rating**, while **Kerrod** sits second with **3 alive** at **32.5%**. **Mitchell** is clinging on with just **2 teams** left at **21.1%**, and **Ryan** is one bad result from total elimination — only **Portugal** remains flying the flag at a slim **11.1%**. No dramatic results to report in the most recent window, but the standings paint a brutal picture for the bottom two.",
-    "Eyes forward — **Jay's** got a massive double-header incoming with **Egypt vs Argentina** (**Wed 8 Jul, 2:00AM**) and **Switzerland vs Colombia** (**Wed 8 Jul, 6:00AM**). **Kerrod** has plenty at stake too, with **France vs Morocco** (**Fri 10 Jul, 6:00AM**) and **Spain vs Belgium** (**Sat 11 Jul, 5:00AM**) — that last one is a Jay vs Kerrod head-to-head. **Mitchell** needs **England** to deliver against **Kerrod's Norway** on **Sun 12 Jul, 7:00AM**. Every result matters with the Secretary curse looming large over **Ryan**."
+    "We're deep in the business end now. **Jay** leads the sweep with **4 teams alive** and zero at risk — the Swiss, Spanish, Colombian, and Japanese flags still flying. **Kerrod** sits second with **France, Belgium, and Norway** still in it. **Mitchell** is hanging by a thread with just **2 survivors** — **Argentina and England** — while **Ryan** is all but packing up the Secretary's clipboard, with only **Morocco** keeping the dream alive after a brutal run of eliminations.",
+    "The big ones coming up: **Jay's Switzerland** face **Jay's Colombia** in what is a sweep civil war on **Wed 8 Jul, 6:00AM AEST** — someone's losing a team there. Then **Kerrod's France** take on **Ryan's Morocco** on **Fri 10 Jul**, followed by **Jay's Spain vs Kerrod's Belgium** on **Sat 11 Jul, 5:00AM AEST**, and **Kerrod's Norway vs Mitchell's England** on **Sun 12 Jul, 7:00AM AEST**. Massive stakes all round."
   ],
   "leaderboard": [
     {
@@ -1612,10 +1612,10 @@
     "managers": [
       {
         "name": "Jay",
-        "title_probability": 35.2,
+        "title_probability": 35.4,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": 1.9
+        "delta": 0.2
       },
       {
         "name": "Kerrod",
@@ -1798,17 +1798,17 @@
         "flag": "🇪🇬",
         "manager": "Jay",
         "status": "in",
-        "title_probability": 7.3,
-        "fifa_rank": 24,
+        "title_probability": 7.5,
+        "fifa_rank": 20,
         "title_breakdown": {
           "form_score": 0.383,
           "stage_score": 0.2,
-          "rank_score": 0.713,
+          "rank_score": 0.762,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
         },
-        "delta": 0.4
+        "delta": 0.2
       },
       {
         "name": "Brazil",
@@ -1986,11 +1986,11 @@
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 20,
+        "fifa_rank": 21,
         "title_breakdown": {
           "form_score": 0.103,
           "stage_score": 0.0,
-          "rank_score": 0.762,
+          "rank_score": 0.75,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -2003,11 +2003,11 @@
         "manager": "Kerrod",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 22,
+        "fifa_rank": 23,
         "title_breakdown": {
           "form_score": 0.145,
           "stage_score": 0.0,
-          "rank_score": 0.738,
+          "rank_score": 0.725,
           "stage_label": "Group stage",
           "form_weight": 0.5,
           "rank_weight": 0.2
@@ -2326,11 +2326,11 @@
         "manager": "Ryan",
         "status": "out",
         "title_probability": 0.0,
-        "fifa_rank": 23,
+        "fifa_rank": 24,
         "title_breakdown": {
           "form_score": 0.197,
           "stage_score": 0.2,
-          "rank_score": 0.725,
+          "rank_score": 0.713,
           "stage_label": "Round of 32",
           "form_weight": 0.54,
           "rank_weight": 0.16
