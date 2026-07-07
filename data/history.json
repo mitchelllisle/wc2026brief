@@ -9220,7 +9220,7 @@
       ]
     },
     {
-      "ts": "2026-07-07T10:28:42.959420+10:00",
+      "ts": "2026-07-07T13:02:37.969660+10:00",
       "stage": "LAST_16",
       "round": "R16",
       "teams": [
@@ -9229,7 +9229,7 @@
           "flag": "\ud83c\uddeb\ud83c\uddf7",
           "manager": "Kerrod",
           "rank": 1,
-          "score": 11.5,
+          "score": 12.2,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -9238,7 +9238,7 @@
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
           "manager": "Mitchell",
           "rank": 2,
-          "score": 10.5,
+          "score": 11.1,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -9247,7 +9247,7 @@
           "flag": "\ud83c\uddf2\ud83c\udde6",
           "manager": "Ryan",
           "rank": 3,
-          "score": 10.5,
+          "score": 11.1,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -9256,7 +9256,7 @@
           "flag": "\ud83c\uddea\ud83c\uddf8",
           "manager": "Jay",
           "rank": 4,
-          "score": 10.4,
+          "score": 11.0,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -9265,7 +9265,16 @@
           "flag": "\ud83c\uddf3\ud83c\uddf4",
           "manager": "Kerrod",
           "rank": 5,
-          "score": 9.7,
+          "score": 10.2,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Belgium",
+          "flag": "\ud83c\udde7\ud83c\uddea",
+          "manager": "Kerrod",
+          "rank": 6,
+          "score": 10.1,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -9273,17 +9282,8 @@
           "name": "Argentina",
           "flag": "\ud83c\udde6\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 6,
-          "score": 9.4,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
-          "name": "Colombia",
-          "flag": "\ud83c\udde8\ud83c\uddf4",
-          "manager": "Jay",
           "rank": 7,
-          "score": 8.0,
+          "score": 10.0,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -9292,25 +9292,16 @@
           "flag": "\ud83c\udde8\ud83c\udded",
           "manager": "Jay",
           "rank": 8,
-          "score": 8.0,
+          "score": 8.5,
           "status": "in",
           "stage": "LAST_32"
         },
         {
-          "name": "United States",
-          "flag": "\ud83c\uddfa\ud83c\uddf8",
-          "manager": "Kerrod",
+          "name": "Colombia",
+          "flag": "\ud83c\udde8\ud83c\uddf4",
+          "manager": "Jay",
           "rank": 9,
-          "score": 7.6,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
-          "name": "Belgium",
-          "flag": "\ud83c\udde7\ud83c\uddea",
-          "manager": "Kerrod",
-          "rank": 10,
-          "score": 7.5,
+          "score": 8.4,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -9318,8 +9309,8 @@
           "name": "Egypt",
           "flag": "\ud83c\uddea\ud83c\uddec",
           "manager": "Jay",
-          "rank": 11,
-          "score": 6.9,
+          "rank": 10,
+          "score": 7.3,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -9327,7 +9318,7 @@
           "name": "Brazil",
           "flag": "\ud83c\udde7\ud83c\uddf7",
           "manager": "Jay",
-          "rank": 12,
+          "rank": 11,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -9336,7 +9327,7 @@
           "name": "Japan",
           "flag": "\ud83c\uddef\ud83c\uddf5",
           "manager": "Jay",
-          "rank": 13,
+          "rank": 12,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9345,7 +9336,7 @@
           "name": "Australia",
           "flag": "\ud83c\udde6\ud83c\uddfa",
           "manager": "Jay",
-          "rank": 14,
+          "rank": 13,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9354,7 +9345,7 @@
           "name": "Algeria",
           "flag": "\ud83c\udde9\ud83c\uddff",
           "manager": "Jay",
-          "rank": 15,
+          "rank": 14,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9363,7 +9354,7 @@
           "name": "Ivory Coast",
           "flag": "\ud83c\udde8\ud83c\uddee",
           "manager": "Jay",
-          "rank": 16,
+          "rank": 15,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9372,7 +9363,7 @@
           "name": "Cape Verde Islands",
           "flag": "\ud83c\udde8\ud83c\uddfb",
           "manager": "Jay",
-          "rank": 17,
+          "rank": 16,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9381,7 +9372,7 @@
           "name": "Bosnia-Herzegovina",
           "flag": "\ud83c\udde7\ud83c\udde6",
           "manager": "Jay",
-          "rank": 18,
+          "rank": 17,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9390,7 +9381,7 @@
           "name": "Ghana",
           "flag": "\ud83c\uddec\ud83c\udded",
           "manager": "Jay",
-          "rank": 19,
+          "rank": 18,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -9398,6 +9389,15 @@
         {
           "name": "Mexico",
           "flag": "\ud83c\uddf2\ud83c\uddfd",
+          "manager": "Kerrod",
+          "rank": 19,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "United States",
+          "flag": "\ud83c\uddfa\ud83c\uddf8",
           "manager": "Kerrod",
           "rank": 20,
           "score": 0.0,
