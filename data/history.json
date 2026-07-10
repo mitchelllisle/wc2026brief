@@ -8781,7 +8781,7 @@
       ]
     },
     {
-      "ts": "2026-07-06T08:19:17.684891+10:00",
+      "ts": "2026-07-06T13:23:47.190565+10:00",
       "stage": "LAST_16",
       "round": "R16",
       "teams": [
@@ -8790,7 +8790,7 @@
           "flag": "\ud83c\uddeb\ud83c\uddf7",
           "manager": "Kerrod",
           "rank": 1,
-          "score": 10.3,
+          "score": 11.0,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -8799,7 +8799,16 @@
           "flag": "\ud83c\uddf2\ud83c\udde6",
           "manager": "Ryan",
           "rank": 2,
-          "score": 9.3,
+          "score": 10.0,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "England",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 3,
+          "score": 9.9,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -8807,8 +8816,8 @@
           "name": "Norway",
           "flag": "\ud83c\uddf3\ud83c\uddf4",
           "manager": "Kerrod",
-          "rank": 3,
-          "score": 8.6,
+          "rank": 4,
+          "score": 9.2,
           "status": "in",
           "stage": "LAST_16"
         },
@@ -8816,17 +8825,8 @@
           "name": "Argentina",
           "flag": "\ud83c\udde6\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 4,
-          "score": 8.4,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
-          "name": "Mexico",
-          "flag": "\ud83c\uddf2\ud83c\uddfd",
-          "manager": "Kerrod",
           "rank": 5,
-          "score": 8.0,
+          "score": 8.9,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8835,16 +8835,7 @@
           "flag": "\ud83c\uddea\ud83c\uddf8",
           "manager": "Jay",
           "rank": 6,
-          "score": 7.5,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
-          "name": "England",
-          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
-          "manager": "Mitchell",
-          "rank": 7,
-          "score": 7.5,
+          "score": 8.0,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8852,8 +8843,8 @@
           "name": "Colombia",
           "flag": "\ud83c\udde8\ud83c\uddf4",
           "manager": "Jay",
-          "rank": 8,
-          "score": 7.1,
+          "rank": 7,
+          "score": 7.6,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8861,8 +8852,8 @@
           "name": "Switzerland",
           "flag": "\ud83c\udde8\ud83c\udded",
           "manager": "Jay",
-          "rank": 9,
-          "score": 7.1,
+          "rank": 8,
+          "score": 7.6,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8870,8 +8861,17 @@
           "name": "United States",
           "flag": "\ud83c\uddfa\ud83c\uddf8",
           "manager": "Kerrod",
+          "rank": 9,
+          "score": 7.2,
+          "status": "in",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "manager": "Ryan",
           "rank": 10,
-          "score": 6.8,
+          "score": 7.1,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8880,16 +8880,7 @@
           "flag": "\ud83c\udde7\ud83c\uddea",
           "manager": "Kerrod",
           "rank": 11,
-          "score": 6.6,
-          "status": "in",
-          "stage": "LAST_32"
-        },
-        {
-          "name": "Portugal",
-          "flag": "\ud83c\uddf5\ud83c\uddf9",
-          "manager": "Ryan",
-          "rank": 12,
-          "score": 6.6,
+          "score": 7.0,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8897,8 +8888,8 @@
           "name": "Egypt",
           "flag": "\ud83c\uddea\ud83c\uddec",
           "manager": "Jay",
-          "rank": 13,
-          "score": 6.2,
+          "rank": 12,
+          "score": 6.6,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -8906,7 +8897,7 @@
           "name": "Brazil",
           "flag": "\ud83c\udde7\ud83c\uddf7",
           "manager": "Jay",
-          "rank": 14,
+          "rank": 13,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -8915,7 +8906,7 @@
           "name": "Japan",
           "flag": "\ud83c\uddef\ud83c\uddf5",
           "manager": "Jay",
-          "rank": 15,
+          "rank": 14,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -8924,7 +8915,7 @@
           "name": "Australia",
           "flag": "\ud83c\udde6\ud83c\uddfa",
           "manager": "Jay",
-          "rank": 16,
+          "rank": 15,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -8933,7 +8924,7 @@
           "name": "Algeria",
           "flag": "\ud83c\udde9\ud83c\uddff",
           "manager": "Jay",
-          "rank": 17,
+          "rank": 16,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -8942,7 +8933,7 @@
           "name": "Ivory Coast",
           "flag": "\ud83c\udde8\ud83c\uddee",
           "manager": "Jay",
-          "rank": 18,
+          "rank": 17,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -8951,7 +8942,7 @@
           "name": "Cape Verde Islands",
           "flag": "\ud83c\udde8\ud83c\uddfb",
           "manager": "Jay",
-          "rank": 19,
+          "rank": 18,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -8960,7 +8951,7 @@
           "name": "Bosnia-Herzegovina",
           "flag": "\ud83c\udde7\ud83c\udde6",
           "manager": "Jay",
-          "rank": 20,
+          "rank": 19,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -8969,10 +8960,19 @@
           "name": "Ghana",
           "flag": "\ud83c\uddec\ud83c\udded",
           "manager": "Jay",
-          "rank": 21,
+          "rank": 20,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
+        },
+        {
+          "name": "Mexico",
+          "flag": "\ud83c\uddf2\ud83c\uddfd",
+          "manager": "Kerrod",
+          "rank": 21,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
         },
         {
           "name": "Uruguay",
@@ -9135,6 +9135,1323 @@
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
+        },
+        {
+          "name": "Germany",
+          "flag": "\ud83c\udde9\ud83c\uddea",
+          "manager": "Ryan",
+          "rank": 40,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Austria",
+          "flag": "\ud83c\udde6\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 41,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "South Korea",
+          "flag": "\ud83c\uddf0\ud83c\uddf7",
+          "manager": "Ryan",
+          "rank": 42,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Paraguay",
+          "flag": "\ud83c\uddf5\ud83c\uddfe",
+          "manager": "Ryan",
+          "rank": 43,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Panama",
+          "flag": "\ud83c\uddf5\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 44,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Congo DR",
+          "flag": "\ud83c\udde8\ud83c\udde9",
+          "manager": "Ryan",
+          "rank": 45,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Iraq",
+          "flag": "\ud83c\uddee\ud83c\uddf6",
+          "manager": "Ryan",
+          "rank": 46,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "South Africa",
+          "flag": "\ud83c\uddff\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 47,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Jordan",
+          "flag": "\ud83c\uddef\ud83c\uddf4",
+          "manager": "Ryan",
+          "rank": 48,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        }
+      ]
+    },
+    {
+      "ts": "2026-07-07T13:02:37.969660+10:00",
+      "stage": "LAST_16",
+      "round": "R16",
+      "teams": [
+        {
+          "name": "France",
+          "flag": "\ud83c\uddeb\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 1,
+          "score": 12.2,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "England",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 2,
+          "score": 11.1,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Morocco",
+          "flag": "\ud83c\uddf2\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 3,
+          "score": 11.1,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "manager": "Jay",
+          "rank": 4,
+          "score": 11.0,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Norway",
+          "flag": "\ud83c\uddf3\ud83c\uddf4",
+          "manager": "Kerrod",
+          "rank": 5,
+          "score": 10.2,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Belgium",
+          "flag": "\ud83c\udde7\ud83c\uddea",
+          "manager": "Kerrod",
+          "rank": 6,
+          "score": 10.1,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Argentina",
+          "flag": "\ud83c\udde6\ud83c\uddf7",
+          "manager": "Mitchell",
+          "rank": 7,
+          "score": 10.0,
+          "status": "in",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Switzerland",
+          "flag": "\ud83c\udde8\ud83c\udded",
+          "manager": "Jay",
+          "rank": 8,
+          "score": 8.5,
+          "status": "in",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Colombia",
+          "flag": "\ud83c\udde8\ud83c\uddf4",
+          "manager": "Jay",
+          "rank": 9,
+          "score": 8.4,
+          "status": "in",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Egypt",
+          "flag": "\ud83c\uddea\ud83c\uddec",
+          "manager": "Jay",
+          "rank": 10,
+          "score": 7.3,
+          "status": "in",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Brazil",
+          "flag": "\ud83c\udde7\ud83c\uddf7",
+          "manager": "Jay",
+          "rank": 11,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Japan",
+          "flag": "\ud83c\uddef\ud83c\uddf5",
+          "manager": "Jay",
+          "rank": 12,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Australia",
+          "flag": "\ud83c\udde6\ud83c\uddfa",
+          "manager": "Jay",
+          "rank": 13,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Algeria",
+          "flag": "\ud83c\udde9\ud83c\uddff",
+          "manager": "Jay",
+          "rank": 14,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ivory Coast",
+          "flag": "\ud83c\udde8\ud83c\uddee",
+          "manager": "Jay",
+          "rank": 15,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Cape Verde Islands",
+          "flag": "\ud83c\udde8\ud83c\uddfb",
+          "manager": "Jay",
+          "rank": 16,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Bosnia-Herzegovina",
+          "flag": "\ud83c\udde7\ud83c\udde6",
+          "manager": "Jay",
+          "rank": 17,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ghana",
+          "flag": "\ud83c\uddec\ud83c\udded",
+          "manager": "Jay",
+          "rank": 18,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Mexico",
+          "flag": "\ud83c\uddf2\ud83c\uddfd",
+          "manager": "Kerrod",
+          "rank": 19,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "United States",
+          "flag": "\ud83c\uddfa\ud83c\uddf8",
+          "manager": "Kerrod",
+          "rank": 20,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Uruguay",
+          "flag": "\ud83c\uddfa\ud83c\uddfe",
+          "manager": "Kerrod",
+          "rank": 21,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Iran",
+          "flag": "\ud83c\uddee\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 22,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Turkey",
+          "flag": "\ud83c\uddf9\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 23,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Tunisia",
+          "flag": "\ud83c\uddf9\ud83c\uddf3",
+          "manager": "Kerrod",
+          "rank": 24,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Qatar",
+          "flag": "\ud83c\uddf6\ud83c\udde6",
+          "manager": "Kerrod",
+          "rank": 25,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Cura\u00e7ao",
+          "flag": "\ud83c\udde8\ud83c\uddfc",
+          "manager": "Kerrod",
+          "rank": 26,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "New Zealand",
+          "flag": "\ud83c\uddf3\ud83c\uddff",
+          "manager": "Kerrod",
+          "rank": 27,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Croatia",
+          "flag": "\ud83c\udded\ud83c\uddf7",
+          "manager": "Mitchell",
+          "rank": 28,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Senegal",
+          "flag": "\ud83c\uddf8\ud83c\uddf3",
+          "manager": "Mitchell",
+          "rank": 29,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ecuador",
+          "flag": "\ud83c\uddea\ud83c\udde8",
+          "manager": "Mitchell",
+          "rank": 30,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Canada",
+          "flag": "\ud83c\udde8\ud83c\udde6",
+          "manager": "Mitchell",
+          "rank": 31,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Sweden",
+          "flag": "\ud83c\uddf8\ud83c\uddea",
+          "manager": "Mitchell",
+          "rank": 32,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Czechia",
+          "flag": "\ud83c\udde8\ud83c\uddff",
+          "manager": "Mitchell",
+          "rank": 33,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Scotland",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 34,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Uzbekistan",
+          "flag": "\ud83c\uddfa\ud83c\uddff",
+          "manager": "Mitchell",
+          "rank": 35,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Saudi Arabia",
+          "flag": "\ud83c\uddf8\ud83c\udde6",
+          "manager": "Mitchell",
+          "rank": 36,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Haiti",
+          "flag": "\ud83c\udded\ud83c\uddf9",
+          "manager": "Mitchell",
+          "rank": 37,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 38,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Netherlands",
+          "flag": "\ud83c\uddf3\ud83c\uddf1",
+          "manager": "Ryan",
+          "rank": 39,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Germany",
+          "flag": "\ud83c\udde9\ud83c\uddea",
+          "manager": "Ryan",
+          "rank": 40,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Austria",
+          "flag": "\ud83c\udde6\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 41,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "South Korea",
+          "flag": "\ud83c\uddf0\ud83c\uddf7",
+          "manager": "Ryan",
+          "rank": 42,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Paraguay",
+          "flag": "\ud83c\uddf5\ud83c\uddfe",
+          "manager": "Ryan",
+          "rank": 43,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Panama",
+          "flag": "\ud83c\uddf5\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 44,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Congo DR",
+          "flag": "\ud83c\udde8\ud83c\udde9",
+          "manager": "Ryan",
+          "rank": 45,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Iraq",
+          "flag": "\ud83c\uddee\ud83c\uddf6",
+          "manager": "Ryan",
+          "rank": 46,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "South Africa",
+          "flag": "\ud83c\uddff\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 47,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Jordan",
+          "flag": "\ud83c\uddef\ud83c\uddf4",
+          "manager": "Ryan",
+          "rank": 48,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        }
+      ]
+    },
+    {
+      "ts": "2026-07-08T10:23:41.029336+10:00",
+      "stage": "LAST_16",
+      "round": "R16",
+      "teams": [
+        {
+          "name": "France",
+          "flag": "\ud83c\uddeb\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 1,
+          "score": 13.8,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Argentina",
+          "flag": "\ud83c\udde6\ud83c\uddf7",
+          "manager": "Mitchell",
+          "rank": 2,
+          "score": 13.7,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "England",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 3,
+          "score": 12.5,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Morocco",
+          "flag": "\ud83c\uddf2\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 4,
+          "score": 12.5,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "manager": "Jay",
+          "rank": 5,
+          "score": 12.4,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Switzerland",
+          "flag": "\ud83c\udde8\ud83c\udded",
+          "manager": "Jay",
+          "rank": 6,
+          "score": 12.2,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Norway",
+          "flag": "\ud83c\uddf3\ud83c\uddf4",
+          "manager": "Kerrod",
+          "rank": 7,
+          "score": 11.5,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Belgium",
+          "flag": "\ud83c\udde7\ud83c\uddea",
+          "manager": "Kerrod",
+          "rank": 8,
+          "score": 11.4,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Brazil",
+          "flag": "\ud83c\udde7\ud83c\uddf7",
+          "manager": "Jay",
+          "rank": 9,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Colombia",
+          "flag": "\ud83c\udde8\ud83c\uddf4",
+          "manager": "Jay",
+          "rank": 10,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Japan",
+          "flag": "\ud83c\uddef\ud83c\uddf5",
+          "manager": "Jay",
+          "rank": 11,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Australia",
+          "flag": "\ud83c\udde6\ud83c\uddfa",
+          "manager": "Jay",
+          "rank": 12,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Egypt",
+          "flag": "\ud83c\uddea\ud83c\uddec",
+          "manager": "Jay",
+          "rank": 13,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Algeria",
+          "flag": "\ud83c\udde9\ud83c\uddff",
+          "manager": "Jay",
+          "rank": 14,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ivory Coast",
+          "flag": "\ud83c\udde8\ud83c\uddee",
+          "manager": "Jay",
+          "rank": 15,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Cape Verde Islands",
+          "flag": "\ud83c\udde8\ud83c\uddfb",
+          "manager": "Jay",
+          "rank": 16,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Bosnia-Herzegovina",
+          "flag": "\ud83c\udde7\ud83c\udde6",
+          "manager": "Jay",
+          "rank": 17,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ghana",
+          "flag": "\ud83c\uddec\ud83c\udded",
+          "manager": "Jay",
+          "rank": 18,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Mexico",
+          "flag": "\ud83c\uddf2\ud83c\uddfd",
+          "manager": "Kerrod",
+          "rank": 19,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "United States",
+          "flag": "\ud83c\uddfa\ud83c\uddf8",
+          "manager": "Kerrod",
+          "rank": 20,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Uruguay",
+          "flag": "\ud83c\uddfa\ud83c\uddfe",
+          "manager": "Kerrod",
+          "rank": 21,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Iran",
+          "flag": "\ud83c\uddee\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 22,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Turkey",
+          "flag": "\ud83c\uddf9\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 23,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Tunisia",
+          "flag": "\ud83c\uddf9\ud83c\uddf3",
+          "manager": "Kerrod",
+          "rank": 24,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Qatar",
+          "flag": "\ud83c\uddf6\ud83c\udde6",
+          "manager": "Kerrod",
+          "rank": 25,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Cura\u00e7ao",
+          "flag": "\ud83c\udde8\ud83c\uddfc",
+          "manager": "Kerrod",
+          "rank": 26,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "New Zealand",
+          "flag": "\ud83c\uddf3\ud83c\uddff",
+          "manager": "Kerrod",
+          "rank": 27,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Croatia",
+          "flag": "\ud83c\udded\ud83c\uddf7",
+          "manager": "Mitchell",
+          "rank": 28,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Senegal",
+          "flag": "\ud83c\uddf8\ud83c\uddf3",
+          "manager": "Mitchell",
+          "rank": 29,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ecuador",
+          "flag": "\ud83c\uddea\ud83c\udde8",
+          "manager": "Mitchell",
+          "rank": 30,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Canada",
+          "flag": "\ud83c\udde8\ud83c\udde6",
+          "manager": "Mitchell",
+          "rank": 31,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Sweden",
+          "flag": "\ud83c\uddf8\ud83c\uddea",
+          "manager": "Mitchell",
+          "rank": 32,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Czechia",
+          "flag": "\ud83c\udde8\ud83c\uddff",
+          "manager": "Mitchell",
+          "rank": 33,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Scotland",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 34,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Uzbekistan",
+          "flag": "\ud83c\uddfa\ud83c\uddff",
+          "manager": "Mitchell",
+          "rank": 35,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Saudi Arabia",
+          "flag": "\ud83c\uddf8\ud83c\udde6",
+          "manager": "Mitchell",
+          "rank": 36,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Haiti",
+          "flag": "\ud83c\udded\ud83c\uddf9",
+          "manager": "Mitchell",
+          "rank": 37,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 38,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Netherlands",
+          "flag": "\ud83c\uddf3\ud83c\uddf1",
+          "manager": "Ryan",
+          "rank": 39,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Germany",
+          "flag": "\ud83c\udde9\ud83c\uddea",
+          "manager": "Ryan",
+          "rank": 40,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Austria",
+          "flag": "\ud83c\udde6\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 41,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "South Korea",
+          "flag": "\ud83c\uddf0\ud83c\uddf7",
+          "manager": "Ryan",
+          "rank": 42,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Paraguay",
+          "flag": "\ud83c\uddf5\ud83c\uddfe",
+          "manager": "Ryan",
+          "rank": 43,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Panama",
+          "flag": "\ud83c\uddf5\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 44,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Congo DR",
+          "flag": "\ud83c\udde8\ud83c\udde9",
+          "manager": "Ryan",
+          "rank": 45,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Iraq",
+          "flag": "\ud83c\uddee\ud83c\uddf6",
+          "manager": "Ryan",
+          "rank": 46,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "South Africa",
+          "flag": "\ud83c\uddff\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 47,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Jordan",
+          "flag": "\ud83c\uddef\ud83c\uddf4",
+          "manager": "Ryan",
+          "rank": 48,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        }
+      ]
+    },
+    {
+      "ts": "2026-07-10T08:29:24.937838+10:00",
+      "stage": "QUARTER_FINALS",
+      "round": "QF",
+      "teams": [
+        {
+          "name": "France",
+          "flag": "\ud83c\uddeb\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 1,
+          "score": 18.2,
+          "status": "in",
+          "stage": "QUARTER_FINALS"
+        },
+        {
+          "name": "Argentina",
+          "flag": "\ud83c\udde6\ud83c\uddf7",
+          "manager": "Mitchell",
+          "rank": 2,
+          "score": 15.2,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "manager": "Jay",
+          "rank": 3,
+          "score": 13.8,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "England",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 4,
+          "score": 13.8,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Switzerland",
+          "flag": "\ud83c\udde8\ud83c\udded",
+          "manager": "Jay",
+          "rank": 5,
+          "score": 13.6,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Norway",
+          "flag": "\ud83c\uddf3\ud83c\uddf4",
+          "manager": "Kerrod",
+          "rank": 6,
+          "score": 12.8,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Belgium",
+          "flag": "\ud83c\udde7\ud83c\uddea",
+          "manager": "Kerrod",
+          "rank": 7,
+          "score": 12.6,
+          "status": "in",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Brazil",
+          "flag": "\ud83c\udde7\ud83c\uddf7",
+          "manager": "Jay",
+          "rank": 8,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Colombia",
+          "flag": "\ud83c\udde8\ud83c\uddf4",
+          "manager": "Jay",
+          "rank": 9,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Japan",
+          "flag": "\ud83c\uddef\ud83c\uddf5",
+          "manager": "Jay",
+          "rank": 10,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Australia",
+          "flag": "\ud83c\udde6\ud83c\uddfa",
+          "manager": "Jay",
+          "rank": 11,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Egypt",
+          "flag": "\ud83c\uddea\ud83c\uddec",
+          "manager": "Jay",
+          "rank": 12,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Algeria",
+          "flag": "\ud83c\udde9\ud83c\uddff",
+          "manager": "Jay",
+          "rank": 13,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ivory Coast",
+          "flag": "\ud83c\udde8\ud83c\uddee",
+          "manager": "Jay",
+          "rank": 14,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Cape Verde Islands",
+          "flag": "\ud83c\udde8\ud83c\uddfb",
+          "manager": "Jay",
+          "rank": 15,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Bosnia-Herzegovina",
+          "flag": "\ud83c\udde7\ud83c\udde6",
+          "manager": "Jay",
+          "rank": 16,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ghana",
+          "flag": "\ud83c\uddec\ud83c\udded",
+          "manager": "Jay",
+          "rank": 17,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Mexico",
+          "flag": "\ud83c\uddf2\ud83c\uddfd",
+          "manager": "Kerrod",
+          "rank": 18,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "United States",
+          "flag": "\ud83c\uddfa\ud83c\uddf8",
+          "manager": "Kerrod",
+          "rank": 19,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Uruguay",
+          "flag": "\ud83c\uddfa\ud83c\uddfe",
+          "manager": "Kerrod",
+          "rank": 20,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Iran",
+          "flag": "\ud83c\uddee\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 21,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Turkey",
+          "flag": "\ud83c\uddf9\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 22,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Tunisia",
+          "flag": "\ud83c\uddf9\ud83c\uddf3",
+          "manager": "Kerrod",
+          "rank": 23,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Qatar",
+          "flag": "\ud83c\uddf6\ud83c\udde6",
+          "manager": "Kerrod",
+          "rank": 24,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Cura\u00e7ao",
+          "flag": "\ud83c\udde8\ud83c\uddfc",
+          "manager": "Kerrod",
+          "rank": 25,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "New Zealand",
+          "flag": "\ud83c\uddf3\ud83c\uddff",
+          "manager": "Kerrod",
+          "rank": 26,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Croatia",
+          "flag": "\ud83c\udded\ud83c\uddf7",
+          "manager": "Mitchell",
+          "rank": 27,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Senegal",
+          "flag": "\ud83c\uddf8\ud83c\uddf3",
+          "manager": "Mitchell",
+          "rank": 28,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Ecuador",
+          "flag": "\ud83c\uddea\ud83c\udde8",
+          "manager": "Mitchell",
+          "rank": 29,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Canada",
+          "flag": "\ud83c\udde8\ud83c\udde6",
+          "manager": "Mitchell",
+          "rank": 30,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Sweden",
+          "flag": "\ud83c\uddf8\ud83c\uddea",
+          "manager": "Mitchell",
+          "rank": 31,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Czechia",
+          "flag": "\ud83c\udde8\ud83c\uddff",
+          "manager": "Mitchell",
+          "rank": 32,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Scotland",
+          "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc73\udb40\udc63\udb40\udc74\udb40\udc7f",
+          "manager": "Mitchell",
+          "rank": 33,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Uzbekistan",
+          "flag": "\ud83c\uddfa\ud83c\uddff",
+          "manager": "Mitchell",
+          "rank": 34,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Saudi Arabia",
+          "flag": "\ud83c\uddf8\ud83c\udde6",
+          "manager": "Mitchell",
+          "rank": 35,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Haiti",
+          "flag": "\ud83c\udded\ud83c\uddf9",
+          "manager": "Mitchell",
+          "rank": 36,
+          "score": 0.0,
+          "status": "out",
+          "stage": "GROUP_STAGE"
+        },
+        {
+          "name": "Portugal",
+          "flag": "\ud83c\uddf5\ud83c\uddf9",
+          "manager": "Ryan",
+          "rank": 37,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_16"
+        },
+        {
+          "name": "Netherlands",
+          "flag": "\ud83c\uddf3\ud83c\uddf1",
+          "manager": "Ryan",
+          "rank": 38,
+          "score": 0.0,
+          "status": "out",
+          "stage": "LAST_32"
+        },
+        {
+          "name": "Morocco",
+          "flag": "\ud83c\uddf2\ud83c\udde6",
+          "manager": "Ryan",
+          "rank": 39,
+          "score": 0.0,
+          "status": "out",
+          "stage": "QUARTER_FINALS"
         },
         {
           "name": "Germany",
