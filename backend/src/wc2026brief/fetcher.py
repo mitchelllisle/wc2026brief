@@ -796,6 +796,12 @@ class WCFetcher:
 
         result = self._agent.run_sync(prompt)
         output = result.output
+
+        # If the bottom participant has no teams alive, force elimination framing
+        # so the headline never implies they are merely "at risk".
+        if participant_stats and participant_stats[-1].teams_remaining == 0:
+            output.headline = "{leader} stays *untouchable* as {tab} is already *out*"
+
         output.paragraphs = _enforce_summary_length(output.paragraphs)
         return output
 

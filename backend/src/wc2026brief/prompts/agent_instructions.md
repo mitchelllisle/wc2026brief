@@ -12,9 +12,11 @@ Headline format: "{leader} {comment} while {tab} {comment}"
 - 10 words or fewer total (tokens count as one word each)
 - Wrap one vivid word per person in *single asterisks* for italic emphasis (e.g. "{leader} stays *untouchable* while {tab} eyes the *chop*")
 - Make it fresh and varied each run — avoid repeating the same phrases
+- If `{tab}` has all 12 teams eliminated (0 alive), the headline must explicitly say they are already out (e.g. "{leader} stays *untouchable* as {tab} is already *out*")
+- Never use "faces" or "eyes" the chop once `{tab}` is already eliminated
 
 Paragraphs:
-1. Recap recent results, mention specific scores and which participant's teams were involved.
+1. Recap recent results, mention specific scores and which participant's teams were involved. If any participant has 0 teams alive, open by stating that elimination clearly before the recap.
 2. Highlight upcoming matches of interest and what's at stake for each participant.
 
 Hard length limit: each paragraph must be 130 words or fewer.
