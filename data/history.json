@@ -10976,7 +10976,7 @@
       ]
     },
     {
-      "ts": "2026-07-12T10:23:18.609354+10:00",
+      "ts": "2026-07-12T15:03:05.762564+10:00",
       "stage": "QUARTER_FINALS",
       "round": "QF",
       "teams": [
@@ -10985,16 +10985,7 @@
           "flag": "\ud83c\uddeb\ud83c\uddf7",
           "manager": "Kerrod",
           "rank": 1,
-          "score": 20.2,
-          "status": "in",
-          "stage": "QUARTER_FINALS"
-        },
-        {
-          "name": "Spain",
-          "flag": "\ud83c\uddea\ud83c\uddf8",
-          "manager": "Jay",
-          "rank": 2,
-          "score": 18.5,
+          "score": 22.8,
           "status": "in",
           "stage": "QUARTER_FINALS"
         },
@@ -11002,35 +10993,35 @@
           "name": "Argentina",
           "flag": "\ud83c\udde6\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 3,
-          "score": 16.8,
+          "rank": 2,
+          "score": 22.8,
           "status": "in",
-          "stage": "LAST_16"
+          "stage": "QUARTER_FINALS"
+        },
+        {
+          "name": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "manager": "Jay",
+          "rank": 3,
+          "score": 20.9,
+          "status": "in",
+          "stage": "QUARTER_FINALS"
         },
         {
           "name": "England",
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
           "manager": "Mitchell",
           "rank": 4,
-          "score": 16.4,
+          "score": 18.6,
           "status": "in",
           "stage": "QUARTER_FINALS"
-        },
-        {
-          "name": "Switzerland",
-          "flag": "\ud83c\udde8\ud83c\udded",
-          "manager": "Jay",
-          "rank": 5,
-          "score": 15.0,
-          "status": "in",
-          "stage": "LAST_16"
         },
         {
           "name": "Mexico",
           "flag": "\ud83c\uddf2\ud83c\uddfd",
           "manager": "Kerrod",
-          "rank": 6,
-          "score": 13.1,
+          "rank": 5,
+          "score": 14.9,
           "status": "in",
           "stage": "LAST_32"
         },
@@ -11038,7 +11029,7 @@
           "name": "Brazil",
           "flag": "\ud83c\udde7\ud83c\uddf7",
           "manager": "Jay",
-          "rank": 7,
+          "rank": 6,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -11047,7 +11038,7 @@
           "name": "Colombia",
           "flag": "\ud83c\udde8\ud83c\uddf4",
           "manager": "Jay",
-          "rank": 8,
+          "rank": 7,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -11056,10 +11047,19 @@
           "name": "Japan",
           "flag": "\ud83c\uddef\ud83c\uddf5",
           "manager": "Jay",
-          "rank": 9,
+          "rank": 8,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
+        },
+        {
+          "name": "Switzerland",
+          "flag": "\ud83c\udde8\ud83c\udded",
+          "manager": "Jay",
+          "rank": 9,
+          "score": 0.0,
+          "status": "out",
+          "stage": "QUARTER_FINALS"
         },
         {
           "name": "Australia",
