@@ -11415,25 +11415,25 @@
       ]
     },
     {
-      "ts": "2026-07-15T06:23:47.525708+10:00",
-      "stage": "QUARTER_FINALS",
-      "round": "QF",
+      "ts": "2026-07-15T08:19:36.932349+10:00",
+      "stage": "SEMI_FINALS",
+      "round": "SF",
       "teams": [
+        {
+          "name": "Spain",
+          "flag": "\ud83c\uddea\ud83c\uddf8",
+          "manager": "Jay",
+          "rank": 1,
+          "score": 36.2,
+          "status": "in",
+          "stage": "SEMI_FINALS"
+        },
         {
           "name": "Argentina",
           "flag": "\ud83c\udde6\ud83c\uddf7",
           "manager": "Mitchell",
-          "rank": 1,
-          "score": 26.1,
-          "status": "in",
-          "stage": "QUARTER_FINALS"
-        },
-        {
-          "name": "France",
-          "flag": "\ud83c\uddeb\ud83c\uddf7",
-          "manager": "Kerrod",
           "rank": 2,
-          "score": 26.0,
+          "score": 33.2,
           "status": "in",
           "stage": "QUARTER_FINALS"
         },
@@ -11442,16 +11442,7 @@
           "flag": "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
           "manager": "Mitchell",
           "rank": 3,
-          "score": 24.0,
-          "status": "in",
-          "stage": "QUARTER_FINALS"
-        },
-        {
-          "name": "Spain",
-          "flag": "\ud83c\uddea\ud83c\uddf8",
-          "manager": "Jay",
-          "rank": 4,
-          "score": 23.9,
+          "score": 30.5,
           "status": "in",
           "stage": "QUARTER_FINALS"
         },
@@ -11459,7 +11450,7 @@
           "name": "Brazil",
           "flag": "\ud83c\udde7\ud83c\uddf7",
           "manager": "Jay",
-          "rank": 5,
+          "rank": 4,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -11468,7 +11459,7 @@
           "name": "Colombia",
           "flag": "\ud83c\udde8\ud83c\uddf4",
           "manager": "Jay",
-          "rank": 6,
+          "rank": 5,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -11477,7 +11468,7 @@
           "name": "Japan",
           "flag": "\ud83c\uddef\ud83c\uddf5",
           "manager": "Jay",
-          "rank": 7,
+          "rank": 6,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -11486,7 +11477,7 @@
           "name": "Switzerland",
           "flag": "\ud83c\udde8\ud83c\udded",
           "manager": "Jay",
-          "rank": 8,
+          "rank": 7,
           "score": 0.0,
           "status": "out",
           "stage": "QUARTER_FINALS"
@@ -11495,7 +11486,7 @@
           "name": "Australia",
           "flag": "\ud83c\udde6\ud83c\uddfa",
           "manager": "Jay",
-          "rank": 9,
+          "rank": 8,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -11504,7 +11495,7 @@
           "name": "Egypt",
           "flag": "\ud83c\uddea\ud83c\uddec",
           "manager": "Jay",
-          "rank": 10,
+          "rank": 9,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_16"
@@ -11513,7 +11504,7 @@
           "name": "Algeria",
           "flag": "\ud83c\udde9\ud83c\uddff",
           "manager": "Jay",
-          "rank": 11,
+          "rank": 10,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -11522,7 +11513,7 @@
           "name": "Ivory Coast",
           "flag": "\ud83c\udde8\ud83c\uddee",
           "manager": "Jay",
-          "rank": 12,
+          "rank": 11,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -11531,7 +11522,7 @@
           "name": "Cape Verde Islands",
           "flag": "\ud83c\udde8\ud83c\uddfb",
           "manager": "Jay",
-          "rank": 13,
+          "rank": 12,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -11540,7 +11531,7 @@
           "name": "Bosnia-Herzegovina",
           "flag": "\ud83c\udde7\ud83c\udde6",
           "manager": "Jay",
-          "rank": 14,
+          "rank": 13,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
@@ -11549,10 +11540,19 @@
           "name": "Ghana",
           "flag": "\ud83c\uddec\ud83c\udded",
           "manager": "Jay",
-          "rank": 15,
+          "rank": 14,
           "score": 0.0,
           "status": "out",
           "stage": "LAST_32"
+        },
+        {
+          "name": "France",
+          "flag": "\ud83c\uddeb\ud83c\uddf7",
+          "manager": "Kerrod",
+          "rank": 15,
+          "score": 0.0,
+          "status": "out",
+          "stage": "SEMI_FINALS"
         },
         {
           "name": "Belgium",

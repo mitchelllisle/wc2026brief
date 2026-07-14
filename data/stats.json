@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-15T06:23:47.525708+10:00",
-  "stage": "QUARTER_FINALS",
+  "generated_at": "2026-07-15T08:19:36.932349+10:00",
+  "stage": "SEMI_FINALS",
   "headline": "{leader} stays *untouchable* as {tab} is already *out*",
   "summary": [
-    "**Ryan** is done — all 12 teams eliminated, zero alive, and the Secretary duties are officially his for the next 12 months. Elsewhere, **Mitchell** sits comfortably on top with **2 teams alive** and a massive **50.1% strength rating**, while **Jay** and **Kerrod** are each clinging on with just **1 team remaining**. The group stage carnage has been brutal across the board, with combined records telling the story — Jay's teams went **24W-15D-16L**, Kerrod's **21W-10D-18L**, and Mitchell's **19W-7D-22L** — survival mattering far more than wins at this point.",
-    "The mouth-watering one to watch is **England vs Argentina** on **Thursday 16 July at 5:00AM AEST** — and incredibly, **Mitchell** owns **both** teams, meaning he literally cannot lose this one. It's a guaranteed points boost either way, and with Jay and Kerrod each down to their last team, Mitchell extending his lead here could be the knockout blow. The other upcoming slots show no remaining teams involved, so all eyes are firmly on that all-Mitchell blockbuster to shape the final standings."
+    "Both **Kerrod** and **Ryan** have been fully eliminated — every single one of their 12 teams is out. **Mitchell** leads the sweep with **2 teams alive** (**Argentina** and **England**) and a massive **63.7% strength**, while **Jay** is hanging on with just **1 team alive** at **36.2%**. Recent results have whittled the field down brutally, with Mitchell's and Jay's squads bearing the brunt of the late group-stage carnage across a combined **19W-7D-22L** and **25W-15D-16L** records respectively.",
+    "The match to watch is **England vs Argentina** on **Thursday 16 July at 5:00AM AEST** — a mouth-watering knockout clash that is pure **Mitchell vs Mitchell**, with both sides his. Whoever wins, he keeps a team alive; if it's a draw after extra time, penalties will decide. **Jay** has no involvement in any of the three upcoming fixtures, so he's left sweating on his sole survivor elsewhere. Mitchell is firmly in the box seat — can Jay's last team cause an upset and close the gap?"
   ],
   "leaderboard": [
     {
@@ -26,21 +26,21 @@
       "eliminated": 11,
       "at_risk": 0,
       "record": {
-        "w": 24,
+        "w": 25,
         "d": 15,
         "l": 16
       }
     },
     {
       "name": "Kerrod",
-      "teams_remaining": 1,
+      "teams_remaining": 0,
       "teams_total": 12,
-      "eliminated": 11,
+      "eliminated": 12,
       "at_risk": 0,
       "record": {
         "w": 21,
         "d": 10,
-        "l": 18
+        "l": 19
       }
     },
     {
@@ -394,11 +394,6 @@
         "form": [
           {
             "result": "W",
-            "opponent": "Saudi Arabia",
-            "score": "4–0"
-          },
-          {
-            "result": "W",
             "opponent": "Uruguay",
             "score": "1–0"
           },
@@ -416,6 +411,11 @@
             "result": "W",
             "opponent": "Belgium",
             "score": "2–1"
+          },
+          {
+            "result": "W",
+            "opponent": "France",
+            "score": "2–0"
           }
         ]
       },
@@ -752,14 +752,9 @@
       {
         "name": "France",
         "flag": "🇫🇷",
-        "status": "in",
-        "last_result": "W",
+        "status": "out",
+        "last_result": "L",
         "form": [
-          {
-            "result": "W",
-            "opponent": "Iraq",
-            "score": "3–0"
-          },
           {
             "result": "W",
             "opponent": "Norway",
@@ -779,6 +774,11 @@
             "result": "W",
             "opponent": "Morocco",
             "score": "2–0"
+          },
+          {
+            "result": "L",
+            "opponent": "Spain",
+            "score": "0–2"
           }
         ]
       },
@@ -1412,6 +1412,15 @@
   },
   "recent_results": [
     {
+      "h_code": "FRA",
+      "h_flag": "🇫🇷",
+      "hs": 0,
+      "a_code": "ESP",
+      "a_flag": "🇪🇸",
+      "as": 2,
+      "group": "SF"
+    },
+    {
       "h_code": "ARG",
       "h_flag": "🇦🇷",
       "hs": 3,
@@ -1617,39 +1626,30 @@
       "a_flag": "🇸🇪",
       "as": 0,
       "group": "KO"
-    },
-    {
-      "h_code": "CIV",
-      "h_flag": "🇨🇮",
-      "hs": 1,
-      "a_code": "NOR",
-      "a_flag": "🇳🇴",
-      "as": 2,
-      "group": "KO"
     }
   ],
   "projections": {
     "managers": [
       {
         "name": "Mitchell",
-        "title_probability": 50.1,
+        "title_probability": 63.7,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Argentina",
-        "delta": 8.7
-      },
-      {
-        "name": "Kerrod",
-        "title_probability": 26.0,
-        "expected_teams_next_stage": 0.0,
-        "favourite_team": "France",
-        "delta": -0.1
+        "delta": 13.6
       },
       {
         "name": "Jay",
-        "title_probability": 23.9,
+        "title_probability": 36.2,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "Spain",
-        "delta": 3.0
+        "delta": 12.3
+      },
+      {
+        "name": "Kerrod",
+        "title_probability": 0.0,
+        "expected_teams_next_stage": 0.0,
+        "favourite_team": "France",
+        "delta": -26.0
       },
       {
         "name": "Ryan",
@@ -1661,11 +1661,28 @@
     ],
     "teams": [
       {
+        "name": "Spain",
+        "flag": "🇪🇸",
+        "manager": "Jay",
+        "status": "in",
+        "title_probability": 36.2,
+        "fifa_rank": 1,
+        "title_breakdown": {
+          "form_score": 0.829,
+          "stage_score": 0.8,
+          "rank_score": 1.0,
+          "stage_label": "Semi-final",
+          "form_weight": 0.66,
+          "rank_weight": 0.04
+        },
+        "delta": 12.3
+      },
+      {
         "name": "Argentina",
         "flag": "🇦🇷",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 26.1,
+        "title_probability": 33.2,
         "fifa_rank": 3,
         "title_breakdown": {
           "form_score": 0.807,
@@ -1675,31 +1692,14 @@
           "form_weight": 0.62,
           "rank_weight": 0.08
         },
-        "delta": 3.3
-      },
-      {
-        "name": "France",
-        "flag": "🇫🇷",
-        "manager": "Kerrod",
-        "status": "in",
-        "title_probability": 26.0,
-        "fifa_rank": 2,
-        "title_breakdown": {
-          "form_score": 0.803,
-          "stage_score": 0.6,
-          "rank_score": 0.988,
-          "stage_label": "Quarter-final",
-          "form_weight": 0.62,
-          "rank_weight": 0.08
-        },
-        "delta": -0.1
+        "delta": 7.1
       },
       {
         "name": "England",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "manager": "Mitchell",
         "status": "in",
-        "title_probability": 24.0,
+        "title_probability": 30.5,
         "fifa_rank": 4,
         "title_breakdown": {
           "form_score": 0.71,
@@ -1709,24 +1709,7 @@
           "form_weight": 0.62,
           "rank_weight": 0.08
         },
-        "delta": 5.4
-      },
-      {
-        "name": "Spain",
-        "flag": "🇪🇸",
-        "manager": "Jay",
-        "status": "in",
-        "title_probability": 23.9,
-        "fifa_rank": 1,
-        "title_breakdown": {
-          "form_score": 0.703,
-          "stage_score": 0.6,
-          "rank_score": 1.0,
-          "stage_label": "Quarter-final",
-          "form_weight": 0.62,
-          "rank_weight": 0.08
-        },
-        "delta": 3.0
+        "delta": 6.5
       },
       {
         "name": "Brazil",
@@ -1914,6 +1897,23 @@
           "rank_weight": 0.16
         },
         "delta": -1.9
+      },
+      {
+        "name": "France",
+        "flag": "🇫🇷",
+        "manager": "Kerrod",
+        "status": "out",
+        "title_probability": 0.0,
+        "fifa_rank": 2,
+        "title_breakdown": {
+          "form_score": 0.796,
+          "stage_score": 0.8,
+          "rank_score": 0.988,
+          "stage_label": "Semi-final",
+          "form_weight": 0.66,
+          "rank_weight": 0.04
+        },
+        "delta": -26.0
       },
       {
         "name": "Belgium",
