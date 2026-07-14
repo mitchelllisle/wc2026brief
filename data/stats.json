@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-15T04:21:40.905753+10:00",
+  "generated_at": "2026-07-15T06:23:47.525708+10:00",
   "stage": "QUARTER_FINALS",
   "headline": "{leader} stays *untouchable* as {tab} is already *out*",
   "summary": [
-    "**Ryan** is cooked — all **12** teams eliminated, securing his spot as Secretary before the tournament is even done. Meanwhile, the race for glory is very much alive: **Mitchell** leads with **2 teams** still standing (**England** and **Argentina**), giving him a commanding **50.1%** strength rating. **Jay** (**Spain**, 1 alive) and **Kerrod** (**France**, 1 alive) are both clinging on with their sole survivors. It's a three-horse race with Mitchell firmly in front.",
-    "The big ones are coming thick and fast. **Kerrod's France** face **Jay's Spain** on **Wednesday 15 July at 5:00AM AEST** — an enormous clash where one survivor could be sent packing and the other books a massive result. Then on **Thursday 16 July at 5:00AM AEST**, **Mitchell's England** take on **Mitchell's Argentina** — a stunning all-Mitchell semi that guarantees he keeps at least one team alive going deep into the tournament. Buckle up."
+    "**Ryan** is done — all 12 teams eliminated, zero alive, and the Secretary duties are officially his for the next 12 months. Elsewhere, **Mitchell** sits comfortably on top with **2 teams alive** and a massive **50.1% strength rating**, while **Jay** and **Kerrod** are each clinging on with just **1 team remaining**. The group stage carnage has been brutal across the board, with combined records telling the story — Jay's teams went **24W-15D-16L**, Kerrod's **21W-10D-18L**, and Mitchell's **19W-7D-22L** — survival mattering far more than wins at this point.",
+    "The mouth-watering one to watch is **England vs Argentina** on **Thursday 16 July at 5:00AM AEST** — and incredibly, **Mitchell** owns **both** teams, meaning he literally cannot lose this one. It's a guaranteed points boost either way, and with Jay and Kerrod each down to their last team, Mitchell extending his lead here could be the knockout blow. The other upcoming slots show no remaining teams involved, so all eyes are firmly on that all-Mitchell blockbuster to shape the final standings."
   ],
   "leaderboard": [
     {
@@ -1639,10 +1639,10 @@
       },
       {
         "name": "Kerrod",
-        "title_probability": 26.1,
+        "title_probability": 26.0,
         "expected_teams_next_stage": 0.0,
         "favourite_team": "France",
-        "delta": -11.6
+        "delta": -0.1
       },
       {
         "name": "Jay",
@@ -1661,16 +1661,16 @@
     ],
     "teams": [
       {
-        "name": "France",
-        "flag": "🇫🇷",
-        "manager": "Kerrod",
+        "name": "Argentina",
+        "flag": "🇦🇷",
+        "manager": "Mitchell",
         "status": "in",
         "title_probability": 26.1,
-        "fifa_rank": 1,
+        "fifa_rank": 3,
         "title_breakdown": {
-          "form_score": 0.803,
+          "form_score": 0.807,
           "stage_score": 0.6,
-          "rank_score": 1.0,
+          "rank_score": 0.975,
           "stage_label": "Quarter-final",
           "form_weight": 0.62,
           "rank_weight": 0.08
@@ -1678,21 +1678,21 @@
         "delta": 3.3
       },
       {
-        "name": "Argentina",
-        "flag": "🇦🇷",
-        "manager": "Mitchell",
+        "name": "France",
+        "flag": "🇫🇷",
+        "manager": "Kerrod",
         "status": "in",
-        "title_probability": 26.1,
+        "title_probability": 26.0,
         "fifa_rank": 2,
         "title_breakdown": {
-          "form_score": 0.807,
+          "form_score": 0.803,
           "stage_score": 0.6,
           "rank_score": 0.988,
           "stage_label": "Quarter-final",
           "form_weight": 0.62,
           "rank_weight": 0.08
         },
-        "delta": 3.3
+        "delta": -0.1
       },
       {
         "name": "England",
@@ -1717,11 +1717,11 @@
         "manager": "Jay",
         "status": "in",
         "title_probability": 23.9,
-        "fifa_rank": 3,
+        "fifa_rank": 1,
         "title_breakdown": {
           "form_score": 0.703,
           "stage_score": 0.6,
-          "rank_score": 0.975,
+          "rank_score": 1.0,
           "stage_label": "Quarter-final",
           "form_weight": 0.62,
           "rank_weight": 0.08
