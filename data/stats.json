@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-19T08:15:44.916957+10:00",
-  "stage": "SEMI_FINALS",
+  "generated_at": "2026-07-19T10:22:36.699966+10:00",
+  "stage": "THIRD_PLACE",
   "headline": "{leader} stays *untouchable* as {tab} is already *out*",
   "summary": [
-    "**Kerrod** and **Ryan** have both been fully eliminated — all 24 of their teams are gone, leaving them watching on as sweepstake spectators. On the pitch, it's now a straight shootout between **Jay** and **Mitchell**, each clinging to their last surviving team. Both have defied the odds to reach this point, but only one can avoid the dreaded Secretary duties.",
-    "The only match that matters right now is **Spain vs Argentina** on **Monday 20 Jul at 5:00AM AEST** — and it's an absolute blockbuster. **Jay's Spain** faces off directly against **Mitchell's Argentina** in what is effectively a JOINT Sweep decider. Win, and your team stays alive. Lose, and you're handing the sweep — and 12 months of Secretary hell — straight to your rival. Doesn't get bigger than this."
+    "**Kerrod** and **Ryan** have both been fully eliminated — all 24 of their teams are done and dusted, meaning one of them is already the early favourite to wear the Secretary crown. Meanwhile, **Jay** and **Mitchell** are the last ones standing, each with just a single team left alive. It's a two-horse race to the finish line, and it couldn't be tighter — **Jay** on **48.1%** strength with **Spain**, **Mitchell** on **51.9%** with **Argentina**.",
+    "The only match that matters now is a blockbuster: **Spain vs Argentina**, Monday 20 Jul at **5:00AM AEST** — and it's an absolute winner-takes-all classic. **Jay's Spain** against **Mitchell's Argentina** in what is effectively the JOINT Sweep final. Whoever survives this one wins it all. Set the alarms, lads — this is the one."
   ],
   "leaderboard": [
     {
@@ -26,7 +26,7 @@
       "eliminated": 11,
       "at_risk": 0,
       "record": {
-        "w": 20,
+        "w": 21,
         "d": 7,
         "l": 23
       }
@@ -40,7 +40,7 @@
       "record": {
         "w": 21,
         "d": 10,
-        "l": 19
+        "l": 20
       }
     },
     {
@@ -458,13 +458,8 @@
         "name": "England",
         "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
         "status": "out",
-        "last_result": "L",
+        "last_result": "W",
         "form": [
-          {
-            "result": "W",
-            "opponent": "Panama",
-            "score": "2–0"
-          },
           {
             "result": "W",
             "opponent": "Congo DR",
@@ -484,6 +479,11 @@
             "result": "L",
             "opponent": "Argentina",
             "score": "1–2"
+          },
+          {
+            "result": "W",
+            "opponent": "France",
+            "score": "6–4"
           }
         ]
       },
@@ -757,11 +757,6 @@
         "form": [
           {
             "result": "W",
-            "opponent": "Norway",
-            "score": "4–1"
-          },
-          {
-            "result": "W",
             "opponent": "Sweden",
             "score": "3–0"
           },
@@ -779,6 +774,11 @@
             "result": "L",
             "opponent": "Spain",
             "score": "0–2"
+          },
+          {
+            "result": "L",
+            "opponent": "England",
+            "score": "4–6"
           }
         ]
       },
@@ -1412,6 +1412,15 @@
   },
   "recent_results": [
     {
+      "h_code": "FRA",
+      "h_flag": "🇫🇷",
+      "hs": 4,
+      "a_code": "ENG",
+      "a_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "as": 6,
+      "group": "3RD"
+    },
+    {
       "h_code": "ENG",
       "h_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
       "hs": 1,
@@ -1616,15 +1625,6 @@
       "a_code": "COD",
       "a_flag": "🇨🇩",
       "as": 1,
-      "group": "KO"
-    },
-    {
-      "h_code": "MEX",
-      "h_flag": "🇲🇽",
-      "hs": 2,
-      "a_code": "ECU",
-      "a_flag": "🇪🇨",
-      "as": 0,
       "group": "KO"
     }
   ],
@@ -1889,10 +1889,10 @@
         "title_probability": 0.0,
         "fifa_rank": 3,
         "title_breakdown": {
-          "form_score": 0.796,
-          "stage_score": 0.8,
+          "form_score": 0.8,
+          "stage_score": 0.85,
           "rank_score": 0.975,
-          "stage_label": "Semi-final",
+          "stage_label": "Third place",
           "form_weight": 0.66,
           "rank_weight": 0.04
         },
@@ -2093,10 +2093,10 @@
         "title_probability": 0.0,
         "fifa_rank": 4,
         "title_breakdown": {
-          "form_score": 0.707,
-          "stage_score": 0.8,
+          "form_score": 0.842,
+          "stage_score": 0.85,
           "rank_score": 0.963,
-          "stage_label": "Semi-final",
+          "stage_label": "Third place",
           "form_weight": 0.66,
           "rank_weight": 0.04
         },
